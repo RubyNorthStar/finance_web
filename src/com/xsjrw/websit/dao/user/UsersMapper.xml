@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xsjrw.websit.dao.user.UsersMapper">
+	<resultMap type="Users" id="usersResultMap">
+		<result property="id" column="id" />
+		<result property="username" column="username" />
+		<result property="mobile" column="mobile" />
+		<result property="email" column="email" />
+		<result property="password" column="password" />
+		<result property="usertype" column="usertype" />
+		<result property="registTime" column="regist_time" />
+		<result property="state" column="state" />
+		<result property="userAddress" column="user_address" />
+		<result property="sex" column="sex" />
+		<result property="picUrl" column="pic_url" />
+	</resultMap>
+	
+	<sql id="table_columns">
+		id,
+		username,
+		mobile,
+		email,
+		password,
+		usertype,
+		regist_time,
+		state,
+		user_address,
+		sex,
+		pic_url
+    </sql>
+	<sql id="entity_properties">
+		#{id},
+		#{username},
+		#{mobile},
+		#{email},
+		#{password},
+		#{usertype},
+		#{registTime},
+		#{state},
+		#{userAddress},
+		#{sex},
+		#{picUrl}
+	</sql>
+	
+	<sql id="entity_batch_properties">
+		#{item.id},
+		#{item.username},
+		#{item.mobile},
+		#{item.email},
+		#{item.password},
+		#{item.usertype},
+		#{item.registTime},
+		#{item.state},
+		#{item.userAddress},
+		#{item.sex},
+		#{item.picUrl}
+	</sql>
+	
+	<!-- 适用于主键自增类型 -->
+	<insert id="insert" parameterType="Users" useGeneratedKeys="true" keyProperty="id">
+		insert into users( <include refid="table_columns" /> ) 
+		values ( <include refid="entity_properties" /> )
+	</insert>
+	
+	<!-- 批量添加 适用于主键自增类型  不支持返回主键-->
+	<insert id="batchInsert" parameterType="java.util.List" useGeneratedKeys="true">
+		insert into users( <include refid="table_columns" /> ) 
+		values 
+		<foreach item="item" collection="list" separator="," >
+			( <include refid="entity_batch_properties" /> )
+		</foreach>
+	</insert>
+	
+	<!--根据主键批量删除 -->
+	<delete id="deleteByIds">
+		delete from users
+		where id in
+		<foreach item="item" collection="array" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	
+	<!--根据主键删除 -->
+	<delete id="deleteById">
+		delete from users
+		where id = #{id}
+	</delete>
+	
+	<!--修改 -->
+	<update id="update" parameterType="Users">
+		update users 
+		<trim prefix="set" suffixOverrides=",">
+			<if test="username != null and username != ''">username = #{username},</if>
+			<if test="mobile != null and mobile != ''">mobile = #{mobile},</if>
+			<if test="email != null and email != ''">email = #{email},</if>
+			<if test="password != null and password != ''">password = #{password},</if>
+			<if test="usertype != null and usertype != ''">usertype = #{usertype},</if>
+			<if test="registTime != null and registTime != ''">regist_time = #{registTime},</if>
+			<if test="state != null and state != ''">state = #{state},</if>
+			<if test="userAddress != null and userAddress != ''">user_address = #{userAddress},</if>
+			<if test="sex != null and sex != ''">sex = #{sex},</if>
+			<if test="picUrl != null and picUrl != ''">pic_url = #{picUrl},</if>
+		</trim>
+		<where>id = #{id}</where>
+	</update>
+	
+	<!--根据主键查询 -->
+	<select id="findById" resultMap="usersResultMap" parameterType="String" >
+		select <include refid="table_columns" />
+		from users
+		where id = #{id}
+	</select>
+	
+	<!--查询所有-->
+	<select id="queryAll" resultMap="usersResultMap">
+		select <include refid="table_columns" /> 
+		from users
+	</select>
+	
+	<!-- 使用like用法：columnName like '%${columnName}%' -->
+	<sql id="page_where">
+		<trim prefix="where" prefixOverrides="and | or ">
+			<if test="username != null and username != ''">username = #{username},</if>
+			<if test="mobile != null and mobile != ''">mobile = #{mobile},</if>
+			<if test="email != null and email != ''">email = #{email},</if>
+			<if test="password != null and password != ''">password = #{password},</if>
+			<if test="usertype != null and usertype != ''">usertype = #{usertype},</if>
+			<if test="registTime != null and registTime != ''">regist_time = #{registTime},</if>
+			<if test="state != null and state != ''">state = #{state},</if>
+			<if test="userAddress != null and userAddress != ''">user_address = #{userAddress},</if>
+			<if test="sex != null and sex != ''">sex = #{sex},</if>
+			<if test="picUrl != null and picUrl != ''">pic_url = #{picUrl},</if>
+		</trim>
+	</sql>
+	
+	<!--分页查询-->
+	<select id="page" resultMap="usersResultMap" parameterType="UsersSearch">
+		select <include refid="table_columns" />
+		from users
+		<include refid="page_where" />
+		limit #{firstIndex},#{pageSize}
+	</select>
+	
+	<!--查询总条数-->
+	<select id="pageCount" resultType="int" parameterType="UsersSearch">
+		select count(id) from users
+		<include refid="page_where" />
+	</select>
+	
+	<!-- 其他自定义SQL -->
+	
+</mapper>
