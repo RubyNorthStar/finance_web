@@ -1,11 +1,4 @@
-/com
-/jdbc.properties
-/log4j.properties
-/mybatis
-/param.properties
-/smtp.properties
-/spring
-
+*.class
 
 .project
 /*/.project
