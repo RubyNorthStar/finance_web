@@ -9,15 +9,6 @@
     </context-param>
 
     <filter>
-        <filter-name>siteMesh</filter-name>
-        <filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>siteMesh</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
-    <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
         <init-param>
