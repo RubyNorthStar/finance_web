@@ -1,0 +1,15 @@
+/bin
+
+
+*.class
+
+*/.project
+
+*.classpath
+
+.settings
+/*/.settings
+/*/.settings/*
+
+.classes
+/WebContent/WEB-INF/classes/*
