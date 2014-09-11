@@ -1,14 +1,12 @@
 /bin
 
 
-*.class
+.project
 
-*/.project
-
-*.classpath
+.classpath
 
 .settings
-/*/.settings
+*/.settings
 /*/.settings/*
 
 .classes
