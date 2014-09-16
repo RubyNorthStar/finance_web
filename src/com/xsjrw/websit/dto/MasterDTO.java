@@ -1,31 +1,31 @@
-package com.xsjrw.websit.dao.admin;
+package com.xsjrw.websit.dto;
 
-import java.io.Serializable;
-import java.util.Set;
+import java.util.Date;
 
-public class Master implements Serializable{
-	/**
-	 * <class name="Master" table="manager">
-	 */
-	private static final long serialVersionUID = 5572604602767910829L;
-	private Integer mtId;
+public class MasterDTO {
+	private Integer id;
 	private String account;
 	private String password;
 	private String name;
+	private Integer sex;
+	private String department;
 	private String position;
+	private String officeTelephone;
 	private String telephone;
 	private String mobile;
 	private String email;
-	private String postDate;
+	private Date postDate;
 	private boolean forbidden;
-	private Set<MasterMapAction> masterMapActionList;
-	
-	public Integer getMtId() {
-		return mtId;
+	private String note;
+	private String flag;
+	private Integer groupColumnId;
+
+	public Integer getId() {
+		return id;
 	}
 
-	public void setMtId(Integer mtId) {
-		this.mtId = mtId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getAccount() {
@@ -52,12 +52,36 @@ public class Master implements Serializable{
 		this.name = name;
 	}
 
+	public Integer getSex() {
+		return sex;
+	}
+
+	public void setSex(Integer sex) {
+		this.sex = sex;
+	}
+
+	public String getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
 	public String getPosition() {
 		return position;
 	}
 
 	public void setPosition(String position) {
 		this.position = position;
+	}
+
+	public String getOfficeTelephone() {
+		return officeTelephone;
+	}
+
+	public void setOfficeTelephone(String officeTelephone) {
+		this.officeTelephone = officeTelephone;
 	}
 
 	public String getTelephone() {
@@ -84,11 +108,11 @@ public class Master implements Serializable{
 		this.email = email;
 	}
 
-	public String getPostDate() {
+	public Date getPostDate() {
 		return postDate;
 	}
 
-	public void setPostDate(String postDate) {
+	public void setPostDate(Date postDate) {
 		this.postDate = postDate;
 	}
 
@@ -100,11 +124,27 @@ public class Master implements Serializable{
 		this.forbidden = forbidden;
 	}
 
-	public Set<MasterMapAction> getMasterMapActionList() {
-		return masterMapActionList;
+	public String getNote() {
+		return note;
 	}
 
-	public void setMasterMapActionList(Set<MasterMapAction> masterMapActionList) {
-		this.masterMapActionList = masterMapActionList;
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public String getFlag() {
+		return flag;
+	}
+
+	public void setFlag(String flag) {
+		this.flag = flag;
+	}
+
+	public Integer getGroupColumnId() {
+		return groupColumnId;
+	}
+
+	public void setGroupColumnId(Integer groupColumnId) {
+		this.groupColumnId = groupColumnId;
 	}
 }

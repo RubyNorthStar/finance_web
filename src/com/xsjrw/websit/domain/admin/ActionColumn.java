@@ -1,4 +1,4 @@
-package com.xsjrw.websit.dao.admin;
+package com.xsjrw.websit.domain.admin;
 
 import java.io.Serializable;
 import java.util.Date;
