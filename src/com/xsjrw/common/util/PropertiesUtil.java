@@ -10,6 +10,12 @@ public class PropertiesUtil {
 	
 	private static Map<String, Properties> propMap = new HashMap<String, Properties>();
 
+	/**
+	 * Description: 
+	 * @Version1.0 2014年9月16日 上午10:38:12 by 王志伟（wangzhiwei@dangdang.com）创建
+	 * @param propName
+	 * @return
+	 */
 	private static Properties getProperties(String propName) {
 		Properties p = new Properties();
 		InputStream in = getClassLoader().getResourceAsStream(propName);
