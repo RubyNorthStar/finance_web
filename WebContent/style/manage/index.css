@@ -1,0 +1,71 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ padding:0; margin:0;}
+a{ text-decoration:none;}
+li{ list-style:none;}
+img{ border:none;cursor: pointer;}
+.clear{zoom:1;}
+.clear:after{ content:'\20'; display:block; clear:both;}
+.page{ margin:0 auto; width:1200px; font-size:12px;}
+.head{ text-align:right; width:1200px; height:110px; background:url(/image/manage/head.png); color:#fff;}
+.head .h-p1{padding:24px 40px 6px 0;}
+.head .h-p2{padding-right:12px;}
+.head .nav{ padding-top:24px; padding-right:25px;}
+.head .nav li{ float:right; width:98px; height:33px; background:url(/image/manage/li.png);line-height:32px; text-align:center; color:#fff; font-weight:bold; font-size:14px;  margin-right:2px;}
+.head .nav li a{ color:#fff;}
+.main{ width:1200px; }
+.main .left{float:left; width:140px;}
+
+.main .left .l-content{ height:760px; overflow-y:scroll; overflow-x:scroll; width:155px; background-color:#E5EBF9;}
+.main .left .l-content dl{ background:#5e7aad;}
+.main .left .l-content dl .dt{ width:140px; height:31px; background:url(/image/manage/l-dt.png); text-align:center; line-height:30px; font-size:14px; font-weight:bold; color:#fff;}
+.main .left .l-content dl .dd{ width:140px; height:30px; background:url(/image/manage/l-dd.png); text-align:center; line-height:30px;}
+
+.main .right{ float:right; width:1040px; padding-bottom:16px;}
+.main .right h3{ height:33px; border-bottom:3px solid #4f69a0; line-height:32px; text-indent:40px; background:url(/image/manage/h3-bg.png) no-repeat 10px 5px;}
+table{border-collapse:collapse;  width: 100%;}
+.table1{border-top:1px solid #4f69a0;border-bottom:1px solid #4f69a0;}
+.table1 td{ background:#e4eaf6; text-align:center; }
+.main .right .m-r{ padding-left: 10px;
+    padding-right: 5px;
+    padding-top: 5px;}
+.main .right .m-r .r-D{ padding-bottom:53px; padding-top:16px;}
+.table2 th{ background:#4f69a0; border:1px solid #4F69A0; font-weight:normal; color:#fff;}
+.table2 td{ border:1px solid #4f69a0; text-align:center;  height:30px;}
+.table2 td a{ display:inline-block; height:18px;}
+
+
+
+.main .right1{ border: 1px solid #9D9ECB;
+    float: right;
+    padding-bottom: 16px;
+    width: 1040px;}
+.main .right1 h3 {
+    background: url("/image/manage/h3-bg.png") no-repeat scroll 10px 5px transparent;
+    border-bottom: 3px solid #4F69A0;
+    height: 33px;
+    line-height: 32px;
+    text-indent: 40px;
+}
+.main .right1 .r1_top{ margin-top:30px; padding-bottom:3px; border-bottom:1px solid #4f689e; padding-left:15px; margin-bottom:30px;}
+.main .right1 .r1_top li{ display:inline-block; margin-right:3px; height:30px; background-color:#dee5f8; text-align:center; width:160px; border:1px solid #cccccc; float:left; line-height:30px; cursor:pointer;}
+.main .right1 .r1_top li.bg{ background-color:#beccf1;}
+.main .right1 .r1_bottom{ width:100%;}
+.main .right1 .r1_bottom td{ height:32px; line-height:32px; text-align:right; line-height:32px;}
+.main .right1 .r1_bottom td.td1{ padding-right:5px; width:18%;}
+.main .right1 .r1_bottom td.td2{ padding-right:5px; width:40%; text-align:left;}
+.main .right1 .r1_bottom td.td4{ padding-right:5px; width:60%; text-align:left;}
+.main .right1 .r1_bottom td.td3{ padding-right:5px;text-align:left;}
+.main .right1 .r1_bottom td.td5{ padding-right:5px; width:13%;}
+.main .right1 .r1_bottom td.td6{ padding-right:5px; width:37%; text-align:left;}
+.main .right1 .r1_bottom td input{padding-left: 3px;border:1px solid #647cbc; width:300px; height:20px; line-height:20px;}
+.main .right1 .r1_bottom td input.ra{ border:0px; width:20px;}
+.main .right1 .r1_bottom td input.rb{width:100px;}
+.main .right1 .r1_bottom td input.rc{width:40px;}
+.main .right1 .r1_bottom td textarea { width:800px; margin-top:8px; border:1px solid #647cbc; line-height:18px; word-wrap:break-word;}
+.main .right1 .r1_bottom td textarea.txt{ width:350px;}
+beccf1
+.dis{ display:none;}
+.float{float:left;}
+.p-a{ display:inline-block;}
