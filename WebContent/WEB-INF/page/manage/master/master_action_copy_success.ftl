@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>酒美网--复制成功</title>
+	<title>携手金融--复制成功</title>
 	<link href="/style/manage/index.css" rel="stylesheet" />
-	<script type="text/javascript" src="/script/jquery/jquery-1.7.js"></script>
+	<script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
 </head>
   <body>
 	 <div class="page"><!--page开始-->

@@ -5,7 +5,7 @@
 	<title>携手金融--后台登陆</title>
 	<link href="/style/manage/index.css" rel="stylesheet" />
 	<script type="text/javascript" src="/script/jquery/jquery-1.7.js"></script>
-	<script type="text/javascript" src="/script/jquery/jquery.pagination.js"></script>
+	<script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
 	<script type="text/javascript">
 		function reset(){
 			$('#account').val('');
