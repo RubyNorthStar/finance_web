@@ -15,7 +15,7 @@ public class MasterDTO {
 	private String mobile;
 	private String email;
 	private Date postDate;
-	private boolean forbidden;
+	private Short forbidden;
 	private String note;
 	private String flag;
 	private Integer groupColumnId;
@@ -116,11 +116,11 @@ public class MasterDTO {
 		this.postDate = postDate;
 	}
 
-	public boolean getForbidden() {
+	public Short getForbidden() {
 		return forbidden;
 	}
 
-	public void setForbidden(boolean forbidden) {
+	public void setForbidden(Short forbidden) {
 		this.forbidden = forbidden;
 	}
 

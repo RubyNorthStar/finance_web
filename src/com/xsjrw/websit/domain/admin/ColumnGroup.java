@@ -1,66 +1,55 @@
 package com.xsjrw.websit.domain.admin;
 
-import java.io.Serializable;
 import java.util.Date;
-import java.util.Set;
 
-public class ColumnGroup implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 576133982115946595L;
-	private Integer cgId;
-	private String name;
-	private String masterName;
-	private Date postDate;
-	private String note;
-	private Set<ActionColumn> actionColumnList;
+public class ColumnGroup {
+    private Integer cgId;
 
-	public Integer getCgId() {
-		return cgId;
-	}
+    private String name;
 
-	public void setCgId(Integer cgId) {
-		this.cgId = cgId;
-	}
+    private String masterName;
 
-	public String getName() {
-		return name;
-	}
+    private Date postName;
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    private String note;
 
-	public String getMasterName() {
-		return masterName;
-	}
+    public Integer getCgId() {
+        return cgId;
+    }
 
-	public void setMasterName(String masterName) {
-		this.masterName = masterName;
-	}
+    public void setCgId(Integer cgId) {
+        this.cgId = cgId;
+    }
 
-	public Date getPostDate() {
-		return postDate;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setPostDate(Date postDate) {
-		this.postDate = postDate;
-	}
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
+    }
 
-	public String getNote() {
-		return note;
-	}
+    public String getMasterName() {
+        return masterName;
+    }
 
-	public void setNote(String note) {
-		this.note = note;
-	}
+    public void setMasterName(String masterName) {
+        this.masterName = masterName == null ? null : masterName.trim();
+    }
 
-	public Set<ActionColumn> getActionColumnList() {
-		return actionColumnList;
-	}
+    public Date getPostName() {
+        return postName;
+    }
 
-	public void setActionColumnList(Set<ActionColumn> actionColumnList) {
-		this.actionColumnList = actionColumnList;
-	}
+    public void setPostName(Date postName) {
+        this.postName = postName;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note == null ? null : note.trim();
+    }
 }

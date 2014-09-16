@@ -1,14 +1,17 @@
 package com.xsjrw.websit.dao.admin;
 
-import com.xsjrw.websit.core.domain.BaseMapper;
-import com.xsjrw.websit.domain.user.Users;
+import com.xsjrw.websit.domain.admin.Action;
 
-/**
- * Description: 
- * All Rights Reserved.
- * @version 1.0  2014年9月16日 上午11:45:22  by 王志伟（wangzhiwei@dangdang.com）创建
- */
-public interface ActionMapper extends BaseMapper<Users>{
-	
-	
+public interface ActionMapper {
+    int deleteByPrimaryKey(Integer atId);
+
+    int insert(Action record);
+
+    int insertSelective(Action record);
+
+    Action selectByPrimaryKey(Integer atId);
+
+    int updateByPrimaryKeySelective(Action record);
+
+    int updateByPrimaryKey(Action record);
 }

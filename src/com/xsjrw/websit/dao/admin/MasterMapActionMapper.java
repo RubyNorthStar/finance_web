@@ -1,14 +1,17 @@
 package com.xsjrw.websit.dao.admin;
 
-import com.xsjrw.websit.core.domain.BaseMapper;
-import com.xsjrw.websit.domain.user.Users;
+import com.xsjrw.websit.domain.admin.MasterMapAction;
 
-/**
- * Description: 
- * All Rights Reserved.
- * @version 1.0  2014年9月16日 上午11:45:22  by 王志伟（wangzhiwei@dangdang.com）创建
- */
-public interface MasterMapActionMapper extends BaseMapper<Users>{
-	
-	
+public interface MasterMapActionMapper {
+    int deleteByPrimaryKey(Integer mmaId);
+
+    int insert(MasterMapAction record);
+
+    int insertSelective(MasterMapAction record);
+
+    MasterMapAction selectByPrimaryKey(Integer mmaId);
+
+    int updateByPrimaryKeySelective(MasterMapAction record);
+
+    int updateByPrimaryKey(MasterMapAction record);
 }

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xsjrw.websit.dao.admin.ActionMapper" >
+  <resultMap id="BaseResultMap" type="com.xsjrw.websit.demain.admin.Action" >
+    <id column="at_id" property="atId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="master_name" property="masterName" jdbcType="VARCHAR" />
+    <result column="action_desc" property="actionDesc" jdbcType="VARCHAR" />
+    <result column="post_date" property="postDate" jdbcType="TIMESTAMP" />
+    <result column="view_mode" property="viewMode" jdbcType="INTEGER" />
+    <result column="ac_id" property="acId" jdbcType="INTEGER" />
+    <result column="action_no" property="actionNo" jdbcType="VARCHAR" />
+    <result column="action_path" property="actionPath" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    at_id, name, master_name, action_desc, post_date, view_mode, ac_id, action_no, action_path
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from action
+    where at_id = #{atId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from action
+    where at_id = #{atId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xsjrw.websit.demain.admin.Action" >
+    insert into action (at_id, name, master_name, 
+      action_desc, post_date, view_mode, 
+      ac_id, action_no, action_path
+      )
+    values (#{atId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{masterName,jdbcType=VARCHAR}, 
+      #{actionDesc,jdbcType=VARCHAR}, #{postDate,jdbcType=TIMESTAMP}, #{viewMode,jdbcType=INTEGER}, 
+      #{acId,jdbcType=INTEGER}, #{actionNo,jdbcType=VARCHAR}, #{actionPath,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xsjrw.websit.demain.admin.Action" >
+    insert into action
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="atId != null" >
+        at_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="masterName != null" >
+        master_name,
+      </if>
+      <if test="actionDesc != null" >
+        action_desc,
+      </if>
+      <if test="postDate != null" >
+        post_date,
+      </if>
+      <if test="viewMode != null" >
+        view_mode,
+      </if>
+      <if test="acId != null" >
+        ac_id,
+      </if>
+      <if test="actionNo != null" >
+        action_no,
+      </if>
+      <if test="actionPath != null" >
+        action_path,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="atId != null" >
+        #{atId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="masterName != null" >
+        #{masterName,jdbcType=VARCHAR},
+      </if>
+      <if test="actionDesc != null" >
+        #{actionDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="postDate != null" >
+        #{postDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="viewMode != null" >
+        #{viewMode,jdbcType=INTEGER},
+      </if>
+      <if test="acId != null" >
+        #{acId,jdbcType=INTEGER},
+      </if>
+      <if test="actionNo != null" >
+        #{actionNo,jdbcType=VARCHAR},
+      </if>
+      <if test="actionPath != null" >
+        #{actionPath,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xsjrw.websit.demain.admin.Action" >
+    update action
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="masterName != null" >
+        master_name = #{masterName,jdbcType=VARCHAR},
+      </if>
+      <if test="actionDesc != null" >
+        action_desc = #{actionDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="postDate != null" >
+        post_date = #{postDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="viewMode != null" >
+        view_mode = #{viewMode,jdbcType=INTEGER},
+      </if>
+      <if test="acId != null" >
+        ac_id = #{acId,jdbcType=INTEGER},
+      </if>
+      <if test="actionNo != null" >
+        action_no = #{actionNo,jdbcType=VARCHAR},
+      </if>
+      <if test="actionPath != null" >
+        action_path = #{actionPath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where at_id = #{atId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xsjrw.websit.demain.admin.Action" >
+    update action
+    set name = #{name,jdbcType=VARCHAR},
+      master_name = #{masterName,jdbcType=VARCHAR},
+      action_desc = #{actionDesc,jdbcType=VARCHAR},
+      post_date = #{postDate,jdbcType=TIMESTAMP},
+      view_mode = #{viewMode,jdbcType=INTEGER},
+      ac_id = #{acId,jdbcType=INTEGER},
+      action_no = #{actionNo,jdbcType=VARCHAR},
+      action_path = #{actionPath,jdbcType=VARCHAR}
+    where at_id = #{atId,jdbcType=INTEGER}
+  </update>
+</mapper>

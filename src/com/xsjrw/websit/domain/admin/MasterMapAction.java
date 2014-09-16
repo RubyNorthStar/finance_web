@@ -1,37 +1,33 @@
 package com.xsjrw.websit.domain.admin;
 
-import java.io.Serializable;
+public class MasterMapAction {
+    private Integer mmaId;
 
-public class MasterMapAction implements Serializable{
-	/**
-	 * <class name="MasterMapAction" table="master_map_action">
-	 */
-	private static final long serialVersionUID = -7380863413645694513L;
-	private Integer mmaId;
-	private Action action;
-	private Master master;
+    private Integer masterId;
 
-	public Integer getMmaId() {
-		return mmaId;
-	}
+    private Integer atId;
 
-	public void setMmaId(Integer mmaId) {
-		this.mmaId = mmaId;
-	}
+    public Integer getMmaId() {
+        return mmaId;
+    }
 
-	public Action getAction() {
-		return action;
-	}
+    public void setMmaId(Integer mmaId) {
+        this.mmaId = mmaId;
+    }
 
-	public void setAction(Action action) {
-		this.action = action;
-	}
+    public Integer getMasterId() {
+        return masterId;
+    }
 
-	public Master getMaster() {
-		return master;
-	}
+    public void setMasterId(Integer masterId) {
+        this.masterId = masterId;
+    }
 
-	public void setMaster(Master master) {
-		this.master = master;
-	}
+    public Integer getAtId() {
+        return atId;
+    }
+
+    public void setAtId(Integer atId) {
+        this.atId = atId;
+    }
 }

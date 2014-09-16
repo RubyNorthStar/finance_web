@@ -1,7 +1,6 @@
 package com.xsjrw.websit.controller.admin;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -9,10 +8,8 @@ import java.util.Set;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.httpclient.util.ExceptionUtil;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-import org.apache.poi.util.StringUtil;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -22,7 +19,6 @@ import com.xsjrw.websit.domain.admin.ActionColumn;
 import com.xsjrw.websit.domain.admin.ColumnGroup;
 import com.xsjrw.websit.domain.admin.Master;
 import com.xsjrw.websit.domain.admin.MasterMapAction;
-import com.xsjrw.websit.domain.admin.MasterOperationRight;
 import com.xsjrw.websit.dto.MasterDTO;
 import com.xsjrw.websit.service.MasterService;
 import com.xsjrw.websit.service.PublishService;
@@ -77,7 +73,7 @@ public class MasterController {
 						if(master != null){
 							String pass = master.getPassword();
 							if(password.trim().equals(pass.trim())){
-								if(!master.getForbidden()){
+								if(master.getForbidden().shortValue() == 1){
 									masterDTO.setFlag("1006");//登陆失败，该账户已被禁用
 									return "login";
 								}

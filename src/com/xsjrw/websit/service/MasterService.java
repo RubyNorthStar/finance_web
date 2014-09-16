@@ -10,7 +10,6 @@ import com.xsjrw.common.util.Pager;
 import com.xsjrw.websit.domain.admin.Action;
 import com.xsjrw.websit.domain.admin.ColumnGroup;
 import com.xsjrw.websit.domain.admin.Master;
-import com.xsjrw.websit.domain.admin.MasterOperationRight;
 import com.xsjrw.websit.dto.MasterDTO;
 
 
@@ -223,27 +222,6 @@ public class MasterService {
 	 * @return
 	 */
 	public List<Master> obtainAllMasterList(){
-		
-		return null;
-	}
-	public List<MasterOperationRight> obtainMasterOperationRightList(
-			Integer operatorId, Integer actionId) {
-//		DetachedCriteria criteria = DetachedCriteria.forClass(MasterOperationRight.class);
-//		try {
-//			if (null == operatorId && operatorId > 0) {
-//				criteria.add(Restrictions.eq("operatorId", operatorId));
-//			}
-//			if (null == actionId && actionId > 0) {
-//				criteria.add(Restrictions.eq("actionId", actionId));
-//			}
-//			List<MasterOperationRight> masterList = masterDao.findByCriteria(criteria);
-//			return masterList;
-//		} catch (Exception e) {
-//			logger.error("", e);
-//			eventManagerClient.triggerEvent(
-//					"com.share.watch.WatchEvent", 
-//					new String[] {ExceptionUtil.toString("", e)});
-//		}
 		
 		return null;
 	}

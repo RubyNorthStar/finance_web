@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xsjrw.websit.dao.admin.ActionColumnMapper" >
+  <resultMap id="BaseResultMap" type="com.xsjrw.websit.demain.admin.ActionColumn" >
+    <id column="ac_id" property="acId" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="post_date" property="postDate" jdbcType="TIMESTAMP" />
+    <result column="note" property="note" jdbcType="VARCHAR" />
+    <result column="cg_id" property="cgId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ac_id, name, post_date, note, cg_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from action_column
+    where ac_id = #{acId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from action_column
+    where ac_id = #{acId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xsjrw.websit.demain.admin.ActionColumn" >
+    insert into action_column (ac_id, name, post_date, 
+      note, cg_id)
+    values (#{acId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{postDate,jdbcType=TIMESTAMP}, 
+      #{note,jdbcType=VARCHAR}, #{cgId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xsjrw.websit.demain.admin.ActionColumn" >
+    insert into action_column
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="acId != null" >
+        ac_id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="postDate != null" >
+        post_date,
+      </if>
+      <if test="note != null" >
+        note,
+      </if>
+      <if test="cgId != null" >
+        cg_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="acId != null" >
+        #{acId,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="postDate != null" >
+        #{postDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="note != null" >
+        #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="cgId != null" >
+        #{cgId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xsjrw.websit.demain.admin.ActionColumn" >
+    update action_column
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="postDate != null" >
+        post_date = #{postDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="note != null" >
+        note = #{note,jdbcType=VARCHAR},
+      </if>
+      <if test="cgId != null" >
+        cg_id = #{cgId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ac_id = #{acId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xsjrw.websit.demain.admin.ActionColumn" >
+    update action_column
+    set name = #{name,jdbcType=VARCHAR},
+      post_date = #{postDate,jdbcType=TIMESTAMP},
+      note = #{note,jdbcType=VARCHAR},
+      cg_id = #{cgId,jdbcType=INTEGER}
+    where ac_id = #{acId,jdbcType=INTEGER}
+  </update>
+</mapper>
