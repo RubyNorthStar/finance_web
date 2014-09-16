@@ -12,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xsjrw.common.util.MD5;
+import com.xsjrw.common.util.SessionUtil;
 import com.xsjrw.websit.core.domain.BaseWebController;
 import com.xsjrw.websit.domain.user.Users;
 import com.xsjrw.websit.search.user.UsersSearch;
@@ -20,8 +22,8 @@ import com.xsjrw.websit.service.IUserService;
 /**
  * Login 控制器
  * 
- * @author xingtianlun
- * @date 2013-02-28
+ * @author wangzhixing
+ * @date 2014-09-12
  */
 @Controller
 @RequestMapping("/user")
@@ -33,15 +35,41 @@ public class UserController extends BaseWebController{
 	protected IUserService userService;
 	
 	/**
+	 * 
+	 * goToRegister(跳转到注册页面)
+	 * @return
+	 * String
+	 * @exception
+	 * @since  1.0.0
+	 */
+	
+	@RequestMapping(value = "/goTORegister")
+	public String goToRegister(){
+		return "user/registe";
+	}
+	
+	@RequestMapping(value = "/goTOLogin")
+	public String goTOLogin(){
+		return "user/login";
+	}
+	
+	
+	
+	/**
 	 * 验证登陆
 	 * 
 	 * @param
 	 * @return
 	 */
-	@ResponseBody
 	@RequestMapping(value = "/login")
-	public String checkLogin(Model model,Users user,HttpServletRequest request) {
+	public String checkLogin(Model model,Users u,HttpServletRequest request) {
 		String result = "faile";
+		
+		List<Users> user = userService.findUserByEmailAndPassWord(u.getEmail(), u.getPassword());
+		if(user != null && user.size() > 0){
+			request.getSession().setAttribute("loginaccount_customer", user.get(0));
+			return "user/usercenter";
+		}
 		return result;
 	}
 
@@ -51,11 +79,12 @@ public class UserController extends BaseWebController{
 	 * @param
 	 * @return
 	 */
-	@ResponseBody
 	@RequestMapping(value = "/register")
 	public String register(Model model,Users user,HttpServletRequest request) {
 		String result = "faile";
 		try{
+			String passWord = user.getPassword();
+			user.setPassword(MD5.getMD5(passWord));
 			userService.saveUser(user);
 			result = "success";
 		}catch(Exception e){

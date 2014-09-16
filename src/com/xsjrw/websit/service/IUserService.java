@@ -16,7 +16,7 @@ public interface IUserService {
 	* @throws 
 	* @exception 
 	* @date 2014-5-12 下午05:32:29
-	* @user by shangde
+	* @user by wangzx
 	 */
 	void saveUser(Users user);
 	
@@ -29,7 +29,7 @@ public interface IUserService {
 	* @throws 
 	* @exception 
 	* @date 2014-5-13 上午09:47:32
-	* @user by shangde
+	* @user by wangzx
 	 */
 	void batchSaveUser(List<Users> users);
 	
@@ -42,7 +42,7 @@ public interface IUserService {
 	* @throws 
 	* @exception 
 	* @date 2014-5-12 下午05:59:25
-	* @user by shangde
+	* @user by wangzx
 	 */
 	void editUser(Users user);
 	
@@ -55,7 +55,7 @@ public interface IUserService {
 	* @throws 
 	* @exception 
 	* @date 2014-5-12 下午06:06:57
-	* @user by shangde
+	* @user by wangzx
 	 */
 	void deleteUserById(Integer id);
 	
@@ -68,7 +68,7 @@ public interface IUserService {
 	* @throws 
 	* @exception 
 	* @date 2014-5-12 下午06:07:32
-	* @user by shangde
+	* @user by wangzx
 	 */
 	void deleteUserByIds(Integer[] ids);
 	
@@ -81,9 +81,22 @@ public interface IUserService {
 	* @throws 
 	* @exception 
 	* @date 2014-5-12 下午06:00:02
-	* @user by shangde
+	* @user by wangzx
 	 */
 	Users findUserById(Integer id);
+	
+	/**
+	 * 
+	* @Title: findUserByEmail
+	* @Description: 根据Email查询
+	* @param email
+	* @return List<Users>    返回类型 
+	* @throws 
+	* @exception 
+	* @date 2014-9-15 下午06:00:02
+	* @user by wangzx
+	 */
+	List<Users> findUserByEmailAndPassWord(String email, String passWord);
 	
 	/**
 	 * 
@@ -94,7 +107,7 @@ public interface IUserService {
 	* @throws 
 	* @exception 
 	* @date 2014-5-12 下午06:01:30
-	* @user by shangde
+	* @user by wangzx
 	 */
 	List<Users> findUserByPage(UsersSearch search);
 	

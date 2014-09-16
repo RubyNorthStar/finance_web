@@ -53,5 +53,15 @@ public class UserServiceImpl implements IUserService{
 		search.setTotalRecords(totalRecords);
 		return usersMapper.page(search);
 	}
+
+	@Override
+	public List<Users> findUserByEmailAndPassWord(String email, String passWord) {
+		String pass = MD5.getMD5(passWord);
+				
+		List<Users> users = usersMapper.findUserByEmailAndPassWord(email, pass);
+		
+		return users;
+	}
+
 	
 }
