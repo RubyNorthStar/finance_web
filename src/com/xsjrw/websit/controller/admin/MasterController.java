@@ -1,34 +1,26 @@
 package com.xsjrw.websit.controller.admin;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.xsjrw.common.util.Pager;
-import com.xsjrw.websit.domain.admin.Action;
-import com.xsjrw.websit.domain.admin.ActionColumn;
 import com.xsjrw.websit.domain.admin.ColumnGroup;
 import com.xsjrw.websit.domain.admin.Master;
-import com.xsjrw.websit.domain.admin.MasterMapAction;
 import com.xsjrw.websit.dto.MasterDTO;
 import com.xsjrw.websit.service.MasterService;
 import com.xsjrw.websit.service.PublishService;
 
 @Component
-@Scope("prototype")
-@SuppressWarnings("all")
 /**
  * @author Zhiwei Wang
  */
+@RequestMapping("/admin/master")
 public class MasterController {
 	public static final String MASTER = "master";
 
@@ -53,6 +45,7 @@ public class MasterController {
 	 * 去登陆页面
 	 * @return
 	 */
+	@RequestMapping(value = "/login")
 	public String goLogin() {
 		return "login";
 	}
