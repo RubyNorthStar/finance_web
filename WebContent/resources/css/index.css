@@ -65,13 +65,21 @@ img{vertical-align: top;}
 .input-block{
     margin-bottom: 24px;
 }
+
+.verify-block{
+    margin-top: -15px;
+    margin-bottom: 5px;
+    text-align: center;
+	color: red;
+	font-size: 14px;
+}
 .icon{
     width: 20px; height: 20px; display: block;
     margin:10px 10px 0 0;
     float: left;
 }
 .icon-user{
-     background: url("../images/user3.png") no-repeat center top;
+     background: url("/resources/images/user/user3.png") no-repeat center top;
      background-size: cover;
  }
 .icon-code{
@@ -165,7 +173,7 @@ img{vertical-align: top;}
 }
 
 
-/*注册页*/
+/*娉ㄥ唽椤�/
 .pages .content-block .right-box{
     margin-left: 53px;
 }
@@ -189,7 +197,7 @@ img{vertical-align: top;}
 .button-color2{
     background: #29a7e1;
 }
-/*菜单*/
+/*鑿滃崟*/
 .menu{
     /*font-size: 12px; */
     margin-left: 34%;
@@ -200,7 +208,7 @@ img{vertical-align: top;}
     margin-left: 20px;
 }
 
-/*end 菜单*/
+/*end 鑿滃崟*/
 .body-bg{
     background: #efefef;
 }

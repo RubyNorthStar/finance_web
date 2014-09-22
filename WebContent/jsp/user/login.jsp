@@ -9,14 +9,55 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>登陆</title>
- <link rel="stylesheet" type="text/css" href="resources/css/index.css">
+ <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
+ <script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
+ <script type="text/javascript" src="/resources/common/cookie/cookie.js"></script>
 </head>
+<script type="text/javascript">
+	function userLogin(){
+		//$('form').submit();
+		var email = $('#email').val();
+		var password = $('#password').val();
+		var remember = $('#remember').attr("checked");
+		alert(email);
+		if(email){
+			$('#verify').text("邮箱不能为空。");
+		}
+		
+		$.ajax({
+	           type: "POST",
+	           url : "http://www.xs.com:8080/user/login.sthml",
+	           data: {"email":email, "password":password},
+	           dataType:"json", 
+	           success: function(data){
+	        	   
+	        	   //跳转到个人中心
+	        	   if(data.result == "success"){
+						alert("如果成功跳转到个人中心");
+	        	   }
+	        	   if(data.result == "faile"){
+	        		   $('#verify').text("邮箱地址或者密码错误，请确认后重新登录。");
+	        	   }
+	           }
+	   });
+	}
+	
+	function passwordLength(){
+		var password = $('#password').val();
+		if(password.length() < 6){
+			alert("x");
+		}
+		if(password.length() > 6){
+			alert("d");
+		}
+	}
+</script>
 <body>
-	<form action="<%=basePath%>user/login.sthml" method="post">
+	<%-- <form action="<%=basePath%>user/login.sthml" method="post">
 	    <input type="text" name="email" /><p>
 	    <input type="password" name="password" /></p>
 	    <input type="submit" value="用户登陆"/>
-  	</form>
+  	</form> --%>
   	
   	<body>
 	<div class="views">
@@ -25,7 +66,7 @@
 			<div class="navbar">
 	          <div class="navbar-inner">
 	          	<div class="left">
-                    <img class="top-logo" src="images/logo.jpg" />
+                    <img class="top-logo" src="/resources/images/user/logo.jpg" />
 	            </div>
 	            <div class="login">
                     <span style="margin: 0 10px;">|</span>
@@ -37,37 +78,38 @@
                 <!--登陆页-->
             <div class="pages clearfix">
                 <div class="content-block">
-                    <img class="left-img" src="images/1.jpg" />
+                    <img class="left-img" src="/resources/images/user//1.jpg" />
                 </div>
                 <div class="content-block">
                     <div class="right-block">
-                        <div class="input-block">
-                            <i class="icon icon-user"></i>
-                            <input class="input-text user" type="text" value="用户名">
-                        </div>
-
-                        <div class="input-block">
-                            <i class="icon icon-user"></i>
-                            <input class="input-text code" type="text" value="密码">
-                        </div>
-                        <div class="text">
-                            <div class="input-ck">
-                                <input class="input-checkbox" type="checkbox">
-                            </div>
-
-                            记住用户名
-                            <a class="forget Acolor" href="javascript:;">忘记密码</a>
-                        </div>
-                        <div class="login-btn">
-                            <button class="">马上登陆</button>
-                            <div class="zc">
-                               <span>没有账号？</span>
-                                <span><a class="Acolor" href="javascript:;">免费注册</a></span>
-                            </div>
-                        </div>
+	                        <div class="verify-block" id="verify"></div>
+	                        <div class="input-block">
+	                            <i class="icon icon-user"></i>
+	                            <input class="input-text user" type="text" name="email" id="email" placeholder="用户名">
+	                        </div>
+	
+	                        <div class="input-block">
+	                            <i class="icon icon-user"></i>
+	                            <input class="input-text code" type="password" name="password" id="password" placeholder="密码">
+	                        </div>
+	                        <div class="text">
+	                            <div class="input-ck">
+	                                <input class="input-checkbox" type="checkbox" id="remember">
+	                            </div>
+	                            	记住用户名
+	                            <a class="forget Acolor" href="javascript:;">忘记密码</a>
+	                        </div>
+	                        <div class="login-btn">
+	                            <button onclick="javascript:userLogin();">马上登陆</button>
+	                            <input type="button" value="马上登陆" onclick="javascript:userLogin();" />
+	                            <div class="zc">
+	                               <span>没有账号？</span>
+	                                <span><a class="Acolor" href="javascript:;">免费注册</a></span>
+	                            </div>
+	                        </div>
                         <div class="hzzh clearfix">
                             <p style="float: left; text-align: center;line-height: 45px; margin: 0 20px 0 30px">
-                                您还可以使用合作账号登陆
+                             	   您还可以使用合作账号登陆
                             </p>
 
                             <i class="icon icon-user"></i>
@@ -80,7 +122,7 @@
             <!--底部工具栏-->
             <div class="page clearfix">
                 <div class="toolbar">
-                    <img class="bottom-logo" src="images/0013.jpg" />
+                    <img class="bottom-logo" src="/resources/images/user//0013.jpg" />
                 </div>
                 <div class="toolbar">
                     <div class="top-inner toolbar-inner">
@@ -91,13 +133,11 @@
                     </div>
                 </div>
                 <div class="toolbar">
-                    <img class="" style="width: 200px;height: 60px" src="images/0012.jpg" />
+                    <img class="" style="width: 200px;height: 60px" src="/resources/images/user/0012.jpg" />
                 </div>
             </div>
 		</div>
 	</div>
 	
-	
-	<script type="text/javascript" src="resouces/common/plugin/jquery-2.1.1.js"></script>
 </body>
 </html>

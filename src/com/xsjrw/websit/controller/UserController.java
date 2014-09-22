@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xsjrw.common.util.MD5;
-import com.xsjrw.common.util.SessionUtil;
 import com.xsjrw.websit.core.domain.BaseWebController;
 import com.xsjrw.websit.domain.user.Users;
 import com.xsjrw.websit.search.user.UsersSearch;
@@ -53,24 +53,29 @@ public class UserController extends BaseWebController{
 		return "user/login";
 	}
 	
-	
-	
 	/**
-	 * 验证登陆
-	 * 
-	 * @param
-	 * @return
+	 * 2014.09.16用户登录，异步 增加对用户名、密码分别验证情况
 	 */
-	@RequestMapping(value = "/login")
-	public String checkLogin(Model model,Users u,HttpServletRequest request) {
+	@ResponseBody
+	@RequestMapping("/login")
+	public String signin(String email, String password, String remember, HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
 		String result = "faile";
 		
-		List<Users> user = userService.findUserByEmailAndPassWord(u.getEmail(), u.getPassword());
-		if(user != null && user.size() > 0){
-			request.getSession().setAttribute("loginaccount_customer", user.get(0));
-			return "user/usercenter";
+		try {
+			password = MD5.getMD5(password);
+			List<Users> user = userService.findUserByEmailAndPassWord(email, password);
+			if(user != null && user.size() > 0){
+				request.getSession().setAttribute("loginaccount_customer", user.get(0));
+				result = "success";
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
-		return result;
+		
+//		return result;
+//		return "{'result','"+result +"'}";
+		return "{\"result\":\"" + result + "\"}";
 	}
 
 	/**
