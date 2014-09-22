@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.xsjrw.websit.dao.admin.ActionColumnMapper" >
-  <resultMap id="BaseResultMap" type="com.xsjrw.websit.demain.admin.ActionColumn" >
+
+  <resultMap id="BaseResultMap" type="actionColumn" >
     <id column="ac_id" property="acId" jdbcType="INTEGER" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="post_date" property="postDate" jdbcType="TIMESTAMP" />
@@ -21,13 +22,13 @@
     delete from action_column
     where ac_id = #{acId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.xsjrw.websit.demain.admin.ActionColumn" >
+  <insert id="insert" parameterType="actionColumn" >
     insert into action_column (ac_id, name, post_date, 
       note, cg_id)
     values (#{acId,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{postDate,jdbcType=TIMESTAMP}, 
       #{note,jdbcType=VARCHAR}, #{cgId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.xsjrw.websit.demain.admin.ActionColumn" >
+  <insert id="insertSelective" parameterType="actionColumn" >
     insert into action_column
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="acId != null" >
@@ -64,7 +65,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.xsjrw.websit.demain.admin.ActionColumn" >
+  <update id="updateByPrimaryKeySelective" parameterType="actionColumn" >
     update action_column
     <set >
       <if test="name != null" >
@@ -82,7 +83,7 @@
     </set>
     where ac_id = #{acId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.xsjrw.websit.demain.admin.ActionColumn" >
+  <update id="updateByPrimaryKey" parameterType="actionColumn" >
     update action_column
     set name = #{name,jdbcType=VARCHAR},
       post_date = #{postDate,jdbcType=TIMESTAMP},
