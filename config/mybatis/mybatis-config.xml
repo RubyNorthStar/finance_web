@@ -15,7 +15,7 @@
     </settings>
 
     <typeAliases>
-        <package name="com.xsjrw.websit.domain"/>
+        <package name="com.xsjrw.websit"/>
     </typeAliases>
 
 </configuration>
