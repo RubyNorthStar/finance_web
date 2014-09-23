@@ -45,9 +45,9 @@ public class MasterController {
 	 * 去登陆页面
 	 * @return
 	 */
-	@RequestMapping(value = "/login")
+	@RequestMapping(value = "login")
 	public String goLogin() {
-		return "login";
+		return "manage/master/login";
 	}
 	
 //	/**
