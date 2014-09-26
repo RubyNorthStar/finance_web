@@ -100,6 +100,17 @@ public interface IUserService {
 	
 	/**
 	 * 
+	 * findUserByEmail(根据邮箱查找当前email是否已经注册)
+	 * @param email
+	 * @return
+	 *List<Users>
+	 * @exception
+	 * @since  1.0.0
+	 */
+	List<Users> findUserByEmail(String email);
+	
+	/**
+	 * 
 	* @Title: findUserByPage 
 	* @Description: 分页查询
 	* @return

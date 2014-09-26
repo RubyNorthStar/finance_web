@@ -1,18 +1,23 @@
 package com.xsjrw.websit.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xsjrw.common.constans.UserConstans;
+import com.xsjrw.common.listener.UserSessionListener;
 import com.xsjrw.common.util.MD5;
 import com.xsjrw.websit.core.domain.BaseWebController;
 import com.xsjrw.websit.domain.user.Users;
@@ -58,24 +63,34 @@ public class UserController extends BaseWebController{
 	 */
 	@ResponseBody
 	@RequestMapping("/login")
-	public String signin(String email, String password, String remember, HttpServletRequest request, HttpServletResponse response)
-			throws Exception {
-		String result = "faile";
+	public List<Users> signin(String email, String password, String remember, HttpServletRequest request, HttpServletResponse response){
+		List<Users> user = null;
 		
 		try {
 			password = MD5.getMD5(password);
-			List<Users> user = userService.findUserByEmailAndPassWord(email, password);
+			user = userService.findUserByEmailAndPassWord(email, password);
 			if(user != null && user.size() > 0){
-				request.getSession().setAttribute("loginaccount_customer", user.get(0));
-				result = "success";
+				// 监听用户的行为，包括把用户信息放入session的操作
+				listenerUserSession(request.getSession(), user.get(0));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			return null;
 		}
-		
-//		return result;
-//		return "{'result','"+result +"'}";
-		return "{\"result\":\"" + result + "\"}";
+		return user;
+	}
+	
+	@ResponseBody
+	@RequestMapping("/verificat_email")
+	public List<Users> verificatEmail(String email){
+		List<Users> user = null;
+		try {
+			user = userService.findUserByEmail(email);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+		return user;
 	}
 
 	/**
@@ -84,13 +99,36 @@ public class UserController extends BaseWebController{
 	 * @param
 	 * @return
 	 */
+	@ResponseBody
 	@RequestMapping(value = "/register")
 	public String register(Model model,Users user,HttpServletRequest request) {
 		String result = "faile";
+		String ym_yzm = request.getParameter("yzm");// 页面验证码
+		String xs_sessionYzm = (String) request.getSession().getAttribute(UserConstans.XS_SESSIONID);  //服务器验证码
+		
+		//判断验证码是否相同，不同则直接返回
+		if(ym_yzm == null || xs_sessionYzm == null || !ym_yzm.toUpperCase().equals(xs_sessionYzm.subSequence(0, 4))){
+			return result;
+		}
+		
 		try{
 			String passWord = user.getPassword();
 			user.setPassword(MD5.getMD5(passWord));
+			user.setRegistTime(new Date());
+			user.setState(1);
 			userService.saveUser(user);
+			
+			/* 注册完毕之后将用户信息存入session中 */
+			UsersSearch usersSearch = new UsersSearch();
+			usersSearch.setEmail(user.getEmail());
+			List<Users> userList = new ArrayList<Users>();
+			userList = (List<Users>) userService.findUserByPage(usersSearch);
+			
+			if (userList != null && userList.size() != 0) {
+				// 监听用户的行为，包括把用户信息放入session的操作
+				listenerUserSession(request.getSession(), user);
+			}
+			
 			result = "success";
 		}catch(Exception e){
 			e.printStackTrace();
@@ -98,6 +136,31 @@ public class UserController extends BaseWebController{
 			result = "faile";
 		}
 		return result;
+	}
+	
+	/**
+	 * 用户登出
+	 * 
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "/loginOut", method = RequestMethod.GET)
+	public String loginOut(Model model, HttpServletRequest request) {
+		
+		if (request.getSession().getAttribute(UserConstans.USER_LISTENER) != null) {
+			request.getSession().removeAttribute(UserConstans.USER_LISTENER);
+		}
+		
+		return "redirect:goTORegister";
+		
+//		if (request.getSession().getAttribute(Constans.USER_LOGIN) != null) {
+//			request.getSession().removeAttribute(Constans.USER_LOGIN);
+//		}
+//		if (questionloginOut != null
+//				&& questionloginOut.equals("questionLoginOut")) {
+//			return "redirect:" + Constans.QE_TIKU_INDEX;
+//		}
+//		return "redirect:" + Constans.QE_TIKU_INDEX;
 	}
 	
 	/**
@@ -184,6 +247,15 @@ public class UserController extends BaseWebController{
 		List<Users> users = userService.findUserByPage(search);
 		model.addAttribute("users", users);
 		return "";
+	}
+	
+	// 从private 改成 public 过滤器有调用
+	public void listenerUserSession(HttpSession session, Users user) {
+		if (session.getAttribute(UserConstans.USER_LOGIN) == null) {
+			UserSessionListener userSessionListener = new UserSessionListener();
+			userSessionListener.setUser(user);
+			session.setAttribute(UserConstans.USER_LISTENER, userSessionListener);
+		}
 	}
 	
 }

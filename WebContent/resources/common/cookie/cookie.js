@@ -5,8 +5,9 @@
  */
 
 //写cookies
-function setCookieTk(name,value)
+function setCookie(name,value)
 {
+	alert(name);
     var Days = 30;
     var exp = new Date();
     exp.setTime(exp.getTime() + Days*24*60*60*1000);
@@ -14,7 +15,7 @@ function setCookieTk(name,value)
 }
 
 //读取cookies
-function getCookieTk(name)
+function getCookie(name)
 {
     var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
  
@@ -26,7 +27,7 @@ function getCookieTk(name)
 }
 
 //删除cookies
-function delCookieTk(name)
+function delCookie(name)
 {
     var exp = new Date();
     exp.setTime(exp.getTime() - 1);

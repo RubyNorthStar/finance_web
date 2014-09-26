@@ -63,5 +63,12 @@ public class UserServiceImpl implements IUserService{
 		return users;
 	}
 
+	@Override
+	public List<Users> findUserByEmail(String email) {
+		
+		List<Users> users = usersMapper.findUserByEmail(email);
+		return users;
+	}
+
 	
 }

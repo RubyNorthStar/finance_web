@@ -23,4 +23,16 @@ public interface UsersMapper extends BaseMapper<Users>{
 	 * @since  1.0.0
 	 */
 	List<Users> findUserByEmailAndPassWord(String email, String passWord);
+	
+	/**
+	 * 
+	 * findUserByEmail(验证邮箱是否已经注册)
+	 * @param email
+	 * @param passWord
+	 * @return
+	 *List<Users>
+	 * @exception
+	 * @since  1.0.0
+	 */
+	List<Users> findUserByEmail(String email);
 }
