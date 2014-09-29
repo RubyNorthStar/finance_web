@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.xsjrw.websit.dao.product.ProductInfoMapper;
 import com.xsjrw.websit.domain.product.ProductInfo;
-import com.xsjrw.websit.domain.user.Users;
 import com.xsjrw.websit.search.product.ProductInfoSearch;
 import com.xsjrw.websit.service.IProductInfoService;
 
@@ -38,7 +37,7 @@ public class ProductInfoServiceImpl implements IProductInfoService {
 	}
 
 	@Override
-	public void editProductInfo(ProductInfo product) {
+	public void update(ProductInfo product) {
 		productInfoMapper.update(product);
 		
 	}
@@ -62,8 +61,9 @@ public class ProductInfoServiceImpl implements IProductInfoService {
 
 	@Override
 	public List<ProductInfo> findProductInfoByPage(ProductInfoSearch search) {
-		// TODO Auto-generated method stub
-		return null;
+		Integer totalRecords = productInfoMapper.pageCount(search);
+		search.setTotalRecords(totalRecords);
+		return productInfoMapper.page(search);
 	}
 	
 }

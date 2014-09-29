@@ -48,7 +48,7 @@ public interface IProductInfoService  {
 	* @date 2014-9-29
 	* @user by wangzx
 	 */
-	void editProductInfo(ProductInfo T);
+	void update(ProductInfo T);
 	
 	/**
 	 * 
