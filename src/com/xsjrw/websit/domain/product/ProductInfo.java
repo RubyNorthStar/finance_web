@@ -32,7 +32,7 @@ public class ProductInfo extends BaseEntity {
 	private String	productDetaileInfo;		 /* 项目介绍 */ 
 	private Integer	isMortgage;		 /* 是否抵押( 1:有抵押，2:未抵押 ) */ 
 	private String	fundUse;		 /* 资金用途 */ 
-	private Integer	repaymentId;		 /* 还款方式（可维护的，对应还款方式表） */ 
+	private String	repaymentSource;		 /* 还款来源*/ 
 	private String	businessStructure;		 /* business_structure */ 
 	private String	windControlMeasures;		 /* 风控措施 */ 
 	private Integer	toExamineStatus;		 /* 审核状态( 1.未审核 2.审核) */ 
@@ -45,7 +45,7 @@ public class ProductInfo extends BaseEntity {
 	/**
 	 * full Constructor
 	 */
-	public ProductInfo(Integer id, String productName, String fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, String minBidMoney, String profitDistribution, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, Integer repaymentId, String businessStructure, String windControlMeasures, Integer toExamineStatus, Integer productMortgageId) {
+	public ProductInfo(Integer id, String productName, String fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, String minBidMoney, String profitDistribution, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, String repaymentSource, String businessStructure, String windControlMeasures, Integer toExamineStatus, Integer productMortgageId) {
 		setId(id);
 		this.productName = productName;
 		this.fundScale = fundScale;
@@ -60,7 +60,7 @@ public class ProductInfo extends BaseEntity {
 		this.productDetaileInfo = productDetaileInfo;
 		this.isMortgage = isMortgage;
 		this.fundUse = fundUse;
-		this.repaymentId = repaymentId;
+		this.repaymentSource = repaymentSource;
 		this.businessStructure = businessStructure;
 		this.windControlMeasures = windControlMeasures;
 		this.toExamineStatus = toExamineStatus;
@@ -200,12 +200,12 @@ public class ProductInfo extends BaseEntity {
 	}
 	
 	
-	public Integer getRepaymentId() {
-		return repaymentId;
+	public String getRepaymentSource() {
+		return repaymentSource;
 	}
 
-	public ProductInfo setRepaymentId(Integer repaymentId) {
-		this.repaymentId = repaymentId;
+	public ProductInfo setRepaymentSource(String repaymentSource) {
+		this.repaymentSource = repaymentSource;
 		return this;
 	}
 	
@@ -251,6 +251,6 @@ public class ProductInfo extends BaseEntity {
 	
 	@Override
 	public String toString() {
-		return "ProductInfo [" + "id=" + getId() + ", productName=" + productName + ", fundScale=" + fundScale + ", expectProfit=" + expectProfit + ", fundTypeId=" + fundTypeId + ", investmentTimeLimit=" + investmentTimeLimit + ", fundManage=" + fundManage + ", minBidMoney=" + minBidMoney + ", profitDistribution=" + profitDistribution + ", beginTime=" + beginTime + ", endTime=" + endTime + ", productDetaileInfo=" + productDetaileInfo + ", isMortgage=" + isMortgage + ", fundUse=" + fundUse + ", repaymentId=" + repaymentId + ", businessStructure=" + businessStructure + ", windControlMeasures=" + windControlMeasures + ", toExamineStatus=" + toExamineStatus + ", productMortgageId=" + productMortgageId +  "]";
+		return "ProductInfo [" + "id=" + getId() + ", productName=" + productName + ", fundScale=" + fundScale + ", expectProfit=" + expectProfit + ", fundTypeId=" + fundTypeId + ", investmentTimeLimit=" + investmentTimeLimit + ", fundManage=" + fundManage + ", minBidMoney=" + minBidMoney + ", profitDistribution=" + profitDistribution + ", beginTime=" + beginTime + ", endTime=" + endTime + ", productDetaileInfo=" + productDetaileInfo + ", isMortgage=" + isMortgage + ", fundUse=" + fundUse + ", repaymentSource=" + repaymentSource + ", businessStructure=" + businessStructure + ", windControlMeasures=" + windControlMeasures + ", toExamineStatus=" + toExamineStatus + ", productMortgageId=" + productMortgageId +  "]";
 	}
 }

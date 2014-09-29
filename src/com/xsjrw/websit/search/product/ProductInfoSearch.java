@@ -30,7 +30,7 @@ public class ProductInfoSearch extends PageModel {
 	private String	productDetaileInfo;		 /* 项目介绍 */ 
 	private Integer	isMortgage;		 /* 是否抵押( 1:有抵押，2:未抵押 ) */ 
 	private String	fundUse;		 /* 资金用途 */ 
-	private Integer	repaymentId;		 /* 还款方式（可维护的，对应还款方式表） */ 
+	private String	repaymentSource;		 /* 还款来源 */ 
 	private String	businessStructure;		 /* business_structure */ 
 	private String	windControlMeasures;		 /* 风控措施 */ 
 	private Integer	toExamineStatus;		 /* 审核状态( 1.未审核 2.审核) */ 
@@ -43,7 +43,7 @@ public class ProductInfoSearch extends PageModel {
 	/**
 	 * full Constructor
 	 */
-	public ProductInfoSearch(Integer id, String productName, String fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, String minBidMoney, String profitDistribution, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, Integer repaymentId, String businessStructure, String windControlMeasures, Integer toExamineStatus, Integer productMortgageId) {
+	public ProductInfoSearch(Integer id, String productName, String fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, String minBidMoney, String profitDistribution, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, String repaymentSource, String businessStructure, String windControlMeasures, Integer toExamineStatus, Integer productMortgageId) {
 		this.id = id;
 		this.productName = productName;
 		this.fundScale = fundScale;
@@ -58,7 +58,7 @@ public class ProductInfoSearch extends PageModel {
 		this.productDetaileInfo = productDetaileInfo;
 		this.isMortgage = isMortgage;
 		this.fundUse = fundUse;
-		this.repaymentId = repaymentId;
+		this.repaymentSource = repaymentSource;
 		this.businessStructure = businessStructure;
 		this.windControlMeasures = windControlMeasures;
 		this.toExamineStatus = toExamineStatus;
@@ -193,12 +193,12 @@ public class ProductInfoSearch extends PageModel {
 		return this;
 	}
 	
-	public Integer getRepaymentId() {
-		return repaymentId;
+	public String getRepaymentSource() {
+		return repaymentSource;
 	}
 
-	public ProductInfoSearch setRepaymentId(Integer repaymentId) {
-		this.repaymentId = repaymentId;
+	public ProductInfoSearch setRepaymentSource(String repaymentSource) {
+		this.repaymentSource = repaymentSource;
 		return this;
 	}
 	

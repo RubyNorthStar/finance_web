@@ -16,7 +16,7 @@
 		<result property="productDetaileInfo" column="product_detaile_info" />
 		<result property="isMortgage" column="is_mortgage" />
 		<result property="fundUse" column="fund_use" />
-		<result property="repaymentId" column="repayment_id" />
+		<result property="repaymentSource" column="repayment_source" />
 		<result property="businessStructure" column="business_structure" />
 		<result property="windControlMeasures" column="wind_control_measures" />
 		<result property="toExamineStatus" column="to_examine_status" />
@@ -38,7 +38,7 @@
 		product_detaile_info,
 		is_mortgage,
 		fund_use,
-		repayment_id,
+		repayment_source,
 		business_structure,
 		wind_control_measures,
 		to_examine_status,
@@ -112,7 +112,7 @@
 			<if test="productDetaileInfo != null and productDetaileInfo != ''">product_detaile_info = #{productDetaileInfo},</if>
 			<if test="isMortgage != null and isMortgage != ''">is_mortgage = #{isMortgage},</if>
 			<if test="fundUse != null and fundUse != ''">fund_use = #{fundUse},</if>
-			<if test="repaymentId != null and repaymentId != ''">repayment_id = #{repaymentId},</if>
+			<if test="repaymentSource != null and repaymentSource != ''">repayment_source = #{repaymentSource},</if>
 			<if test="businessStructure != null and businessStructure != ''">business_structure = #{businessStructure},</if>
 			<if test="windControlMeasures != null and windControlMeasures != ''">wind_control_measures = #{windControlMeasures},</if>
 			<if test="toExamineStatus != null and toExamineStatus != ''">to_examine_status = #{toExamineStatus},</if>
@@ -148,7 +148,7 @@
 			<if test="productDetaileInfo != null and productDetaileInfo != ''">and product_detaile_info = #{productDetaileInfo}</if>
 			<if test="isMortgage != null and isMortgage != ''">and is_mortgage = #{isMortgage}</if>
 			<if test="fundUse != null and fundUse != ''">and fund_use = #{fundUse}</if>
-			<if test="repaymentId != null and repaymentId != ''">and repayment_id = #{repaymentId}</if>
+			<if test="repaymentSource != null and repaymentSource != ''">and repayment_source = #{repaymentSource}</if>
 			<if test="businessStructure != null and businessStructure != ''">and business_structure = #{businessStructure}</if>
 			<if test="windControlMeasures != null and windControlMeasures != ''">and wind_control_measures = #{windControlMeasures}</if>
 			<if test="toExamineStatus != null and toExamineStatus != ''">and to_examine_status = #{toExamineStatus}</if>
