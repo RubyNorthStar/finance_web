@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xsjrw.websit.domain.product.ProductInfo">
+	<resultMap type="ProductInfo" id="productInfoResultMap">
+		<result property="id" column="id" />
+		<result property="productName" column="product_name" />
+		<result property="fundScale" column="fund_scale" />
+		<result property="expectProfit" column="expect_profit" />
+		<result property="fundTypeId" column="fund_type_id" />
+		<result property="investmentTimeLimit" column="investment_time_limit" />
+		<result property="fundManage" column="fund_manage" />
+		<result property="minBidMoney" column="min_bid_money" />
+		<result property="profitDistribution" column="profit_distribution" />
+		<result property="beginTime" column="begin_time" />
+		<result property="endTime" column="end_time" />
+		<result property="productDetaileInfo" column="product_detaile_info" />
+		<result property="isMortgage" column="is_mortgage" />
+		<result property="fundUse" column="fund_use" />
+		<result property="repaymentId" column="repayment_id" />
+		<result property="businessStructure" column="business_structure" />
+		<result property="windControlMeasures" column="wind_control_measures" />
+		<result property="toExamineStatus" column="to_examine_status" />
+		<result property="productMortgageId" column="product_mortgage_id" />
+	</resultMap>
+	
+	<sql id="table_columns">
+		id,
+		product_name,
+		fund_scale,
+		expect_profit,
+		fund_type_id,
+		investment_time_limit,
+		fund_manage,
+		min_bid_money,
+		profit_distribution,
+		begin_time,
+		end_time,
+		product_detaile_info,
+		is_mortgage,
+		fund_use,
+		repayment_id,
+		business_structure,
+		wind_control_measures,
+		to_examine_status,
+		product_mortgage_id
+    </sql>
+	<sql id="entity_properties">
+		#{id},
+		#{productName},
+		#{fundScale},
+		#{expectProfit},
+		#{fundTypeId},
+		#{investmentTimeLimit},
+		#{fundManage},
+		#{minBidMoney},
+		#{profitDistribution},
+		#{beginTime},
+		#{endTime},
+		#{productDetaileInfo},
+		#{isMortgage},
+		#{fundUse},
+		#{repaymentId},
+		#{businessStructure},
+		#{windControlMeasures},
+		#{toExamineStatus},
+		#{productMortgageId}
+	</sql>
+	
+	<!-- 适用于主键自增类型 -->
+	<insert id="saveProductInfo" parameterType="ProductInfo" useGeneratedKeys="true" keyProperty="id">
+		insert into tbl_product_info( <include refid="table_columns" /> ) 
+		values ( <include refid="entity_properties" /> )
+	</insert>
+	
+	<!-- 批量添加 适用于主键自增类型  不支持返回主键-->
+	<insert id="batchInsert" parameterType="java.util.List" useGeneratedKeys="true">
+		insert into tbl_product_info( <include refid="table_columns" /> ) 
+		values 
+		<foreach item="item" collection="list" separator="," >
+			( <include refid="entity_batch_properties" /> )
+		</foreach>
+	</insert>
+	
+	<!--根据主键删除 -->
+	<delete id="deleteById">
+		delete from tbl_users
+		where id = #{id}
+	</delete>
+	
+	<!-- 根据ID批量删除 -->
+	<delete id="deleteByIds">
+		delete from tbl_product_info
+		where id in
+		<foreach item="item" collection="array" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	
+	<update id="update" parameterType="ProductInfo">
+		update tbl_product_info 
+		<trim prefix="set" suffixOverrides=",">
+			<if test="productName != null and productName != ''">product_name = #{productName},</if>
+			<if test="fundScale != null and fundScale != ''">fund_scale = #{fundScale},</if>
+			<if test="expectProfit != null and expectProfit != ''">expect_profit = #{expectProfit},</if>
+			<if test="fundTypeId != null and fundTypeId != ''">fund_type_id = #{fundTypeId},</if>
+			<if test="investmentTimeLimit != null and investmentTimeLimit != ''">investment_time_limit = #{investmentTimeLimit},</if>
+			<if test="fundManage != null and fundManage != ''">fund_manage = #{fundManage},</if>
+			<if test="minBidMoney != null and minBidMoney != ''">min_bid_money = #{minBidMoney},</if>
+			<if test="profitDistribution != null and profitDistribution != ''">profit_distribution = #{profitDistribution},</if>
+			<if test="beginTime != null and beginTime != ''">begin_time = #{beginTime},</if>
+			<if test="endTime != null and endTime != ''">end_time = #{endTime},</if>
+			<if test="productDetaileInfo != null and productDetaileInfo != ''">product_detaile_info = #{productDetaileInfo},</if>
+			<if test="isMortgage != null and isMortgage != ''">is_mortgage = #{isMortgage},</if>
+			<if test="fundUse != null and fundUse != ''">fund_use = #{fundUse},</if>
+			<if test="repaymentId != null and repaymentId != ''">repayment_id = #{repaymentId},</if>
+			<if test="businessStructure != null and businessStructure != ''">business_structure = #{businessStructure},</if>
+			<if test="windControlMeasures != null and windControlMeasures != ''">wind_control_measures = #{windControlMeasures},</if>
+			<if test="toExamineStatus != null and toExamineStatus != ''">to_examine_status = #{toExamineStatus},</if>
+			<if test="productMortgageId != null and productMortgageId != ''">product_mortgage_id = #{productMortgageId},</if>
+		</trim>
+		<where>id = #{id}</where>
+	</update>
+	
+	<select id="findById" resultMap="productInfoResultMap" parameterType="String" >
+		select <include refid="table_columns" />
+		from tbl_product_info
+		where id = #{id}
+	</select>
+	
+	<select id="queryAll" resultMap="productInfoResultMap">
+		select <include refid="table_columns" /> 
+		from tbl_product_info
+	</select>
+	
+	<!-- 使用like用法：columnName like concat('%',#columnName#,'%') -->
+	<sql id="page_where">
+		<trim prefix="where" prefixOverrides="and | or ">
+			<if test="productName != null and productName != ''">and product_name = #{productName}</if>
+			<if test="fundScale != null and fundScale != ''">and fund_scale = #{fundScale}</if>
+			<if test="expectProfit != null and expectProfit != ''">and expect_profit = #{expectProfit}</if>
+			<if test="fundTypeId != null and fundTypeId != ''">and fund_type_id = #{fundTypeId}</if>
+			<if test="investmentTimeLimit != null and investmentTimeLimit != ''">and investment_time_limit = #{investmentTimeLimit}</if>
+			<if test="fundManage != null and fundManage != ''">and fund_manage = #{fundManage}</if>
+			<if test="minBidMoney != null and minBidMoney != ''">and min_bid_money = #{minBidMoney}</if>
+			<if test="profitDistribution != null and profitDistribution != ''">and profit_distribution = #{profitDistribution}</if>
+			<if test="beginTime != null and beginTime != ''">and begin_time = #{beginTime}</if>
+			<if test="endTime != null and endTime != ''">and end_time = #{endTime}</if>
+			<if test="productDetaileInfo != null and productDetaileInfo != ''">and product_detaile_info = #{productDetaileInfo}</if>
+			<if test="isMortgage != null and isMortgage != ''">and is_mortgage = #{isMortgage}</if>
+			<if test="fundUse != null and fundUse != ''">and fund_use = #{fundUse}</if>
+			<if test="repaymentId != null and repaymentId != ''">and repayment_id = #{repaymentId}</if>
+			<if test="businessStructure != null and businessStructure != ''">and business_structure = #{businessStructure}</if>
+			<if test="windControlMeasures != null and windControlMeasures != ''">and wind_control_measures = #{windControlMeasures}</if>
+			<if test="toExamineStatus != null and toExamineStatus != ''">and to_examine_status = #{toExamineStatus}</if>
+			<if test="productMortgageId != null and productMortgageId != ''">and product_mortgage_id = #{productMortgageId}</if>
+		</trim>
+	</sql>
+	
+	<select id="page" resultMap="productInfoResultMap" parameterType="ProductInfoSearch">
+		select <include refid="table_columns" />
+		from tbl_product_info
+		<include refid="page_where" />
+		limit #{firstIndex},#{pageSize}
+	</select>
+	
+	<select id="pageCount" resultType="int" parameterType="ProductInfoSearch">
+		select count(id) from tbl_product_info
+		<include refid="page_where" />
+	</select>
+	
+	<!-- 其他自定义SQL -->
+	
+</mapper>

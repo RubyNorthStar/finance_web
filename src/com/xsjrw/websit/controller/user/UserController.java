@@ -1,4 +1,4 @@
-package com.xsjrw.websit.controller;
+package com.xsjrw.websit.controller.user;
 
 import java.util.ArrayList;
 import java.util.Date;
