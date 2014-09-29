@@ -1,4 +1,4 @@
-package com.xsjrw.websit.service;
+package com.xsjrw.websit.service.product;
 
 import java.util.List;
 

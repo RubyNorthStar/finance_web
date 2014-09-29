@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xsjrw.websit.domain.product.ProductMortgage;
 import com.xsjrw.websit.search.product.ProductMortgageSearch;
-import com.xsjrw.websit.service.IProductMortgageService;
+import com.xsjrw.websit.service.product.IProductMortgageService;
 
 /**
  * Controller of ProductMortgage
@@ -41,14 +41,14 @@ public class ProductMortgageController {
 	}
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST)
-	public String add(ProductMortgage ProductMortgage) {
-		productMortgageServiceImpl.saveProductMortgage(ProductMortgage);
+	public String add(ProductMortgage productMortgage) {
+		productMortgageServiceImpl.saveProductMortgage(productMortgage);
 		return "redirect:/productMortgage";
 	}
 	
 	@RequestMapping(value="/update", method = RequestMethod.POST)
-	public String update(ProductMortgage ProductMortgage) {
-		productMortgageServiceImpl.update(ProductMortgage);
+	public String update(ProductMortgage productMortgage) {
+		productMortgageServiceImpl.update(productMortgage);
 		return "redirect:/productMortgage";
 	}
 	

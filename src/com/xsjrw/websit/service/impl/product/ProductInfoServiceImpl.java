@@ -1,4 +1,4 @@
-package com.xsjrw.websit.service.impl;
+package com.xsjrw.websit.service.impl.product;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.xsjrw.websit.dao.product.ProductInfoMapper;
 import com.xsjrw.websit.domain.product.ProductInfo;
 import com.xsjrw.websit.search.product.ProductInfoSearch;
-import com.xsjrw.websit.service.IProductInfoService;
+import com.xsjrw.websit.service.product.IProductInfoService;
 
 /**
  * Service Implementation:ProductInfo

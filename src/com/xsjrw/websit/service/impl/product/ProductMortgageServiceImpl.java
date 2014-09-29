@@ -1,4 +1,4 @@
-package com.xsjrw.websit.service.impl;
+package com.xsjrw.websit.service.impl.product;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.xsjrw.websit.dao.product.ProductMortgageMapper;
 import com.xsjrw.websit.domain.product.ProductMortgage;
 import com.xsjrw.websit.search.product.ProductMortgageSearch;
-import com.xsjrw.websit.service.IProductMortgageService;
+import com.xsjrw.websit.service.product.IProductMortgageService;
 
 /**
  * Service Implementation:ProductMortgage

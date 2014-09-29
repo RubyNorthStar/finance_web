@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xsjrw.websit.domain.product.ProductInfo;
 import com.xsjrw.websit.search.product.ProductInfoSearch;
-import com.xsjrw.websit.service.IProductInfoService;
+import com.xsjrw.websit.service.product.IProductInfoService;
 
 /**
  * Controller of ProductInfo
@@ -41,14 +41,14 @@ public class ProductInfoController {
 	}
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST)
-	public String add(ProductInfo ProductInfo) {
-		productInfoServiceImpl.saveProductInfo(ProductInfo);
+	public String add(ProductInfo productInfo) {
+		productInfoServiceImpl.saveProductInfo(productInfo);
 		return "redirect:/productInfo";
 	}
 	
 	@RequestMapping(value="/update", method = RequestMethod.POST)
-	public String update(ProductInfo ProductInfo) {
-		productInfoServiceImpl.update(ProductInfo);
+	public String update(ProductInfo productInfo) {
+		productInfoServiceImpl.update(productInfo);
 		return "redirect:/productInfo";
 	}
 	
