@@ -20,7 +20,7 @@ public class ProductInfo extends BaseEntity {
 	
 	
 	private String	productName;		 /* 项目名称 */ 
-	private String	fundScale;		 /* 基金规模 */ 
+	private Double	fundScale;		 /* 基金规模( 需要募集的资金, 已元为单位 ) */ 
 	private String	expectProfit;		 /* 预期收益 */ 
 	private Integer	fundTypeId;		 /* 基金类型( 基金类型表ID ) */ 
 	private Integer	investmentTimeLimit;		 /* 投资期限( 以月为单位 ) */ 
@@ -37,6 +37,10 @@ public class ProductInfo extends BaseEntity {
 	private String	windControlMeasures;		 /* 风控措施 */ 
 	private Integer	toExamineStatus;		 /* 审核状态( 1.未审核 2.审核) */ 
 	private Integer	productMortgageId;		 /* 产品抵押物品(对应抵押物品表) */ 
+	private Double 	yearInterestRate;		 /* 年利率 */ 
+	private Integer creditLevle;			 /* 信用等级 */
+	private Double	totalMoney;				 /* 已募集总金额 */
+	
 
 	// Constructor
 	public ProductInfo() {
@@ -45,7 +49,8 @@ public class ProductInfo extends BaseEntity {
 	/**
 	 * full Constructor
 	 */
-	public ProductInfo(Integer id, String productName, String fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, String minBidMoney, String profitDistribution, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, String repaymentSource, String businessStructure, String windControlMeasures, Integer toExamineStatus, Integer productMortgageId) {
+	public ProductInfo(Integer id, String productName, Double fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, String minBidMoney, String profitDistribution, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, String repaymentSource, 
+			String businessStructure, String windControlMeasures, Integer toExamineStatus, Integer productMortgageId, Double yearInterestRate, Integer creditLevle, Double totalMoney) {
 		setId(id);
 		this.productName = productName;
 		this.fundScale = fundScale;
@@ -65,6 +70,9 @@ public class ProductInfo extends BaseEntity {
 		this.windControlMeasures = windControlMeasures;
 		this.toExamineStatus = toExamineStatus;
 		this.productMortgageId = productMortgageId;
+		this.yearInterestRate = yearInterestRate; 
+		this.creditLevle = creditLevle;
+		this.totalMoney = totalMoney;
 	}
 
 	// getter && setter
@@ -80,11 +88,11 @@ public class ProductInfo extends BaseEntity {
 	}
 	
 	
-	public String getFundScale() {
+	public Double getFundScale() {
 		return fundScale;
 	}
 
-	public ProductInfo setFundScale(String fundScale) {
+	public ProductInfo setFundScale(Double fundScale) {
 		this.fundScale = fundScale;
 		return this;
 	}
@@ -249,8 +257,33 @@ public class ProductInfo extends BaseEntity {
 		return this;
 	}
 	
+	public Double getYearInterestRate() {
+		return yearInterestRate;
+	}
+
+	public void setYearInterestRate(Double yearInterestRate) {
+		this.yearInterestRate = yearInterestRate;
+	}
+
+	public Integer getCreditLevle() {
+		return creditLevle;
+	}
+
+	public void setCreditLevle(Integer creditLevle) {
+		this.creditLevle = creditLevle;
+	}
+
+	public Double getTotalMoney() {
+		return totalMoney;
+	}
+
+	public void setTotalMoney(Double totalMoney) {
+		this.totalMoney = totalMoney;
+	}
+
 	@Override
 	public String toString() {
-		return "ProductInfo [" + "id=" + getId() + ", productName=" + productName + ", fundScale=" + fundScale + ", expectProfit=" + expectProfit + ", fundTypeId=" + fundTypeId + ", investmentTimeLimit=" + investmentTimeLimit + ", fundManage=" + fundManage + ", minBidMoney=" + minBidMoney + ", profitDistribution=" + profitDistribution + ", beginTime=" + beginTime + ", endTime=" + endTime + ", productDetaileInfo=" + productDetaileInfo + ", isMortgage=" + isMortgage + ", fundUse=" + fundUse + ", repaymentSource=" + repaymentSource + ", businessStructure=" + businessStructure + ", windControlMeasures=" + windControlMeasures + ", toExamineStatus=" + toExamineStatus + ", productMortgageId=" + productMortgageId +  "]";
+		return "ProductInfo [" + "id=" + getId() + ", productName=" + productName + ", fundScale=" + fundScale + ", expectProfit=" + expectProfit + ", fundTypeId=" + fundTypeId + ", investmentTimeLimit=" + investmentTimeLimit + ", fundManage=" + fundManage + ", minBidMoney=" + minBidMoney + ", profitDistribution=" + profitDistribution + ", beginTime=" + beginTime + ", endTime=" + endTime + ", productDetaileInfo=" + productDetaileInfo + ", isMortgage=" + isMortgage + ", fundUse=" + fundUse + ", repaymentSource=" + repaymentSource + ", businessStructure=" + businessStructure + ", windControlMeasures=" + windControlMeasures + 
+								", toExamineStatus=" + toExamineStatus + ", productMortgageId=" + productMortgageId + ", yearInterestRate=" + yearInterestRate + ", creditLevle=" + creditLevle +", totalMoney=" + totalMoney + "]";
 	}
 }

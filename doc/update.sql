@@ -124,7 +124,7 @@ CREATE TABLE `tbl_users` (
   `sex` tinyint(1) DEFAULT NULL COMMENT '性别',
   `pic_url` varchar(128) DEFAULT NULL COMMENT '头像路径',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Records of tbl_users
@@ -139,12 +139,15 @@ CREATE TABLE `tbl_product_info` (
 	`id`  int(11) NOT NULL AUTO_INCREMENT ,
 	`product_name`  varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '项目名称' ,
 	`fund_scale`  varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '基金规模' ,
+	`total_money`  double(11,0) NULL DEFAULT NULL COMMENT '已募集总金额' ,
 	`expect_profit`  varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '预期收益' ,
 	`fund_type_id`  int(11) NULL DEFAULT NULL COMMENT '基金类型( 基金类型表ID )' ,
 	`investment_time_limit`  tinyint(2) NULL DEFAULT NULL COMMENT '投资期限( 以月为单位 )' ,
 	`fund_manage`  varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '基金管理( 目前理解为公司名称 )' ,
 	`min_bid_money`  varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '起投金额( 目前为字符串，如果单位定了的话，转为int类型 )' ,
 	`profit_distribution`  varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '收益分配 ( 同起投金额 )' ,
+	`year_interest_rate`  double(4,0) NULL DEFAULT 0 COMMENT '年利率' ,
+	`credit_levle`  tinyint(2) NULL DEFAULT 0 COMMENT '信用等级' ,
 	`begin_time`  datetime NULL DEFAULT NULL COMMENT '产品投资开始时间' ,
 	`end_time`  datetime NULL DEFAULT NULL COMMENT '产品投资结束时间( 根据开始时间及募集日期推算 )' ,
 	`product_detaile_info`  text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '项目介绍' ,
@@ -179,7 +182,7 @@ CREATE TABLE `tbl_product_mortgage` (
 `create_time`  datetime NULL DEFAULT NULL ,
 PRIMARY KEY (`id`)
 )
-ENGINE=MyISAM
+ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
 CHECKSUM=0
 ROW_FORMAT=DYNAMIC
@@ -197,7 +200,7 @@ CREATE TABLE `tbl_product_fund_type` (
 `create_time`  datetime NULL DEFAULT NULL ,
 PRIMARY KEY (`id`)
 )
-ENGINE=MyISAM
+ENGINE=InnoDB
 DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
 AUTO_INCREMENT=1
 CHECKSUM=0

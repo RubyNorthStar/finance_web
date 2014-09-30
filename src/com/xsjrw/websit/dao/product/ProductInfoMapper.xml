@@ -21,6 +21,9 @@
 		<result property="windControlMeasures" column="wind_control_measures" />
 		<result property="toExamineStatus" column="to_examine_status" />
 		<result property="productMortgageId" column="product_mortgage_id" />
+		<result property="yearInterestRate" column="year_interest_rate" />
+		<result property="creditLevle" column="credit_levle" />
+		<result property="totalMoney" column="total_money" />
 	</resultMap>
 	
 	<sql id="table_columns">
@@ -42,7 +45,10 @@
 		business_structure,
 		wind_control_measures,
 		to_examine_status,
-		product_mortgage_id
+		product_mortgage_id,
+		year_interest_rate,
+		credit_levle,
+		total_money
     </sql>
 	<sql id="entity_properties">
 		#{id},
@@ -63,7 +69,10 @@
 		#{businessStructure},
 		#{windControlMeasures},
 		#{toExamineStatus},
-		#{productMortgageId}
+		#{productMortgageId},
+		#{yearInterestRate},
+		#{creditLevle},
+		#{totalMoney
 	</sql>
 	
 	<!-- 适用于主键自增类型 -->
@@ -117,6 +126,9 @@
 			<if test="windControlMeasures != null and windControlMeasures != ''">wind_control_measures = #{windControlMeasures},</if>
 			<if test="toExamineStatus != null and toExamineStatus != ''">to_examine_status = #{toExamineStatus},</if>
 			<if test="productMortgageId != null and productMortgageId != ''">product_mortgage_id = #{productMortgageId},</if>
+			<if test="yearInterestRate != null and yearInterestRate != ''">year_interest_rate = #{yearInterestRate},</if>
+			<if test="creditLevle != null and creditLevle != ''">credit_levle = #{creditLevle},</if>
+			<if test="totalMoney != null and totalMoney != ''">total_money = #{totalMoney},</if>
 		</trim>
 		<where>id = #{id}</where>
 	</update>
@@ -153,6 +165,9 @@
 			<if test="windControlMeasures != null and windControlMeasures != ''">and wind_control_measures = #{windControlMeasures}</if>
 			<if test="toExamineStatus != null and toExamineStatus != ''">and to_examine_status = #{toExamineStatus}</if>
 			<if test="productMortgageId != null and productMortgageId != ''">and product_mortgage_id = #{productMortgageId}</if>
+			<if test="yearInterestRate != null and yearInterestRate != ''">year_interest_rate = #{yearInterestRate},</if>
+			<if test="creditLevle != null and creditLevle != ''">credit_levle = #{creditLevle},</if>
+			<if test="totalMoney != null and totalMoney != ''">total_money = #{totalMoney},</if>
 		</trim>
 	</sql>
 	
