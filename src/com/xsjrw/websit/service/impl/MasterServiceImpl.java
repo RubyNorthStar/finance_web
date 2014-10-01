@@ -1,16 +1,22 @@
-package com.xsjrw.websit.service;
+package com.xsjrw.websit.service.impl;
 
 import java.io.Serializable;
 import java.util.List;
 
+import javax.annotation.Resource;
+
+import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
 import com.xsjrw.common.util.Pager;
+import com.xsjrw.websit.dao.admin.MasterMapActionMapper;
+import com.xsjrw.websit.dao.admin.MasterMapper;
 import com.xsjrw.websit.domain.admin.Action;
 import com.xsjrw.websit.domain.admin.ColumnGroup;
 import com.xsjrw.websit.domain.admin.Master;
 import com.xsjrw.websit.dto.MasterDTO;
+import com.xsjrw.websit.service.IMasterService;
 
 
 @Component
@@ -18,33 +24,28 @@ import com.xsjrw.websit.dto.MasterDTO;
 /**
  * @author Zhiwei Wang
  */
-public class MasterService {
-	Logger logger = Logger.getLogger(MasterService.class);
-//	@Resource private EventManagerClient eventManagerClient;
-//
-//	@Resource private MasterDao masterDao;
-//	@Resource private ColumnGroupDao columnGroupDao;
-//	@Resource private ActionDao actionDao;
+public class MasterServiceImpl implements IMasterService{
+	Logger logger = Logger.getLogger(MasterServiceImpl.class);
+
+	@Resource private MasterMapper masterMapper;
 	/**
 	 * 根据账号获取管理员
 	 * @param account
 	 * @return
 	 */
-	public Master obtainMasterBuyAccount(String account){
-//		if(!StringUtil.isBlank(account)){
-//			try {
-//				DetachedCriteria criteria = DetachedCriteria.forClass(Master.class);
-//				criteria.add(Restrictions.eq("account", account.trim()));
-//				List<Master> masterList = masterDao.findByCriteria(criteria);
-//				
-//				if(masterList != null && masterList.size() > 0){
-//					return masterList.get(0);
-//				}
-//			} catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//			
-//		}
+	public List<Master> obtainMasterListBuyAccount(String account){
+		if(!StringUtils.isBlank(account)){
+			try {
+				List<Master> masterList = masterMapper.selectByMasterAccount(account);
+				
+				if(masterList != null){
+					
+					return masterList;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
 		return null;
 	}

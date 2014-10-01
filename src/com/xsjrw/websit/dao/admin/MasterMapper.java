@@ -1,5 +1,7 @@
 package com.xsjrw.websit.dao.admin;
 
+import java.util.List;
+
 import com.xsjrw.websit.domain.admin.Master;
 
 public interface MasterMapper {
@@ -14,4 +16,6 @@ public interface MasterMapper {
     int updateByPrimaryKeySelective(Master record);
 
     int updateByPrimaryKey(Master record);
+    
+    List<Master> selectByMasterAccount(String account);
 }

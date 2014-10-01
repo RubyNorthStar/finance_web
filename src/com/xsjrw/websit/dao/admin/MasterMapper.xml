@@ -1,153 +1,172 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.xsjrw.websit.dao.admin.MasterMapper" >
-  
-  <resultMap id="BaseResultMap" type="master" >
-    <id column="mt_id" property="mtId" jdbcType="INTEGER" />
-    <result column="account" property="account" jdbcType="VARCHAR" />
-    <result column="password" property="password" jdbcType="VARCHAR" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="position" property="position" jdbcType="VARCHAR" />
-    <result column="telephone" property="telephone" jdbcType="VARCHAR" />
-    <result column="mobile" property="mobile" jdbcType="VARCHAR" />
-    <result column="email" property="email" jdbcType="VARCHAR" />
-    <result column="post_date" property="postDate" jdbcType="VARCHAR" />
-    <result column="forbidden" property="forbidden" jdbcType="SMALLINT" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    mt_id, account, password, name, position, telephone, mobile, email, post_date, forbidden
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from master
-    where mt_id = #{mtId,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from master
-    where mt_id = #{mtId,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="master" >
-    insert into master (mt_id, account, password, 
-      name, position, telephone, 
-      mobile, email, post_date, 
-      forbidden)
-    values (#{mtId,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{name,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR}, 
-      #{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{postDate,jdbcType=VARCHAR}, 
-      #{forbidden,jdbcType=SMALLINT})
-  </insert>
-  <insert id="insertSelective" parameterType="master" >
-    insert into master
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="mtId != null" >
-        mt_id,
-      </if>
-      <if test="account != null" >
-        account,
-      </if>
-      <if test="password != null" >
-        password,
-      </if>
-      <if test="name != null" >
-        name,
-      </if>
-      <if test="position != null" >
-        position,
-      </if>
-      <if test="telephone != null" >
-        telephone,
-      </if>
-      <if test="mobile != null" >
-        mobile,
-      </if>
-      <if test="email != null" >
-        email,
-      </if>
-      <if test="postDate != null" >
-        post_date,
-      </if>
-      <if test="forbidden != null" >
-        forbidden,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="mtId != null" >
-        #{mtId,jdbcType=INTEGER},
-      </if>
-      <if test="account != null" >
-        #{account,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null" >
-        #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="position != null" >
-        #{position,jdbcType=VARCHAR},
-      </if>
-      <if test="telephone != null" >
-        #{telephone,jdbcType=VARCHAR},
-      </if>
-      <if test="mobile != null" >
-        #{mobile,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null" >
-        #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="postDate != null" >
-        #{postDate,jdbcType=VARCHAR},
-      </if>
-      <if test="forbidden != null" >
-        #{forbidden,jdbcType=SMALLINT},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="master" >
-    update master
-    <set >
-      <if test="account != null" >
-        account = #{account,jdbcType=VARCHAR},
-      </if>
-      <if test="password != null" >
-        password = #{password,jdbcType=VARCHAR},
-      </if>
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="position != null" >
-        position = #{position,jdbcType=VARCHAR},
-      </if>
-      <if test="telephone != null" >
-        telephone = #{telephone,jdbcType=VARCHAR},
-      </if>
-      <if test="mobile != null" >
-        mobile = #{mobile,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null" >
-        email = #{email,jdbcType=VARCHAR},
-      </if>
-      <if test="postDate != null" >
-        post_date = #{postDate,jdbcType=VARCHAR},
-      </if>
-      <if test="forbidden != null" >
-        forbidden = #{forbidden,jdbcType=SMALLINT},
-      </if>
-    </set>
-    where mt_id = #{mtId,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="master" >
-    update master
-    set account = #{account,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
-      position = #{position,jdbcType=VARCHAR},
-      telephone = #{telephone,jdbcType=VARCHAR},
-      mobile = #{mobile,jdbcType=VARCHAR},
-      email = #{email,jdbcType=VARCHAR},
-      post_date = #{postDate,jdbcType=VARCHAR},
-      forbidden = #{forbidden,jdbcType=SMALLINT}
-    where mt_id = #{mtId,jdbcType=INTEGER}
-  </update>
+<mapper namespace="com.xsjrw.websit.dao.admin.MasterMapper">
+
+	<resultMap id="BaseResultMap" type="master">
+		<id column="mt_id" property="mtId" jdbcType="INTEGER" />
+		<result column="account" property="account" jdbcType="VARCHAR" />
+		<result column="password" property="password" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="position" property="position" jdbcType="VARCHAR" />
+		<result column="telephone" property="telephone" jdbcType="VARCHAR" />
+		<result column="mobile" property="mobile" jdbcType="VARCHAR" />
+		<result column="email" property="email" jdbcType="VARCHAR" />
+		<result column="post_date" property="postDate" jdbcType="VARCHAR" />
+		<result column="forbidden" property="forbidden" jdbcType="SMALLINT" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		mt_id, account, password, name, position, telephone, mobile, email,
+		post_date, forbidden
+	</sql>
+	
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from master
+		where mt_id = #{mtId,jdbcType=INTEGER}
+	</select>
+	
+	<select id="selectByMasterAccount" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from master
+		where account=#{account,jdbcType=VARCHAR}
+	</select>
+	
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from master
+		where mt_id = #{mtId,jdbcType=INTEGER}
+	</delete>
+	
+	<insert id="insert" parameterType="master">
+		insert into master (mt_id, account, password,
+		name, position, telephone,
+		mobile, email, post_date,
+		forbidden)
+		values (#{mtId,jdbcType=INTEGER}, #{account,jdbcType=VARCHAR},
+		#{password,jdbcType=VARCHAR},
+		#{name,jdbcType=VARCHAR}, #{position,jdbcType=VARCHAR}, #{telephone,jdbcType=VARCHAR},
+		#{mobile,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
+		#{postDate,jdbcType=VARCHAR},
+		#{forbidden,jdbcType=SMALLINT})
+	</insert>
+	
+	<insert id="insertSelective" parameterType="master">
+		insert into master
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="mtId != null">
+				mt_id,
+			</if>
+			<if test="account != null">
+				account,
+			</if>
+			<if test="password != null">
+				password,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="position != null">
+				position,
+			</if>
+			<if test="telephone != null">
+				telephone,
+			</if>
+			<if test="mobile != null">
+				mobile,
+			</if>
+			<if test="email != null">
+				email,
+			</if>
+			<if test="postDate != null">
+				post_date,
+			</if>
+			<if test="forbidden != null">
+				forbidden,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="mtId != null">
+				#{mtId,jdbcType=INTEGER},
+			</if>
+			<if test="account != null">
+				#{account,jdbcType=VARCHAR},
+			</if>
+			<if test="password != null">
+				#{password,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="position != null">
+				#{position,jdbcType=VARCHAR},
+			</if>
+			<if test="telephone != null">
+				#{telephone,jdbcType=VARCHAR},
+			</if>
+			<if test="mobile != null">
+				#{mobile,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null">
+				#{email,jdbcType=VARCHAR},
+			</if>
+			<if test="postDate != null">
+				#{postDate,jdbcType=VARCHAR},
+			</if>
+			<if test="forbidden != null">
+				#{forbidden,jdbcType=SMALLINT},
+			</if>
+		</trim>
+	</insert>
+	
+	<update id="updateByPrimaryKeySelective" parameterType="master">
+		update master
+		<set>
+			<if test="account != null">
+				account = #{account,jdbcType=VARCHAR},
+			</if>
+			<if test="password != null">
+				password = #{password,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="position != null">
+				position = #{position,jdbcType=VARCHAR},
+			</if>
+			<if test="telephone != null">
+				telephone = #{telephone,jdbcType=VARCHAR},
+			</if>
+			<if test="mobile != null">
+				mobile = #{mobile,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null">
+				email = #{email,jdbcType=VARCHAR},
+			</if>
+			<if test="postDate != null">
+				post_date = #{postDate,jdbcType=VARCHAR},
+			</if>
+			<if test="forbidden != null">
+				forbidden = #{forbidden,jdbcType=SMALLINT},
+			</if>
+		</set>
+		where mt_id = #{mtId,jdbcType=INTEGER}
+	</update>
+	
+	<update id="updateByPrimaryKey" parameterType="master">
+		update master
+		set account = #{account,jdbcType=VARCHAR},
+		password = #{password,jdbcType=VARCHAR},
+		name = #{name,jdbcType=VARCHAR},
+		position = #{position,jdbcType=VARCHAR},
+		telephone = #{telephone,jdbcType=VARCHAR},
+		mobile = #{mobile,jdbcType=VARCHAR},
+		email = #{email,jdbcType=VARCHAR},
+		post_date = #{postDate,jdbcType=VARCHAR},
+		forbidden = #{forbidden,jdbcType=SMALLINT}
+		where mt_id = #{mtId,jdbcType=INTEGER}
+	</update>
 </mapper>

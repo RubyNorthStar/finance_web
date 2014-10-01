@@ -41,7 +41,7 @@
 </div>
 	
   
-	<form name="form_wm"  id="login_form" method="post" action="/manage/manage_executeLogin.shtml">
+	<form name="form_wm"  id="login_form" method="post" action="/admin/master/executeLogin.go">
 	<div class="main">
 	<img src="/resources/images/manage/login/lt.jpg" id="lt" height="164" width="133">
 	<ul>
@@ -52,7 +52,7 @@
 					<td width="60px">
 				   <span id="chan_user">用户名：</span><img src="/resources/images/manage/login/1x1.gif" height="1" width="60"></td>
 					<td>
-						<input name="masterDTO.account"  id="account" class="ipt1" type="text">						
+						<input name="account"  id="account" class="ipt1" type="text">						
 					</td>
                     <td>			
 					</td>
@@ -66,7 +66,7 @@
 						<span id="chan_pass">密　码：</span>
 					</td>
 					<td>
-						<input name="masterDTO.password" id="password" class="ipt1" value="" type="password">
+						<input name="password" id="password" class="ipt1" value="" type="password">
 					</td>
 				</tr>
 			</tbody></table>	
