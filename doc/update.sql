@@ -1,4 +1,4 @@
-/*
+﻿/*
 Navicat MySQL Data Transfer
 
 Source Server         : 本地数据库
@@ -195,7 +195,7 @@ DELAY_KEY_WRITE=0
 
 CREATE TABLE `tbl_product_fund_type` (
 `id`  int(11) NOT NULL AUTO_INCREMENT ,
-`investment_name`  varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '投资类型名称' ,
+`fund_name`  varchar(11) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '投资类型名称' ,
 `status`  tinyint(2) NULL DEFAULT 1 COMMENT '状态： 1 可用，2不可用' ,
 `create_time`  datetime NULL DEFAULT NULL ,
 PRIMARY KEY (`id`)
