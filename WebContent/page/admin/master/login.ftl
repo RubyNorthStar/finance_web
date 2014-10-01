@@ -28,14 +28,14 @@
 		
 		function changeValidateCode() {   
 			var timenow = new Date().getTime();
-			$("#image").attr("src","/rand.shtml?d="+timenow);
+			$("#image_validateCode").attr("src","/captcha/cimge.go?d="+timenow);
 		}   
 	</script>
 </head>
   <body>
 	
 	<div class="head">
-    <img src="/image/manage/login/banner.gif" id="banner" height="60" width="468">
+    <img src="/resources/images/manage/login/banner.gif" id="banner" height="60" width="468">
     <ul id="language">
     </ul>
 </div>
@@ -43,14 +43,14 @@
   
 	<form name="form_wm"  id="login_form" method="post" action="/manage/manage_executeLogin.shtml">
 	<div class="main">
-	<img src="/image/manage/login/lt.jpg" id="lt" height="164" width="133">
+	<img src="/resources/images/manage/login/lt.jpg" id="lt" height="164" width="133">
 	<ul>
-    	<li><img src="/image/manage/login/text.gif" height="20" width="120"></li>
+    	<li><img src="/resources/images/manage/login/text.gif" height="20" width="120"></li>
         <li>
        		<table>
        			 <tbody><tr>
 					<td width="60px">
-				   <span id="chan_user">用户名：</span><img src="/image/manage/login/1x1.gif" height="1" width="60"></td>
+				   <span id="chan_user">用户名：</span><img src="/resources/images/manage/login/1x1.gif" height="1" width="60"></td>
 					<td>
 						<input name="masterDTO.account"  id="account" class="ipt1" type="text">						
 					</td>
@@ -78,10 +78,10 @@
 						<span id="chan_code">校验码：</span>
 					</td>
 					<td id="cc">
-						<input id="validateCode" name="validateCode" class="ipt1_code" maxlength="4" type="text">&nbsp;<img id="image" src="/rand.shtml" onclick="changeValidateCode();" style="cursor:pointer"/>
+						<input id="validateCode" name="validateCode" class="ipt1_code" maxlength="4" type="text">&nbsp;&nbsp;&nbsp;<img id="image_validateCode" class="hyx_img" src="/captcha/cimge.go" alt="img" style="cursor: pointer; padding-bottom: 0px; margin-bottom: -5px; width: 70px;"/>
 					</td>
 					<td>
-						<span><a  href="javascript:void(0)" onclick="changeValidateCode();">换一张</a></span>
+						<span>&nbsp;&nbsp;<a href="javascript:void(0)" onclick="changeValidateCode();">换一张</a></span>
 					</td>
 				</tr>
 			</tbody></table>				
