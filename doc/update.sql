@@ -138,9 +138,9 @@ CREATE TABLE `tbl_users` (
 CREATE TABLE `tbl_product_info` (
 	`id`  int(11) NOT NULL AUTO_INCREMENT ,
 	`product_name`  varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '项目名称' ,
-	`fund_scale`  varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '基金规模' ,
-	`total_money`  double(11,0) NULL DEFAULT NULL COMMENT '已募集总金额' ,
+	`fund_scale`  double(16,0) NULL DEFAULT NULL COMMENT '基金规模( 需要募集的资金, 已元为单位 )' ,
 	`expect_profit`  varchar(16) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '预期收益' ,
+	`total_money`  double(11,0) NULL DEFAULT NULL COMMENT '已募集总金额' ,
 	`fund_type_id`  int(11) NULL DEFAULT NULL COMMENT '基金类型( 基金类型表ID )' ,
 	`investment_time_limit`  tinyint(2) NULL DEFAULT NULL COMMENT '投资期限( 以月为单位 )' ,
 	`fund_manage`  varchar(32) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '基金管理( 目前理解为公司名称 )' ,
@@ -163,10 +163,10 @@ CREATE TABLE `tbl_product_info` (
 	ENGINE=InnoDB
 	DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
 	AUTO_INCREMENT=1
-	CHECKSUM=0
-	ROW_FORMAT=DYNAMIC
-	DELAY_KEY_WRITE=0
+	ROW_FORMAT=COMPACT
 ;
+
+
 
 
 -- ----------------------------
