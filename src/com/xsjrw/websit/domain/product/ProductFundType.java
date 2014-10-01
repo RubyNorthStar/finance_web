@@ -19,7 +19,7 @@ import com.xsjrw.websit.core.domain.BaseEntity;
 public class ProductFundType extends BaseEntity {
 	
 	
-	private String	investmentName;		 /* 投资类型名称 */ 
+	private String	fundName;		 /* 基金类型名称 */ 
 	private Integer	status;		 /* 状态： 1 可用，2不可用 */ 
 	private Date	createTime;		
 
@@ -30,9 +30,9 @@ public class ProductFundType extends BaseEntity {
 	/**
 	 * full Constructor
 	 */
-	public ProductFundType(Integer id, String investmentName, Integer status, Date createTime) {
+	public ProductFundType(Integer id, String fundName, Integer status, Date createTime) {
 		setId(id);
-		this.investmentName = investmentName;
+		this.fundName = fundName;
 		this.status = status;
 		this.createTime = createTime;
 	}
@@ -40,12 +40,12 @@ public class ProductFundType extends BaseEntity {
 	// getter && setter
 	// 在setter方法最后加上"return this;"并把返回参数改为ProductFundType可以实现连缀设置属性
 	
-	public String getInvestmentName() {
-		return investmentName;
+	public String getFundName() {
+		return fundName;
 	}
 
-	public ProductFundType setInvestmentName(String investmentName) {
-		this.investmentName = investmentName;
+	public ProductFundType setFundName(String fundName) {
+		this.fundName = fundName;
 		return this;
 	}
 	
@@ -71,6 +71,6 @@ public class ProductFundType extends BaseEntity {
 	
 	@Override
 	public String toString() {
-		return "ProductFundType [" + "id=" + getId() + ", investmentName=" + investmentName + ", status=" + status + ", createTime=" + createTime +  "]";
+		return "ProductFundType [" + "id=" + getId() + ", fundName=" + fundName + ", status=" + status + ", createTime=" + createTime +  "]";
 	}
 }

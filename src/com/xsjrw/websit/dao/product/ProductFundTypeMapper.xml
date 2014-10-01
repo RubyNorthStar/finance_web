@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.xsjrw.websit.domain.product.ProductFundType">
+<mapper namespace="com.xsjrw.websit.dao.product.ProductFundTypeMapper">
 	<resultMap type="ProductFundType" id="productFundTypeResultMap">
 		<result property="id" column="id" />
-		<result property="investmentName" column="investment_name" />
+		<result property="fundName" column="fund_name" />
 		<result property="status" column="status" />
 		<result property="createTime" column="create_time" />
 	</resultMap>
 	
 	<sql id="table_columns">
 		id,
-		investment_name,
+		fund_name,
 		status,
 		create_time
     </sql>
 	<sql id="entity_properties">
 		#{id},
-		#{investmentName},
+		#{fundName},
 		#{status},
 		#{createTime}
 	</sql>
@@ -54,7 +54,7 @@
 	<update id="update" parameterType="ProductFundType">
 		update tbl_product_fund_type 
 		<trim prefix="set" suffixOverrides=",">
-			<if test="investmentName != null and investmentName != ''">investment_name = #{investmentName},</if>
+			<if test="fundName != null and fundName != ''">fund_name = #{fundName},</if>
 			<if test="status != null and status != ''">status = #{status},</if>
 			<if test="createTime != null and createTime != ''">create_time = #{createTime},</if>
 		</trim>
@@ -75,7 +75,7 @@
 	<!-- 使用like用法：columnName like concat('%',#columnName#,'%') -->
 	<sql id="page_where">
 		<trim prefix="where" prefixOverrides="and | or ">
-			<if test="investmentName != null and investmentName != ''">and investment_name = #{investmentName}</if>
+			<if test="fundName != null and fundName != ''">and fund_name = #{fundName}</if>
 			<if test="status != null and status != ''">and status = #{status}</if>
 			<if test="createTime != null and createTime != ''">and create_time = #{createTime}</if>
 		</trim>

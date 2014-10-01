@@ -17,7 +17,7 @@ import com.xsjrw.websit.core.domain.PageModel;
 public class ProductFundTypeSearch extends PageModel {
 	
 	private Integer	id;		
-	private String	investmentName;		 /* 投资类型名称 */ 
+	private String	fundName;		 /* 基金类型名称 */ 
 	private Integer	status;		 /* 状态： 1 可用，2不可用 */ 
 	private Date	createTime;		
 
@@ -28,9 +28,9 @@ public class ProductFundTypeSearch extends PageModel {
 	/**
 	 * full Constructor
 	 */
-	public ProductFundTypeSearch(Integer id, String investmentName, Integer status, Date createTime) {
+	public ProductFundTypeSearch(Integer id, String fundName, Integer status, Date createTime) {
 		this.id = id;
-		this.investmentName = investmentName;
+		this.fundName = fundName;
 		this.status = status;
 		this.createTime = createTime;
 	}
@@ -46,12 +46,12 @@ public class ProductFundTypeSearch extends PageModel {
 		return this;
 	}
 	
-	public String getInvestmentName() {
-		return investmentName;
+	public String getFundName() {
+		return fundName;
 	}
 
-	public ProductFundTypeSearch setInvestmentName(String investmentName) {
-		this.investmentName = investmentName;
+	public ProductFundTypeSearch setFundName(String fundName) {
+		this.fundName = fundName;
 		return this;
 	}
 	
