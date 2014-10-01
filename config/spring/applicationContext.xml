@@ -16,8 +16,6 @@
 	http://www.springframework.org/schema/cache/spring-cache-3.1.xsd"
 	default-lazy-init="true">
 	
-	<!--<import resource="classpath:applicationContext-*.xml"/>-->
-	
 	<context:property-placeholder location="classpath:jdbc.properties" ignore-unresolvable="true"/>
 	<context:property-placeholder location="classpath:smtp.properties" ignore-unresolvable="true"/>
 	
