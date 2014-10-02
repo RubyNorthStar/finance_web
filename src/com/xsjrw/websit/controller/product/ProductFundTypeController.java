@@ -2,6 +2,7 @@ package com.xsjrw.websit.controller.product;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -24,7 +25,7 @@ import com.xsjrw.websit.service.product.IProductFundTypeService;
  * @date 2014-9-29
  */
 @Controller
-@RequestMapping("/productFundType")
+@RequestMapping("/admin/fundType")
 public class ProductFundTypeController {
 	
 	@Autowired
@@ -34,28 +35,61 @@ public class ProductFundTypeController {
 	public String list(Model model, ProductFundTypeSearch search){
 		if (search == null) {
 			search = new ProductFundTypeSearch();
+			search.setStatus(1);
 			// search.setPageSize(20);
 		}
-		model.addAttribute("list", productFundTypeServiceImpl.findProductFundTypeByPage(search));
-		return "productFundType/list";
+		
+		List<ProductFundType> fundTypes =  productFundTypeServiceImpl.findProductFundTypeByPage(search);
+		model.addAttribute("search", search);
+		model.addAttribute("fundTypes",fundTypes);
+		return "admin/product/fund_type_list";
 	}
 	
-	@RequestMapping(value="/add", method = RequestMethod.POST)
+	@RequestMapping(value="/add")
 	public String add(ProductFundType productFundType) {
+		
+		if(productFundType.getFundName() == null && productFundType.getId() == null ){
+			return "admin/product/add_fund_type";
+		}
+		
 		productFundTypeServiceImpl.saveProductFundType(productFundType);
-		return "redirect:/productFundType";
+		return "redirect:/admin/fundType.go";
 	}
 	
-	@RequestMapping(value="/update", method = RequestMethod.POST)
-	public String update(ProductFundType productFundType) {
-		productFundTypeServiceImpl.update(productFundType);
-		return "redirect:/productFundType";
+	@RequestMapping(value="/update")
+	public String update(Model model, ProductFundType productFundType) {
+		
+		//查询出该类型，然后更新
+		if(productFundType.getFundName() == null && productFundType.getId() != null ){
+			ProductFundType fundType = productFundTypeServiceImpl.findProductFundTypeById(productFundType.getId());
+			
+			if(fundType.getStatus() != 2){
+				model.addAttribute("fundType", fundType);
+			}
+			
+			return "admin/product/update_fund_type";
+		}
+		
+		if(productFundType.getId() != null && productFundType.getFundName() != null && productFundType.getFundName().length() > 0){
+			productFundTypeServiceImpl.update(productFundType);
+		}
+		
+		return "redirect:/admin/fundType.go";
 	}
 	
+	//逻辑删除，改变基金类型的状态
 	@RequestMapping(value="/del/{id}", method = RequestMethod.GET)
 	public String del(Model model, @PathVariable Integer id) {
-		productFundTypeServiceImpl.deleteProductFundTypeById(id);
-		return "redirect:/productFundType";
+		
+		ProductFundType fundType = null;
+		//查询出该类型，然后更新
+		if(id == null){
+			fundType = productFundTypeServiceImpl.findProductFundTypeById(id);
+			fundType.setStatus(2);
+		}
+		productFundTypeServiceImpl.update(fundType);
+		
+		return "redirect:/admin/fundType.go";
 	}
 	
 	@ResponseBody

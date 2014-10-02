@@ -100,4 +100,10 @@ public class Master {
     public void setForbidden(Short forbidden) {
         this.forbidden = forbidden;
     }
+    
+    @Override
+	public String toString() {
+		return "ProductInfo [" + "mtId=" + mtId + ", account=" + account + ", password=" + password + ", name=" + name + ", " +
+				"position=" + position + ", telephone=" + telephone + ", mobile=" + mobile + ", email=" + email + ", forbidden=" + forbidden + "]";
+	}
 }

@@ -23,7 +23,7 @@ public class ProductInfoSearch extends PageModel {
 	private Integer	fundTypeId;		 /* 基金类型( 基金类型表ID ) */ 
 	private Integer	investmentTimeLimit;		 /* 投资期限( 以月为单位 ) */ 
 	private String	fundManage;		 /* 基金管理( 目前理解为公司名称 ) */ 
-	private String	minBidMoney;		 /* 起投金额( 目前为字符串，如果单位定了的话，转为int类型 ) */ 
+	private Integer	minBidMoney;		 /* 起投金额(以元为单位 ) */ 
 	private String	profitDistribution;		 /* 收益分配 ( 同起投金额 ) */ 
 	private Date	beginTime;		 /* 产品投资开始时间 */ 
 	private Date	endTime;		 /* 产品投资结束时间( 根据开始时间及募集日期推算 ) */ 
@@ -46,7 +46,7 @@ public class ProductInfoSearch extends PageModel {
 	/**
 	 * full Constructor
 	 */
-	public ProductInfoSearch(Integer id, String productName, Integer fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, String minBidMoney, String profitDistribution, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, String repaymentSource, String businessStructure, String windControlMeasures, Integer toExamineStatus, Integer productMortgageId, Double yearInterestRate, Integer creditLevle, Double totalMoney) {
+	public ProductInfoSearch(Integer id, String productName, Integer fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, Integer minBidMoney, String profitDistribution, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, String repaymentSource, String businessStructure, String windControlMeasures, Integer toExamineStatus, Integer productMortgageId, Double yearInterestRate, Integer creditLevle, Double totalMoney) {
 		this.id = id;
 		this.productName = productName;
 		this.fundScale = fundScale;
@@ -137,11 +137,11 @@ public class ProductInfoSearch extends PageModel {
 		return this;
 	}
 	
-	public String getMinBidMoney() {
+	public Integer getMinBidMoney() {
 		return minBidMoney;
 	}
 
-	public ProductInfoSearch setMinBidMoney(String minBidMoney) {
+	public ProductInfoSearch setMinBidMoney(Integer minBidMoney) {
 		this.minBidMoney = minBidMoney;
 		return this;
 	}
