@@ -1,6 +1,6 @@
 $(function(){
 	$(".hyx_img").click(function(){
-		$(this).attr({"src":"/captcha/cimge.shtml?"+Math.random()});
+		$(this).attr({"src":"/captcha/cimge.go?"+Math.random()});
 	});
 });
 
@@ -25,20 +25,21 @@ function userLogin(obj){
     	$(obj).val("登录中...");
     	$.ajax({
     		type: "POST",
-    		url : "http://www.xs.com:8080/user/login.sthml",
+    		url : "/user/login.go",
     		data: {"email":email, "password":password},
     		dataType:"json", 
     		success: function(data){
-    			 if (data.length > 0) {
-				        if ($("#remember").prop("checked")) {
-				            setCookie("LOGINNAME",email);
-				            setCookie("LOGINPWD",data[0].password);
-				        }
-				        window.location.href = "http://www.xs.com:8080";
-				    } else { 
-				    	$("#verify").html("用户名或密码错误！"); 
-				    	$(obj).val("马上登录");
-				    }
+    			
+    			 if (data) {
+			        if ($("#remember").prop("checked")) {
+			            setCookie("LOGINNAME",email);
+			            setCookie("LOGINPWD",data[0].password);
+			        }
+			        window.location.href = "http://localhost:8080";
+			    } else { 
+			    	$("#verify").html("用户名或密码错误！"); 
+			    	$(obj).val("马上登录");
+			    }
     		},
     		error:function(data)
     		{
@@ -91,22 +92,22 @@ function userRegiste(){
     	//检查该邮箱是否已经注册
     	$.ajax({
     		type: "POST",
-    		url : "http://www.xs.com:8080/user/verificat_email.sthml",
+    		url : "/user/verificat_email.go",
     		data: {"email":email},
-    		dataType:"json", 
+    		dataType:"text", 
     		success: function(data){
-    			if(data.length > 0){
+    			if(data){
     				$("#verify").text("该邮箱已经注册");
     		        $("#email").focus();
     			}else{
     				$.ajax({
     		    		type: "POST",
-    		    		url : "http://www.xs.com:8080/user/register.sthml?yzm="+verification_code,
+    		    		url : "/user/register.go?yzm="+verification_code,
     		    		data: {"email":email, "username":username,"mobile":mobile,"password":password},
     		    		dataType:"text", 
     		    		success: function(data){
     		    			if(data == "success"){
-    		    				window.location.href = "http://www.xs.com:8080";
+    		    				window.location.href = "/";
     		    			}else{
     		    				$("#verify").text("注册失败");
     		    			}
