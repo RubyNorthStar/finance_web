@@ -1,5 +1,6 @@
 package com.xsjrw.websit.service.impl.product;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,10 @@ public class ProductFundTypeServiceImpl implements IProductFundTypeService {
 	
 	@Override
 	public void saveProductFundType(ProductFundType productFundType) {
-		productFundTypeMapper.insert(productFundType);
 		
+		productFundType.setCreateTime(new Date());
+		productFundType.setStatus(1);
+		productFundTypeMapper.insert(productFundType);
 	}
 
 	@Override
@@ -66,6 +69,11 @@ public class ProductFundTypeServiceImpl implements IProductFundTypeService {
 		Integer totalRecords = productFundTypeMapper.pageCount(search);
 		search.setTotalRecords(totalRecords);
 		return productFundTypeMapper.page(search);
+	}
+
+	@Override
+	public List<ProductFundType> queryAll() {
+		return productFundTypeMapper.queryAll();
 	}
 	
 	

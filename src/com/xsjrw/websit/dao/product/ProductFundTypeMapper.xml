@@ -22,7 +22,7 @@
 	</sql>
 	
 	<!-- 适用于主键自增类型 -->
-	<insert id="saveProductFundType" parameterType="ProductFundType" useGeneratedKeys="true" keyProperty="id">
+	<insert id="insert" parameterType="ProductFundType" useGeneratedKeys="true" keyProperty="id">
 		insert into tbl_product_fund_type( <include refid="table_columns" /> ) 
 		values ( <include refid="entity_properties" /> )
 	</insert>
@@ -38,7 +38,7 @@
 	
 	<!--根据主键删除 -->
 	<delete id="deleteById">
-		delete from tbl_users
+		delete from tbl_product_fund_type
 		where id = #{id}
 	</delete>
 	
@@ -69,7 +69,7 @@
 	
 	<select id="queryAll" resultMap="productFundTypeResultMap">
 		select <include refid="table_columns" /> 
-		from tbl_product_fund_type
+		from tbl_product_fund_type where status = 1
 	</select>
 	
 	<!-- 使用like用法：columnName like concat('%',#columnName#,'%') -->

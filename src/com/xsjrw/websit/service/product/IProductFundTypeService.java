@@ -87,7 +87,6 @@ public interface IProductFundTypeService  {
 	ProductFundType findProductFundTypeById(Integer id);
 	
 	/**
-	 * 
 	* @Title: findProductFundTypeByPage 
 	* @Description: 分页查询
 	* @return
@@ -98,4 +97,10 @@ public interface IProductFundTypeService  {
 	* @user by wangzx
 	 */
 	List<ProductFundType> findProductFundTypeByPage(ProductFundTypeSearch search);
+	
+	/**
+	 * @Description: 查询所有可用状态的类型
+	 * @return
+	 */
+	List<ProductFundType> queryAll();
 }

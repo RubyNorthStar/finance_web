@@ -15,9 +15,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import net.sf.json.JSONArray;
 
 import com.xsjrw.common.constans.UserConstans;
 import com.xsjrw.common.listener.UserSessionListener;
+import com.xsjrw.common.util.JsonUtil;
 import com.xsjrw.common.util.MD5;
 import com.xsjrw.websit.core.domain.BaseWebController;
 import com.xsjrw.websit.domain.user.Users;
@@ -63,7 +65,7 @@ public class UserController extends BaseWebController{
 	 */
 	@ResponseBody
 	@RequestMapping("/login")
-	public List<Users> signin(String email, String password, String remember, HttpServletRequest request, HttpServletResponse response){
+	public String signin(String email, String password, String remember, HttpServletRequest request, HttpServletResponse response){
 		List<Users> user = null;
 		
 		try {
@@ -77,20 +79,33 @@ public class UserController extends BaseWebController{
 			e.printStackTrace();
 			return null;
 		}
-		return user;
+		
+		try {
+			String a = JsonUtil.getJSONString(user.get(0));
+			System.out.println(a);
+			return a ;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 	
 	@ResponseBody
 	@RequestMapping("/verificat_email")
-	public List<Users> verificatEmail(String email){
+	public String verificatEmail(String email){
 		List<Users> user = null;
+		String a = "";
 		try {
 			user = userService.findUserByEmail(email);
+			if(user.size() > 0){
+				a = JsonUtil.getJSONString(user.get(0));
+			}
+			System.out.println(a);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return null;
 		}
-		return user;
+		return a;
 	}
 
 	/**
