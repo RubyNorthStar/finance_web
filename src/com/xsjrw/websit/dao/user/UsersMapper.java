@@ -2,6 +2,8 @@ package com.xsjrw.websit.dao.user;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.xsjrw.websit.core.domain.BaseMapper;
 import com.xsjrw.websit.domain.user.Users;
 

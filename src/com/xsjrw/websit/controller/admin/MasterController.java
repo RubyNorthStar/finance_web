@@ -57,7 +57,7 @@ public class MasterController {
 								masterDTO.setFlag("1010");//该用户名有多个用户
 								return "admin/master/login";
 							}else{
-								Master master = new Master();
+								Master master = masterList.get(0);
 								String pass = master.getPassword();
 								if(password.trim().equals(pass.trim())){
 									if(master.getForbidden() == 0){

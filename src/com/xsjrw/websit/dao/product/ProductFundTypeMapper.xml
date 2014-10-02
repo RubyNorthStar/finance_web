@@ -32,7 +32,7 @@
 		insert into tbl_product_fund_type( <include refid="table_columns" /> ) 
 		values 
 		<foreach item="item" collection="list" separator="," >
-			( <include refid="entity_batch_properties" /> )
+			( <include refid="entity_properties" /> )
 		</foreach>
 	</insert>
 	

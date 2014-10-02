@@ -1,5 +1,7 @@
 package com.xsjrw.websit.dao.admin;
 
+import org.springframework.stereotype.Component;
+
 import com.xsjrw.websit.domain.admin.MasterMapAction;
 
 public interface MasterMapActionMapper {

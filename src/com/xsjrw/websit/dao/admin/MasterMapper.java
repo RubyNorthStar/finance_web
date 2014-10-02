@@ -2,6 +2,8 @@ package com.xsjrw.websit.dao.admin;
 
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
 import com.xsjrw.websit.domain.admin.Master;
 
 public interface MasterMapper {
