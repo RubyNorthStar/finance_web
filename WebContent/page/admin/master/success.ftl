@@ -8,9 +8,9 @@
 </head>
   <body>
 	  <div class="page"><!--page开始-->
-		<#include "/WEB-INF/page/manage/include/top.ftl">
+		<#include "/page/admin/common/top.ftl">
 		<div class="main clear"><!--main开始-->
-				<#include "/WEB-INF/page/manage/include/left_new.ftl">
+				<#include "/page/admin/common/left.ftl">
 			    <div class="right1">
 			    <h3>登陆成功</h3>
 			    <div class="r1_bottom" id="layer0" style="padding:50px;text-align:center;"><font size="25">
@@ -33,9 +33,6 @@
 								</#if >
 							</#if >
 						</#if ></strong>&nbsp;&nbsp;&nbsp;&nbsp; 
-						<#--
-						&nbsp;&nbsp;&nbsp;&nbsp;<a href="/manage/manage_goUpdateMaster.shtml?masterDTO.id=${masterMtid}">管理员数据修改</a>
-			    		-->
 			    </div>
 		    </div>
 		</div>
