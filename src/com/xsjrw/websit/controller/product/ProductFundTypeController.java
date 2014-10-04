@@ -65,6 +65,8 @@ public class ProductFundTypeController {
 			
 			if(fundType.getStatus() != 2){
 				model.addAttribute("fundType", fundType);
+			}else{
+				return "redirect:/admin/fundType/fundType.go";
 			}
 			
 			return "admin/product/update_fund_type";

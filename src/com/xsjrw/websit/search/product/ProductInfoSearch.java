@@ -25,6 +25,7 @@ public class ProductInfoSearch extends PageModel {
 	private String	fundManage;		 /* 基金管理( 目前理解为公司名称 ) */ 
 	private Integer	minBidMoney;		 /* 起投金额(以元为单位 ) */ 
 	private String	profitDistribution;		 /* 收益分配 ( 同起投金额 ) */ 
+	private Date 	createTime;			/* 产品创建时间 */	
 	private Date	beginTime;		 /* 产品投资开始时间 */ 
 	private Date	endTime;		 /* 产品投资结束时间( 根据开始时间及募集日期推算 ) */ 
 	private String	productDetaileInfo;		 /* 项目介绍 */ 
@@ -38,6 +39,7 @@ public class ProductInfoSearch extends PageModel {
 	private Double 	yearInterestRate;		 /* 年利率 */ 
 	private Integer creditLevle;			 /* 信用等级 */
 	private Double	totalMoney;				 /* 已募集总金额 */
+	private Integer status;					/* 1可用 2不可用*/
 
 	// Constructor
 	public ProductInfoSearch() {
@@ -46,7 +48,7 @@ public class ProductInfoSearch extends PageModel {
 	/**
 	 * full Constructor
 	 */
-	public ProductInfoSearch(Integer id, String productName, Integer fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, Integer minBidMoney, String profitDistribution, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, String repaymentSource, String businessStructure, String windControlMeasures, Integer toExamineStatus, Integer productMortgageId, Double yearInterestRate, Integer creditLevle, Double totalMoney) {
+	public ProductInfoSearch(Integer id, String productName, Integer fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, Integer minBidMoney, String profitDistribution,Date createTime, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, String repaymentSource, String businessStructure, String windControlMeasures, Integer toExamineStatus, Integer productMortgageId, Double yearInterestRate, Integer creditLevle, Double totalMoney, Integer status) {
 		this.id = id;
 		this.productName = productName;
 		this.fundScale = fundScale;
@@ -56,6 +58,7 @@ public class ProductInfoSearch extends PageModel {
 		this.fundManage = fundManage;
 		this.minBidMoney = minBidMoney;
 		this.profitDistribution = profitDistribution;
+		this.createTime = createTime;
 		this.beginTime = beginTime;
 		this.endTime = endTime;
 		this.productDetaileInfo = productDetaileInfo;
@@ -70,6 +73,7 @@ public class ProductInfoSearch extends PageModel {
 		this.yearInterestRate = yearInterestRate; 
 		this.creditLevle = creditLevle;
 		this.totalMoney = totalMoney;
+		this.status = status;
 	}
 
 	// getter && setter
@@ -155,6 +159,14 @@ public class ProductInfoSearch extends PageModel {
 		return this;
 	}
 	
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
 	public Date getBeginTime() {
 		return beginTime;
 	}
@@ -267,6 +279,14 @@ public class ProductInfoSearch extends PageModel {
 
 	public void setTotalMoney(Double totalMoney) {
 		this.totalMoney = totalMoney;
+	}
+	
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 	
 }
