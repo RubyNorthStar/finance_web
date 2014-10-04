@@ -89,4 +89,14 @@ function updateStatus(id,obj){
 			alert("更新失败!");
 		}
 	});
+	
+}
+
+function check(obj){
+	var isMortgage = $(obj).attr("value");
+	if(isMortgage == 1){
+		
+	}else if(isMortgage == 2){
+		
+	}
 }

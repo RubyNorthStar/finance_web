@@ -3,6 +3,10 @@ package com.xsjrw.websit.controller.product;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -14,7 +18,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.xsjrw.common.constans.Constans;
+import com.xsjrw.common.util.FileBean;
+import com.xsjrw.common.util.FileUploadUtil;
+import com.xsjrw.websit.core.util.ParamUtil;
 import com.xsjrw.websit.domain.product.ProductFundType;
 import com.xsjrw.websit.domain.product.ProductInfo;
 import com.xsjrw.websit.search.product.ProductInfoSearch;
@@ -35,6 +45,11 @@ public class ProductInfoController {
 	
 	@Autowired
 	private IProductFundTypeService productFundTypeService;
+	
+	@RequestMapping(value="/test")
+	public String ueditorTest(){
+		return "admin/product/ckeditor_test";
+	}
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model, ProductInfoSearch search){
@@ -132,4 +147,35 @@ public class ProductInfoController {
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
+	
+	/**
+	 * 上传文件方法
+	 * @param model
+	 * @param imgPath
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	
+	@ResponseBody
+	@RequestMapping(value = "/saveImage", method = RequestMethod.POST)
+	public void saveMaterialImage(Model model, HttpServletRequest request,HttpServletResponse response) {
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html");
+		try {
+	        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+	        Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
+			String  uploadPath = Constans.PRODUCTIMAGEPATH;	   
+			List<FileBean> fileList = FileUploadUtil.upload(request,
+					multipartRequest, "",uploadPath, "next");
+			
+			response.getWriter().print(
+					"{\"url\":\"" + "http://www.xsjrw.com/product/imgaes/" + fileList.get(0).getServerName() + "\",\"error\":0}");
+			
+//			return Constans.PRODUCTSERVICEPATH+fileList.get(0).getServerName();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
 }

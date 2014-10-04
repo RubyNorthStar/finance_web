@@ -4,6 +4,7 @@
 	<resultMap type="ProductInfo" id="productInfoResultMap">
 		<result property="id" column="id" />
 		<result property="productName" column="product_name" />
+		<result property="picPath" column="pic_path" />
 		<result property="fundScale" column="fund_scale" />
 		<result property="expectProfit" column="expect_profit" />
 		<result property="fundTypeId" column="fund_type_id" />
@@ -31,6 +32,7 @@
 	<sql id="table_columns">
 		id,
 		product_name,
+		pic_path,
 		fund_scale,
 		expect_profit,
 		fund_type_id,
@@ -57,6 +59,7 @@
 	<sql id="entity_properties">
 		#{id},
 		#{productName},
+		#{picPath},
 		#{fundScale},
 		#{expectProfit},
 		#{fundTypeId},
@@ -115,6 +118,7 @@
 		update tbl_product_info 
 		<trim prefix="set" suffixOverrides=",">
 			<if test="productName != null and productName != ''">product_name = #{productName},</if>
+			<if test="picPath != null and picPath != ''">pic_path = #{picPath},</if>
 			<if test="fundScale != null and fundScale != ''">fund_scale = #{fundScale},</if>
 			<if test="expectProfit != null and expectProfit != ''">expect_profit = #{expectProfit},</if>
 			<if test="fundTypeId != null and fundTypeId != ''">fund_type_id = #{fundTypeId},</if>
@@ -156,6 +160,7 @@
 	<sql id="page_where">
 		<trim prefix="where" prefixOverrides="and | or ">
 			<if test="productName != null and productName != ''">and product_name = #{productName}</if>
+			<if test="picPath != null and picPath != ''">pic_path = #{picPath},</if>
 			<if test="fundScale != null and fundScale != ''">and fund_scale = #{fundScale}</if>
 			<if test="expectProfit != null and expectProfit != ''">and expect_profit = #{expectProfit}</if>
 			<if test="fundTypeId != null and fundTypeId != ''">and fund_type_id = #{fundTypeId}</if>

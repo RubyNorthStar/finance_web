@@ -20,6 +20,7 @@ public class ProductInfo extends BaseEntity {
 	
 	
 	private String	productName;		 /* 项目名称 */ 
+	private String 	picPath;			 /* 产品主图 */ 
 	private Double	fundScale;		 /* 基金规模( 需要募集的资金, 已元为单位 ) */ 
 	private String	expectProfit;		 /* 预期收益 */ 
 	private Integer	fundTypeId;		 /* 基金类型( 基金类型表ID ) */ 
@@ -51,7 +52,7 @@ public class ProductInfo extends BaseEntity {
 	/**
 	 * full Constructor
 	 */
-	public ProductInfo(Integer id, String productName, Double fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, Integer minBidMoney, String profitDistribution,Date createTime, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, String repaymentSource, 
+	public ProductInfo(Integer id, String productName, String picPath, Double fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, Integer minBidMoney, String profitDistribution,Date createTime, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, String repaymentSource, 
 			String businessStructure, String windControlMeasures, Integer toExamineStatus, Integer productMortgageId, Double yearInterestRate, Integer creditLevle, Double totalMoney, Integer status) {
 		setId(id);
 		this.productName = productName;
@@ -77,6 +78,7 @@ public class ProductInfo extends BaseEntity {
 		this.creditLevle = creditLevle;
 		this.totalMoney = totalMoney;
 		this.status = status;
+		this.picPath = picPath;
 	}
 
 	// getter && setter
@@ -302,9 +304,17 @@ public class ProductInfo extends BaseEntity {
 		this.status = status;
 	}
 
+	public String getPicPath() {
+		return picPath;
+	}
+
+	public void setPicPath(String picPath) {
+		this.picPath = picPath;
+	}
+
 	@Override
 	public String toString() {
-		return "ProductInfo [" + "id=" + getId() + ", productName=" + productName + ", fundScale=" + fundScale + ", expectProfit=" + expectProfit + ", fundTypeId=" + fundTypeId + ", investmentTimeLimit=" + investmentTimeLimit + ", fundManage=" + fundManage + ", minBidMoney=" + minBidMoney + ", profitDistribution=" + profitDistribution + ", createTime=" + createTime + ", beginTime=" + beginTime + ", endTime=" + endTime + ", productDetaileInfo=" + productDetaileInfo + ", isMortgage=" + isMortgage + ", fundUse=" + fundUse + ", repaymentSource=" + repaymentSource + ", businessStructure=" + businessStructure + ", windControlMeasures=" + windControlMeasures + 
+		return "ProductInfo [" + "id=" + getId() + ", productName=" + productName + ", picPath=" + picPath + ", fundScale=" + fundScale + ", expectProfit=" + expectProfit + ", fundTypeId=" + fundTypeId + ", investmentTimeLimit=" + investmentTimeLimit + ", fundManage=" + fundManage + ", minBidMoney=" + minBidMoney + ", profitDistribution=" + profitDistribution + ", createTime=" + createTime + ", beginTime=" + beginTime + ", endTime=" + endTime + ", productDetaileInfo=" + productDetaileInfo + ", isMortgage=" + isMortgage + ", fundUse=" + fundUse + ", repaymentSource=" + repaymentSource + ", businessStructure=" + businessStructure + ", windControlMeasures=" + windControlMeasures + 
 								", toExamineStatus=" + toExamineStatus + ", productMortgageId=" + productMortgageId + ", yearInterestRate=" + yearInterestRate + ", creditLevle=" + creditLevle +", totalMoney=" + totalMoney + ", status=" + status +"]";
 	}
 }

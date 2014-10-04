@@ -18,6 +18,7 @@ public class ProductInfoSearch extends PageModel {
 	
 	private Integer	id;		
 	private String	productName;		 /* 项目名称 */ 
+	private String 	picPath;			 /* 产品主图 */ 
 	private Integer	fundScale;		 /* 基金规模( 需要募集的资金, 已元为单位 ) */ 
 	private String	expectProfit;		 /* 预期收益 */ 
 	private Integer	fundTypeId;		 /* 基金类型( 基金类型表ID ) */ 
@@ -48,7 +49,7 @@ public class ProductInfoSearch extends PageModel {
 	/**
 	 * full Constructor
 	 */
-	public ProductInfoSearch(Integer id, String productName, Integer fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, Integer minBidMoney, String profitDistribution,Date createTime, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, String repaymentSource, String businessStructure, String windControlMeasures, Integer toExamineStatus, Integer productMortgageId, Double yearInterestRate, Integer creditLevle, Double totalMoney, Integer status) {
+	public ProductInfoSearch(Integer id, String productName, String picPath, Integer fundScale, String expectProfit, Integer fundTypeId, Integer investmentTimeLimit, String fundManage, Integer minBidMoney, String profitDistribution,Date createTime, Date beginTime, Date endTime, String productDetaileInfo, Integer isMortgage, String fundUse, String repaymentSource, String businessStructure, String windControlMeasures, Integer toExamineStatus, Integer productMortgageId, Double yearInterestRate, Integer creditLevle, Double totalMoney, Integer status) {
 		this.id = id;
 		this.productName = productName;
 		this.fundScale = fundScale;
@@ -74,6 +75,7 @@ public class ProductInfoSearch extends PageModel {
 		this.creditLevle = creditLevle;
 		this.totalMoney = totalMoney;
 		this.status = status;
+		this.picPath = picPath;
 	}
 
 	// getter && setter
@@ -287,6 +289,14 @@ public class ProductInfoSearch extends PageModel {
 
 	public void setStatus(Integer status) {
 		this.status = status;
+	}
+
+	public String getPicPath() {
+		return picPath;
+	}
+
+	public void setPicPath(String picPath) {
+		this.picPath = picPath;
 	}
 	
 }
