@@ -37,7 +37,7 @@ a:hover {
 	*vertical-align:auto;
 	margin:0 auto;
 	border:0;
-	background:url(/image/manage/tubiao.gif) no-repeat left -119px
+	background:url(/resources/images/manage/tubiao.gif) no-repeat left -119px
 }
 .wrap .inp_txt {
 	margin:auto;
@@ -61,7 +61,7 @@ a.butn3 {
 	width:15px;
 	height:15px;
 	margin:5px 9px 0 0;
-	background:url(/image/manage/tb.gif) no-repeat left -327px
+	background:url(/resources/images/manage/tb.gif) no-repeat left -327px
 }
 a.butn3:hover {
 	background-position:left -297px
@@ -76,7 +76,7 @@ a.butn3:hover {
 	padding:3px 0 6px;
 *padding:3px 0 0;
 	line-height:20px;
-	background:url(/image/manage/btn_fst.gif) no-repeat;
+	background:url(/resources/images/manage/btn_fst.gif) no-repeat;
 	border:0
 }
 .btn_fst input:hover {
@@ -90,7 +90,7 @@ a.butn3:hover {
 }
 .btn_fst input.butdef_n {
 	color:#aca899;
-	background:url(/image/manage/btn_fst.gif) no-repeat 0 -72px
+	background:url(/resources/images/manage/btn_fst.gif) no-repeat 0 -72px
 }
 .btn_fst input.butdef_n:hover {
 	background-position:0 -72px
@@ -99,7 +99,7 @@ a.butn3:hover {
 .alert_div {
 	position:absolute;
 	z-index:160;
-	background:#3d62a6 url(/image/manage/laybj.gif) repeat-x left top
+	background:#3d62a6 url(/resources/images/manage/laybj.gif) repeat-x left top
 }
 .alert_div h1 {
 	height:26px;
@@ -168,7 +168,7 @@ a.gray:hover {
 	float:left
 }
 .sech_div h1 {
-	background:#3d62a6 url(/image/manage/laybj.gif) repeat-x left top
+	background:#3d62a6 url(/resources/images/manage/laybj.gif) repeat-x left top
 }
 .sech_div ol, .sech_lay2 ol {
 	height:auto;
@@ -215,12 +215,12 @@ a.gray:hover {
 .sech_lay2 li a, .sech_lay2 li a label {
 	color:#000;
 	cursor:default;
-	font-family:"ËÎÌå";
+	font-family:"ï¿½ï¿½ï¿½ï¿½";
 }
 .sech_div li a, .sech_div li a label {
 	color:#000;
 	cursor:pointer;
-	font-family:"ËÎÌå"
+	font-family:"ï¿½ï¿½ï¿½ï¿½"
 }
 .sech_layb a, .sech_lay2 a, .sech_div label {
 	display:block
@@ -244,7 +244,7 @@ a.gray:hover {
 	padding:2px 20px 0 4px;
 	_padding:2px 20px 0 2px;
 	border:1px solid #e5ecf4;
-	background:url(/image/manage/tb.gif) no-repeat;
+	background:url(/resources/images/manage/tb.gif) no-repeat;
 	background-position:right -14px;
 	*background-position:right -13px
 }
@@ -295,10 +295,10 @@ a.gray:hover {
 	float:left
 }
 .sech_div .layshow {
-	background:#e4ecf3 url(/image/manage/tb.gif) no-repeat 96% -55px
+	background:#e4ecf3 url(/resources/images/manage/tb.gif) no-repeat 96% -55px
 }
 .sech_div .layicon {
-	background:#cbf0fd url(/image/manage/tb.gif) no-repeat 96% -55px
+	background:#cbf0fd url(/resources/images/manage/tb.gif) no-repeat 96% -55px
 }
 .sech_div .layon, .sech_lay2 .layon {
 	background:#cbf0fd

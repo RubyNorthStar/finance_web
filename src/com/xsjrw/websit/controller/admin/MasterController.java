@@ -8,6 +8,7 @@ import javax.servlet.http.HttpSession;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.xsjrw.common.constans.UserConstans;
@@ -28,8 +29,14 @@ public class MasterController {
 	 * @return
 	 */
 	@RequestMapping("/login")
-	public String goLogin() {
-		System.out.println("aaaaaaaaaaa");
+	public String goLogin(Model model,HttpServletRequest request) {
+		Master master = (Master)request.getSession().getAttribute(UserConstans.MASTER_LOGIN);
+		if(master != null && StringUtils.isNotBlank(master.getAccount())){
+			MasterDTO masterDTO = new MasterDTO();
+			masterDTO.setFlag("1005"); //登陆成功
+			model.addAttribute("masterDTO", masterDTO);
+			return "admin/master/success";
+		}
 		return "admin/master/login";
 	}
 	
@@ -38,7 +45,7 @@ public class MasterController {
 	 * @return
 	 */
 	@RequestMapping("/executeLogin")
-	public String executeLogin(HttpServletRequest request) {
+	public String executeLogin(Model model,HttpServletRequest request) {
 		MasterDTO masterDTO = new MasterDTO();
 		String account = request.getParameter("account");
 		String password = request.getParameter("password");
@@ -55,19 +62,18 @@ public class MasterController {
 						if(masterList != null){
 							if(masterList.size() > 1){
 								masterDTO.setFlag("1010");//该用户名有多个用户
-								return "admin/master/login";
 							}else{
 								Master master = masterList.get(0);
 								String pass = master.getPassword();
 								if(password.trim().equals(pass.trim())){
 									if(master.getForbidden() == 0){
 										masterDTO.setFlag("1006");//登陆失败，该账户已被禁用
-										return "admin/master/login";
 									}
 									
 									request.getSession().setAttribute(UserConstans.MASTER_LOGIN, master);
 									
 									masterDTO.setFlag("1005"); //登陆成功
+									model.addAttribute("masterDTO", masterDTO);
 									return "admin/master/success";
 								}else{
 									masterDTO.setFlag("1004");//登陆失败，密码不正确
@@ -81,17 +87,15 @@ public class MasterController {
 					}
 				}else{
 					masterDTO.setFlag("1008");//登陆失败，验证码不正确
-					return "admin/master/login";
 				}
 			}else{
 				masterDTO.setFlag("1007");//登陆失败，验证码不能为空
-				return "admin/master/login";
 			}
 		}else{
 			masterDTO = new MasterDTO();
 			masterDTO.setFlag("1001");//登陆失败，登录名和密码不能为空
 		}
-		
+		model.addAttribute("masterDTO", masterDTO);
 		return "admin/master/login";
 	}
 }
