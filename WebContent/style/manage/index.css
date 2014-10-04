@@ -8,22 +8,22 @@ img{ border:none;cursor: pointer;}
 .clear{zoom:1;}
 .clear:after{ content:'\20'; display:block; clear:both;}
 .page{ margin:0 auto; width:1200px; font-size:12px;}
-.head{ text-align:right; width:1200px; height:110px; background:url(/image/manage/head.png); color:#fff;}
+.head{ text-align:right; width:1200px; height:110px; background:url(/resources/images/manage/head.png); color:#fff;}
 .head .h-p1{padding:24px 40px 6px 0;}
 .head .h-p2{padding-right:12px;}
 .head .nav{ padding-top:24px; padding-right:25px;}
-.head .nav li{ float:right; width:98px; height:33px; background:url(/image/manage/li.png);line-height:32px; text-align:center; color:#fff; font-weight:bold; font-size:14px;  margin-right:2px;}
+.head .nav li{ float:right; width:98px; height:33px; background:url(/resources/images/manage/li.png);line-height:32px; text-align:center; color:#fff; font-weight:bold; font-size:14px;  margin-right:2px;}
 .head .nav li a{ color:#fff;}
 .main{ width:1200px; }
 .main .left{float:left; width:140px;}
 
 .main .left .l-content{ height:760px; overflow-y:scroll; overflow-x:scroll; width:155px; background-color:#E5EBF9;}
 .main .left .l-content dl{ background:#5e7aad;}
-.main .left .l-content dl .dt{ width:140px; height:31px; background:url(/image/manage/l-dt.png); text-align:center; line-height:30px; font-size:14px; font-weight:bold; color:#fff;}
-.main .left .l-content dl .dd{ width:140px; height:30px; background:url(/image/manage/l-dd.png); text-align:center; line-height:30px;}
+.main .left .l-content dl .dt{ width:140px; height:31px; background:url(/resources/images/manage/l-dt.png); text-align:center; line-height:30px; font-size:14px; font-weight:bold; color:#fff;}
+.main .left .l-content dl .dd{ width:140px; height:30px; background:url(/resources/images/manage/l-dd.png); text-align:center; line-height:30px;}
 
 .main .right{ float:right; width:1040px; padding-bottom:16px;}
-.main .right h3{ height:33px; border-bottom:3px solid #4f69a0; line-height:32px; text-indent:40px; background:url(/image/manage/h3-bg.png) no-repeat 10px 5px;}
+.main .right h3{ height:33px; border-bottom:3px solid #4f69a0; line-height:32px; text-indent:40px; background:url(/resources/images/manage/h3-bg.png) no-repeat 10px 5px;}
 table{border-collapse:collapse;  width: 100%;}
 .table1{border-top:1px solid #4f69a0;border-bottom:1px solid #4f69a0;}
 .table1 td{ background:#e4eaf6; text-align:center; }
@@ -42,7 +42,7 @@ table{border-collapse:collapse;  width: 100%;}
     padding-bottom: 16px;
     width: 1040px;}
 .main .right1 h3 {
-    background: url("/image/manage/h3-bg.png") no-repeat scroll 10px 5px transparent;
+    background: url("/resources/images/manage/h3-bg.png") no-repeat scroll 10px 5px transparent;
     border-bottom: 3px solid #4F69A0;
     height: 33px;
     line-height: 32px;
