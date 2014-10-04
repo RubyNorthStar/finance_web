@@ -1,109 +1,103 @@
 package com.xsjrw.websit.domain.admin;
 
 public class Master {
-    private Integer mtId;
+	private Integer mtId;
+	private String account;
+	private String password;
+	private String name;
+	private String position;
+	private String telephone;
+	private String mobile;
+	private String email;
+	private String postDate;
+	private Short forbidden;
 
-    private String account;
+	public Integer getMtId() {
+		return mtId;
+	}
 
-    private String password;
+	public void setMtId(Integer mtId) {
+		this.mtId = mtId;
+	}
 
-    private String name;
+	public String getAccount() {
+		return account;
+	}
 
-    private String position;
+	public void setAccount(String account) {
+		this.account = account == null ? null : account.trim();
+	}
 
-    private String telephone;
+	public String getPassword() {
+		return password;
+	}
 
-    private String mobile;
+	public void setPassword(String password) {
+		this.password = password == null ? null : password.trim();
+	}
 
-    private String email;
+	public String getName() {
+		return name;
+	}
 
-    private String postDate;
+	public void setName(String name) {
+		this.name = name == null ? null : name.trim();
+	}
 
-    private Short forbidden;
+	public String getPosition() {
+		return position;
+	}
 
-    public Integer getMtId() {
-        return mtId;
-    }
+	public void setPosition(String position) {
+		this.position = position == null ? null : position.trim();
+	}
 
-    public void setMtId(Integer mtId) {
-        this.mtId = mtId;
-    }
+	public String getTelephone() {
+		return telephone;
+	}
 
-    public String getAccount() {
-        return account;
-    }
+	public void setTelephone(String telephone) {
+		this.telephone = telephone == null ? null : telephone.trim();
+	}
 
-    public void setAccount(String account) {
-        this.account = account == null ? null : account.trim();
-    }
+	public String getMobile() {
+		return mobile;
+	}
 
-    public String getPassword() {
-        return password;
-    }
+	public void setMobile(String mobile) {
+		this.mobile = mobile == null ? null : mobile.trim();
+	}
 
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
+	public String getEmail() {
+		return email;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public void setEmail(String email) {
+		this.email = email == null ? null : email.trim();
+	}
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
+	public String getPostDate() {
+		return postDate;
+	}
 
-    public String getPosition() {
-        return position;
-    }
+	public void setPostDate(String postDate) {
+		this.postDate = postDate == null ? null : postDate.trim();
+	}
 
-    public void setPosition(String position) {
-        this.position = position == null ? null : position.trim();
-    }
+	public Short getForbidden() {
+		return forbidden;
+	}
 
-    public String getTelephone() {
-        return telephone;
-    }
+	public void setForbidden(Short forbidden) {
+		this.forbidden = forbidden;
+	}
 
-    public void setTelephone(String telephone) {
-        this.telephone = telephone == null ? null : telephone.trim();
-    }
-
-    public String getMobile() {
-        return mobile;
-    }
-
-    public void setMobile(String mobile) {
-        this.mobile = mobile == null ? null : mobile.trim();
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email == null ? null : email.trim();
-    }
-
-    public String getPostDate() {
-        return postDate;
-    }
-
-    public void setPostDate(String postDate) {
-        this.postDate = postDate == null ? null : postDate.trim();
-    }
-
-    public Short getForbidden() {
-        return forbidden;
-    }
-
-    public void setForbidden(Short forbidden) {
-        this.forbidden = forbidden;
-    }
-    
-    @Override
+	@Override
 	public String toString() {
-		return "ProductInfo [" + "mtId=" + mtId + ", account=" + account + ", password=" + password + ", name=" + name + ", " +
-				"position=" + position + ", telephone=" + telephone + ", mobile=" + mobile + ", email=" + email + ", forbidden=" + forbidden + "]";
+		return "ProductInfo [" + "mtId=" + mtId + ", account=" + account
+				+ ", password=" + password + ", name=" + name + ", "
+				+ "position=" + position + ", telephone=" + telephone
+				+ ", mobile=" + mobile + ", email=" + email + ", forbidden="
+				+ forbidden + "]";
 	}
 }

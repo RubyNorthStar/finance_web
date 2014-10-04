@@ -169,4 +169,29 @@
 		forbidden = #{forbidden,jdbcType=SMALLINT}
 		where mt_id = #{mtId,jdbcType=INTEGER}
 	</update>
+
+	<!-- 使用like用法：columnName like concat('%',#columnName#,'%') -->
+	<sql id="page_where">
+		<trim prefix="where" prefixOverrides="and | or ">
+			<if test="account != null and account != ''">and account = #{account}</if>
+			<if test="name != null and name != ''">and name = #{name}</if>
+			<if test="position != null and position != ''">and position = #{position}</if>
+			<if test="telephone != null and telephone != ''">and telephone = #{telephone}</if>
+			<if test="mobile != null and mobile != ''">and mobile = #{mobile}</if>
+			<if test="email != null and email != ''">and email = #{email}</if>
+			<if test="forbidden != null and forbidden != ''">and forbidden = #{forbidden}</if>
+		</trim>
+	</sql>
+	
+	<select id="page" resultMap="BaseResultMap" parameterType="masterSearch">
+		select <include refid="Base_Column_List" />
+		from master
+		<include refid="page_where" />
+		limit #{firstIndex},#{pageSize}
+	</select>
+	
+	<select id="pageCount" resultType="int" parameterType="masterSearch">
+		select count(1) from master
+		<include refid="page_where" />
+	</select>
 </mapper>
