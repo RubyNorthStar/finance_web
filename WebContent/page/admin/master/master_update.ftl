@@ -22,38 +22,6 @@
 				$('#massges_info').html("名称不能为空！");
 				return false;
 			}
-			<#-- 
-			var department = $('#department').val();
-			if($.trim(department).length == 0){
-				$('#massges_info').html("密码不能为空！");
-				return false;
-			}
-			var position = $('#position').val();
-			if($.trim(position).length == 0){
-				$('#massges_info').html("密码不能为空！");
-				return false;
-			}
-			var officeTelephone = $('#officeTelephone').val();
-			if($.trim(officeTelephone).length == 0){
-				$('#massges_info').html("密码不能为空！");
-				return false;
-			}
-			var mobile = $('#mobile').val();
-			if($.trim(mobile).length == 0){
-				$('#massges_info').html("密码不能为空！");
-				return false;
-			}
-			var email = $('#email').val();
-			if($.trim(email).length == 0){
-				$('#massges_info').html("密码不能为空！");
-				return false;
-			}
-			var note = $('#note').val();
-			if($.trim(note).length == 0){
-				$('#massges_info').html("密码不能为空！");
-				return false;
-			}
-			-->
 			$('#master_update_form').submit();
 		}
 		
@@ -73,70 +41,69 @@
 </head>
   <body>
 	 <div class="page"><!--page开始-->
-		<#include "/WEB-INF/page/manage/include/top.ftl">
+		<#include "/admin/common/top.ftl">
 		<div class="main clear"><!--main开始-->
-				<#include "/WEB-INF/page/manage/include/left_new.ftl">
+			<#include "/admin/common/left.ftl">
 			<div class="right1">
 				<h3>管理员管理&gt;&gt;更新管理员</h3>
 				<div class="r1_bottom" id="layer0">
 		      		<span id="massges_info">
-		      			<#if masterDTO??><#if masterDTO.flag??> 
-							<#if masterDTO.flag == '1001'>
+		      			<#if flag??> 
+							<#if flag == '1001'>
 								更新成功
 							</#if >
-							<#if masterDTO.flag == '1002'>
+							<#if flag == '1002'>
 								更新失败，传输对象为空
 							</#if >
-							<#if masterDTO.flag == '1003'>
+							<#if flag == '1003'>
 								更新失败，传输对象为空
 							</#if >
-							<#if masterDTO.flag == '1004'>
+							<#if flag == '1004'>
 								更新失败，没有像匹配对象
 							</#if >
-			      		</#if></#if>
+			      		</#if>
 		      		</span>
 			    </div>
 			    
 			    <div class="r1_bottom" id="layer0">
-		      		<form action="/manage/manage_executeUpdateMaster.shtml" method="post" id="master_update_form">
+		      		<form action="/admin/master/executeUpdateMaster.go" method="post" id="master_update_form">
 				    	<table border="0" cellspacing="0" cellpadding="0" style="width:70%">
-			         	 	  <tr>&nbsp;<input type="hidden" name="masterDTO.id" value="<#if masterDTO??><#if masterDTO.id??>${masterDTO.id}</#if></#if>"></tr>
+			         	 	  <tr>&nbsp;<input type="hidden" name="mtId" value="<#if returnMaster??><#if returnMaster.mtId??>${returnMaster.mtId}</#if></#if>"></tr>
 				         	  <tr>
-					             <td class="td1">账号：</td><td class="td2">&nbsp;<input type="text" name="masterDTO.account" id="account" value="<#if masterDTO??><#if masterDTO.account??>${masterDTO.account}</#if></#if>"></td>
+					             <td class="td1">账号：</td><td class="td2">&nbsp;<input type="text" name="account" id="account" value="<#if returnMaster??><#if returnMaster.account??>${returnMaster.account}</#if></#if>"></td>
 					          </tr>
 					          <tr>
-					             <td class="td1">密码：</td><td class="td2">&nbsp;<input type="text" name="masterDTO.password" id="password" value="<#if masterDTO??><#if masterDTO.password??>${masterDTO.password}</#if></#if>"></td>
+					             <td class="td1">密码：</td><td class="td2">&nbsp;<input type="text" name="password" id="password" value="<#if returnMaster??><#if returnMaster.password??>${returnMaster.password}</#if></#if>"></td>
 					          </tr>
 					          <tr>   
-					             <td class="td1">姓名：</td><td class="td2">&nbsp;<input type="text" name="masterDTO.name" id="name" value="<#if masterDTO??><#if masterDTO.name??>${masterDTO.name}</#if></#if>"></td>
+					             <td class="td1">姓名：</td><td class="td2">&nbsp;<input type="text" name="name" id="name" value="<#if returnMaster??><#if returnMaster.name??>${returnMaster.name}</#if></#if>"></td>
 					          </tr>
 					          <tr>   
-					             <td class="td1">电话：</td><td class="td2">&nbsp;<input type="text" name="masterDTO.telephone" id="telephone" value="<#if masterDTO??><#if masterDTO.telephone??>${masterDTO.telephone}</#if></#if>"></td>
+					             <td class="td1">电话：</td><td class="td2">&nbsp;<input type="text" name="telephone" id="telephone" value="<#if returnMaster??><#if returnMaster.telephone??>${returnMaster.telephone}</#if></#if>"></td>
 					          </tr>
 					          <tr>   
-					             <td class="td1">手机：</td><td class="td2">&nbsp;<input type="text" name="masterDTO.mobile" id="mobile" value="<#if masterDTO??><#if masterDTO.mobile??>${masterDTO.mobile}</#if></#if>"></td>
+					             <td class="td1">手机：</td><td class="td2">&nbsp;<input type="text" name="mobile" id="mobile" value="<#if returnMaster??><#if returnMaster.mobile??>${returnMaster.mobile}</#if></#if>"></td>
 					          </tr>
 					          <tr>   
-					             <td class="td1"> email：</td><td class="td2">&nbsp;<input type="text" name="masterDTO.email" id="email" value="<#if masterDTO??><#if masterDTO.email??>${masterDTO.email}</#if></#if>"></td>
+					             <td class="td1"> email：</td><td class="td2">&nbsp;<input type="text" name="email" id="email" value="<#if returnMaster??><#if returnMaster.email??>${returnMaster.email}</#if></#if>"></td>
 					          </tr>
 					          <tr>   
 					             <td class="td1">状态：</td><td class="td2">
-					             	<#if masterDTO??>
-							      		 <#if masterDTO.forbidden??>
-							      		 	 <#if (!masterDTO.forbidden)>
-							      		 	  &nbsp;<input style="width:30px; border: 0px;" type="radio" name="masterDTO.forbidden" value = "false" checked="checked">禁用&nbsp;<input style="width:30px; border: 0px;" type="radio" name="masterDTO.forbidden" value = "true">启用<br>
+					             	<#if returnMaster??>
+							      		 <#if returnMaster.forbidden??>
+							      		 	 <#if (returnMaster.forbidden == 0)>
+							      		 	  &nbsp;<input style="width:30px; border: 0px;" type="radio" name="forbidden" value = "0" checked="checked">禁用&nbsp;<input style="width:30px; border: 0px;" type="radio" name="forbidden" value = "1">启用<br>
 							      		 	 </#if>
-							      		 	  <#if (masterDTO.forbidden)>
-							      		 	&nbsp;<input style="width:30px; border: 0px;" type="radio" name="masterDTO.forbidden" value = "false" >禁用&nbsp;<input style="width:30px; border: 0px;" type="radio" name="masterDTO.forbidden" value = "true" checked="checked">启用<br>
+							      		 	  <#if (returnMaster.forbidden == 1)>
+							      		 	&nbsp;<input style="width:30px; border: 0px;" type="radio" name="forbidden" value = "0" >禁用&nbsp;<input style="width:30px; border: 0px;" type="radio" name="forbidden" value = "1" checked="checked">启用<br>
 							      		 	 </#if>
 							      		 <#else>
-							      		 	&nbsp;<input style="width:30px; border: 0px;" type="radio" name="masterDTO.forbidden" value = "false">禁用&nbsp;<input style="width:30px; border: 0px;" type="radio" name="masterDTO.forbidden" value = "true">启用<br>
+							      		 	&nbsp;<input style="width:30px; border: 0px;" type="radio" name="forbidden" value = "0">禁用&nbsp;<input style="width:30px; border: 0px;" type="radio" name="forbidden" value = "1">启用<br>
 							      		 </#if>
 						      		 </#if> 
 					             </td>
 					           </tr>
-					          <tr> <td class="td1"><button  onclick="return updateMaster()">更新</button></td><td class="td2">&nbsp;&nbsp;<button  onclick="return reset()">重置</button></td></tr>
-					          <#if (actionNos?index_of("ceshi") >= 0)><button  onclick="return updateMaster()">测试</button></#if>
+					          <tr> <td class="td1"></td><td class="td2"><img src="/images/common/save.jpg" onclick="updateMaster()" width="30px"/></td></tr>
 				    	 </table>
 				    </form>
 			    </div>

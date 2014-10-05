@@ -6,6 +6,8 @@
 	<link href="/style/manage/index.css" rel="stylesheet" />
 	<script type="text/javascript" src="/script/jquery/jquery-1.7.js"></script>
 	<script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
+	<script src="/script/jquery/jquery.pagination.js" type="text/javascript" ></script>
+	<script type="text/javascript" src="/script/admin/action_manage.js"></script>
 
 	<script type="text/javascript">
 		function reset(){
@@ -14,23 +16,12 @@
 		}
 		
 		$(function(){
-			var condition = "";
-			
-	 		var account = $('#account').val();
-			if(account != ''){
-				condition = "&account="+account;
-			}
-			var name = encodeURI($('#name').val());
-			if(name != ''){
-				condition = "&name="+name;
-			}
-			
-		    $('.pagination').pagination(${pager.totalRecords?c}, {
-				items_per_page: ${pager.pageSize},
-				current_page: ${page - 1},
+		    $('.pagination').pagination(${masterSearch.totalRecords?c}, {
+				items_per_page: ${masterSearch.pageSize},
+				current_page: ${masterSearch.pageNo - 1},
 				prev_show_always:false,
 				next_show_always:false,
-				link_to: encodeURI('/manage/manage_obtainAllMasterList.shtml?page=__id__&'+condition)
+				link_to: encodeURI('/manage/manage_obtainAllMasterList.shtml?page=__id__')
 		    });
 	   	});
 	   	
@@ -83,9 +74,9 @@
 </head>   
   <body>
 	 <div class="page"><!--page开始-->
-		<#include "/WEB-INF/page/manage/include/top.ftl">
+		<#include "/admin/common/top.ftl">
 		<div class="main clear"><!--main开始-->
-				<#include "/WEB-INF/page/manage/include/left_new.ftl">
+			<#include "/admin/common/left.ftl">
 			<div class="right">
 				<div class="m-r">
 					<div style="padding:5px;background:none repeat scroll 0 0 #E4EAF6; margin-bottom:5px;border:1px solid #4F69A0">
@@ -103,37 +94,29 @@
 				    <div>
 				    <table class="table2">
 		            	<tr>
-		                    <th style="width:5%; height:28px;" >账号</th>
-		                    <th style="width:8%">姓名</th>
-		                    <th style="width:7%">电话</th>
-		                    <th style="width:7%">手机</th>
-		                    <th style="width:5%">email</th>
-		                    <th style="width:5%"> 状态</th>
-		                    <th style="width:27%">操作</th>
+		                    <th style="width:15%; height:28px;" >账号</th>
+		                    <th style="width:15%">姓名</th>
+		                    <th style="width:15%">电话</th>
+		                    <th style="width:15%">手机</th>
+		                    <th style="width:15%">email</th>
+		                    <th style="width:15%"> 状态</th>
+		                    <th style="width:10%">操作</th>
 	               	    </tr>
-	               	 <#if pager??><#if pager.records??>
-			    			<#list pager.records as master>
+	               	 <#if masterList??>
+			    			<#list masterList as master>
 					    		<tr>
 					    			<td><#if master.account??>${master.account}</#if></td>
 						      		<td><#if master.name??>${master.name}</#if></td>
 						      		<td><#if master.telephone??>${master.telephone}</#if></td>
 						      		<td><#if master.mobile??>${master.mobile}</#if></td>
 						      		<td><#if master.email??>${master.email}</#if></td>
-						      		<td><#if master.forbidden??><#if (!master.forbidden)>禁用</#if><#if (master.forbidden)>启用</#if></#if></td>
+						      		<td><#if master.forbidden??><#if (master.forbidden == 0)>禁用</#if><#if (master.forbidden == 1)>启用</#if></#if></td>
 						      		<td>
-						      			<#if (actionNos?index_of("glygl") >= 0)>
-						      				<a href="/manage/manage_goUpdateMaster.shtml?masterDTO.id=${master.mtId}">更新</a> &nbsp; &nbsp;
-						      			</#if>
-						      			<#if (actionNos?index_of("glyqx") >= 0)>
-						      				<a href="/manage/manage_goUpdateAction.shtml?masterDTO.id=${master.mtId}">权限管理</a>&nbsp; &nbsp;
-						      			</#if>
-						      			<#if (actionNos?index_of("fzglygx") >= 0)>
-						      				<a href="/manage/manage_goCopyAction.shtml?masterDTO.id=${master.mtId}">权限复制</a>
-						      			</#if>
+					      				<a href="/admin/master/goUpdateMaster.go?id=${master.mtId}">更新</a>
 						      		</td>
 						      	</tr>
 				      		</#list>
-				      	</#if></#if>
+				      	</#if>
 		            </table>
 		            </div>
 			    </div>
