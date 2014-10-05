@@ -13,12 +13,6 @@
 	<script charset="utf-8" src="/resources/common/plugin/kindeditor/lang/zh_CN.js"></script>
 	<script type="text/javascript" src="/resources/common/plugin/kindeditor/plugins/code/prettify.js"></script>
 	
-	<!-- 多图片异步上传 -->
-	<link rel="stylesheet" type="text/css" href="/resources/common/plugin/diyUpload/css/webuploader.css">
-	<link rel="stylesheet" type="text/css" href="/resources/common/plugin/diyUpload/css/diyUpload.css">
-	<script type="text/javascript" src="/resources/common/plugin/diyUpload/js/webuploader.html5only.min.js"></script>
-	<script type="text/javascript" src="/resources/common/plugin/diyUpload/js/diyUpload.js"></script>
-	
 	<title>添加产品</title>
 	
 	<script>
@@ -59,7 +53,7 @@
 			起投金额：<input type="text" name="minBidMoney" id="minBidMoney" placeholder="起投金额">5000<p>
 			
 			收益分配：<input type="text" name="profitDistribution" id="profitDistribution" placeholder="收益分配">半年分配一次收益<p>
-			是否抵押：<select name="isMortgage" id="isMortgage" onchange=check(this)>
+			是否抵押：<select name="isMortgage" id="isMortgage">
 						<option value ="1" >有抵押</option>
 						<option value ="2" >无抵押</option>
 				   </select><p>
@@ -77,36 +71,8 @@
 			
 			风控措施 ：<textarea style="width:200px;height:100px;" name="windControlMeasures" id="windControlMeasures" placeholder="交易结构"></textarea><p>
 			
-			
-			<h1>上传产品抵押产品</h1>
-			
-			<div id="demo">
-				<div id="as" ></div>
-			</div>
-			
 			<input name="sub" value="提交" onclick="return addProductInfo()" class="btn1" type="button">
 		</form>
 	
   </body>
-  
-  <script type="text/javascript">
-	  $('#as').diyUpload({
-		url:'/admin/productInfo/saveImage.go',
-		success:function( data ) {
-			console.info( data );
-		},
-		error:function( err ) {
-			console.info( err );	
-		},
-		buttonText : '选择文件',
-		chunked:true,
-		// 分片大小
-		chunkSize:512 * 1024,
-		//最大上传的文件数量, 总文件大小,单个文件大小(单位字节);
-		fileNumLimit:50,
-		fileSizeLimit:500000 * 1024,
-		fileSingleSizeLimit:50000 * 1024,
-		accept: {}
-	  });
-  </script>
 </html>
