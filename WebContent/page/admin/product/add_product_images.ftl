@@ -5,9 +5,12 @@
 	<script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
 	<script src="/script/product/product.js" type="text/javascript" ></script>
 	
-	<style>#mortgageDiv{ margin:50px auto; width:540px; min-height:200px; background:#CF9}</style>
+	<style>#mortgageDiv{ margin:50px auto; width:540px; min-height:200px;border:1px solid #000;}</style>
 	
-	<style>#mainImageDiv{ margin:50px auto; width:240px; min-height:200px; background:#CF9}</style>
+	<style>#mainImageDiv{ margin:50px auto; width:240px; min-height:200px; border:1px solid #000;}</style>
+	
+	<!-- 样式 -->
+	<link href="/style/manage/index.css" rel="stylesheet" />
 	
 	<!-- 多图片异步上传 -->
 	<link rel="stylesheet" type="text/css" href="/resources/common/plugin/diyUpload/css/webuploader.css">
@@ -15,19 +18,65 @@
 	<script type="text/javascript" src="/resources/common/plugin/diyUpload/js/webuploader.html5only.min.js"></script>
 	<script type="text/javascript" src="/resources/common/plugin/diyUpload/js/diyUpload.js"></script>
 	
+	<script type="text/javascript">
+		function addMortgageImage(){
+			$('#product_info_form').submit();
+		}
+	</script>
+	
 	<title>添加产品主图及抵押产品图片</title>
 	
 </head>
   <body>
-		<form name="form_wm" id="product_info_form" method="post" action="/admin/productInfo/addImage.go" enctype="multipart/form-data">
+  
+	  <div class="page"><!--page开始-->
+			<#include "/admin/common/top.ftl">
+			<div class="main clear"><!--main开始-->
+				<#include "/admin/common/left.ftl">
+				<div class="right1">
+					<h3>产品管理&gt;&gt;添加产品图片</h3>
+				    
+				    <div class="r1_bottom" id="layer0">
+			      		<form id="product_info_form" method="post" action="/admin/productInfo/addImage.go" enctype="multipart/form-data">
+			      			 <input type="hidden" id="id" name="id" value="${proInfoId}"/>
+				      		 <table border="0" cellspacing="0" cellpadding="0" style="width:70%">
+				         	 	  <tr>&nbsp;</tr>
+					         	  <tr>
+						             <td class="td1">产品主图：</td>
+						             <td class="td2">&nbsp;
+						             	<div id="mainImageDiv">
+											<div id="mainImageContent" ></div>
+										</div>
+										<input type="hidden" name="mainImage" id="mainImage"/>
+						             </td>
+						          </tr>
+						          
+						          <tr>
+						             <td class="td1">抵押产品图片：</td>
+						             <td class="td2">&nbsp;
+						             	<div id="mortgageDiv">
+											<div id="mortgageImagesDiv" ></div>
+										</div>
+										<input type="hidden" name="mortgageImage" id="mortgageImage"/>
+						             </td>
+						          </tr>
+						          
+						          <tr> <td class="td1"><button onclick="return addMortgageImage()">保存</button></td></tr>
+					    	 </table>
+					    </form>
+				    </div>
+			    </div>
+			</div>
+		</div>
+	
+	
+	
+<!--		<form name="form_wm" id="product_info_form" method="post" action="/admin/productInfo/addImage.go" enctype="multipart/form-data">
 			
-			<input type="hidden" id="id" name="id" value="${proInfoId}"/>
+			
 			
 			<h3>产品主图：</h3>
-				<div id="mainImageDiv">
-					<div id="mainImageContent" ></div>
-				</div>
-				<input type="text" name="mainImage" id="mainImage"/>
+				
 			
 			<h3>上传抵押产品图片</h3>
 			
@@ -37,7 +86,7 @@
 			<input type="text" name="mortgageImage" id="mortgageImage"/>
 			
 			<input name="sub" value="提交" class="btn1" type="submit">
-		</form>
+		</form>  -->
 	
   </body>
   
