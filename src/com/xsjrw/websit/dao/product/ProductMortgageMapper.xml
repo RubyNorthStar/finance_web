@@ -27,6 +27,15 @@
 		#{createTime}
 	</sql>
 	
+	<sql id="entity_batch_properties">
+		#{item.id},
+		#{item.mortgageName},
+		#{item.imagUrl},
+		#{item.productId},
+		#{item.status},
+		#{item.createTime}
+	</sql>
+	
 	<!-- 适用于主键自增类型 -->
 	<insert id="saveProductMortgage" parameterType="ProductMortgage" useGeneratedKeys="true" keyProperty="id">
 		insert into tbl_product_mortgage( <include refid="table_columns" /> ) 
@@ -38,7 +47,7 @@
 		insert into tbl_product_mortgage( <include refid="table_columns" /> ) 
 		values 
 		<foreach item="item" collection="list" separator="," >
-			( <include refid="entity_properties" /> )
+			( <include refid="entity_batch_properties" /> )
 		</foreach>
 	</insert>
 	

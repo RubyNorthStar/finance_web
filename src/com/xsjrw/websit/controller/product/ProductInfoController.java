@@ -1,9 +1,9 @@
 package com.xsjrw.websit.controller.product;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,18 +18,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.xsjrw.common.constans.Constans;
 import com.xsjrw.common.util.FileBean;
 import com.xsjrw.common.util.FileUploadUtil;
-import com.xsjrw.websit.core.util.ParamUtil;
 import com.xsjrw.websit.domain.product.ProductFundType;
 import com.xsjrw.websit.domain.product.ProductInfo;
+import com.xsjrw.websit.domain.product.ProductMortgage;
+import com.xsjrw.websit.dto.ProductImageDTO;
 import com.xsjrw.websit.search.product.ProductInfoSearch;
 import com.xsjrw.websit.service.product.IProductFundTypeService;
 import com.xsjrw.websit.service.product.IProductInfoService;
+import com.xsjrw.websit.service.product.IProductMortgageService;
 
 /**
  * Controller of ProductInfo
@@ -45,6 +46,9 @@ public class ProductInfoController {
 	
 	@Autowired
 	private IProductFundTypeService productFundTypeService;
+	
+	@Autowired
+	private IProductMortgageService productMortgageService;
 	
 	@RequestMapping(value="/test")
 	public String ueditorTest(){
@@ -65,6 +69,12 @@ public class ProductInfoController {
 		return "admin/product/product_info_list";
 	}
 	
+	/**
+	 * 添加产品
+	 * @param model
+	 * @param productInfo
+	 * @return
+	 */
 	@RequestMapping(value="/add")
 	public String add(Model model, ProductInfo productInfo) {
 		
@@ -81,6 +91,63 @@ public class ProductInfoController {
 		}
 		
 		productInfoService.saveProductInfo(productInfo);
+		Integer proInfoId = productInfo.getId();
+		System.out.println("=====proInfoId====="+proInfoId);
+		return "redirect:/admin/productInfo/addProImage.go?proInfoId="+proInfoId+"&isMortgage="+productInfo.getIsMortgage();
+	}
+	
+	/**
+	 * 添加产品主图及抵押产品图片
+	 * @return
+	 */
+	@RequestMapping(value="addProImage")
+	public String addProductImages(Model model, Integer isMortgage, Integer proInfoId){
+		
+		System.out.println("=====isMortgage====="+isMortgage);
+		System.out.println("=====proInfoId====="+proInfoId);
+		
+		model.addAttribute("proInfoId", proInfoId);
+		model.addAttribute("isMortgage", isMortgage);
+		
+		return "admin/product/add_product_images";
+	}
+	
+	/**
+	 * 为产品添加主图及抵押产品图
+	 * @param imageDto
+	 * @return
+	 */
+	@RequestMapping(value="addImage")
+	public String addImage(ProductImageDTO imageDto){
+		Integer id = imageDto.getId();
+		if(imageDto != null && id != null && id > 0){
+			ProductInfo proInfo = productInfoService.findProductInfoById(id);
+			if(proInfo != null){
+				proInfo.setPicPath(imageDto.getMainImage());
+			}
+			productInfoService.update(proInfo);
+		}
+		
+		String imagePaths = imageDto.getMortgageImage();
+		String[] imagePathArr = null ;
+		if(imagePaths != null && imagePaths.length() > 0){
+			imagePathArr = imagePaths.split(",");
+		}
+		
+		List<ProductMortgage> mortages = new ArrayList<ProductMortgage>();
+		if(imagePathArr.length > 0){
+			for(int i = 0; i < imagePathArr.length; i++){
+				ProductMortgage mortage = new ProductMortgage();
+				mortage.setCreateTime(new Date());
+				mortage.setImagUrl(imagePathArr[i]);
+				mortage.setStatus(1);
+				mortage.setProductId(id);
+				mortages.add(mortage);
+			}
+			
+			productMortgageService.batchSaveProductMortgage(mortages);
+		}
+		
 		return "redirect:/admin/productInfo.go";
 	}
 	
@@ -164,13 +231,16 @@ public class ProductInfoController {
 		response.setContentType("text/html");
 		try {
 	        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-	        Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
-			String  uploadPath = Constans.PRODUCTIMAGEPATH;	   
+			String uploadPath = Constans.PRODUCTIMAGEPATH;
+			java.text.DateFormat format1 = new java.text.SimpleDateFormat(  
+	                "yyyy-MM-dd");  
+	        String day = format1.format(new Date());  
+			String nextLevel = day.substring(0, 4)+"/"+day.substring(5, 7)+"/"+day.substring(8);
 			List<FileBean> fileList = FileUploadUtil.upload(request,
-					multipartRequest, "",uploadPath, "next");
+					multipartRequest, "",uploadPath, nextLevel);
 			
 			response.getWriter().print(
-					"{\"url\":\"" + "http://www.xsjrw.com/product/imgaes/" + fileList.get(0).getServerName() + "\",\"error\":0}");
+					"{\"url\":\"" + "/" + nextLevel + "/" + fileList.get(0).getServerName() + "\",\"error\":0}");
 			
 //			return Constans.PRODUCTSERVICEPATH+fileList.get(0).getServerName();
 		} catch (Exception e) {

@@ -110,6 +110,9 @@ function addProductInfo(){
 
 function updateStatus(id,obj){
 	
+	/2014/10/06/1412583297923s7h658tbox.jpg
+	
+	
 	$.ajax({
 		type: "POST",
 		url : "/admin/productInfo/updateStatus.go",
