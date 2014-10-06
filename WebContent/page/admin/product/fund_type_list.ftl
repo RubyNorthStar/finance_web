@@ -3,6 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link href="/style/manage/index.css" rel="stylesheet" />
+	<link href="/style/manage/page.css" rel="stylesheet" />
 	<script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
 	<script src="/script/jquery/jquery.pagination.js" type="text/javascript" ></script>
 	<title>基金类型列表</title>
@@ -20,20 +21,18 @@
 				current_page: ${search.pageNo - 1},
 				prev_show_always:false,
 				next_show_always:false,
-				link_to: encodeURI('admin/fundType.go?page=__id__')
+				link_to: encodeURI('admin/fundType.go?pageNo=__id__')
 		    });
 	   	});
 	   	
 	   	function searchMaster(){
 	   		$('#master_list_form').submit();
 	   	}
+	   	
 	</script>
 	
 </head>
   <body>
-	
-	
-	
 	<div class="page"><!--page开始-->
 		<#include "/admin/common/top.ftl">
 		<div class="main clear"><!--main开始-->
@@ -44,8 +43,7 @@
 		      		<form action="/manage/manage_obtainAllMasterList.shtml" method="post" id="master_list_form">
 			      		 <table >
 		        			<tr>
-								<td> 账号：<input type="text" name="masterDTO.account" id="account" value=""></td>
-							 	<td>姓名：<input type="text" name="masterDTO.name" id="name" value=""></td>
+								<td> 类型名称：<input type="text" name="masterDTO.account" id="account" value="<#if masterDTO??><#if masterDTO.account??>${masterDTO.account}</#if></#if>"></td>
 								<td><button  onclick="return searchMaster()">查询</button>
 								<td width="540px;">&nbsp;</td>
 							</tr>
@@ -63,7 +61,6 @@
 		               	 <#if fundTypes??>
 				    			<#list fundTypes as fund>
 						    		<tr>
-		
 						    			<td><#if fund.fundName??>${fund.fundName}</#if></td>
 							      		<td><#if fund.status??>${fund.status}</#if></td>
 							      		<td><#if fund.createTime??>${fund.createTime?string('yyyy-MM-dd')}</#if></td>

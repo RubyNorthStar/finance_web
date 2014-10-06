@@ -1,0 +1,40 @@
+.divcenter {
+	text-align:center; 
+	color: #0066CC; 
+	margin:5px auto;
+	background-color:#ccc;
+}
+a {
+	behavior: url(/script/jquery/hideFoucs.htc);
+}
+.rightPager{
+	float: right; 
+	height: 20px; 
+	margin: 5px 5px 0 0 ;
+}
+.pagination .current {
+	/*background-color:#D8DFEA;*/
+	font-weight:bold;
+	border: 1px solid #CCCCCC;
+	color:#ffffff;
+	display:block;
+	float:left;
+	padding:5px;
+	text-decoration:none;
+	font-size: 15px;
+	margin-right: 5px;
+	background: none repeat scroll 0 0 #647cbc;
+}
+.pagination a,.pagination span {
+ 	border: 1px solid #CCCCCC;
+	color:#000000;
+	display:block;
+	float:left;
+	padding:5px;
+	text-decoration:none;
+	font-size: 15px;
+	margin-right: 5px;
+}
+.Left {
+	text-align: left;
+}

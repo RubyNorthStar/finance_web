@@ -85,7 +85,7 @@ public class ProductFundTypeController {
 		
 		ProductFundType fundType = null;
 		//查询出该类型，然后更新
-		if(id == null){
+		if(id != null){
 			fundType = productFundTypeServiceImpl.findProductFundTypeById(id);
 			fundType.setStatus(2);
 		}
