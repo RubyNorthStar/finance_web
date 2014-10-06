@@ -3,6 +3,7 @@ package com.xsjrw.websit.search.user;
 import java.util.Date;
 
 import org.apache.ibatis.type.Alias;
+
 import com.xsjrw.websit.core.domain.PageModel;
 
 /**
@@ -11,7 +12,6 @@ import com.xsjrw.websit.core.domain.PageModel;
  * @author wang.zx
  * @date 2014-9-25
  */
-@SuppressWarnings("unchecked")
 @Alias("UsersSearch")
 public class UsersSearch extends PageModel {
 	

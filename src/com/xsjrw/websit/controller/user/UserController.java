@@ -15,7 +15,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import net.sf.json.JSONArray;
 
 import com.xsjrw.common.constans.UserConstans;
 import com.xsjrw.common.listener.UserSessionListener;
