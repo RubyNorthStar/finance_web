@@ -7,8 +7,17 @@
 	        		<a href="obtainMasterList.go" onclick="javascript:showCurPic('picId000001')">管理员列表</a>
 	        	</li>
 	            <li class="dd" onmouseover="javascript:onChangeLeftTreePic('picId000002')" onmouseout="javascript:onChangeLeftTreePic2('picId000002')" id="picId000002">
-	           		<a href="goAddMaster.go" onclick="javascript:showCurPic('picId000002')">廷加管理员</a>
+	           		<a href="goAddMaster.go" onclick="javascript:showCurPic('picId000002')">添加管理员</a>
 	            </li>
+            </ul>
+            <div class="dt"><a >产品管理</a></div>
+    		<ul id="ul1" style="display:block">
+	        	<li class="dd" onmouseover="javascript:onChangeLeftTreePic('picId100001')" onmouseout="javascript:onChangeLeftTreePic2('picId100001')" id="picId100001">
+	        		<a href="/admin/fundType/add.go" onclick="javascript:showCurPic('picId100001')">添加产品类型</a>
+	        	</li>
+	        	<li class="dd" onmouseover="javascript:onChangeLeftTreePic('picId100002')" onmouseout="javascript:onChangeLeftTreePic2('picId100002')" id="picId100002">
+	        		<a href="/admin/fundType.go" onclick="javascript:showCurPic('picId100002')">产品类型列表</a>
+	        	</li>
             </ul>
 	      	<div class="dt"><a href="javascript:showActionLeft('ul7');">文章类型管理</a></div>
 	      	<ul id="ul7" style="display:block">
