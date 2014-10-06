@@ -14,54 +14,54 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.xsjrw.websit.domain.article.ArticleInfo;
-import com.xsjrw.websit.search.article.ArticleInfoSearch;
-import com.xsjrw.websit.service.article.IArticleInfoService;
+import com.xsjrw.websit.domain.article.ArticleInfoType;
+import com.xsjrw.websit.search.article.ArticleInfoTypeSearch;
+import com.xsjrw.websit.service.article.IArticleInfoTypeService;
 
 /**
- * Controller of ArticleInfo
+ * Controller of ArticleInfoType
  * @author wang.zx
  * @date 2014-10-6
  */
 @Controller
-@RequestMapping("/articleInfo")
-public class ArticleInfoController {
+@RequestMapping("/articleInfoType")
+public class ArticleInfoTypeController {
 	
 	@Autowired
-	private IArticleInfoService articleInfoService;
+	private IArticleInfoTypeService articleInfoTypeService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String list(Model model, ArticleInfoSearch search){
+	public String list(Model model, ArticleInfoTypeSearch search){
 		if (search == null) {
-			search = new ArticleInfoSearch();
+			search = new ArticleInfoTypeSearch();
 			// search.setPageSize(20);
 		}
-		model.addAttribute("list", articleInfoService.findArticleInfoByPage(search));
-		return "articleInfo/list";
+		model.addAttribute("list", articleInfoTypeService.findArticleInfoTypeByPage(search));
+		return "articleInfoType/list";
 	}
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST)
-	public String add(ArticleInfo ArticleInfo) {
-		articleInfoService.saveArticleInfo(ArticleInfo);
-		return "redirect:/articleInfo";
+	public String add(ArticleInfoType ArticleInfoType) {
+		articleInfoTypeService.saveArticleInfoType(ArticleInfoType);
+		return "redirect:/articleInfoType";
 	}
 	
 	@RequestMapping(value="/update", method = RequestMethod.POST)
-	public String update(ArticleInfo ArticleInfo) {
-		articleInfoService.update(ArticleInfo);
-		return "redirect:/articleInfo";
+	public String update(ArticleInfoType ArticleInfoType) {
+		articleInfoTypeService.update(ArticleInfoType);
+		return "redirect:/articleInfoType";
 	}
 	
 	@RequestMapping(value="/del/{id}", method = RequestMethod.GET)
 	public String del(Model model, @PathVariable Integer id) {
-		articleInfoService.deleteArticleInfoById(id);
-		return "redirect:/articleInfo";
+		articleInfoTypeService.deleteArticleInfoTypeById(id);
+		return "redirect:/articleInfoType";
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
-	public ArticleInfo getJson(Model model, @PathVariable Integer id){
-		return articleInfoService.findArticleInfoById(id);
+	public ArticleInfoType getJson(Model model, @PathVariable Integer id){
+		return articleInfoTypeService.findArticleInfoTypeById(id);
 	}
 	
 	/**
