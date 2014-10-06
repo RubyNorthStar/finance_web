@@ -10,22 +10,41 @@
   <body>
 	
 	<div class="views">
-	    <div class="view">
-	        <!--头部导航-->
+	<!--头部导航-->
 	        <div class="navbar">
-	            <div class="navbar-inner">
+	            <div class="navbar-inner clearfix">
 	                <div class="left">
-	                    <img class="top-logo" src="/resources/images/user/logo.jpg" />
+	                    <img class="top-logo" src="/resources/images/user/logo.png" />
+	                </div>
+	                <div class="right">
+	                	<i class="rightI" style=""></i>
 	                </div>
 	                <div class="login" style="display: block">
-	                    <span style="margin: 0 10px;">|</span>
 	                    <a href="javascript:;">注册</a>
 	                </div>
 	            </div>
 	        </div>
+	    <div class="view">
 	        <!--中间内容-->
 	        <!--注册页-->
 	        <div class="pages clearfix " style="display: block">
+	        <!-- 提交注册记录条
+	        	<div class="schedule clearfix">
+	        		<div class="scheduleBG"></div>
+	        		<i class="num numActive">1</i>
+	        		<div class="scheduleBG"></div>
+	        		<i class="num">2</i>
+	        		<div class="scheduleBG"></div>
+	        		<i class="num">3</i>
+	        		<div class="scheduleBG"></div>
+	        		<div><a href="javascript:;">已有账号？立即登录</a></div>
+	        	</div>
+	        	<div class="schedule clearfix">
+	        		<i class="scheduleText ml125">填写账户信息</i>
+	        		<i class="scheduleText ml105">手机信息验证</i>
+	        		<i class="scheduleText ml105">注册成功</i>
+	        	</div>
+	        	-->
 	            <div class="content-block">
 	                <img class="left-img" src="/resources/images/user/2.jpg" />
 	            </div>
@@ -38,19 +57,19 @@
 	                    </div>
 	
 	                    <div class="input-box">
-	                        <i class="icon icon-user"></i>
+	                        <i class="icon icon-number"></i>
 	                        <input class="input-text code" type="text" name="mobile" id="mobile" placeholder="手机号码">
 	                    </div>
 	                    <div class="input-box">
-	                        <i class="icon icon-user"></i>
+	                        <i class="icon icon-mail"></i>
 	                        <input class="input-text code" type="text" name="email" id="email" placeholder="邮箱">
 	                    </div>
 	                    <div class="input-box">
-	                        <i class="icon icon-user"></i>
+	                        <i class="icon icon-code"></i>
 	                        <input class="input-text code" type="password" name="password" id="password" placeholder="设置密码">
 	                    </div>
 	                    <div class="input-box">
-	                        <i class="icon icon-user"></i>
+	                        <i class="icon icon-code"></i>
 	                        <input class="input-text code" type="password" name="confirm_password" id="confirm_password" placeholder="重复密码">
 	                    </div>
 	                    <div class="input-box clearfix">
@@ -67,7 +86,7 @@
 	            </div>
 	        </div>
 	        <!--底部工具栏-->
-	        <div class="page clearfix">
+	        <div class="page clearfix" style="margin-bottom: 40px;">
 	            <div class="toolbar">
 	                <img class="bottom-logo" src="/resources/images/user/0013.jpg" />
 	            </div>
