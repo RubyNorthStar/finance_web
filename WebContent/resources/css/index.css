@@ -1,5 +1,5 @@
 *{padding:0; margin: 0; font-size: 12px;}
-body,ul,li,p,a,h1,h2,h3,h4,h5,h6,i{margin: 0; padding: 0; font-size: 12px; font-family: "微软雅黑";}
+body,ul,li,p,a,h1,h2,h3,h4,h5,h6,i{margin: 0; padding: 0; font-size: 12px; font-family: "寰蒋闆呴粦";}
 li{list-style: none;}
 i{font-style:normal;}
 td,th{padding:0;}
@@ -50,7 +50,7 @@ img{vertical-align: top;}
 .pages{
     margin: 50px 0 0 150px;
 }
-/*  提交注册记录条
+/*  鎻愪氦娉ㄥ唽璁板綍鏉�
 .pages .schedule .scheduleBG{
 	width:130px; height:5px;
 	background:#a0a0a0; float:left;
@@ -222,7 +222,7 @@ img{vertical-align: top;}
 }
 
 
-/*注册页*/
+/*娉ㄥ唽椤�/
 .pages .content-block .right-box{
     margin-left: 53px;
 }
@@ -246,7 +246,7 @@ img{vertical-align: top;}
 .button-color2{
     background: #29a7e1;
 }
-/*菜单*/
+/*鑿滃崟*/
 .menu{
     /*font-size: 12px; */
     margin-left: 34%;
@@ -257,7 +257,7 @@ img{vertical-align: top;}
     margin-left: 20px;
 }
 
-/*end 菜单*/
+/*end 鑿滃崟*/
 .body-bg{ background: #efefef;}
 .box-shadow{ box-shadow: 0px 1px 2px rgba(0,0,0,0.5);}
 .content{}
@@ -288,7 +288,7 @@ img{vertical-align: top;}
     color: #0e6eb8; padding:16px 25px; text-align: center; border:1px solid #0e6eb8;
     border-bottom-left-radius: 70px; border-bottom-right-radius:70px; line-height: 20px;
 }
-.data .data1BG{ background: #89ba2a; font-size: 14px; padding:24px 25px;}
+.data .data1BG{ background: #89ba2a; font-size: 14px; padding:27px 25px;}
 .data .data1Border{ border:1px solid #89ba2a;}
 /*index newadd style end*/
 .content-content .right{float: left;}
@@ -337,8 +337,18 @@ th,td{padding: 23px 36px;}
     color: #814e23;font-size: 16px;
 }
 .span6{
-    border-radius: 25px; border: 1px solid #26ac39;padding: 9px 3px;
+    display: block;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 8px;
+    text-align: center;
+    background: url("../images/progressbar_mid.png");
 }
+.ui-progressbar-mid-100{
+    background-position:-5400px 0 ;
+}
+
 
 .phone{padding-left: 42%; margin-bottom: 20px;}
 .number{padding-top: 10px;}
