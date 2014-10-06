@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xsjrw.common.util.JsonUtil;
 import com.xsjrw.websit.domain.product.ProductFundType;
 import com.xsjrw.websit.search.product.ProductFundTypeSearch;
 import com.xsjrw.websit.service.product.IProductFundTypeService;
@@ -29,7 +30,7 @@ import com.xsjrw.websit.service.product.IProductFundTypeService;
 public class ProductFundTypeController {
 	
 	@Autowired
-	private IProductFundTypeService productFundTypeServiceImpl;
+	private IProductFundTypeService productFundTypeService;
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model, ProductFundTypeSearch search){
@@ -39,7 +40,7 @@ public class ProductFundTypeController {
 			// search.setPageSize(20);
 		}
 		
-		List<ProductFundType> fundTypes =  productFundTypeServiceImpl.findProductFundTypeByPage(search);
+		List<ProductFundType> fundTypes =  productFundTypeService.findProductFundTypeByPage(search);
 		model.addAttribute("search", search);
 		model.addAttribute("fundTypes",fundTypes);
 		return "admin/product/fund_type_list";
@@ -52,7 +53,7 @@ public class ProductFundTypeController {
 			return "admin/product/add_fund_type";
 		}
 		
-		productFundTypeServiceImpl.saveProductFundType(productFundType);
+		productFundTypeService.saveProductFundType(productFundType);
 		return "redirect:/admin/fundType.go";
 	}
 	
@@ -61,7 +62,7 @@ public class ProductFundTypeController {
 		
 		//查询出该类型，然后更新
 		if(productFundType.getFundName() == null && productFundType.getId() != null ){
-			ProductFundType fundType = productFundTypeServiceImpl.findProductFundTypeById(productFundType.getId());
+			ProductFundType fundType = productFundTypeService.findProductFundTypeById(productFundType.getId());
 			
 			if(fundType.getStatus() != 2){
 				model.addAttribute("fundType", fundType);
@@ -73,7 +74,7 @@ public class ProductFundTypeController {
 		}
 		
 		if(productFundType.getId() != null && productFundType.getFundName() != null && productFundType.getFundName().length() > 0){
-			productFundTypeServiceImpl.update(productFundType);
+			productFundTypeService.update(productFundType);
 		}
 		
 		return "redirect:/admin/fundType.go";
@@ -86,10 +87,10 @@ public class ProductFundTypeController {
 		ProductFundType fundType = null;
 		//查询出该类型，然后更新
 		if(id != null){
-			fundType = productFundTypeServiceImpl.findProductFundTypeById(id);
+			fundType = productFundTypeService.findProductFundTypeById(id);
 			fundType.setStatus(2);
 		}
-		productFundTypeServiceImpl.update(fundType);
+		productFundTypeService.update(fundType);
 		
 		return "redirect:/admin/fundType.go";
 	}
@@ -97,7 +98,7 @@ public class ProductFundTypeController {
 	@ResponseBody
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
 	public ProductFundType getJson(Model model, @PathVariable Integer id){
-		return productFundTypeServiceImpl.findProductFundTypeById(id);
+		return productFundTypeService.findProductFundTypeById(id);
 	}
 	
 	/**
@@ -109,4 +110,22 @@ public class ProductFundTypeController {
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
+	
+	/**
+	 * 查询所有的基金类型
+	 * @return
+	 */
+	public String obtainFundType(){
+		List<ProductFundType> fundTypes = productFundTypeService.queryAll();
+		String result = "";
+		if(fundTypes != null && fundTypes.size() > 0){
+			try {
+				result = JsonUtil.getJSONString(fundTypes);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
 }
