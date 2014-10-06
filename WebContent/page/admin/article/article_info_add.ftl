@@ -4,11 +4,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>文章添加</title>
 	<link href="/style/manage/index.css" rel="stylesheet" />
-	<script type="text/javascript" src="../script/jquery/jquery-1.7.js"></script>
-	<#-- <script type="text/javascript" src="/script/product/leftTree.js"></script> -->
+	<script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
+	<script src="/script/jquery/jquery.pagination.js" type="text/javascript" ></script>
+	<link href="/style/manage/page.css" rel="stylesheet" />
 	<SCRIPT type="text/javascript" src="/fckeditor/fckeditor.js"></SCRIPT>
 	<SCRIPT type="text/javascript" src="/fckeditor/fckconfig.js"></SCRIPT>
-	<script type="text/javascript" src="/script/publish/publish.js"></script>
+	<script type="text/javascript" src="/script/admin/publish.js"></script>
 </head>
 <script type="text/javascript">
 
@@ -82,16 +83,24 @@
 				    <div class="right1"><!--right开始-->
 				    <h3>文章管理&gt;&gt;文章添加</h3>
 				      <div class="r1_bottom" id="layer0">
-			      		<form action="article_publish_type_saveArticlePublish.shtml" method="post" id="myForm1" enctype ="multipart/form-data">
+				       <#if flag??>
+			      	 	 <#if (flag == '1001')>
+				      	 	保存成功
+				      	 </#if>
+				      	 <#if (flag == '1002')>
+				      	 	保存失败
+				      	 </#if>
+			      	 </#if>
+			      		<form action="/admin/articleInfo/save.go" method="post" id="myForm1" enctype ="multipart/form-data">
 			      			 <table border="0" cellspacing="0" cellpadding="0" style="width:70%">
 			         	 	  <tr>&nbsp;</tr>
 				         	  <tr>
 					             <td class="td1">文章类型： </td>
 								 <td class="td2">
-								 	<SELECT name="articlePublishType.artPubId">
-							    	<#if articlePublishTypeList??>
-										<#list articlePublishTypeList as articlePublishType>
-											<OPTION  value="${articlePublishType.artPubId}">${articlePublishType.artPubName}</OPTION>
+								 	<SELECT name="aptId">
+							    	<#if articleInfoTypeList??>
+										<#list articleInfoTypeList as articleInfoType>
+											<OPTION  value="${articleInfoType.aptId}">${articleInfoType.aptName}</OPTION>
 										</#list>
 									</#if>
 									</SELECT>
@@ -99,39 +108,33 @@
 					          </tr>
 					           <tr>
 					             <td class="td1">文章标题：</td>
-	             				 <td class="td2"><input type="text" id="title" name="articlePublish.title" value=""/></td>
+	             				 <td class="td2"><input type="text" id="title" name="title" value=""/></td>
 					          </tr>
 					          <tr>
 					             <td class="td1">文章来源：</td>
-	             				<td class="td2"><input type="text" id="articleSource" name="articlePublish.articleSource" value=""/></td>
+	             				<td class="td2"><input type="text" id="articleSource" name="articleSource" value=""/></td>
 					          </tr>
 					          <tr>
 					             <td class="td1">相关标签：</td>
-	             				<td class="td2"><input type="text" id="taLabel" name="articlePublish.taLabel" value=""/></td>
+	             				<td class="td2"><input type="text" id="taLabel" name="taLabel" value=""/></td>
 					          </tr>
 					          <tr>
 					             <td class="td1">上传图片：</td>
 					             <td class="td2" colspan="2">
 					             	 <div id="preview_fake">
-						             	<img id="uploadImage" <#if articlePublish??><#if articlePublish.articlePic??>src="${articlePublish.articlePic}"</#if><#else>src="/image/manage/touming.png"</#if> width="210" height="100" border="0"/>
+						             	<img id="uploadImage" name="uploadImage" <#if articleInfo??><#if articleInfo.articlePic??>src="${articleInfo.articlePic}"</#if><#else>src="/images/common/touming.png"</#if> width="210" height="100" border="0"/>
 						             </div>
 						             <div>
 						             	<font color="#FF0000">*建议上传100*210格式图片</font>
 						             </div>
 						             <input type="file" name="file" onchange="loadImage(this);" />
 						             <input type="hidden" id="imageFileName"  name="imageFileName" />
-						             <!--<#if productAwards??>
-						             	<#if productAwards.awardsPic??>
-								             <input class="ra" type="checkbox" name="removeImage" value="true"><font color="red">删除图片</font>
-											 <input class="ra" type="checkbox"  name="updateImage" value="true">更新图片
-						             	</#if> 
-						             </#if>-->
 					             </td>
 						        </tr>
 					          <tr>
 				          	     <td class="td1">文章内容：</td>
              				     <td class="td4"><textarea id="FCKeditor1"></textarea></td>
-		                         <input type="hidden" id="editingCode"  name="articlePublish.editingCode"><br>
+		                         <input type="hidden" id="editingCode"  name="articleInfo.editingCode"><br>
 		                      </tr>
 					     	  <tr>
              					 <td colspan="2" style="text-align:center"><input type="button" onclick="toSubmit()" value="添加" style="width: 50px;"/></td>

@@ -58,6 +58,8 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/sunland-email.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/freemarker-2.3.19.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/fckeditor-java-core-2.6.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/imageinfo-1.9.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>

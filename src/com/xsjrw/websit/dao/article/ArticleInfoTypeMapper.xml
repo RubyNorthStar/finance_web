@@ -108,6 +108,10 @@
 		<include refid="page_where" />
 	</select>
 	
+	<select id="selectAllArticleInfoType" resultMap="articleInfoTypeResultMap" parameterType="ArticleInfoTypeSearch">
+		select <include refid="table_columns" /> from tbl_article_info_type
+	</select>
+	
 	<!-- 其他自定义SQL -->
 	
 </mapper>

@@ -98,4 +98,11 @@ public interface IArticleInfoTypeService  {
 	* @user by wangzx
 	 */
 	List<ArticleInfoType> findArticleInfoTypeByPage(ArticleInfoTypeSearch search);
+	
+	/**
+	 * 获取所有的文章类型
+	 * @param param
+	 * @return
+	 */
+	List<ArticleInfoType> selectAllArticleInfoType();
 }

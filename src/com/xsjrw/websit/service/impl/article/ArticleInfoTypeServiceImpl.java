@@ -61,8 +61,13 @@ public class ArticleInfoTypeServiceImpl implements IArticleInfoTypeService {
 		search.setTotalRecords(totalRecords);
 		return articleInfoTypeMapper.page(search);
 	}
-	
-	
-	
+	/**
+	 * 获取所有的文章类型
+	 * @param param
+	 * @return
+	 */
+	public List<ArticleInfoType> selectAllArticleInfoType(){
+		return articleInfoTypeMapper.selectAllArticleInfoType();
+	}
 	
 }

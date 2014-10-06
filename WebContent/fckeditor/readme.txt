@@ -1,0 +1,5 @@
+对FCKeditor这个功能宏大的编辑器进行精简，当然是文件精简而非功能精简化。在这里我以asp版的FCKeditor为例进行，进入到 FCKeditor 2.0文件夹下，先把以“_”为开头的文件夹统统删除，这些文件夹里放的是范例或是一些其它工具。其实也就是只保留editor文件夹、 fckconfig.js、fckeditor.asp、fckeditor.js、fckstyles.xml、fcktemplates.xml就可以了，最外层的精简化完毕，进入到editor文件夹内，先把“_source”文件夹删除，这里是一些源文件，对于使用来说没什么用处。
+　　进入images文件夹，删除smiley文件夹，这里是放表情图标的，如果你用到自己的表情图标，那就删了吧，当然，如果你想用这里的表情图标那就不要删掉了。
+　　进入lang文件夹内，这里的东西可以来个大清洗了，只保留fcklanguagemanager.js、zh-cn.js、en.js、 zh.js这四个文件，第一个文件是语言配置文件，有了它才能和fckconfig.js里的设置成对对应上相应的语言文件,zh-cn.js是简体中文语言包,en.js就不用说了吧，zh.js是繁体中文的。
+　　进入skin文件夹，如果你想使用fckeditor默认的这种奶黄色，那就把除了default文件夹外的另两个文件夹直接删除，如果想用别的，那就自己考虑了。
+　　进入filemanager文件夹，如果你用的不是最新版的fckeditor的话，那这里就一个文件夹 browser，新版的还有一个upload文件夹。一个个来，先进入到filemanager/browser/default/connectors /下，若用的asp，那么除asp文件夹外，都可以全部删除。然后再进入filemanager/upload/下，同样，只留asp文件夹，至此，编辑器的精简化已经结束了。

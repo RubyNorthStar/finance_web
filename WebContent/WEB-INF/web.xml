@@ -26,6 +26,25 @@
         <url-pattern>*.go</url-pattern>
     </servlet-mapping>
     
+    <servlet> 
+		<servlet-name>Connector </servlet-name> 
+		<servlet-class>net.fckeditor.connector.ConnectorServlet</servlet-class> 
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+		   <param-name>enabled</param-name>
+		   <param-value>true</param-value>
+		 </init-param>
+		<load-on-startup>1 </load-on-startup> 
+	</servlet> 
+    <servlet-mapping> 
+		<servlet-name>Connector </servlet-name> 
+		<url-pattern>/servlet/fckeditor/editor/filemanager/connectors/*</url-pattern> 
+	</servlet-mapping>
+	
+	
     <!--  自动赋值 
 
     <servlet>
