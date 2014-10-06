@@ -11,24 +11,26 @@
   <body>
 	
 	<div class="views">
-		<div class="view">
-            <!--头部导航-->
-			<div class="navbar">
-	          <div class="navbar-inner">
-	          	<div class="left">
-                    <img class="top-logo" src="/resources/images/user/logo.jpg" />
-	            </div>
-	            <div class="login">
-                    <span style="margin: 0 10px;">|</span>
-                  <a href="javascript:;">登陆</a>
+		<!--头部导航-->
+        <div class="navbar">
+            <div class="navbar-inner clearfix">
+                <div class="left">
+                    <img class="top-logo" src="/resources/images/user/logo.png" />
                 </div>
-	          </div>
-	        </div>
+                <div class="right">
+                	<i class="rightI" style=""></i>
+                </div>
+                <div class="login" style="display: block">
+                    <a href="javascript:;">登录</a>
+                </div>
+            </div>
+        </div>
+		<div class="view"> 
             <!--中间内容-->
                 <!--登陆页-->
             <div class="pages clearfix">
                 <div class="content-block">
-                    <img class="left-img" src="/resources/images/user/1.jpg" />
+                    <img class="left-img" style="height:397px;" src="/resources/images/user/1.jpg" />
                 </div>
                 <div class="content-block">
                     <div class="right-block">
@@ -39,12 +41,12 @@
 	                        </div>
 	
 	                        <div class="input-block">
-	                            <i class="icon icon-user"></i>
+	                            <i class="icon icon-code"></i>
 	                            <input class="input-text code" type="password" name="password" id="password" placeholder="密码">
 	                        </div>
 	                        <div class="text">
 	                            <div class="input-ck">
-	                                <input class="input-checkbox" type="checkbox" id="remember">
+	                                <input class="input-checkbox" type="checkbox" checked="checked" id="remember">
 	                            </div>
 	                            	记住用户名
 	                            <a class="forget Acolor" href="javascript:;">忘记密码</a>
@@ -61,15 +63,15 @@
                              	   您还可以使用合作账号登陆
                             </p>
 
-                            <i class="icon icon-user"></i>
-                            <i class="icon icon-user"></i>
+                            <i class="icon icon-wb"></i>
+                            <i class="icon icon-qq"></i>
                         </div>
 
                     </div>
                 </div>
             </div>
             <!--底部工具栏-->
-            <div class="page clearfix">
+            <div class="page clearfix" style="margin-bottom: 40px;">
                 <div class="toolbar">
                     <img class="bottom-logo" src="/resources/images/user/0013.jpg" />
                 </div>
