@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xsjrw.websit.dao.article.ArticleInfoTypeMapper">
+	<resultMap type="ArticleInfoType" id="articleInfoTypeResultMap">
+		<result property="aptId" column="apt_id" />
+		<result property="aptName" column="apt_name" />
+		<result property="addTime" column="add_time" />
+		<result property="lastUpdateTime" column="last_update_time" />
+		<result property="addUser" column="add_user" />
+		<result property="lastUpdateUser" column="last_update_user" />
+		<result property="status" column="status" />
+	</resultMap>
+	
+	<sql id="table_columns">
+		apt_id,
+		apt_name,
+		add_time,
+		last_update_time,
+		add_user,
+		last_update_user,
+		status
+    </sql>
+	<sql id="entity_properties">
+		#{aptId},
+		#{aptName},
+		#{addTime},
+		#{lastUpdateTime},
+		#{addUser},
+		#{lastUpdateUser},
+		#{status}
+	</sql>
+	
+	<!-- 适用于主键自增类型 -->
+	<insert id="saveArticleInfoType" parameterType="ArticleInfoType" useGeneratedKeys="true" keyProperty="id">
+		insert into tbl_article_info_type( <include refid="table_columns" /> ) 
+		values ( <include refid="entity_properties" /> )
+	</insert>
+	
+	<!-- 批量添加 适用于主键自增类型  不支持返回主键-->
+	<insert id="batchInsert" parameterType="java.util.List" useGeneratedKeys="true">
+		insert into tbl_article_info_type( <include refid="table_columns" /> ) 
+		values 
+		<foreach item="item" collection="list" separator="," >
+			( <include refid="entity_properties" /> )
+		</foreach>
+	</insert>
+	
+	<!--根据主键删除 -->
+	<delete id="deleteById">
+		delete from tbl_users
+		where id = #{id}
+	</delete>
+	
+	<!-- 根据ID批量删除 -->
+	<delete id="deleteByIds">
+		delete from tbl_article_info_type
+		where id in
+		<foreach item="item" collection="array" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	
+	<update id="update" parameterType="ArticleInfoType">
+		update tbl_article_info_type 
+		<trim prefix="set" suffixOverrides=",">
+			<if test="aptName != null and aptName != ''">apt_name = #{aptName},</if>
+			<if test="addTime != null and addTime != ''">add_time = #{addTime},</if>
+			<if test="lastUpdateTime != null and lastUpdateTime != ''">last_update_time = #{lastUpdateTime},</if>
+			<if test="addUser != null and addUser != ''">add_user = #{addUser},</if>
+			<if test="lastUpdateUser != null and lastUpdateUser != ''">last_update_user = #{lastUpdateUser},</if>
+			<if test="status != null and status != ''">status = #{status},</if>
+		</trim>
+		<where>id = #{id}</where>
+	</update>
+	
+	<select id="findById" resultMap="articleInfoTypeResultMap" parameterType="String" >
+		select <include refid="table_columns" />
+		from tbl_article_info_type
+		where id = #{id}
+	</select>
+	
+	<select id="queryAll" resultMap="articleInfoTypeResultMap">
+		select <include refid="table_columns" /> 
+		from tbl_article_info_type
+	</select>
+	
+	<!-- 使用like用法：columnName like concat('%',#columnName#,'%') -->
+	<sql id="page_where">
+		<trim prefix="where" prefixOverrides="and | or ">
+			<if test="aptName != null and aptName != ''">and apt_name = #{aptName}</if>
+			<if test="addTime != null and addTime != ''">and add_time = #{addTime}</if>
+			<if test="lastUpdateTime != null and lastUpdateTime != ''">and last_update_time = #{lastUpdateTime}</if>
+			<if test="addUser != null and addUser != ''">and add_user = #{addUser}</if>
+			<if test="lastUpdateUser != null and lastUpdateUser != ''">and last_update_user = #{lastUpdateUser}</if>
+			<if test="status != null and status != ''">and status = #{status}</if>
+		</trim>
+	</sql>
+	
+	<select id="page" resultMap="articleInfoTypeResultMap" parameterType="ArticleInfoTypeSearch">
+		select <include refid="table_columns" />
+		from tbl_article_info_type
+		<include refid="page_where" />
+		limit #{firstIndex},#{pageSize}
+	</select>
+	
+	<select id="pageCount" resultType="int" parameterType="ArticleInfoTypeSearch">
+		select count(id) from tbl_article_info_type
+		<include refid="page_where" />
+	</select>
+	
+	<!-- 其他自定义SQL -->
+	
+</mapper>
