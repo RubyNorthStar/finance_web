@@ -210,15 +210,14 @@ CHECKSUM=0
 ROW_FORMAT=DYNAMIC
 DELAY_KEY_WRITE=0
 ;
-
 -- ----------------------------
--- Table structure for `article_publish`
+-- Table structure for `article_info`
 -- ----------------------------
-DROP TABLE IF EXISTS `article_publish`;
-CREATE TABLE `article_publish` (
-  `ap_id` bigint(20) DEFAULT NULL,
+DROP TABLE IF EXISTS `article_info`;
+CREATE TABLE `article_info` (
+  `ai_id` bigint(20) DEFAULT NULL,
   `author` varchar(50) DEFAULT NULL,
-  `apt_id` bigint(20) DEFAULT NULL,
+  `ait_id` bigint(20) DEFAULT NULL,
   `title` varchar(50) DEFAULT NULL,
   `publish_time` datetime DEFAULT NULL,
   `add_time` datetime DEFAULT NULL,
@@ -230,29 +229,29 @@ CREATE TABLE `article_publish` (
   `article_pic` varchar(50) DEFAULT NULL,
   `editing_code` varchar(5000) DEFAULT NULL,
   `normal_code` varchar(5000) DEFAULT NULL,
-  `is_using` smallint(6) DEFAULT NULL,
-  `status` smallint(6) DEFAULT NULL,
-  `stick` smallint(6) DEFAULT NULL
+  `is_using` tinyint(2) DEFAULT NULL,
+  `status` tinyint(2) DEFAULT NULL,
+  `stick` tinyint(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of article_publish
+-- Records of article_info
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `article_publish_type`
+-- Table structure for `article_info_type`
 -- ----------------------------
-DROP TABLE IF EXISTS `article_publish_type`;
-CREATE TABLE `article_publish_type` (
-  `apt_id` bigint(20) DEFAULT NULL,
-  `apt_name` varchar(50) DEFAULT NULL,
+DROP TABLE IF EXISTS `article_info_type`;
+CREATE TABLE `article_info_type` (
+  `ait_id` bigint(20) DEFAULT NULL,
+  `ait_name` varchar(50) DEFAULT NULL,
   `add_time` datetime DEFAULT NULL,
   `last_update_time` datetime DEFAULT NULL,
   `add_user` varchar(50) DEFAULT NULL,
   `last_update_user` varchar(50) DEFAULT NULL,
-  `status` smallint(6) DEFAULT NULL
+  `status` tinyint(2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of article_publish_type
+-- Records of article_info_type
 -- ----------------------------
