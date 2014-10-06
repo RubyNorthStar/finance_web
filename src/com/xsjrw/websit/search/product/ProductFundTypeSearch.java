@@ -12,9 +12,8 @@ import com.xsjrw.websit.core.domain.PageModel;
  * @author wang.zx
  * @date 2014-9-29
  */
-@SuppressWarnings({ "rawtypes" })
 @Alias("ProductFundTypeSearch")
-public class ProductFundTypeSearch extends PageModel {
+public class ProductFundTypeSearch extends PageModel<ProductFundTypeSearch> {
 	
 	private Integer	id;		
 	private String	fundName;		 /* 基金类型名称 */ 

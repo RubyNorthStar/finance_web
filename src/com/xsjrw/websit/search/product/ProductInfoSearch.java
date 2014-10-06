@@ -12,9 +12,8 @@ import com.xsjrw.websit.core.domain.PageModel;
  * @author wang.zx
  * @date 2014-9-29
  */
-@SuppressWarnings({ "rawtypes" })
 @Alias("ProductInfoSearch")
-public class ProductInfoSearch extends PageModel {
+public class ProductInfoSearch extends PageModel<ProductInfoSearch> {
 	
 	private Integer	id;		
 	private String	productName;		 /* 项目名称 */ 

@@ -13,7 +13,7 @@ import com.xsjrw.websit.core.domain.PageModel;
  * @date 2014-9-25
  */
 @Alias("UsersSearch")
-public class UsersSearch extends PageModel {
+public class UsersSearch extends PageModel<UsersSearch> {
 	
 	private Integer	id;		 /* PK */ 
 	private String	username;		

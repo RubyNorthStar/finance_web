@@ -12,9 +12,8 @@ import com.xsjrw.websit.core.domain.PageModel;
  * @author wang.zx
  * @date 2014-9-29
  */
-@SuppressWarnings({ "rawtypes" })
 @Alias("ProductMortgageSearch")
-public class ProductMortgageSearch extends PageModel {
+public class ProductMortgageSearch extends PageModel<ProductMortgageSearch> {
 	
 	private Integer	id;		
 	private String	mortgageName;		 /* 抵押物品名称 */ 

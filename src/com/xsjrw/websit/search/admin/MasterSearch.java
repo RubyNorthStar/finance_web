@@ -4,9 +4,8 @@ import org.apache.ibatis.type.Alias;
 
 import com.xsjrw.websit.core.domain.PageModel;
 
-@SuppressWarnings("rawtypes")
 @Alias("masterSearch")
-public class MasterSearch extends PageModel {
+public class MasterSearch extends PageModel<MasterSearch> {
 	private String account;
 	private String name;
 	private String position;
