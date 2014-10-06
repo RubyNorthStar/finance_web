@@ -50,7 +50,7 @@
 	            </div>
 	            <div class="content-block">
 	                <div class="right-box">
-	                	<div id="verify"></div>
+	                	<div class="verify-block" id="verify"></div>
 	                    <div class="input-block">
 	                        <i class="icon icon-user"></i>
 	                        <input class="input-text user" type="text" name="username" id="username" placeholder="输入昵称">

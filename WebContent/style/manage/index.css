@@ -17,7 +17,7 @@ img{ border:none;cursor: pointer;}
 .main{ width:1200px; }
 .main .left{float:left; width:140px;}
 
-.main .left .l-content{ height:760px; overflow-y:scroll; overflow-x:scroll; width:155px; background-color:#E5EBF9;}
+.main .left .l-content{ height:760px; overflow-y:scroll; overflow-x:scroll; width:157px; background-color:#E5EBF9;}
 .main .left .l-content dl{ background:#5e7aad;}
 .main .left .l-content dl .dt{ width:140px; height:31px; background:url(/resources/images/manage/l-dt.png); text-align:center; line-height:30px; font-size:14px; font-weight:bold; color:#fff;}
 .main .left .l-content dl .dd{ width:140px; height:30px; background:url(/resources/images/manage/l-dd.png); text-align:center; line-height:30px;}
@@ -52,8 +52,8 @@ table{border-collapse:collapse;  width: 100%;}
 .main .right1 .r1_top li{ display:inline-block; margin-right:3px; height:30px; background-color:#dee5f8; text-align:center; width:160px; border:1px solid #cccccc; float:left; line-height:30px; cursor:pointer;}
 .main .right1 .r1_top li.bg{ background-color:#beccf1;}
 .main .right1 .r1_bottom{ width:100%;}
-.main .right1 .r1_bottom td{ height:32px; line-height:32px; text-align:right; line-height:32px;}
-.main .right1 .r1_bottom td.td1{ padding-right:5px; width:18%;}
+.main .right1 .r1_bottom td{ height:32px; line-height:32px; text-align:left; line-height:32px;}
+.main .right1 .r1_bottom td.td1{ padding-right:5px; width:18%;text-align: right;}
 .main .right1 .r1_bottom td.td2{ padding-right:5px; width:40%; text-align:left;}
 .main .right1 .r1_bottom td.td4{ padding-right:5px; width:60%; text-align:left;}
 .main .right1 .r1_bottom td.td3{ padding-right:5px;text-align:left;}
