@@ -21,6 +21,9 @@
 	        	<li class="dd" onmouseover="javascript:onChangeLeftTreePic('picId100003')" onmouseout="javascript:onChangeLeftTreePic2('picId100003')" id="picId100003">
 	        		<a href="/admin/productInfo/add.go" onclick="javascript:showCurPic('picId100003')">添加产品</a>
 	        	</li>
+	        	<li class="dd" onmouseover="javascript:onChangeLeftTreePic('picId100004')" onmouseout="javascript:onChangeLeftTreePic2('picId100004')" id="picId100004">
+	        		<a href="/admin/productInfo.go" onclick="javascript:showCurPic('picId100004')">产品产品列表</a>
+	        	</li>
             </ul>
 	      	<div class="dt"><a href="javascript:showActionLeft('ul7');">文章类型管理</a></div>
 	      	<ul id="ul7" style="display:block">
