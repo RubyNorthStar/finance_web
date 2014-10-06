@@ -5,6 +5,7 @@
 	<script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
 	<script src="/script/jquery/jquery.pagination.js" type="text/javascript" ></script>
 	<script src="/script/product/product.js" type="text/javascript" ></script>
+	<link href="/style/manage/page.css" rel="stylesheet" />
 	<
 	<title>产品列表</title>
 	

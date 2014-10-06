@@ -4,6 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>携手金融--后台登陆</title>
 	<link href="/style/manage/index.css" rel="stylesheet" />
+	<link href="/style/manage/page.css" rel="stylesheet" />
 	<script type="text/javascript" src="/script/jquery/jquery-1.7.js"></script>
 	<script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
 	<script src="/script/jquery/jquery.pagination.js" type="text/javascript" ></script>
@@ -29,48 +30,6 @@
 	   		$('#master_list_form').submit();
 	   	}
 	</script>
-	<style type="text/css">
-	.divcenter {
-		text-align:center; 
-		color: #0066CC; 
-		margin:5px auto;
-		background-color:#ccc;
-	}
-	a {
-		behavior: url(/script/jquery/hideFoucs.htc);
-	}
-	.rightPager{
-		float: right; 
-		height: 20px; 
-		margin: 5px 5px 0 0 ;
-	}
-	.pagination .current {
-		/*background-color:#D8DFEA;*/
-		font-weight:bold;
-		border: 1px solid #CCCCCC;
-		color:#ffffff;
-		display:block;
-		float:left;
-		padding:5px;
-		text-decoration:none;
-		font-size: 15px;
-		margin-right: 5px;
-		background: none repeat scroll 0 0 #647cbc;
-	}
-	.pagination a,.pagination span {
-	 	border: 1px solid #CCCCCC;
-		color:#000000;
-		display:block;
-		float:left;
-		padding:5px;
-		text-decoration:none;
-		font-size: 15px;
-		margin-right: 5px;
-	}
-	.Left {
-		text-align: left;
-	}
-</style>
 </head>   
   <body>
 	 <div class="page"><!--page开始-->

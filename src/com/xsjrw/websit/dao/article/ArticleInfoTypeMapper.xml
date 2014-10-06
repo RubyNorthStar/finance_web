@@ -31,7 +31,7 @@
 	</sql>
 	
 	<!-- 适用于主键自增类型 -->
-	<insert id="saveArticleInfoType" parameterType="ArticleInfoType" useGeneratedKeys="true" keyProperty="id">
+	<insert id="insert" parameterType="ArticleInfoType" useGeneratedKeys="true" keyProperty="id">
 		insert into tbl_article_info_type( <include refid="table_columns" /> ) 
 		values ( <include refid="entity_properties" /> )
 	</insert>
@@ -47,14 +47,14 @@
 	
 	<!--根据主键删除 -->
 	<delete id="deleteById">
-		delete from tbl_users
-		where id = #{id}
+		delete from tbl_article_info_type
+		where apt_id = #{id}
 	</delete>
 	
 	<!-- 根据ID批量删除 -->
 	<delete id="deleteByIds">
 		delete from tbl_article_info_type
-		where id in
+		where apt_id in
 		<foreach item="item" collection="array" open="(" separator="," close=")">
 			#{item}
 		</foreach>
@@ -70,13 +70,13 @@
 			<if test="lastUpdateUser != null and lastUpdateUser != ''">last_update_user = #{lastUpdateUser},</if>
 			<if test="status != null and status != ''">status = #{status},</if>
 		</trim>
-		<where>id = #{id}</where>
+		<where>apt_id = #{aptId}</where>
 	</update>
 	
 	<select id="findById" resultMap="articleInfoTypeResultMap" parameterType="String" >
 		select <include refid="table_columns" />
 		from tbl_article_info_type
-		where id = #{id}
+		where apt_id = #{aptId}
 	</select>
 	
 	<select id="queryAll" resultMap="articleInfoTypeResultMap">
@@ -104,7 +104,7 @@
 	</select>
 	
 	<select id="pageCount" resultType="int" parameterType="ArticleInfoTypeSearch">
-		select count(id) from tbl_article_info_type
+		select count(apt_id) from tbl_article_info_type
 		<include refid="page_where" />
 	</select>
 	

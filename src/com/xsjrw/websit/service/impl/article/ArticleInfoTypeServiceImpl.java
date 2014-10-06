@@ -40,7 +40,6 @@ public class ArticleInfoTypeServiceImpl implements IArticleInfoTypeService {
 
 	@Override
 	public void deleteArticleInfoTypeById(Integer id) {
-		// TODO Auto-generated method stub
 		articleInfoTypeMapper.deleteById(id);
 	}
 

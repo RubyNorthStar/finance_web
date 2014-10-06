@@ -24,20 +24,20 @@ import com.xsjrw.websit.service.article.IArticleInfoService;
  * @date 2014-10-6
  */
 @Controller
-@RequestMapping("/articleInfo")
+@RequestMapping("/admin/articleInfo")
 public class ArticleInfoController {
 	
 	@Autowired
 	private IArticleInfoService articleInfoServiceImpl;
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping(value="/list", method = RequestMethod.GET)
 	public String list(Model model, ArticleInfoSearch search){
 		if (search == null) {
 			search = new ArticleInfoSearch();
-			// search.setPageSize(20);
 		}
 		model.addAttribute("list", articleInfoServiceImpl.findArticleInfoByPage(search));
-		return "articleInfo/list";
+		model.addAttribute("search", search);
+		return "admin/article/article_info_list";
 	}
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST)

@@ -14,9 +14,8 @@ import com.xsjrw.websit.core.domain.BaseEntity;
  * @author wang.zx
  * @date 2014-10-6
  */
-@SuppressWarnings("serial")
 @Alias("ArticleInfoType")
-public class ArticleInfoType extends BaseEntity {
+public class ArticleInfoType{
 	
 	private Integer	aptId;		
 	private String	aptName;		

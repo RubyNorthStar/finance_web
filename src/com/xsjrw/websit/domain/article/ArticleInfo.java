@@ -14,9 +14,8 @@ import com.xsjrw.websit.core.domain.BaseEntity;
  * @author wang.zx
  * @date 2014-10-6
  */
-@SuppressWarnings("serial")
 @Alias("ArticleInfo")
-public class ArticleInfo extends BaseEntity {
+public class ArticleInfo{
 	
 	private Integer	apId;		
 	private String	author;		
