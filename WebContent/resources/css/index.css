@@ -33,14 +33,14 @@ img{vertical-align: top;}
 .navbar .navbar-inner .left,.right,.login{
     float: left;
 }
+/*login.html*/
 .rightI{
 	height:30px; width:1px; margin: 15px 10px 0;
 	display:block;border-left:1px solid #000; 
 	}
 .top-logo{
     width: 84px; height: 30px;
-    padding-top:16px;
-    vertical-align: middle;
+    padding-top:16px; vertical-align: middle;
 }
 .login a{
     cursor: pointer;
@@ -84,6 +84,7 @@ img{vertical-align: top;}
     padding: 44px 30px;
     margin-left: 23px;
 }
+.verify-block{ color: red;margin: -10px 0 15px 30px;}
 .input-block{
     margin-bottom: 24px;
 }
@@ -106,6 +107,10 @@ img{vertical-align: top;}
  }
 .icon-mail{
    background: url("/resources/images/user/mail.png") no-repeat center top;
+   background-size: cover;
+}
+.icon-phone{
+   background: url("/resources/images/user/phone.png") no-repeat center top;
    background-size: cover;
 }
 .icon-wb{
@@ -217,7 +222,7 @@ img{vertical-align: top;}
 }
 
 
-/*娉ㄥ唽椤�*/
+/*注册页*/
 .pages .content-block .right-box{
     margin-left: 53px;
 }
@@ -241,7 +246,7 @@ img{vertical-align: top;}
 .button-color2{
     background: #29a7e1;
 }
-/*鑿滃崟*/
+/*菜单*/
 .menu{
     /*font-size: 12px; */
     margin-left: 34%;
@@ -252,7 +257,7 @@ img{vertical-align: top;}
     margin-left: 20px;
 }
 
-/*end 鑿滃崟*/
+/*end 菜单*/
 .body-bg{ background: #efefef;}
 .box-shadow{ box-shadow: 0px 1px 2px rgba(0,0,0,0.5);}
 .content{}
@@ -260,7 +265,7 @@ img{vertical-align: top;}
 .content-top-img{ width: 971px;height: 302px;}
 .content-img{ width: 238px;height: 159px;}
 .content-content-bg{
-    width: 81%; background: #ffffff;
+    width: 970px; background: #ffffff;
     box-shadow: 0px 1px 2px rgba(0,0,0,0.5);
 }
 .content-content .left{
@@ -271,6 +276,21 @@ img{vertical-align: top;}
     line-height: 24px;
 }
 .p2{ margin-bottom: 20px;}
+/*index newadd style*/
+.data{
+    overflow: hidden; float: left; margin-left: 30px;
+}
+.data .data1{
+    background: #0e6eb8;padding:22px 25px; color: #fff; font-size: 22px; text-align: center;
+    border-top-left-radius: 70px; border-top-right-radius:70px;
+}
+.data .data2{
+    color: #0e6eb8; padding:16px 25px; text-align: center; border:1px solid #0e6eb8;
+    border-bottom-left-radius: 70px; border-bottom-right-radius:70px; line-height: 20px;
+}
+.data .data1BG{ background: #89ba2a; font-size: 14px; padding:24px 25px;}
+.data .data1Border{ border:1px solid #89ba2a;}
+/*index newadd style end*/
 .content-content .right{float: left;}
 .content-content .right .img1{ width: 284px; height: 125px;}
 .tag{padding-top: 15px;}
