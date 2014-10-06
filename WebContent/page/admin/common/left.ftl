@@ -34,10 +34,10 @@
 	           		<a href="/admin/articleInfoType/add.go" onclick="javascript:showCurPic('picId000002')">文章类型添加</a>
 	            </li>
 	            <li class="dd" onmouseover="javascript:onChangeLeftTreePic('picId800001')" onmouseout="javascript:onChangeLeftTreePic2('picId800001')" id="picId800001">
-	        		<a href="/admin/articleInfoType/article_publish_type_obtainArticlePublishList.shtml" onclick="javascript:showCurPic('picId000003')">文章列表</a>
+	        		<a href="/admin/articleInfo/list.go" onclick="javascript:showCurPic('picId000003')">文章列表</a>
 	        	</li>
 	            <li class="dd" onmouseover="javascript:onChangeLeftTreePic('picId800002')" onmouseout="javascript:onChangeLeftTreePic2('picId800002')" id="picId800002">
-	           		<a href="/admin/articleInfoType/article_publish_type_addArticlePublish.shtml" onclick="javascript:showCurPic('picId000004')">文章添加</a>
+	           		<a href="/admin/articleInfo/add.go" onclick="javascript:showCurPic('picId000004')">文章添加</a>
 	            </li>
             </ul>
         </dl>

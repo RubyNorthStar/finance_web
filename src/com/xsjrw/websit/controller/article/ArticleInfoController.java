@@ -41,9 +41,25 @@ public class ArticleInfoController {
 	}
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST)
-	public String add(ArticleInfo ArticleInfo) {
-		articleInfoServiceImpl.saveArticleInfo(ArticleInfo);
-		return "redirect:/articleInfo";
+	public String add() {
+		return "admin/article/article_info_add";
+	}
+	
+	@RequestMapping(value="/save", method = RequestMethod.POST)
+	public String save(Model model, ArticleInfo articleInfo) {
+		String flag = "1001";
+		try{
+			articleInfo.setAddTime(new Date());
+			articleInfo.setLastUpdateTime(new Date());
+			articleInfo.setAddUser("system");
+			articleInfo.setLastUpdateUser("system");
+			articleInfoServiceImpl.saveArticleInfo(articleInfo);
+		}catch(Exception e){
+			flag = "1002";
+			e.printStackTrace();
+		}
+		model.addAttribute("flag", flag);
+		return "admin/article/article_info_add";
 	}
 	
 	@RequestMapping(value="/update", method = RequestMethod.POST)
