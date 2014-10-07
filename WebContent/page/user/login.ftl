@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>登陆</title>
+	<title>携手金融网 - 登陆</title>
 	 <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
 	 <script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
 	 <script type="text/javascript" src="/resources/common/cookie/cookie.js"></script>

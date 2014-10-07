@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -37,17 +39,37 @@ public class ProductInfoFrontController {
 	private IProductFundTypeService productFundTypeService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String list(Model model, ProductInfoSearch search){
+	public String list(Model model, ProductInfoSearch search, HttpServletRequest request){
+		
+		String pid = request.getParameter("pid");
+		
+		//查询所有的产品类型
+		List<ProductFundType> fundTypes = productFundTypeService.queryAll();
+		
 		if (search == null) {
 			search = new ProductInfoSearch();
 			// search.setPageSize(20);
-			search.setStatus(1);
 		}
+		search.setStatus(1);
+		search.setPageSize(5);
 		
-		model.addAttribute("listProduct", productInfoService.findProductInfoByPage(search));
+		if(fundTypes != null && fundTypes.size() > 0){
+			if(pid != null && pid.length() > 0){
+				search.setFundTypeId(Integer.parseInt(pid));
+				model.addAttribute("pid", Integer.parseInt(pid));
+			}else{
+				search.setFundTypeId(fundTypes.get(0).getId());
+				model.addAttribute("pid", fundTypes.get(0).getId());
+			}
+		}
+		List<ProductInfo> proInfos = productInfoService.findProductInfoByPage(search);
+		
+		
+		model.addAttribute("fundTypes", fundTypes);
 		model.addAttribute("search", search);
+		model.addAttribute("proInfos", proInfos);
 		 
-		return "admin/product/product_info_list";
+		return "product/product_list";
 	}
 	
 	@RequestMapping(value="/add")

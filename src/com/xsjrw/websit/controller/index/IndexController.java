@@ -32,6 +32,7 @@ public class IndexController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String toIndex(Model model, ProductInfoSearch search){
 		
+		//查询所有的产品类型
 		List<ProductFundType> fundTypes = productFundTypeService.queryAll();
 		
 		LinkedHashMap<String, List<ProductInfo>> linkMap = new LinkedHashMap<String, List<ProductInfo>>();

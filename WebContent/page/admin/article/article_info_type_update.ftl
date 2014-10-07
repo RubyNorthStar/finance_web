@@ -19,7 +19,6 @@ function toSubmit(){
 		alert("类型名称的长度不能大约16个字符");
 		return;
 	}
-	alert(typeName);
 	$("#myForm").submit();
 }
 </script>

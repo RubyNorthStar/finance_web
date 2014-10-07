@@ -22,14 +22,22 @@ public class ArticleInfoFrontController {
 	@Autowired
 	private IArticleInfoService articleInfoServiceImpl;
 	
-	@RequestMapping(value="/list_new", method = RequestMethod.GET)
-	public String listNew(Model model, Integer aptId, Integer number){
+	@RequestMapping(value="/list_article", method = RequestMethod.GET)
+	public String listArticle(Model model, Integer aptId, Integer number){
 		if (aptId != null) {
 			if(number == null){
 				number = 2;
 			}
 			model.addAttribute("list", articleInfoServiceImpl.findArticleInfoByAptIdAndNumber(aptId, number));
 		}
-		return "article/list_new";
+		return "article/list_article";
+	}
+	
+	@RequestMapping(value="/article_detail", method = RequestMethod.GET)
+	public String articleDetail(Model model, Integer id){
+		if (id != null) {
+			model.addAttribute("articleInfo", articleInfoServiceImpl.findArticleInfoById(id));
+		}
+		return "article/article_detail";
 	}
 }

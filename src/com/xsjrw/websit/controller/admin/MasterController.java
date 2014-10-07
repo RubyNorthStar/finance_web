@@ -200,4 +200,17 @@ public class MasterController {
 		model.addAttribute("flag", flag);
 		return "admin/master/master_update";
 	}
+	
+	/**
+	 * 执行更新管理员页面
+	 * @return
+	 */
+	@RequestMapping("/login_out")
+	public String loginOut(Model model,HttpServletRequest request) {
+		Master master = (Master)request.getSession().getAttribute(UserConstans.MASTER_LOGIN);
+		if(master != null){
+			request.getSession().removeAttribute(UserConstans.MASTER_LOGIN);
+		}
+		return "admin/master/login";
+	}
 }

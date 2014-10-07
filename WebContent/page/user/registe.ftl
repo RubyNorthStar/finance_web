@@ -5,7 +5,7 @@
  	<link rel="stylesheet" type="text/css" href="/resources/css/index.css">
  	<script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
   	<script type="text/javascript" src="/script/user/login.js"></script>
-	<title>用户注册</title>
+	<title>携手金融网 - 用户注册</title>
 </head>
   <body>
 	
