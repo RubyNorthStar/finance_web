@@ -10,23 +10,7 @@
   <body>
   
 <div class="views body-bg">
-    <!--头部导航-->
-    <div class="navbar">
-        <div class="navbar-inner clearfix">
-            <div class="left">
-                <img class="top-logo" style="padding-top:0;" src="/resources/images/user/logo.png" />
-            </div>
-            <div class="right " style="width: 82%;">
-                <div class="menu">
-                    关于我们&numsp;|&numsp;我要理财&numsp;|&numsp;我要借款&numsp;|&numsp;新手指南&numsp;|&numsp;联系我们
-                </div>
-                <div class="button-login">
-                    <a href="user/goTOLogin.go" class="button button-color1">登陆</a>
-                    <a href="user/goTORegister.go" class="button button-color1">注册</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <#include "/index/common/top.ftl">
     <div class="view" style="background:none;">
         <!--中间内容-->
         <div class="content m-l clearfix " style="display: block">
@@ -144,23 +128,7 @@
         </div>
 
     </div>
-    <!--底部工具栏-->
-        <div class="page clearfix" style="margin-bottom: 40px;">
-            <div class="toolbar">
-                <img class="bottom-logo" src="/resources/images/user/0013.jpg" />
-            </div>
-            <div class="toolbar">
-                <div class="top-inner toolbar-inner">
-                	    关于安心理财&numsp;|&numsp;联系我们&numsp;|&numsp;公司荣誉&numsp;|&numsp;合作伙伴&numsp;|&numsp;安心官方微博&numsp;|&numsp;全国免费质询电话：400-6099-800
-                </div>
-                <div class="bottom-text">
-                  	   京ICP证100743号 京公网安1101055897CreditEase@Θ2009
-                </div>
-            </div>
-            <div class="toolbar">
-                <img class="" style="width: 200px;height: 60px" src="/resources/images/user/0012.jpg" />
-            </div>
-        </div>
+    <#include "/index/common/foot.ftl">
 </div>
 
 <script type="text/javascript" src="/script/jquery/jquery-1.7.js"></script>
