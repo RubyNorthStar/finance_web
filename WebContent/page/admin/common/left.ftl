@@ -1,7 +1,7 @@
 <div class="left"><!--left开始-->
     <div class="l-content"><!--l-content"-->
     	<dl class="l-dl1">
-        	<div class="dt"><a >管理员管理</a></div>
+        	<div class="dt"><a href="javascript:showActionLeft('ul0');">管理员管理</a></div>
     		<ul id="ul0" style="display:block">
 	        	<li class="dd">
 	        		<a href="/admin/master/obtainMasterList.go" onclick="javascript:showCurPic('picId000001')">管理员列表</a>
@@ -10,7 +10,7 @@
 	           		<a href="/admin/master/goAddMaster.go" onclick="javascript:showCurPic('picId000002')">添加管理员</a>
 	            </li>
             </ul>
-            <div class="dt"><a >产品管理</a></div>
+            <div class="dt"><a href="javascript:showActionLeft('ul1');">产品管理</a></div>
     		<ul id="ul1" style="display:block">
 	        	<li class="dd">
 	        		<a href="/admin/fundType/add.go" onclick="javascript:showCurPic('picId100001')">添加产品类型</a>
@@ -25,8 +25,8 @@
 	        		<a href="/admin/productInfo.go" onclick="javascript:showCurPic('picId100004')">产品产品列表</a>
 	        	</li>
             </ul>
-	      	<div class="dt"><a href="javascript:showActionLeft('ul7');">文章类型管理</a></div>
-	      	<ul id="ul7" style="display:block">
+	      	<div class="dt"><a href="javascript:showActionLeft('ul2');">文章类型管理</a></div>
+	      	<ul id="ul2" style="display:block">
 	        	<li class="dd">
 	        		<a href="/admin/articleInfoType/list.go" onclick="javascript:showCurPic('picId000001')">文章类型列表</a>
 	        	</li>
