@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="/resources/css/index.css">
 	<script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
-	<title>携手金融网 - 首页</title>
+	<title>携手金融网-首页</title>
 	
 </head>
   <body>
@@ -61,7 +61,7 @@
                 
                 <div class="list clearfix">
                     <div class="table-menu clearfix">
-                        <ul class="list-ul ">
+                        <ul class="list-ul product_index">
                             <#if fundTypes??>
 				    			<#list fundTypes as fund>
 				    				<#if fund_index == 0>
@@ -77,7 +77,7 @@
                             <li class="list-li-yuan button7 button-color-3"><a href="javascript:;">预期收益</a></li>
                             <li class="list-li-yuan button7 button-color-4"> <a href="javascript:;">投资额度</a></li>
                             <li class="list-li-yuan button7 button-color-5"><a href="javascript:;">投资期限</a></li>
-                            <li class="list-li-yuan button7 button-color-6"><a href="javascript:;">更多产品</a></li>
+                            <li class="list-li-yuan button7 button-color-6"><a href="/product/productInfo.go">更多产品</a></li>
                         </ul>
                     </div>
                 </div>

@@ -13,7 +13,7 @@ $(function(){
 //       page3 点击事件结束
 
 //  index 点击事件
-    $(".table-menu .list-ul li").click(function(){
+    $(".table-menu .product_index li").click(function(){
         $(".table-menu .list-ul li").removeClass("aActive");
         $(this).addClass("aActive");
 //        console.log($(this).index())
@@ -28,6 +28,16 @@ $(function(){
     
     
 // 百分比 end   ui-progressbar-mid-0  background-position:0px 0px ;  -54px
+
+//  index 点击事件
+    $(".table-menu .product_list li").click(function(){
+        $(".table-menu .list-ul li").removeClass("aActive");
+        $(this).addClass("aActive");
+        
+        
+    });
+//       index 点击事件结束
+
 });
 //alert($("tbody tr td span.span6").text())
 percent();
