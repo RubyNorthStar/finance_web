@@ -33,7 +33,7 @@
 			                <div class="newslist clearfix">
 			                    <div class="fL"><a href="/article/articleInfo/article_detail.go?id=7" target="_blank"><img class="news-img" <#if articleInfo??><#if articleInfo.articlePic??>src="/userfiles/articleImg${articleInfo.articlePic}"</#if><#else>src="/image/manage/touming.png"</#if>/></a></div>
 			                    <div class="fL news-content">
-			                        <div class="news-title"><a href="/article/articleInfo/article_detail.go?id=7" target="_blank">${articleInfo.title}</a><span class="span7"><#if articleInfo.addTime??>${articleInfo.addTime?string("yyyy-MM-dd")}</#if ></span></div>
+			                        <div class="news-title"><a href="/article/articleInfo/article_detail.go?id=7" target="_blank"><span class="news-title">${articleInfo.title}</span></a><span class="span7"><#if articleInfo.addTime??>${articleInfo.addTime?string("yyyy-MM-dd")}</#if ></span></div>
 			                        <div class="newsInfo" style="text-indent:2em;">
 			                            ${articleInfo.normalCode}
 			                        </div>
