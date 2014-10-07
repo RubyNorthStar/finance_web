@@ -89,7 +89,7 @@ public class ProductInfoController {
 		if(productInfo.getStatus() == null){
 			productInfo.setStatus(1);
 		}
-		
+		productInfo.setToExamineStatus(1);  //设置为未审核状态
 		productInfoService.saveProductInfo(productInfo);
 		Integer proInfoId = productInfo.getId();
 		System.out.println("=====proInfoId====="+proInfoId);

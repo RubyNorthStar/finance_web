@@ -111,21 +111,4 @@ public class ProductFundTypeController {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
 	
-	/**
-	 * 查询所有的基金类型
-	 * @return
-	 */
-	public String obtainFundType(){
-		List<ProductFundType> fundTypes = productFundTypeService.queryAll();
-		String result = "";
-		if(fundTypes != null && fundTypes.size() > 0){
-			try {
-				result = JsonUtil.getJSONString(fundTypes);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		
-		return result;
-	}
 }
