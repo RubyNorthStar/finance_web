@@ -222,7 +222,7 @@ img{vertical-align: top;}
 }
 
 
-/*娉ㄥ唽椤�/
+/*娉ㄥ唽椤*/
 .pages .content-block .right-box{
     margin-left: 53px;
 }
@@ -357,6 +357,18 @@ th,td{padding: 23px 36px;}
     font-size: 8px;
     text-align: center;
     background: url("/resources/images/user/progressbar_mid.png");
+}
+.ui-progressbar-mid-0{
+	background-position:0px 0px ;
+}
+.ui-progressbar-mid-1{
+	background-position:-54px -46px ;
+}
+.ui-progressbar-mid-2{
+	background-position:-108px -46px ;
+}
+.ui-progressbar-mid-3{
+	background-position:-162px -46px ;
 }
 .ui-progressbar-mid-100{
     background-position:-5400px 0 ;

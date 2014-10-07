@@ -16,10 +16,25 @@ $(function(){
     $(".table-menu .list-ul li").click(function(){
         $(".table-menu .list-ul li").removeClass("aActive");
         $(this).addClass("aActive");
-//        console.log($(this).index())
+        console.log($(this).index())
         $(".table-div .tab").removeClass("tabActive");
-        $(".table-div .tab").eq( $(this).index()).siblings().addClass("tabActive");
+        $(".table-div .tab").eq( $(this).index()).addClass("tabActive");
 
     });
 //       index 点击事件结束
+    
+//    百分比
+    
+    
+    
+// 百分比 end   ui-progressbar-mid-0  background-position:0px 0px ;  -54px
 });
+//alert($("tbody tr td span.span6").text())
+percent();
+function percent(){
+	$("tbody tr td .span6").each(function(){
+	    $(this).css("background-position",($(this).text().split('%')[0] * (-54))+"px 46px");
+	});
+}
+
+
