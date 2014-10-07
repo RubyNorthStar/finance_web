@@ -16,7 +16,7 @@ $(function(){
     $(".table-menu .list-ul li").click(function(){
         $(".table-menu .list-ul li").removeClass("aActive");
         $(this).addClass("aActive");
-        console.log($(this).index())
+//        console.log($(this).index())
         $(".table-div .tab").removeClass("tabActive");
         $(".table-div .tab").eq( $(this).index()).addClass("tabActive");
 
