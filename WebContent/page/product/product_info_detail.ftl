@@ -3,13 +3,13 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>登陆</title>
-    <link rel="stylesheet" type="text/css" href="/style/common/index.css">
+    <!--<link rel="stylesheet" type="text/css" href="/style/common/index.css">-->
+    
+    <link rel="stylesheet" href="/resources/css/idangerous.swiper.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+	<link rel="stylesheet" href="/resources/css/swiper-demos.css?v=1.8">
+    <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
     <script src="/script/jquery/jquery-1.7.js"></script>
-    <style>
-        .none{
-            display: none;
-        }
-    </style>
     
     <script type="text/javascript">
     	$(function(){
@@ -25,15 +25,13 @@
 
 <body>
 <div class="views body-bg">
-    <div class="view">
-        <!--头部导航-->
-        <!--  -->
+<!--头部导航-->
         <div class="navbar">
             <div class="navbar-inner clearfix">
                 <div class="left">
-                    <img class="top-logo" src="/images/common/logo.jpg" />
+                    <img class="top-logo" style="padding-top:0;" src="/resources/images/user/logo.png" />
                 </div>
-                <div class="right ">
+                <div class="right " style="width: 82%;">
                     <div class="menu">
                         	关于我们&numsp;|&numsp;我要理财&numsp;|&numsp;我要借款&numsp;|&numsp;新手指南&numsp;|&numsp;联系我们
                     </div>
@@ -44,6 +42,8 @@
                 </div>
             </div>
         </div>
+    <div class="view" style="width:1348px; background:#f7f7f7;">
+        
 
         <!--中间内容-->
 
@@ -100,7 +100,7 @@
                 </div>
 
             </div>
-            <div class="" style="margin-top: 20px;">
+            <div style="margin-top: 20px;">
                 <div class="">
                     <ul class="tab-title clearfix">
                         <li class="list-li-title fL active">
@@ -138,13 +138,28 @@
                     </div>
                 </div>
             </div>
-            <div class="content-content mt6 box-shadow" style="width: 81%">
-                <img class="content-img" src="/images/common/002.jpg" />
-                <img class="content-img" src="/images/common/003.jpg" />
-                <img class="content-img" src="/images/common/004.jpg" />
-                <img class="content-img" src="/images/common/005.jpg" />
+            <div role="main" class="main" >
+            	<div class="swiper-car content-content mt6 box-shadow clearfix" style="width:970px;height: 160px; overflow: hidden; position: relative;">
+        		<!--<a class="leftMove A1" href="javascript:;"><</a>
+        		<a class="rightMove A1" href="javascript:;">></a>-->
+        		<div class="pagination-car"></div>
+        		<div class="swiper-wrapper clearfix move">
+			      <img class="swiper-slide content-img" src="/images/common/002.jpg" />
+			      <img class="swiper-slide content-img" src="/images/common/003.jpg" />
+			      <img class="swiper-slide content-img" src="/images/common/004.jpg" />
+			      <img class="swiper-slide content-img" src="/images/common/005.jpg" />
+			      <img class="swiper-slide content-img" src="/images/common/002.jpg" />
+			      <img class="swiper-slide content-img" src="/images/common/003.jpg" />
+			      <img class="swiper-slide content-img" src="/images/common/005.jpg" />
+			      
+			    </div>
+			    
             </div>
-            <div class="content-content mt6 box-shadow" style="width: 81%">
+            </div>
+            
+            
+    </div>
+    <div class="content-content mt6" style="width: 81%">
                 <div class="details-form" style="">
                     <div class="user-name">更多产品信息请致电&numsp;400-6099-800</div>
                     <div class="user-name" style="font-size: 12px;">更多产品信息请致电&numsp;400-6099-800</div>
@@ -177,7 +192,18 @@
                 <img class="" style="width: 200px;height: 60px" src="/images/common/0012.jpg" />
             </div>
         </div>
-    </div>
 </div>
+
+<script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/resources/common/plugin/jquery/js.js"></script>
+
+<script type="text/javascript" src="/resources/common/plugin/swiper/idangerous.swiper-1.8.min.js"></script>
+
+<script type="text/javascript" src="/resources/common/plugin/swiper/swiper-demos.js"></script>
+
+
+
+
+
 </body>
 </html>

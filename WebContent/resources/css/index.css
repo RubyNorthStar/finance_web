@@ -446,7 +446,7 @@ td{ width:0%;padding: 18px 0%; border-bottom: 1px dotted #d3d3d3;}
 .list-li-title{ padding: 6px 15px; background: #f7f7f7;}
 .list-li-title a{ color: #000; font-size: 14px;}
 .active{ background: #fff; border-top:2px solid #0195db;}
-.Tab-content{ width: 81%; background: #fff;}
+.Tab-content{ width: 81%; height:200px; background: #fff;}
 .Tab-content div{ width: 900px; }
 .hidden{ display: none; padding: 20px;}
 .show{ display: block;}
@@ -462,6 +462,23 @@ td{ width:0%;padding: 18px 0%; border-bottom: 1px dotted #d3d3d3;}
 .form-input-phone input{ width:200px; padding: 5px 10px;}
 .tj-btn{ }
 .tj{ width: 100px; padding: 5px 10px; color: #fff; border: none; background: #0074c1;}
+
+/*new page3 style*/
+/* width:970px; */
+ul.move, ol{margin:0; padding:0;}
+.swiper-car, .swiper-car .swiper-slide{width:238px;}
+.main{padding:0; margin:0; width:970px; border:none;}
+.pagination-car{left:45%; top:140px;}
+
+.content-content .move{ overflow: hidden; position: absolute; left: 0px; top: 0px;}
+.A1{ width:40px;height:100px; background-color:rgba(40,40,40,0.5); color:#fff; font-size:80px;}
+.A1:hover{color:#fff;}
+.leftMove{ position: absolute; left: 0px; top: 20px;z-index:1;}
+.rightMove{position: absolute; left: 930px; top: 20px; z-index:1;}
+/* .moveLi{position: absolute; left: 0px; top: 0px;} */
+/*new page3 style*/
+
+
 /*page3.html end*/
 /*page4.html*/
 .h4-forum{ color: #0168b7; font-size: 14px;}
@@ -469,7 +486,7 @@ td{ width:0%;padding: 18px 0%; border-bottom: 1px dotted #d3d3d3;}
 .page4-img{ text-align: center;}
 .page4-img img{ width: 625px; height: 275px;}
 .h1-text{ font-size: 24px;}
-/*.news-bottom{ width: 900px;height: 500px; background: url("../images/0023.jpg") no-repeat; background-size: cover;}*/
+.news-bottom{ width: 1349px;height: 500px; background: url("../images/0023.jpg") no-repeat; background-size: cover;}
 /*page4.html end*/
 
 
@@ -481,3 +498,4 @@ td{ width:0%;padding: 18px 0%; border-bottom: 1px dotted #d3d3d3;}
 .about-bottom{}
 .about-bottom-img{ width: 100%;}
 /*page6.html end*/
+

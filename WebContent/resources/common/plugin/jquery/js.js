@@ -23,11 +23,29 @@ $(function(){
     });
 //       index 点击事件结束
     
-//    百分比
-    
-    
-    
-// 百分比 end   ui-progressbar-mid-0  background-position:0px 0px ;  -54px
+//
+
+  //leftMove{ position: absolute; left: 0px; top: 20px;}
+  //.rightMove
+   var aLiWidth = $(".move li").width();
+   var aLiLength = $(".move li").length;
+//   alert(aLiWidth);
+//   alert(aLiLength);
+   
+   $(".move").css('width',aLiWidth*aLiLength+"px")
+   $(".leftMove").click(function(){
+//	   alert("leftMove");
+   })
+   
+   $(".rightMove").click(function(){
+//	   alert("rightMove")
+//	   .content-img{ width: 238px;height: 159px;}
+	   
+	   $(".move").css({'left':(-aLiWidth)+'px'})
+	   alert($(".move").css("left"))
+	   
+   })
+//
 });
 //alert($("tbody tr td span.span6").text())
 percent();
@@ -36,5 +54,8 @@ function percent(){
 	    $(this).css("background-position",($(this).text().split('%')[0] * (-54))+"px 46px");
 	});
 }
+
+
+
 
 
