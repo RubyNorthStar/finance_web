@@ -4,7 +4,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" type="text/css" href="/resources/css/index.css">
 	<script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
-	<title> 首页</title>
+	<title>携手金融网 - 首页</title>
 	
 </head>
   <body>

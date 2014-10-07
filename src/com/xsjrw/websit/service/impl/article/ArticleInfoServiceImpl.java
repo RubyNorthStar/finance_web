@@ -71,7 +71,8 @@ public class ArticleInfoServiceImpl implements IArticleInfoService {
 		map.put("number", number);
 		List<ArticleInfo> articleInfoList = articleInfoMapper.findArticleInfoByAptIdAndNumber(map);
 		for(ArticleInfo articleInfo : articleInfoList){
-			articleInfo.setNormalCode(Html2Text(articleInfo.getNormalCode()).substring(0, 400));
+			String code = Html2Text(articleInfo.getNormalCode());
+			articleInfo.setNormalCode(code.substring(0, code.length() >= 400 ? 400 :code.length()));
 		}
 		return articleInfoList;
 	}

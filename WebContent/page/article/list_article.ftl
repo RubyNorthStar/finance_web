@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>登陆</title>
+    <title>携手金融网</title>
     <link rel="stylesheet" type="text/css" href="/style/common/index.css">
     <script src="/script/jquery/jquery-1.7.js"></script>
     <style>
@@ -31,9 +31,9 @@
                 <#if list??>
 						<#list list as articleInfo>   
 			                <div class="newslist clearfix">
-			                    <div class="fL"><img class="news-img" <#if articleInfo??><#if articleInfo.articlePic??>src="/userfiles/articleImg${articleInfo.articlePic}"</#if><#else>src="/image/manage/touming.png"</#if>/></div>
+			                    <div class="fL"><a href="/article/articleInfo/article_detail.go?id=7" target="_blank"><img class="news-img" <#if articleInfo??><#if articleInfo.articlePic??>src="/userfiles/articleImg${articleInfo.articlePic}"</#if><#else>src="/image/manage/touming.png"</#if>/></a></div>
 			                    <div class="fL news-content">
-			                        <div class="news-title">${articleInfo.title}<span class="span7"><#if articleInfo.addTime??>${articleInfo.addTime?string("yyyy-MM-dd")}</#if ></span></div>
+			                        <div class="news-title"><a href="/article/articleInfo/article_detail.go?id=7" target="_blank">${articleInfo.title}</a><span class="span7"><#if articleInfo.addTime??>${articleInfo.addTime?string("yyyy-MM-dd")}</#if ></span></div>
 			                        <div class="newsInfo" style="text-indent:2em;">
 			                            ${articleInfo.normalCode}
 			                        </div>
@@ -48,9 +48,6 @@
         <#include "/index/common/foot.ftl">
     </div>
 </div>
-
-
-
 <script type="text/javascript" src="js/jquery-2.1.1.js"></script>
 <script type="text/javascript" src="js/js.js"></script>
 </body>

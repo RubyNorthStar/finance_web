@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>登陆</title>
+    <title>携手金融网</title>
     <link rel="stylesheet" type="text/css" href="/style/common/index.css">
     <script src="/script/jquery/jquery-1.7.js"></script>
 </head>
