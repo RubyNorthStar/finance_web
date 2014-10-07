@@ -103,7 +103,7 @@
 	                        	<#assign values = linkMap[mykey]> 
 		                     	<#list values as a> 
 						    		<tr>
-			                            <td>${a.productName?default("产品名称")} </td>
+			                            <td><a href="/product/productInfo/detail.go?id=${a.id}">${a.productName?default("产品名称")}</a></td>
 			                            <td><span class="span2 creditLevle" style="">${a.creditLevle?default("A")}</span></td>
 			                            <td><span class="span3" style="" >${a.yearInterestRate?default("0")}%</span><span style="font-size: 10px;">每年</span></td>
 			                            <td><span class="span4" style="" >${a.fundScale?default("0")}</span>元</td>

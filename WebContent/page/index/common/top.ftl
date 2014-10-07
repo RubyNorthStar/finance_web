@@ -6,7 +6,12 @@
         </div>
         <div class="right " style="width: 82%;">
             <div class="menu">
-                关于我们&numsp;|&numsp;我要理财&numsp;|&numsp;我要借款&numsp;|&numsp;新手指南&numsp;|&numsp;联系我们
+		                关于我们&numsp;|&numsp;
+		                我要理财&numsp;|&numsp;
+		                我要借款&numsp;|&numsp;
+		                新手指南&numsp;|&numsp;
+		                联系我们&numsp;|&numsp;
+		      <a href="/article/articleInfo/list_new.go?aptId=9">新闻动态</a>
             </div>
             <div class="button-login">
                 <a href="user/goTOLogin.go" class="button button-color1">登陆</a>
