@@ -32,4 +32,12 @@ public class ArticleInfoFrontController {
 		}
 		return "article/list_new";
 	}
+	
+	@RequestMapping(value="/article_detail", method = RequestMethod.GET)
+	public String articleDetail(Model model, Integer id){
+		if (id != null) {
+			model.addAttribute("articleInfo", articleInfoServiceImpl.findArticleInfoById(id));
+		}
+		return "article/article_detail";
+	}
 }

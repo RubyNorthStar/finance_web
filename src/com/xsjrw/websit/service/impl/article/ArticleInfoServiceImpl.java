@@ -52,8 +52,8 @@ public class ArticleInfoServiceImpl implements IArticleInfoService {
 	}
 
 	@Override
-	public ArticleInfo findArticleInfoById(Integer id) {
-		return articleInfoMapper.findById(id);
+	public ArticleInfo findArticleInfoById(Integer apId) {
+		return articleInfoMapper.findById(apId);
 	}
 
 	@Override
