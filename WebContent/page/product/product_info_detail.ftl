@@ -3,7 +3,10 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>携手金融网 - 产品详情</title>
-    <link rel="stylesheet" type="text/css" href="/style/common/index.css">
+    <link rel="stylesheet" href="/resources/css/idangerous.swiper.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
+	<link rel="stylesheet" href="/resources/css/swiper-demos.css?v=1.8">
+    <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
     <script src="/script/jquery/jquery-1.7.js"></script>
     <style>
         .none{
@@ -25,10 +28,10 @@
 
 <body>
 <div class="views body-bg">
-    <div class="view">
-        <!--头部导航-->
-        <!--  -->
-        <#include "/index/common/top.ftl">
+
+    <!--头部导航-->
+    <#include "/index/common/top.ftl">
+    <div class="view" style="width:1348px;background:#f7f7f7;">
         <!--中间内容-->
 
         <div class="content clearfix " style="display: block; background: #f7f7f7; padding-left: 150px;">
@@ -122,31 +125,63 @@
                     </div>
                 </div>
             </div>
-            <div class="content-content mt6 box-shadow" style="width: 81%">
-                <img class="content-img" src="/images/common/002.jpg" />
-                <img class="content-img" src="/images/common/003.jpg" />
-                <img class="content-img" src="/images/common/004.jpg" />
-                <img class="content-img" src="/images/common/005.jpg" />
+            <div role="main" class="main" >
+            	<div class="swiper-car content-content mt6 box-shadow clearfix" style="width:970px;height: 160px; overflow: hidden; position: relative;">
+        		<!--<a class="leftMove A1" href="javascript:;"><</a>
+        		<a class="rightMove A1" href="javascript:;">></a>-->
+        		<div class="pagination-car"></div>
+        		<div class="swiper-wrapper clearfix move">
+			      <img class="swiper-slide content-img" src="/images/common/002.jpg" />
+			      <img class="swiper-slide content-img" src="/images/common/003.jpg" />
+			      <img class="swiper-slide content-img" src="/images/common/004.jpg" />
+			      <img class="swiper-slide content-img" src="/images/common/005.jpg" />
+			      <img class="swiper-slide content-img" src="/images/common/002.jpg" />
+			      <img class="swiper-slide content-img" src="/images/common/003.jpg" />
+			      <img class="swiper-slide content-img" src="/images/common/005.jpg" />
+			    </div>
             </div>
-            <div class="content-content mt6 box-shadow" style="width: 81%">
-                <div class="details-form" style="">
-                    <div class="user-name">更多产品信息请致电&numsp;400-6099-800</div>
-                    <div class="user-name" style="font-size: 12px;">更多产品信息请致电&numsp;400-6099-800</div>
-                    <div class="form-text">
-                        <p>在线填写真实姓名和电话号码</p>
-                        <p>在线填写真实姓名和电话号码在线填写真实姓名和电话号码</p>
-                    </div>
-                    <div class="form-input">
-                        <div class="form-input-name">贵宾姓名：<input type="text" style="width: 200px;"></div>
-                        <div class="form-input-phone">联系电话：<input type="text" style="width: 200px;"></div>
-                        <div class="tj-btn"><button class="tj" style="width: 100px; padding: 5px 10px; color: #fff; border: none; background: #0074c1;">提 交</button></div>
-                    </div>
-                </div>
+            
+        </div>
+    </div>
+	<div class="content-content mt6 bg-content" style="width: 100%">
+        <div class="details-form" style="">
+            <div class="user-name">更多产品信息请致电&numsp;400-6099-800</div>
+            <div class="user-name" style="font-size: 12px;">更多产品信息请致电&numsp;400-6099-800</div>
+            <div class="form-text">
+                <p>在线填写真实姓名和电话号码</p>
+                <p>在线填写真实姓名和电话号码在线填写真实姓名和电话号码</p>
+            </div>
+            <div class="form-input">
+                <div class="form-input-name">贵宾姓名：<input type="text" style="width: 200px;"></div>
+                <div class="form-input-phone">联系电话：<input type="text" style="width: 200px;"></div>
+                <div class="tj-btn"><button class="tj" style="width: 100px; padding: 5px 10px; color: #fff; border: none; background: #0074c1;">提 交</button></div>
             </div>
         </div>
-        <!--底部工具栏-->
-        <#include "/index/common/foot.ftl">
     </div>
+	       <!--底部工具栏-->
+	<div class="page clearfix" style="padding-bottom: 40px;">
+	    <div class="toolbar">
+	        <img class="bottom-logo" src="/resources/images/user/0013.jpg" />
+	    </div>
+	    <div class="toolbar">
+	        <div class="top-inner toolbar-inner">
+	        	    关于安心理财&numsp;|&numsp;联系我们&numsp;|&numsp;公司荣誉&numsp;|&numsp;合作伙伴&numsp;|&numsp;安心官方微博&numsp;|&numsp;全国免费质询电话：400-6099-800
+	        </div>
+	        <div class="bottom-text">
+	          	   京ICP证100743号 京公网安1101055897CreditEase@Θ2009
+	        </div>
+	    </div>
+	    <div class="toolbar">
+	        <img class="" style="width: 200px;height: 60px" src="/resources/images/user/0012.jpg" />
+	    </div>
+	</div>
 </div>
+
+<script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
+<script type="text/javascript" src="/resources/common/plugin/jquery/js.js"></script>
+
+<script type="text/javascript" src="/resources/common/plugin/swiper/idangerous.swiper-1.8.min.js"></script>
+
+<script type="text/javascript" src="/resources/common/plugin/swiper/swiper-demos.js"></script>
 </body>
 </html>
