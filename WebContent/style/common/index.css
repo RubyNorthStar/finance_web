@@ -362,6 +362,7 @@ th,td{
 .news-title .span7{
     margin-left: 46%;
     font-size: 14px;
+    float: right;
 }
 .news-content{
     width: 715px; margin-left: 40px;

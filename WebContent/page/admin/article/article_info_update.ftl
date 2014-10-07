@@ -4,11 +4,12 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>文章更新</title>
 	<link href="/style/manage/index.css" rel="stylesheet" />
-	<script type="text/javascript" src="../script/jquery/jquery-1.7.js"></script>
-	<#-- <script type="text/javascript" src="/script/product/leftTree.js"></script> -->
+	<script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
+	<script src="/script/jquery/jquery.pagination.js" type="text/javascript" ></script>
+	<link href="/style/manage/page.css" rel="stylesheet" />
 	<SCRIPT type="text/javascript" src="/fckeditor/fckeditor.js"></SCRIPT>
 	<SCRIPT type="text/javascript" src="/fckeditor/fckconfig.js"></SCRIPT>
-	<script type="text/javascript" src="/script/publish/publish.js"></script>
+	<script type="text/javascript" src="/script/admin/publish.js"></script>
 </head>
 <script type="text/javascript">
 
@@ -50,15 +51,6 @@
 	}
   function toSubmit(){
     getEditorHTMLContents("FCKeditor1");
-	if(!checkIsNull('title','文章标题不能为空！')){
-		return;
-	}
-	if(!checkForm('title',32,'文章标题长度不能超过32')){
-		return;
-	}
-	if(!checkForm('articleSource',32,'文章标题长度不能超过32')){
-		return;
-	}
 	$("#myForm1").submit();
 }
 </script>
@@ -82,39 +74,39 @@
 				    <div class="right1"><!--right开始-->
 				    <h3>文章管理&gt;&gt;文章修改</h3>
 				      <div class="r1_bottom" id="layer0">
-			      		<form action="article_publish_type_excuteUpdateArticlePublish.shtml" method="post" id="myForm1" enctype ="multipart/form-data">
-			      		   <input type="hidden" name="articlePublish.artId" value="${articlePublish.artId}"/>
+			      		<form action="/admin/articleInfo/update.go" method="post" id="myForm1" enctype ="multipart/form-data">
+			      		   <input type="hidden" name="apId" value="${articleInfo.apId}"/>
 			      			 <table border="0" cellspacing="0" cellpadding="0" style="width:70%">
 			         	 	  <tr>&nbsp;</tr>
-				         	  <tr>
+					          <tr>
 					             <td class="td1">文章类型： </td>
 								 <td class="td4">
-								 	<SELECT name="articlePublishType.artPubId">
-							    	<#if articlePublishTypeList??>
-										<#list articlePublishTypeList as articlePublishType>
-											<#if articlePublishType.artPubId == articlePublish.articlePublishType.artPubId>
-													<OPTION  value="${articlePublishType.artPubId}" selected="selected">${articlePublishType.artPubName}</OPTION>
+								 	<SELECT name="aptId">
+							    	<#if articleInfoTypeList??>
+										<#list articleInfoTypeList as articleInfoType>
+											<#if articleInfo.apId == articleInfo.apId>
+													<OPTION  value="${articleInfoType.aptId}" selected="selected">${articleInfoType.aptName}</OPTION>
 												<#else>
-													<OPTION  value="${articlePublishType.artPubId}">${articlePublishType.artPubName}</OPTION>
+													<OPTION  value="${articleInfoType.aptId}">${articleInfoType.aptName}</OPTION>
 											</#if>
 										</#list>
 									</#if>
 									</SELECT>
 								</td>
 					          </tr>
-					           <tr>
-					             <td class="td1">文章标题：</td>
-	             				 <td class="td4"><input type="text" id="title" name="articlePublish.title" value="${articlePublish.title}"/></td>
+					          <tr>
+					             <td class="td1">作者：</td>
+	             				<td class="td2"><input type="text" id="author" name="author" value="${articleInfo.author}"/></td>
 					          </tr>
 					          <tr>
 					             <td class="td1">文章来源：</td>
-	             				<td class="td4"><input type="text" id="articleSource" name="articlePublish.articleSource" value="${articlePublish.articleSource}"/></td>
+	             				<td class="td4"><input type="text" id="articleSource" name="articleSource" value="${articleInfo.articleSource}"/></td>
 					          </tr>
 					          <tr>
 					             <td class="td1">上传图片：</td>
 					             <td class="td4" colspan="2">
 					             	 <div id="preview_fake">
-						             	<img id="uploadImage" <#if articlePublish??><#if articlePublish.articlePic??>src="${articlePublish.articlePic}"</#if><#else>src="/image/manage/touming.png"</#if> width="210" height="100" border="0"/>
+						             	<img id="uploadImage" name="uploadImage" <#if articleInfo??><#if articleInfo.articlePic??>src="/userfiles/articleImg${articleInfo.articlePic}"</#if><#else>src="/image/manage/touming.png"</#if> width="210" height="100" border="0"/>
 						             </div>
 						             <div>
 						             	<font color="#FF0000">*建议上传100*210格式图片</font>
@@ -126,20 +118,18 @@
 					     	   <tr>
 					             <td class="td1">是否启用：</td>
 					             <td class="td4">
-		             				 <input name="articlePublish.isUsing" type="radio" value="1" <#if (articlePublish.isUsing==1) > checked="checked"</#if> style="width:30px;border:0px"/>是
-									 <input name="articlePublish.isUsing" type="radio" value="0" <#if (articlePublish.isUsing!=1) > checked="checked"</#if> style="width:30px;border:0px"/>否
+		             				 <input name="isUsing" type="radio" value="1" <#if (articleInfo.isUsing==1) > checked="checked"</#if> style="width:30px;border:0px"/>是
+									 <input name="isUsing" type="radio" value="0" <#if (articleInfo.isUsing!=1) > checked="checked"</#if> style="width:30px;border:0px"/>否
 	             				 </td>
 					     	  </tr>
 					     	  <tr>
 				          	     <td class="td1">文章内容：</td>
-             				     <td class="td4"><textarea id="FCKeditor1"><#if articlePublish.editingCode??> ${articlePublish.editingCode}</#if></textarea></td>
-		                         <input type="hidden" id="editingCode"  name="articlePublish.editingCode"><br>
+             				     <td class="td4"><textarea id="FCKeditor1" name="FCKeditor1"><#if articleInfo.editingCode??> ${articleInfo.editingCode}</#if></textarea></td>
+		                         <input type="hidden" id="editingCode"  name="editingCode"><br>
 		                      </tr>
 					     	  <tr>
              					 <td colspan="2" style="text-align:center"><input type="button" onclick="toSubmit()" value="修改" style="width: 50px;"/></td>
 				          	  </tr>
-							  <input type="hidden" id="isCurShowPicId" name="isCurShowPicId" value="picId000008"/>
-							  <input type="hidden" id="dtul" name="dtul" value="ul8"/>
 				    	 </table>
 				    </form>
 			    </div>

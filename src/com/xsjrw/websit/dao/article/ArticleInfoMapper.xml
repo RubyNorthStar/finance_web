@@ -158,6 +158,9 @@
 		<include refid="page_where" />
 	</select>
 	
-	<!-- 其他自定义SQL -->
+	<select id="findArticleInfoByAptIdAndNumber" resultMap="articleInfoResultMap" parameterType="java.util.Map">
+		select <include refid="table_columns" /> from tbl_article_info where apt_id=#{aptId} and is_using=1 and status=1 order by last_update_time desc limit #{number}
+	</select>
 	
+	<!-- 其他自定义SQL -->
 </mapper>

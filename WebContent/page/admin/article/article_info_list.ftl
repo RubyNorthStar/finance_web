@@ -48,9 +48,13 @@
 	}
 	function publishInfo(id){
 		if(confirm("是否确定发布？")){
-	     	$.getJSON('/json/articles_publish_type_articleInfo.shtml?articleInfo.apId='+id+'&m=' + Math.random(), function(data) {
-				alert(data.publishInfo);
-				window.location.reload();
+	     	$.getJSON('/admin/articleInfo/publish/'+id+'.go?m=' + Math.random(), function(data) {
+     			if(data == '1001'){
+     				alert("发布成功");
+     				window.location.reload();
+     			}else{
+     				alert("发布失败");
+     			}
 			});
 	    }
 	}
@@ -144,7 +148,7 @@
 								<td>${articleInfo.lastUpdateUser}</td>
 								<td><#if (articleInfo.isUsing == 1)>是 <#else>否</#if></td>
 								<td>
-									<a href="article_publish_type_goUpdatearticleInfo.shtml?articleInfo.apId=${articleInfo.apId?c}">
+									<a href="/admin/articleInfo/goUpdate.go?id=${articleInfo.apId?c}">
 										<img src="/images/common/update.jpg" alt="更新" align="absmiddle"/>
 									</a>
 									<a id="J_L_${articleInfo.apId?c}" href="javascript:publishInfo(${articleInfo.apId?c})">

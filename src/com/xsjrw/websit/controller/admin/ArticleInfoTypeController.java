@@ -1,4 +1,4 @@
-package com.xsjrw.websit.controller.article;
+package com.xsjrw.websit.controller.admin;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

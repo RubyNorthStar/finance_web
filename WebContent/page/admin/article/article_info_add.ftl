@@ -111,6 +111,10 @@
 	             				 <td class="td2"><input type="text" id="title" name="title" value=""/></td>
 					          </tr>
 					          <tr>
+					             <td class="td1">作者：</td>
+	             				<td class="td2"><input type="text" id="author" name="author" value=""/></td>
+					          </tr>
+					          <tr>
 					             <td class="td1">文章来源：</td>
 	             				<td class="td2"><input type="text" id="articleSource" name="articleSource" value=""/></td>
 					          </tr>
@@ -134,7 +138,7 @@
 					          <tr>
 				          	     <td class="td1">文章内容：</td>
              				     <td class="td4"><textarea id="FCKeditor1"></textarea></td>
-		                         <input type="hidden" id="editingCode"  name="articleInfo.editingCode"><br>
+		                         <input type="hidden" id="editingCode"  name="editingCode"><br>
 		                      </tr>
 					     	  <tr>
              					 <td colspan="2" style="text-align:center"><input type="button" onclick="toSubmit()" value="添加" style="width: 50px;"/></td>

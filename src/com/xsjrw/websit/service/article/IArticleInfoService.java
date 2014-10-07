@@ -98,4 +98,12 @@ public interface IArticleInfoService  {
 	* @user by wangzx
 	 */
 	List<ArticleInfo> findArticleInfoByPage(ArticleInfoSearch search);
+	
+	/**
+	 * 根据aptId和获取数量，获取倒叙的N个新闻
+	 * @param aptId
+	 * @param number
+	 * @return
+	 */
+	List<ArticleInfo> findArticleInfoByAptIdAndNumber(Integer aptId, Integer number);
 }
