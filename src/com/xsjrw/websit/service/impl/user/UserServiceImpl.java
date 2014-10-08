@@ -1,4 +1,4 @@
-package com.xsjrw.websit.service.impl;
+package com.xsjrw.websit.service.impl.user;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import com.xsjrw.common.util.MD5;
 import com.xsjrw.websit.dao.user.UsersMapper;
 import com.xsjrw.websit.domain.user.Users;
 import com.xsjrw.websit.search.user.UsersSearch;
-import com.xsjrw.websit.service.IUserService;
+import com.xsjrw.websit.service.user.IUserService;
 
 @Service("userService")
 @Transactional

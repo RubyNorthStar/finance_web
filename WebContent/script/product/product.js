@@ -42,74 +42,59 @@ function addProductInfo(){
 		alert("起投金额必须为纯数字！");
 		return false;
 	}
-	
 	var profitDistribution = $('#profitDistribution').val();
 	if($.trim(profitDistribution).length == 0){
 		alert("收益分配不能为空！");
 		return false;
 	}
-	
 	var yearInterestRate = $('#yearInterestRate').val();
 	if(isNaN(yearInterestRate)){
 		alert("年利率必须为纯数字！");
 		return false;
 	}
-	
 	var creditLevle = $('#creditLevle').val();
 	if(isNaN(creditLevle)){
 		alert("信用等级必须为纯数字！");
 		return false;
 	}
-	
 	var productDetaileInfo = $('#productDetaileInfo').prev().children().eq(1).children().eq(0).contents().find("body").text();
 	$('#productDetaileInfo').val(productDetaileInfo);
-	
 	if($.trim(productDetaileInfo).length == 0){
 		alert("项目简介不能为空！");
 		return false;
 	}
-	
 	var fundUse = $('#fundUse').prev().children().eq(1).children().eq(0).contents().find("body").text();
 	$('#fundUse').val(fundUse);
-	
 	var fundUse = $('#fundUse').val();
 	if($.trim(fundUse).length == 0){
 		alert("资金用途不能为空！");
 		return false;
 	}
-	
 	var repaymentSource = $('#repaymentSource').prev().children().eq(1).children().eq(0).contents().find("body").text();
 	$('#repaymentSource').val(repaymentSource);
-	
 	var repaymentSource = $('#repaymentSource').val();
 	if($.trim(repaymentSource).length == 0){
 		alert("还款来源不能为空！");
 		return false;
 	}
-	
 	var businessStructure = $('#businessStructure').prev().children().eq(1).children().eq(0).contents().find("body").text();
 	$('#businessStructure').val(businessStructure);
-	
 	var businessStructure = $('#businessStructure').val();
 	if($.trim(businessStructure).length == 0){
 		alert("交易结构不能为空！");
 		return false;
 	}
-	
 	var windControlMeasures = $('#windControlMeasures').prev().children().eq(1).children().eq(0).contents().find("body").text();
 	$('#windControlMeasures').val(windControlMeasures);
-	
 	var windControlMeasures = $('#windControlMeasures').val();
 	if($.trim(windControlMeasures).length == 0){
 	alert("风控措施不能为空！");
 	return false;
 	}
-	
 	$('#product_info_form').submit();
 }
 
 function updateStatus(id,obj){
-	
 	$.ajax({
 		type: "POST",
 		url : "/admin/productInfo/updateStatus.go",
@@ -128,6 +113,47 @@ function updateStatus(id,obj){
 			alert("更新失败!");
 		}
 	});
+}
+
+function addVipUser(){
+	var vipName = $.trim($("#vipName").val());
+	var vipMobile = $.trim($("#vipMobile").val());
+	var proId = $.trim($("#proId").val());
 	
+	var isMobile = checkPhone(vipMobile);
+	
+	if(vipName == null || vipName == ''){
+		alert("请输入用户名");
+		return false;
+	}
+	if (!isMobile) {
+		alert("请输入正确的手机号！");
+		return false;
+	}
+	$.ajax({
+		type: "POST",
+		url : "/vipUser/add.go",
+		data: {"vipName":vipName, "vipMobile":vipMobile,"productId":proId},
+		dataType:"json", 
+		success: function(data){
+			alert("添加成功");
+		},
+		error:function(data)
+		{
+			alert("添加失败");
+		}
+	});
+}
+
+/**
+ * 手机号检查
+ * @param phone
+ * @returns
+ */
+function checkPhone(num){ 
+    var phone = num || 0;
+    phone = $.trim(phone);
+    var Format = /^1[3,4,5,7,8]\d{9}$/; 
+    return Format.test(phone) ? true : false;
 }
 

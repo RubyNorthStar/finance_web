@@ -23,7 +23,7 @@ import com.xsjrw.common.util.MD5;
 import com.xsjrw.websit.core.domain.BaseWebController;
 import com.xsjrw.websit.domain.user.Users;
 import com.xsjrw.websit.search.user.UsersSearch;
-import com.xsjrw.websit.service.IUserService;
+import com.xsjrw.websit.service.user.IUserService;
 
 /**
  * Login 控制器

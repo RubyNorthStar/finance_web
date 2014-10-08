@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xsjrw.websit.dao.user.VipUserMapper">
+	<resultMap type="VipUser" id="vipUserResultMap">
+		<result property="id" column="id" />
+		<result property="vipName" column="vip_name" />
+		<result property="vipMobile" column="vip_mobile" />
+		<result property="productId" column="product_id" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+	<sql id="table_columns">
+		id,
+		vip_name,
+		vip_mobile,
+		product_id,
+		create_time
+    </sql>
+	<sql id="entity_properties">
+		#{id},
+		#{vipName},
+		#{vipMobile},
+		#{productId},
+		#{createTime}
+	</sql>
+	
+	<!-- 适用于主键自增类型 -->
+	<insert id="insert" parameterType="VipUser" useGeneratedKeys="true" keyProperty="id">
+		insert into tbl_vip_user( <include refid="table_columns" /> ) 
+		values ( <include refid="entity_properties" /> )
+	</insert>
+	
+	<!-- 批量添加 适用于主键自增类型  不支持返回主键-->
+	<insert id="batchInsert" parameterType="java.util.List" useGeneratedKeys="true">
+		insert into tbl_vip_user( <include refid="table_columns" /> ) 
+		values 
+		<foreach item="item" collection="list" separator="," >
+			( <include refid="entity_properties" /> )
+		</foreach>
+	</insert>
+	
+	<!--根据主键删除 -->
+	<delete id="deleteById">
+		delete from tbl_users
+		where id = #{id}
+	</delete>
+	
+	<!-- 根据ID批量删除 -->
+	<delete id="deleteByIds">
+		delete from tbl_vip_user
+		where id in
+		<foreach item="item" collection="array" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	
+	<update id="update" parameterType="VipUser">
+		update tbl_vip_user 
+		<trim prefix="set" suffixOverrides=",">
+			<if test="vipName != null and vipName != ''">vip_name = #{vipName},</if>
+			<if test="vipMobile != null and vipMobile != ''">vip_mobile = #{vipMobile},</if>
+			<if test="productId != null and productId != ''">product_id = #{productId},</if>
+			<if test="createTime != null and createTime != ''">create_time = #{createTime},</if>
+		</trim>
+		<where>id = #{id}</where>
+	</update>
+	
+	<select id="findById" resultMap="vipUserResultMap" parameterType="String" >
+		select <include refid="table_columns" />
+		from tbl_vip_user
+		where id = #{id}
+	</select>
+	
+	<select id="queryAll" resultMap="vipUserResultMap">
+		select <include refid="table_columns" /> 
+		from tbl_vip_user
+	</select>
+	
+	<!-- 使用like用法：columnName like concat('%',#columnName#,'%') -->
+	<sql id="page_where">
+		<trim prefix="where" prefixOverrides="and | or ">
+			<if test="vipName != null and vipName != ''">and vip_name = #{vipName}</if>
+			<if test="vipMobile != null and vipMobile != ''">and vip_mobile = #{vipMobile}</if>
+			<if test="productId != null and productId != ''">and product_id = #{productId}</if>
+			<if test="createTime != null and createTime != ''">and create_time = #{createTime}</if>
+		</trim>
+	</sql>
+	
+	<select id="page" resultMap="vipUserResultMap" parameterType="VipUserSearch">
+		select <include refid="table_columns" />
+		from tbl_vip_user
+		<include refid="page_where" />
+		limit #{firstIndex},#{pageSize}
+	</select>
+	
+	<select id="pageCount" resultType="int" parameterType="VipUserSearch">
+		select count(id) from tbl_vip_user
+		<include refid="page_where" />
+	</select>
+	
+	<!-- 其他自定义SQL -->
+	
+</mapper>
