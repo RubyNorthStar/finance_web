@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
 	<link rel="stylesheet" href="/resources/css/swiper-demos.css?v=1.8">
     <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
+    <script type="text/javascript" src="/script/product/product.js"></script>
     <script src="/script/jquery/jquery-1.7.js"></script>
     <style>
         .none{
@@ -152,9 +153,10 @@
                 <p>在线填写真实姓名和电话号码在线填写真实姓名和电话号码</p>
             </div>
             <div class="form-input">
-                <div class="form-input-name">贵宾姓名：<input type="text" style="width: 200px;"></div>
-                <div class="form-input-phone">联系电话：<input type="text" style="width: 200px;"></div>
-                <div class="tj-btn"><button class="tj" style="width: 100px; padding: 5px 10px; color: #fff; border: none; background: #0074c1;">提 交</button></div>
+             <input class="page-input-text fl"  type="text" >
+                <div class="form-input-name">贵宾姓名：<input type="text" id="vipName" style="width: 200px;"></div>
+                <div class="form-input-phone">联系电话：<input type="text" id="vipMobile" style="width: 200px;"></div>
+                <div class="tj-btn"><button class="tj" onclick="return addVipUser()" style="width: 100px; padding: 5px 10px; color: #fff; border: none; background: #0074c1;">提 交</button></div>
             </div>
         </div>
     </div>

@@ -6,6 +6,7 @@
 	<script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
 	<script src="/script/jquery/jquery.pagination.js" type="text/javascript" ></script>
 	<link href="/style/manage/page.css" rel="stylesheet" />
+	<script type="text/javascript" src="/script/product/product.js"></script>
 	<title> 首页</title>
 	
 	<script type="text/javascript">
@@ -123,12 +124,12 @@
                 <div class="">
                     <div class="VIP-phone clearfix">
                         <span class="input-title fL">贵宾姓名：</span>
-                        <input class="page-input-text fl" type="text" >
+                         <input class="page-input-text fl" id="vipName" type="text" >
                     </div>
                     <div class="VIP-phone clearfix">
                         <span class="input-title fL">联系电话：</span>
-                        <input class="page-input-text fL" type="text" >
-                        <button class="submit">提 交</button>
+                        <input class="page-input-text fL" type="text" id="vipMobile">
+                        <button class="submit" onclick="return addVipUser()">提 交</button>
                     </div>
                 </div>
             </div>
