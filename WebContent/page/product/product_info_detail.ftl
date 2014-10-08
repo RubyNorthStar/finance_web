@@ -147,13 +147,10 @@
 	<div class="content-content mt6 bg-content" style="width: 100%">
         <div class="details-form" style="">
             <div class="user-name">更多产品信息请致电&numsp;400-6099-800</div>
-            <div class="user-name" style="font-size: 12px;">更多产品信息请致电&numsp;400-6099-800</div>
             <div class="form-text">
                 <p>在线填写真实姓名和电话号码</p>
-                <p>在线填写真实姓名和电话号码在线填写真实姓名和电话号码</p>
             </div>
             <div class="form-input">
-             <input class="page-input-text fl"  type="text" >
                 <div class="form-input-name">贵宾姓名：<input type="text" id="vipName" style="width: 200px;"></div>
                 <div class="form-input-phone">联系电话：<input type="text" id="vipMobile" style="width: 200px;"></div>
                 <div class="tj-btn"><button class="tj" onclick="return addVipUser()" style="width: 100px; padding: 5px 10px; color: #fff; border: none; background: #0074c1;">提 交</button></div>
