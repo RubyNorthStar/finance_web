@@ -121,7 +121,7 @@ public class UserController extends BaseWebController{
 		String xs_sessionYzm = (String) request.getSession().getAttribute(UserConstans.XS_SESSIONID);  //服务器验证码
 		
 		//判断验证码是否相同，不同则直接返回
-		if(ym_yzm == null || xs_sessionYzm == null || !ym_yzm.toUpperCase().equals(xs_sessionYzm.subSequence(0, 4))){
+		if(ym_yzm == null || xs_sessionYzm == null || !ym_yzm.toUpperCase().equals(xs_sessionYzm.substring(0, 4).toUpperCase())){
 			return result;
 		}
 		
@@ -248,6 +248,19 @@ public class UserController extends BaseWebController{
 			result = "faile";
 		}
 		return result;
+	}
+	
+	/**
+	 * 个人中心
+	 * @param modle
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(value="/center")
+	public String center(Model modle, HttpServletRequest request){
+		Users user = (Users) request.getSession().getAttribute(UserConstans.USER_LOGIN);
+		System.out.println(user);
+		return "user/center";
 	}
 	
 	/**

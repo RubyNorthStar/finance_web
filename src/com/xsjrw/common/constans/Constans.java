@@ -5,4 +5,6 @@ public class Constans {
 	
 	public static final String PRODUCTSERVICEPATH= "D:/data/images";
 	
+	public static final String PRODUCTMORTGAGEPATH = "F:/workspace/finance_web/WebContent/userfiles/mortgageImages";
+	
 }

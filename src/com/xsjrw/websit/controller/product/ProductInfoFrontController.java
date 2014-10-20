@@ -19,9 +19,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xsjrw.websit.domain.product.ProductFundType;
 import com.xsjrw.websit.domain.product.ProductInfo;
+import com.xsjrw.websit.domain.product.ProductMortgage;
 import com.xsjrw.websit.search.product.ProductInfoSearch;
 import com.xsjrw.websit.service.product.IProductFundTypeService;
 import com.xsjrw.websit.service.product.IProductInfoService;
+import com.xsjrw.websit.service.product.IProductMortgageService;
 
 /**
  * Controller of ProductInfo
@@ -37,6 +39,9 @@ public class ProductInfoFrontController {
 	
 	@Autowired
 	private IProductFundTypeService productFundTypeService;
+	
+	@Autowired
+	private IProductMortgageService productMortgageService;
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model, ProductInfoSearch search, HttpServletRequest request){
@@ -95,6 +100,12 @@ public class ProductInfoFrontController {
 	public String detail(Model model, Integer id) {
 		if(id != null ){
 			ProductInfo productInfo = productInfoService.findProductInfoById(id);
+			
+			List<ProductMortgage> mortgages = productMortgageService.findProductMortgageByProductId(id);
+			if(mortgages != null && mortgages.size() < 1){
+				mortgages = null;
+			}
+			model.addAttribute("mortgages", mortgages);
 			
 			if(productInfo != null && productInfo.getProductName() != null && productInfo.getId() != null ){
 				model.addAttribute("productInfo", productInfo);

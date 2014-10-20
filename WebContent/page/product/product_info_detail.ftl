@@ -126,21 +126,27 @@
                     </div>
                 </div>
             </div>
-            <div role="main" class="main" >
-            	<div class="swiper-car content-content mt6 box-shadow clearfix" style="width:970px;height: 160px; overflow: hidden; position: relative;">
-        		<!--<a class="leftMove A1" href="javascript:;"><</a>
-        		<a class="rightMove A1" href="javascript:;">></a>-->
-        		<div class="pagination-car"></div>
-        		<div class="swiper-wrapper clearfix move">
-			      <img class="swiper-slide content-img" src="/images/common/002.jpg" />
-			      <img class="swiper-slide content-img" src="/images/common/003.jpg" />
-			      <img class="swiper-slide content-img" src="/images/common/004.jpg" />
-			      <img class="swiper-slide content-img" src="/images/common/005.jpg" />
-			      <img class="swiper-slide content-img" src="/images/common/002.jpg" />
-			      <img class="swiper-slide content-img" src="/images/common/003.jpg" />
-			      <img class="swiper-slide content-img" src="/images/common/005.jpg" />
-			    </div>
-            </div>
+            
+            <#if mortgages??>
+	            <div role="main" class="main" >
+	            	<div class="swiper-car content-content mt6 box-shadow clearfix" style="width:970px;height: 160px; overflow: hidden; position: relative;">
+	        		<!--<a class="leftMove A1" href="javascript:;"><</a>
+	        		<a class="rightMove A1" href="javascript:;">></a>-->
+	        		<div class="pagination-car"></div>
+	        		<div class="swiper-wrapper clearfix move">
+	        			<#list mortgages as m>
+	        				<img class="swiper-slide content-img" src="/userfiles/mortgageImages/${m.imagUrl}" />
+	        			</#list>
+				      
+				    <!--  <img class="swiper-slide content-img" src="/images/common/003.jpg" />
+				      <img class="swiper-slide content-img" src="/images/common/004.jpg" />
+				      <img class="swiper-slide content-img" src="/images/common/005.jpg" />
+				      <img class="swiper-slide content-img" src="/images/common/002.jpg" />
+				      <img class="swiper-slide content-img" src="/images/common/003.jpg" />
+				      <img class="swiper-slide content-img" src="/images/common/005.jpg" /> -->
+				    </div>
+	            </div>
+            </#if>
             
         </div>
     </div>

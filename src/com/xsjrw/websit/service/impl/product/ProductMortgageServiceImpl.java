@@ -64,8 +64,13 @@ public class ProductMortgageServiceImpl implements IProductMortgageService {
 		search.setTotalRecords(totalRecords);
 		return productMortgageMapper.page(search);
 	}
-	
-	
-	
+
+	@Override
+	public List<ProductMortgage> findProductMortgageByProductId(
+			Integer productId) {
+		
+		return productMortgageMapper.findProductMortgageByProductId(productId);
+	}
+
 	
 }

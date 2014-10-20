@@ -90,6 +90,7 @@ public class ProductInfoController {
 			productInfo.setStatus(1);
 		}
 		productInfo.setToExamineStatus(1);  //设置为未审核状态
+		productInfo.setTotalMoney(0.0);
 		productInfoService.saveProductInfo(productInfo);
 		Integer proInfoId = productInfo.getId();
 		System.out.println("=====proInfoId====="+proInfoId);
@@ -231,7 +232,7 @@ public class ProductInfoController {
 		response.setContentType("text/html");
 		try {
 	        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-			String uploadPath = Constans.PRODUCTIMAGEPATH;
+			String uploadPath = Constans.PRODUCTMORTGAGEPATH;
 			java.text.DateFormat format1 = new java.text.SimpleDateFormat(  
 	                "yyyy-MM-dd");  
 	        String day = format1.format(new Date());  

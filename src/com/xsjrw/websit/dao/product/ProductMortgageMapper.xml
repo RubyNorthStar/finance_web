@@ -114,4 +114,9 @@
 	
 	<!-- 其他自定义SQL -->
 	
+	<select id="findProductMortgageByProductId" resultMap="productMortgageResultMap" parameterType="Integer" >
+		select <include refid="table_columns" /> 
+		from tbl_product_mortgage where product_id = #{productId} and status = 1
+	</select>
+	
 </mapper>

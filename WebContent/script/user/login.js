@@ -29,13 +29,12 @@ function userLogin(obj){
     		data: {"email":email, "password":password},
     		dataType:"json", 
     		success: function(data){
-    			
     			 if (data) {
 			        if ($("#remember").prop("checked")) {
 			            setCookie("LOGINNAME",email);
 			            setCookie("LOGINPWD",data[0].password);
 			        }
-			        window.location.href = "http://localhost:8080";
+			        window.location.href = "/index.go";
 			    } else { 
 			    	$("#verify").html("用户名或密码错误！"); 
 			    	$(obj).val("马上登录");
@@ -107,7 +106,7 @@ function userRegiste(){
     		    		dataType:"text", 
     		    		success: function(data){
     		    			if(data == "success"){
-    		    				window.location.href = "/";
+    		    				window.location.href = "/user/center.go";
     		    			}else{
     		    				$("#verify").text("注册失败");
     		    			}

@@ -98,4 +98,11 @@ public interface IProductMortgageService  {
 	* @user by wangzx
 	 */
 	List<ProductMortgage> findProductMortgageByPage(ProductMortgageSearch search);
+	
+	/**
+	 * 根据产品ID查询所有的对应的抵押产品
+	 * @param productId
+	 * @return
+	 */
+	List<ProductMortgage> findProductMortgageByProductId (Integer productId);
 }
