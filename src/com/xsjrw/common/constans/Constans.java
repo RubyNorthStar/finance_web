@@ -7,4 +7,8 @@ public class Constans {
 	
 	public static final String PRODUCTMORTGAGEPATH = "F:/workspace/finance_web/WebContent/userfiles/mortgageImages";
 	
+	public static final String product_real_path = "F:/data/images";
+	
+	public static final String image_service_path = "http://image.xsjrw.com";
+	
 }

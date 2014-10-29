@@ -55,14 +55,14 @@ public class ProductInfoController {
 		return "admin/product/ckeditor_test";
 	}
 	
-	@RequestMapping(method = RequestMethod.GET)
+	@RequestMapping()
 	public String list(Model model, ProductInfoSearch search){
 		if (search == null) {
 			search = new ProductInfoSearch();
 			// search.setPageSize(20);
 			search.setStatus(1);
 		}
-		
+		search.setStatus(1);
 		model.addAttribute("listProduct", productInfoService.findProductInfoByPage(search));
 		model.addAttribute("search", search);
 		 
@@ -196,8 +196,10 @@ public class ProductInfoController {
 	
 	@RequestMapping(value="/del/{id}", method = RequestMethod.GET)
 	public String del(Model model, @PathVariable Integer id) {
-		productInfoService.deleteProductInfoById(id);
-		return "redirect:/productInfo";
+		ProductInfo proInfo = productInfoService.findProductInfoById(id);
+		proInfo.setStatus(2);
+		productInfoService.update(proInfo);
+		return "redirect:/admin/productInfo.go";
 	}
 	
 	@ResponseBody
@@ -232,7 +234,7 @@ public class ProductInfoController {
 		response.setContentType("text/html");
 		try {
 	        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-			String uploadPath = Constans.PRODUCTMORTGAGEPATH;
+			String uploadPath = Constans.product_real_path;
 			java.text.DateFormat format1 = new java.text.SimpleDateFormat(  
 	                "yyyy-MM-dd");  
 	        String day = format1.format(new Date());  
@@ -241,7 +243,7 @@ public class ProductInfoController {
 					multipartRequest, "",uploadPath, nextLevel);
 			
 			response.getWriter().print(
-					"{\"url\":\"" + "/" + nextLevel + "/" + fileList.get(0).getServerName() + "\",\"error\":0}");
+					"{\"url\":\"" + Constans.image_service_path+"/" + nextLevel + "/" + fileList.get(0).getServerName() + "\",\"error\":0}");
 			
 //			return Constans.PRODUCTSERVICEPATH+fileList.get(0).getServerName();
 		} catch (Exception e) {

@@ -39,11 +39,11 @@
 			<div class="right">
 				<div class="m-r">
 					<div style="padding:5px;background:none repeat scroll 0 0 #E4EAF6; margin-bottom:5px;border:1px solid #4F69A0">
-		      		<form action="/manage/manage_obtainAllMasterList.shtml" method="post" id="master_list_form">
+		      		<form action="/admin/master/obtainMasterList.go" method="post" id="master_list_form">
 			      		 <table >
 		        			<tr>
-								<td> 账号：<input type="text" name="masterDTO.account" id="account" value="<#if masterDTO??><#if masterDTO.account??>${masterDTO.account}</#if></#if>"></td>
-							 	<td>姓名：<input type="text" name="masterDTO.name" id="name" value="<#if masterDTO??><#if masterDTO.name??>${masterDTO.name}</#if></#if>"></td>
+								<td> 账号：<input type="text" name="account" id="account" value="<#if masterSearch??><#if masterSearch.account??>${masterSearch.account}</#if></#if>"></td>
+							 	<td>姓名：<input type="text" name="name" id="name" value="<#if masterSearch??><#if masterSearch.name??>${masterSearch.name}</#if></#if>"></td>
 								<td><button  onclick="return searchMaster()">查询</button>
 								<td width="540px;">&nbsp;</td>
 							</tr>

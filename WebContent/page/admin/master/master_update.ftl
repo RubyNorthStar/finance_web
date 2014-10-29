@@ -103,7 +103,7 @@
 						      		 </#if> 
 					             </td>
 					           </tr>
-					          <tr> <td class="td1"></td><td class="td2"><img src="/images/common/save.jpg" onclick="updateMaster()" width="30px"/></td></tr>
+					          <tr> <td class="td1"></td><td class="td2"><img src="/images/common/update.jpg" onclick="updateMaster()" width="45px"/></td></tr>
 				    	 </table>
 				    </form>
 			    </div>

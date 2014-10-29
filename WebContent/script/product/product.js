@@ -98,14 +98,15 @@ function updateStatus(id,obj){
 	$.ajax({
 		type: "POST",
 		url : "/admin/productInfo/updateStatus.go",
-		data: {"id":id, "status":obj},
+		data: {"id":id, "toExamineStatus":obj},
 		dataType:"json", 
 		success: function(data){
-			alert(data.result);
 			if(obj == 2){
 				alert("审核成功");
+				window.location.href = "/admin/productInfo.go";
 			}else{
-				slert("禁用成功");
+				alert("禁用成功");
+				window.location.href = "/admin/productInfo.go";
 			}
 		},
 		error:function(data)
@@ -155,5 +156,13 @@ function checkPhone(num){
     phone = $.trim(phone);
     var Format = /^1[3,4,5,7,8]\d{9}$/; 
     return Format.test(phone) ? true : false;
+}
+
+/**
+ * 根据产品名称查询产品
+ */
+
+function searchProductByName(){
+	$('#product_list_form').submit();
 }
 

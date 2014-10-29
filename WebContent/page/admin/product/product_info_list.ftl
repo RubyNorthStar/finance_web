@@ -42,12 +42,12 @@
 			<div class="right">
 				<div class="m-r">
 					<div style="padding:5px;background:none repeat scroll 0 0 #E4EAF6; margin-bottom:5px;border:1px solid #4F69A0">
-		      		<form action="/manage/manage_obtainAllMasterList.shtml" method="post" id="master_list_form">
+		      		<form action="/admin/productInfo.go" method="post" id="product_list_form">
 			      		 <table >
 		        			<tr>
-								<td> 类型名称：<input type="text" name="masterDTO.account" id="account" value="<#if masterDTO??><#if masterDTO.account??>${masterDTO.account}</#if></#if>"></td>
-								<td><button  onclick="return searchMaster()">查询</button>
-								<td width="540px;">&nbsp;</td>
+								<td> 产品名称：<input type="text" name="productName" id="productName" value="<#if search.productName??>${search.productName}</#if>"></td>
+								<td><button  onclick="return searchProductByName()">查询</button>
+								<td width="740px;">&nbsp;</td>
 							</tr>
 						</table>
 				    </form>
@@ -85,8 +85,11 @@
 						      		<td><#if item.yearInterestRate??>${item.yearInterestRate}</#if></td>
 						      		<td><#if item.creditLevle??>${item.creditLevle}</#if></td>
 						      		<td>
-						      			<a onclick="updateStatus(${item.id},2)" style="cursor:pointer">审核</a> &nbsp;
-						      			<a onclick="updateStatus(${item.id},3)" style="cursor:pointer">禁用</a> &nbsp;
+						      			<#if item.toExamineStatus == 1 || item.toExamineStatus == 3>
+						      					<a onclick="updateStatus(${item.id},2)" style="cursor:pointer">审核</a> &nbsp;
+						      				<#else>
+						      					<a onclick="updateStatus(${item.id},3)" style="cursor:pointer">禁用</a> &nbsp;
+						      			</#if>
 						      			<a href="/admin/productInfo/update.go?id=${item.id}">更新</a> &nbsp;
 						      			<a href="/admin/productInfo/del/${item.id}.go">删除</a> &nbsp;
 						      		</td>

@@ -89,7 +89,7 @@
 		                            <td><span class="span3" style="" >${a.yearInterestRate?default("0")}%</span><span style="font-size: 10px;">每年</span></td>
 		                            <td><span class="span4" style="" >${a.fundScale?default("0")}</span>元</td>
 		                            <td><span class="span5" style="" >${a.investmentTimeLimit?default("0")}</span>个月</td>
-		                            <td><span class="span6" style=""><#if a.totalMoney == 0>0<#else>${(a.totalMoney/a.fundScale*100)?int+1}</#if>%</span></td>
+		                            <td><span class="span6" style=""><#if a.totalMoney?? && a.totalMoney == 0>0<#else>${(a.totalMoney/a.fundScale*100)?int+1}</#if>%</span></td>
 		                            <td>
 		                            	<#if a.toExamineStatus == 1>等待审核</#if>
 		                            	<#if a.toExamineStatus == 2>已审核</#if>

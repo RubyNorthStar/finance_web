@@ -5,9 +5,36 @@
 	<script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
 	<script src="/script/product/product.js" type="text/javascript" ></script>
 	
+	<!-- 编辑器插件 -->
+	<link rel="stylesheet" href="/resources/common/plugin/kindeditor/themes/default/default.css" />
+	<script charset="utf-8" src="/resources/common/plugin/kindeditor/kindeditor-min.js"></script>
+	<script charset="utf-8" src="/resources/common/plugin/kindeditor/lang/zh_CN.js"></script>
+	<script type="text/javascript" src="/resources/common/plugin/kindeditor/plugins/code/prettify.js"></script>
+	
 	<!-- 样式 -->
 	<link href="/style/manage/index.css" rel="stylesheet" />
 	<title>更新产品</title>
+	
+	<script>
+        var editor;
+	    KindEditor.ready(function(K) {
+		    var options={
+			    cssPath : ['/resources/common/plugin/kindeditor/plugins/code/prettify.css'],
+			    //allowImageUpload:false,
+			    allowFlashUpload:false,
+			    allowFileManager : true,
+			    uploadJson:'/admin/productInfo/saveImage.go',
+			    items:
+			   		 ['source','|','image','|','preview','|','selectall','|','fullscreen','|','justifyleft','justifycenter','justifyright','justifyfull','|','insertorderedlist','formatblock','fontname','fontsize','forecolor','hilitecolor','bold','italic','baidumap','link','unlink','clearhtml','quickformat' ]
+		    };
+	   		editor = K.create('#productDetaileInfo',options);
+	   		editor = K.create('#fundUse',options);
+	   		editor = K.create('#repaymentSource',options);
+	   		editor = K.create('#businessStructure',options);
+	   		editor = K.create('#windControlMeasures',options);
+	    });
+	    
+	</script>
 	
 </head>
   <body>
@@ -71,19 +98,19 @@
 					             <td class="td1">信用等级：</td><td class="td2">&nbsp;<input type="text" name="creditLevle" id="creditLevle" value="${proInfo.creditLevle}"></td>
 					          </tr>
 					          <tr>
-					             <td class="td1">项目简介：</td><td class="td2"><textarea style="width:200px;height:100px;" name="productDetaileInfo" id="productDetaileInfo" value="${proInfo.productDetaileInfo}"></textarea></td>
+					             <td class="td1">项目简介：</td><td class="td2"><textarea style="width:200px;height:100px;" name="productDetaileInfo" id="productDetaileInfo" >${proInfo.productDetaileInfo}</textarea></td>
 					          </tr>
 					          <tr>
-					             <td class="td1">资金用途：</td><td class="td2">&nbsp;<textarea style="width:200px;height:100px;" name="fundUse" id="fundUse" value="${proInfo.fundUse}"></textarea></td>
+					             <td class="td1">资金用途：</td><td class="td2">&nbsp;<textarea style="width:200px;height:100px;" name="fundUse" id="fundUse" >${proInfo.fundUse}</textarea></td>
 					          </tr>
 					          <tr>
-					             <td class="td1">还款来源：</td><td class="td2">&nbsp;<textarea style="width:200px;height:100px;" name="repaymentSource" id="repaymentSource" value="${proInfo.repaymentSource}"></textarea></td>
+					             <td class="td1">还款来源：</td><td class="td2">&nbsp;<textarea style="width:200px;height:100px;" name="repaymentSource" id="repaymentSource" >${proInfo.repaymentSource}</textarea></td>
 					          </tr>
 					          <tr>
-					             <td class="td1">交易结构：</td><td class="td2">&nbsp;<textarea style="width:200px;height:100px;" name="businessStructure" id="businessStructure" value="${proInfo.businessStructure}"></textarea></td>
+					             <td class="td1">交易结构：</td><td class="td2">&nbsp;<textarea style="width:200px;height:100px;" name="businessStructure" id="businessStructure" >${proInfo.businessStructure}</textarea></td>
 					          </tr>
 					          <tr>
-					             <td class="td1">风控措施：</td><td class="td2">&nbsp;<textarea style="width:200px;height:100px;" name="windControlMeasures" id="windControlMeasures" value="${proInfo.windControlMeasures}"></textarea></td>
+					             <td class="td1">风控措施：</td><td class="td2">&nbsp;<textarea style="width:200px;height:100px;" name="windControlMeasures" id="windControlMeasures" >${proInfo.windControlMeasures}</textarea></td>
 					          </tr>
 					          
 					          <tr> <td class="td1"><button  onclick="return addProductInfo()">保存</button></td></tr>
