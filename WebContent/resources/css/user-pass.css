@@ -1,0 +1,20 @@
+img { border: 0; }
+.header { height: 72px; background: #fff; }
+.resvise_passWord_box { margin: 0 auto; width: 1001px; height: 363px; margin-top: 31px; background: #fff; padding-top: 82px; }
+.resvise_passWord { height: 188px; margin: 0 auto; text-align: center; display: block; }
+.resvise_passWord p { font-size: 18px; font-family: "微软雅黑"; color: #666; }
+.resvise_passWord label { width: 75px; text-align: right; font-size: 14px; font-family: "微软雅黑"; color: #888; float: left; height: 34px; line-height: 34px; }
+.resvise_passWord p input { height: 32px; border: 1px solid #d9d9d9; width: 190px; padding-left: 10px; background: #f7f7f7; float: left; margin-left: 10px; display: inline; }
+.resvise_passWord .pass_error { color: #f00; font-size: 14px; font-family: "微软雅黑"; float: left; height: 34px; line-height: 34px; margin-left: 10px; display: inline; display: none; }
+.new_password { margin-top: 25px; margin-bottom: 20px; padding-left: 320px; }
+.confirm_password { padding-left: 320px; }
+.submit_but { padding-left: 320px; }
+.resvise_passWord .submit_but input { width: 202px; height: 37px; background: #00b98d; color: #fff; border: 0; margin-top: 20px; padding: 0; margin-left: 85px; cursor: pointer; font-size: 14px; font-family: "微软雅黑"; }
+.resvise_passWord .submit_but input:hover { opacity: 0.8; filter: alpha(opacity=80); }
+.resvise_passWord .focus_style { background: #fff; -webkit-box-shadow: 0 0 8px #ededed; box-shadow: 0 0 8px #ededed; }
+.resvise_passWord_tip { width: 140px; text-align: center; margin: 0 auto; display: none; }
+.resvise_passWord_tip img { margin-bottom: 15px; }
+.resvise_passWord_tip p { font-size: 14px; font-family: "微软雅黑"; color: #666; line-height: 24px; }
+.resvise_passWord_tip p span { color: #00b98d; }
+.resvise_passWord_tip p i { font-style: normal; color: #00b98d; }
+.resvise_passWord_tip p a { color: #007cd5; }

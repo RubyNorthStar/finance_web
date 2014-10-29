@@ -14,8 +14,13 @@
 		      <a href="/article/articleInfo/list_new.go?aptId=9">新闻动态</a>
             </div>
             <div class="button-login">
-	                <a href="/user/goTOLogin.go" class="button button-color1">登陆</a>
-	                <a href="/user/goTORegister.go" class="button button-color1">注册</a>
+            		<#if user??>
+            			您好，${user.username}
+            			<a href="/user/loginOut.go" class="button button-color1">退出</a>
+            		<#else>
+		                <a href="/user/goTOLogin.go" class="button button-color1">登陆</a>
+		                <a href="/user/goTORegister.go" class="button button-color1">注册</a>
+	                </#if>
             </div>
         </div>
     </div>

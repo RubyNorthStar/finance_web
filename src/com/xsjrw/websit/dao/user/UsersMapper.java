@@ -37,4 +37,5 @@ public interface UsersMapper extends BaseMapper<Users>{
 	 * @since  1.0.0
 	 */
 	List<Users> findUserByEmail(String email);
+	
 }

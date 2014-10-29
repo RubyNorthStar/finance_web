@@ -16,7 +16,7 @@ import com.xsjrw.common.constans.UserConstans;
  * 登录过滤 
  *  
  * @author geloin 
- * @date 2012-4-10 下午2:37:38 
+ * @date 2014-9-10 下午2:37:38 
  */  
 public class AdminLoginFilter extends OncePerRequestFilter {  
   
@@ -77,7 +77,7 @@ public class AdminLoginFilter extends OncePerRequestFilter {
         } else {  
             // 如果uri中不包含background，则继续  
             filterChain.doFilter(request, response);  
-        }  
+        }
     }  
   
 }

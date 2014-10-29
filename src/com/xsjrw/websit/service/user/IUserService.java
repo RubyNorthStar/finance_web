@@ -2,6 +2,7 @@ package com.xsjrw.websit.service.user;
 
 import java.util.List;
 
+import com.plat.common.mail.pojo.Email;
 import com.xsjrw.websit.domain.user.Users;
 import com.xsjrw.websit.search.user.UsersSearch;
 
@@ -121,5 +122,13 @@ public interface IUserService {
 	* @user by wangzx
 	 */
 	List<Users> findUserByPage(UsersSearch search);
+	
+	/**
+	 * 获取邮件内容
+	 * @param u
+	 * @param url
+	 * @return
+	 */
+	public Email getEmailFormat(Users u, String url);
 	
 }

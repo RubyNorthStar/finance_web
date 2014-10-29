@@ -3,6 +3,7 @@ package com.xsjrw.websit.controller.index;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,9 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xsjrw.common.constans.UserConstans;
 import com.xsjrw.common.util.JsonUtil;
 import com.xsjrw.websit.domain.product.ProductFundType;
 import com.xsjrw.websit.domain.product.ProductInfo;
+import com.xsjrw.websit.domain.user.Users;
 import com.xsjrw.websit.search.product.ProductInfoSearch;
 import com.xsjrw.websit.service.product.IProductFundTypeService;
 import com.xsjrw.websit.service.product.IProductInfoService;
@@ -30,7 +33,7 @@ public class IndexController {
 	private IProductInfoService productInfoService;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String toIndex(Model model, ProductInfoSearch search){
+	public String toIndex(Model model, ProductInfoSearch search, HttpServletRequest request){
 		
 		//查询所有的产品类型
 		List<ProductFundType> fundTypes = productFundTypeService.queryAll();
@@ -48,7 +51,6 @@ public class IndexController {
 		}
 		
 		model.addAttribute("fundTypes", fundTypes);
-		
 		model.addAttribute("linkMap", linkMap);
 		
 		return "index/index";

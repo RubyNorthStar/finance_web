@@ -28,6 +28,8 @@ public class Users extends BaseEntity {
 	private String 	userAddress; 
 	private String	sex;		
 	private String	picUrl;		
+	 private Date authSendtime;		 /* 验证码或验证url发送时间 */
+	 private String authCode;		 /* 发送给用户注册邮箱中的验证码或者加密的字符串，用来确定是否为当前用户访问该链接 */
 
 	// Constructor
 	public Users() {
@@ -37,7 +39,8 @@ public class Users extends BaseEntity {
 	 * full Constructor
 	 */
 	public Users(Integer id, String username, String mobile, String email, String password, 
-			Integer usertype, Date registTime, Integer state, String picUrl,String userAddress, String sex) {
+			Integer usertype, Date registTime, Integer state, String picUrl,String userAddress, String sex,
+			Date authSendtime, String authCode) {
 		setId(id);
 		this.username = username;
 		this.mobile = mobile;
@@ -49,6 +52,8 @@ public class Users extends BaseEntity {
 		this.userAddress = userAddress;
 		this.sex = sex;
 		this.picUrl = picUrl;
+		this.authSendtime = authSendtime;
+		this.authCode = authCode;
 	}
 
 	// getter && setter
@@ -148,7 +153,22 @@ public class Users extends BaseEntity {
 		return this;
 	}
 	
-	
+	public Date getAuthSendtime() {
+		return authSendtime;
+	}
+
+	public void setAuthSendtime(Date authSendtime) {
+		this.authSendtime = authSendtime;
+	}
+
+	public String getAuthCode() {
+		return authCode;
+	}
+
+	public void setAuthCode(String authCode) {
+		this.authCode = authCode;
+	}
+
 	@Override
 	public String toString() {
 		return "Users [" + "id=" + getId() + ", username=" + username + ", mobile=" + mobile + ", email=" + email + ", password=" + password + ", usertype=" + usertype + ", registTime=" + registTime + ", state=" + state + ", picUrl=" + picUrl + ", userAddress=" + userAddress + ", sex=" + sex +   "]";

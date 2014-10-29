@@ -12,14 +12,20 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.plat.common.mail.pojo.Email;
+import com.plat.common.mail.service.spi.EmailService;
 import com.xsjrw.common.constans.UserConstans;
 import com.xsjrw.common.listener.UserSessionListener;
+import com.xsjrw.common.util.DateCalcUtil;
 import com.xsjrw.common.util.JsonUtil;
 import com.xsjrw.common.util.MD5;
+import com.xsjrw.common.util.StringOperUtils;
 import com.xsjrw.websit.core.domain.BaseWebController;
 import com.xsjrw.websit.domain.user.Users;
 import com.xsjrw.websit.search.user.UsersSearch;
@@ -28,7 +34,7 @@ import com.xsjrw.websit.service.user.IUserService;
 /**
  * Login 控制器
  * 
- * @author wangzhixing
+ * @author wang.zx
  * @date 2014-09-12
  */
 @Controller
@@ -39,6 +45,9 @@ public class UserController extends BaseWebController{
 	
 	@Autowired
 	protected IUserService userService;
+	
+	@Autowired
+    private EmailService emailService;
 	
 	/**
 	 * 
@@ -165,7 +174,7 @@ public class UserController extends BaseWebController{
 			request.getSession().removeAttribute(UserConstans.USER_LISTENER);
 		}
 		
-		return "redirect:goTORegister";
+		return "redirect:/index.go";
 		
 //		if (request.getSession().getAttribute(Constans.USER_LOGIN) != null) {
 //			request.getSession().removeAttribute(Constans.USER_LOGIN);
@@ -284,5 +293,108 @@ public class UserController extends BaseWebController{
 			session.setAttribute(UserConstans.USER_LISTENER, userSessionListener);
 		}
 	}
+	
+	/** 找回密码开始 */
+	
+    /**
+     * 前往密码重置页面
+     *
+     * @return
+     */
+    @RequestMapping(value = "/forgot", method = RequestMethod.GET)
+    public String forgotPassword() {
+    	System.out.println("进来了");
+        return "user/findBackPassword";
+    }
+    
+    /**
+     * 密码找回邮件地址提交
+     *
+     * @param model
+     * @param email
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/forgot-submit", method = RequestMethod.POST)
+    public String forgotPasswordSubmit(Model model,  String email, HttpServletRequest request) {
+        // 判断用户所输入的电子邮件地址是否存在或者邮件输入是否合法
+    	List<Users> user = userService.findUserByEmail(email);
+    	
+        if (user == null ) {
+            // 不存在则返还验证失败信息
+            logger.debug("系统中没有找到此邮箱");
+            model.addAttribute("email", email);
+            return "/user/findBackPassword";
+        }
+        if (!StringOperUtils.validateEmail(email)) {
+            // 不存在则返还验证失败信息
+            logger.debug("所填邮箱不合法");
+            model.addAttribute("email", email);
+            return "/user/findBackPassword";
+        }
+        // 存在则获取用户信息
+//        Users user = userService.findUserByEmail(email);
+        Date sendEmailDate = new Date();
+        // 获得通行证的密钥,密码找回使用
+        String emailPassport = MD5.getMD5(user.get(0).getId() + "$" + sendEmailDate.getTime());
+        String hostUrl = "";
+        String urls = request.getServerName()+ ":" +request.getServerPort();
+        
+        hostUrl = "http://" + urls;
+        // 获得域名
+        String url = hostUrl + "/user/change-password/" + user.get(0).getId() + "/" + emailPassport+".go";
+        // 拼装email的内容
+        Email emailContent = userService.getEmailFormat(user.get(0), url);
+            
+            
+        // 发送邮件
+        try {
+            emailService.send(emailContent);
+        } catch (Exception e) {
+            logger.info("发送找回密码邮件失败，具体信息如下:{}"+ e.getMessage());
+            e.printStackTrace();
+        }
+        
+        user.get(0).setAuthCode(emailPassport);
+        user.get(0).setAuthSendtime(sendEmailDate);
+        userService.editUser(user.get(0));
+        
+        return "/user/sendResetPasswdSuccess";
+    }
+    
+    
+    @RequestMapping(value = "/change-password/{id}/{passport}", method = RequestMethod.GET)
+    public String changePassword(Model model, HttpServletRequest request, @PathVariable(value = "id") Integer id, @PathVariable(value = "passport") String passport) {
+        Date currDate = new Date();
+        Users user = userService.findUserById(id);
+        Date sendDate = user.getAuthSendtime();
+        //验证密码找回邮件的有效时间
+        if (!StringOperUtils.equals(passport, user.getAuthCode()) || DateCalcUtil.dateDiff(sendDate, currDate) > 24) {
+            model.addAttribute("message", "邮件已超时或者已失效，请重新修改密码");
+            return "/user/changePasswdFail";
+        }
+        //用户登陆
+        request.getSession().setAttribute(UserConstans.USER_LOGIN, user);
+        model.addAttribute("email", user.getEmail());
+        model.addAttribute("id", user.getId());
+        return "/user/changePassword";
+    }
+    
+    @ResponseBody
+    @RequestMapping(value = "/changePasswordNew", method = RequestMethod.POST)
+    public String changePasswordNew(Model model, @RequestParam(value = "user_id") int user_id, @RequestParam(value = "newPassword") String newPassword) {
+    	try {
+    		 Users user = userService.findUserById(user_id);
+        	 user.setPassword(MD5.getMD5(newPassword));
+             user.setAuthCode(MD5.getMD5(user.getId() + "$" + new Date().getTime()));
+             userService.editUser(user);
+		} catch (Exception e) {
+			return "-1";
+		}
+    	
+         return "1";
+    }
+    
+    /** 找回密码结束 */
 	
 }

@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote,dl, dt, dd, ul, ol, li, pre,fieldset, lengend, button, input, textarea,th, td { margin: 0; padding: 0; }
+body, button, input, select, textarea { font: 12px/1 "微软雅黑",Tahoma, Helvetica, Arial, "\5b8b\4f53", sans-serif;}
+.clearfix:before,
+.clearfix:after {
+  content:"";
+  display:table;
+}
+.clearfix:after {
+ clear:both;
+ overflow:hidden;
+}
+.clearfix {
+ zoom:1; /* IE < 8 */
+}
+body{overflow:hidden;}	
+.mail_lose_bg{position:absolute;top:0;left:0;z-index:-1;}
+.w610{margin:0 auto;width:610px;text-align:center;position:relative;height:100%;}
+.mail_lose_list{margin-top:167px;}
+.mail_lose_tc_bg{width:610px;height:148px;border-radius:5px;background:#fff;position:absolute;top:267px;left:0;opacity:0.4;filter:alpha(opacity=40);z-index:1;}
+.mail_lose_tc{width:610px;height:148px;border-radius:5px;margin-top:75px;position:relative;z-index:2;}
+.mail_lose_tc p{color:#010101;font-family:"微软雅黑";font-size:24px;margin-bottom:20px;}
+.mail_lose_tc p a{color:#010101;}
+.mail_lose_tc p a:hover{opacity:0.8;filter:alpha(opacity=80);}
+.mail_lose_footer{position:absolute;bottom:0;left:0;width:610px;height:123px;background:url(../images/mail_lose_footer_bg.png) center no-repeat}

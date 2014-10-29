@@ -49,7 +49,7 @@
 	                                <input class="input-checkbox" type="checkbox" checked="checked" id="remember">
 	                            </div>
 	                            	记住用户名
-	                            <a class="forget Acolor" href="javascript:;">忘记密码</a>
+	                            <a class="forget Acolor" href="/user/forgot.go">忘记密码</a>
 	                        </div>
 	                        <div class="login-btn">
 	                            <button onclick="javascript:userLogin(this);">马上登陆</button>

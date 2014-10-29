@@ -13,6 +13,8 @@
 		<result property="userAddress" column="user_address" />
 		<result property="sex" column="sex" />
 		<result property="picUrl" column="pic_url" />
+		<result property="authSendtime" column="auth_send_time" />
+		<result property="authCode" column="auth_code" />
 	</resultMap>
 	
 	<sql id="table_columns">
@@ -26,7 +28,9 @@
 		state,
 		user_address,
 		sex,
-		pic_url
+		pic_url,
+		auth_send_time,
+		auth_code
     </sql>
 	<sql id="entity_properties">
 		#{id},
@@ -39,7 +43,9 @@
 		#{state},
 		#{userAddress},
 		#{sex},
-		#{picUrl}
+		#{picUrl},
+		#{authSendtime},
+		#{authCode}
 	</sql>
 	
 	<sql id="entity_batch_properties">
@@ -53,7 +59,10 @@
 		#{item.state},
 		#{item.userAddress},
 		#{item.sex},
-		#{item.picUrl}
+		#{item.picUrl},
+		#{item.authSendtime},
+		#{item.authCode},
+		
 	</sql>
 	
 	<!-- 适用于主键自增类型 -->
@@ -100,6 +109,8 @@
 			<if test="userAddress != null and userAddress != ''">user_address = #{userAddress},</if>
 			<if test="sex != null and sex != ''">sex = #{sex},</if>
 			<if test="picUrl != null and picUrl != ''">pic_url = #{picUrl},</if>
+			<if test="authSendtime != null and authSendtime != ''">auth_send_time = #{authSendtime},</if>
+			<if test="authCode != null and authCode != ''">auth_code = #{authCode},</if>
 		</trim>
 		<where>id = #{id}</where>
 	</update>
@@ -130,6 +141,8 @@
 			<if test="userAddress != null and userAddress != ''">user_address = #{userAddress}</if>
 			<if test="sex != null and sex != ''">sex = #{sex}</if>
 			<if test="picUrl != null and picUrl != ''">pic_url = #{picUrl}</if>
+			<if test="authSendtime != null and authSendtime != ''">auth_send_time = #{authSendtime}</if>
+			<if test="authCode != null and authCode != ''">auth_code = #{authCode}</if>
 		</trim>
 	</sql>
 	
@@ -159,7 +172,7 @@
 	
 	<!--根据email和密码查询当前用户 -->
 	<select id="findUserByEmail" resultMap="usersResultMap" parameterType="String" >
-		select id
+		select *
 		from tbl_users
 		where email = #{email}
 	</select>
