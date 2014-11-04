@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>携手金融网 - 登陆</title>
+	<title>携手金融网 - 个人信息</title>
 	 <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
 	 <script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
 	 <script type="text/javascript" src="/resources/common/cookie/cookie.js"></script>
@@ -25,6 +25,8 @@
                 </div>
             </div>
         </div>
+        
+        <a href="/center/projectInfo/transferType.go">发布转让信息</a>
        		 <!--中间内容-->
 		  <div class="view">
 	        <div class="content m-l mt20 clearfix " style="margin-bottom: 200px;">

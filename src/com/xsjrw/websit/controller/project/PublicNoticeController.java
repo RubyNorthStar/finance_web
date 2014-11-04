@@ -1,4 +1,4 @@
-package com.xsjrw.websit.controller.user;
+package com.xsjrw.websit.controller.project;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,62 +14,54 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.xsjrw.websit.domain.user.VipUser;
-import com.xsjrw.websit.search.user.VipUserSearch;
-import com.xsjrw.websit.service.user.IVipUserService;
+import com.xsjrw.websit.domain.project.PublicNotice;
+import com.xsjrw.websit.search.project.PublicNoticeSearch;
+import com.xsjrw.websit.service.project.IPublicNoticeService;
 
 /**
- * Controller of VipUser
+ * Controller of PublicNotice
  * @author wang.zx
- * @date 2014-10-7
+ * @date 2014-11-4
  */
 @Controller
-@RequestMapping("/vipUser")
-public class VipUserController {
+@RequestMapping("/publicNotice")
+public class PublicNoticeController {
 	
 	@Autowired
-	private IVipUserService vipUserServiceImpl;
+	private IPublicNoticeService publicNoticeServiceImpl;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String list(Model model, VipUserSearch search){
+	public String list(Model model, PublicNoticeSearch search){
 		if (search == null) {
-			search = new VipUserSearch();
+			search = new PublicNoticeSearch();
 			// search.setPageSize(20);
 		}
-		model.addAttribute("list", vipUserServiceImpl.findVipUserByPage(search));
-		return "vipUser/list";
+		model.addAttribute("list", publicNoticeServiceImpl.findPublicNoticeByPage(search));
+		return "publicNotice/list";
 	}
 	
-	@ResponseBody
 	@RequestMapping(value="/add", method = RequestMethod.POST)
-	public String add(VipUser VipUser) {
-		String result = "1";
-		try {
-			vipUserServiceImpl.saveVipUser(VipUser);
-			result = "2";
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		result = "{\"result\":\""+result+"\"}";
-		return result;
+	public String add(PublicNotice PublicNotice) {
+		publicNoticeServiceImpl.savePublicNotice(PublicNotice);
+		return "redirect:/publicNotice";
 	}
 	
 	@RequestMapping(value="/update", method = RequestMethod.POST)
-	public String update(VipUser VipUser) {
-		vipUserServiceImpl.update(VipUser);
-		return "redirect:/vipUser";
+	public String update(PublicNotice PublicNotice) {
+		publicNoticeServiceImpl.update(PublicNotice);
+		return "redirect:/publicNotice";
 	}
 	
 	@RequestMapping(value="/del/{id}", method = RequestMethod.GET)
 	public String del(Model model, @PathVariable Integer id) {
-		vipUserServiceImpl.deleteVipUserById(id);
-		return "redirect:/vipUser";
+		publicNoticeServiceImpl.deletePublicNoticeById(id);
+		return "redirect:/publicNotice";
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
-	public VipUser getJson(Model model, @PathVariable Integer id){
-		return vipUserServiceImpl.findVipUserById(id);
+	public PublicNotice getJson(Model model, @PathVariable Integer id){
+		return publicNoticeServiceImpl.findPublicNoticeById(id);
 	}
 	
 	/**

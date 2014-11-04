@@ -15,7 +15,7 @@
             </div>
             <div class="button-login">
             		<#if user??>
-            			您好，${user.username}
+            			您好，<a href="/center/user/center.go"> ${user.username}</a>
             			<a href="/user/loginOut.go" class="button button-color1">退出</a>
             		<#else>
 		                <a href="/user/goTOLogin.go" class="button button-color1">登陆</a>

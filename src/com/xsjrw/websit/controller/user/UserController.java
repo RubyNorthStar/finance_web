@@ -260,19 +260,6 @@ public class UserController extends BaseWebController{
 	}
 	
 	/**
-	 * 个人中心
-	 * @param modle
-	 * @param request
-	 * @return
-	 */
-	@RequestMapping(value="/center")
-	public String center(Model modle, HttpServletRequest request){
-		Users user = (Users) request.getSession().getAttribute(UserConstans.USER_LOGIN);
-		System.out.println(user);
-		return "user/center";
-	}
-	
-	/**
 	 *分页查询
 	 * 
 	 * @param

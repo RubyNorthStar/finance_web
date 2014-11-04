@@ -1,4 +1,4 @@
-package com.xsjrw.websit.controller.user;
+package com.xsjrw.websit.controller.project;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,62 +14,54 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.xsjrw.websit.domain.user.VipUser;
-import com.xsjrw.websit.search.user.VipUserSearch;
-import com.xsjrw.websit.service.user.IVipUserService;
+import com.xsjrw.websit.domain.project.ImagePath;
+import com.xsjrw.websit.search.project.ImagePathSearch;
+import com.xsjrw.websit.service.project.IImagePathService;
 
 /**
- * Controller of VipUser
+ * Controller of ImagePath
  * @author wang.zx
- * @date 2014-10-7
+ * @date 2014-10-30
  */
 @Controller
-@RequestMapping("/vipUser")
-public class VipUserController {
+@RequestMapping("/imagePath")
+public class ImagePathController {
 	
 	@Autowired
-	private IVipUserService vipUserServiceImpl;
+	private IImagePathService imagePathServiceImpl;
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String list(Model model, VipUserSearch search){
+	public String list(Model model, ImagePathSearch search){
 		if (search == null) {
-			search = new VipUserSearch();
+			search = new ImagePathSearch();
 			// search.setPageSize(20);
 		}
-		model.addAttribute("list", vipUserServiceImpl.findVipUserByPage(search));
-		return "vipUser/list";
+		model.addAttribute("list", imagePathServiceImpl.findImagePathByPage(search));
+		return "imagePath/list";
 	}
 	
-	@ResponseBody
 	@RequestMapping(value="/add", method = RequestMethod.POST)
-	public String add(VipUser VipUser) {
-		String result = "1";
-		try {
-			vipUserServiceImpl.saveVipUser(VipUser);
-			result = "2";
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		result = "{\"result\":\""+result+"\"}";
-		return result;
+	public String add(ImagePath ImagePath) {
+		imagePathServiceImpl.saveImagePath(ImagePath);
+		return "redirect:/imagePath";
 	}
 	
 	@RequestMapping(value="/update", method = RequestMethod.POST)
-	public String update(VipUser VipUser) {
-		vipUserServiceImpl.update(VipUser);
-		return "redirect:/vipUser";
+	public String update(ImagePath ImagePath) {
+		imagePathServiceImpl.update(ImagePath);
+		return "redirect:/imagePath";
 	}
 	
 	@RequestMapping(value="/del/{id}", method = RequestMethod.GET)
 	public String del(Model model, @PathVariable Integer id) {
-		vipUserServiceImpl.deleteVipUserById(id);
-		return "redirect:/vipUser";
+		imagePathServiceImpl.deleteImagePathById(id);
+		return "redirect:/imagePath";
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
-	public VipUser getJson(Model model, @PathVariable Integer id){
-		return vipUserServiceImpl.findVipUserById(id);
+	public ImagePath getJson(Model model, @PathVariable Integer id){
+		return imagePathServiceImpl.findImagePathById(id);
 	}
 	
 	/**

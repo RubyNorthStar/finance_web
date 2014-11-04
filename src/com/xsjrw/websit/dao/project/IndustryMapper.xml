@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xsjrw.websit.dao.project.IndustryMapper">
+	<resultMap type="Industry" id="industryResultMap">
+		<result property="id" column="id" />
+		<result property="industryName" column="industry_name" />
+		<result property="createTime" column="create_time" />
+		<result property="status" column="status" />
+	</resultMap>
+	
+	<sql id="table_columns">
+		id,
+		industry_name,
+		create_time,
+		status
+    </sql>
+	<sql id="entity_properties">
+		#{id},
+		#{industryName},
+		#{createTime},
+		#{status}
+	</sql>
+	
+	<!-- 适用于主键自增类型 -->
+	<insert id="insert" parameterType="Industry" useGeneratedKeys="true" keyProperty="id">
+		insert into tbl_industry( <include refid="table_columns" /> ) 
+		values ( <include refid="entity_properties" /> )
+	</insert>
+	
+	<!-- 批量添加 适用于主键自增类型  不支持返回主键-->
+	<insert id="batchInsert" parameterType="java.util.List" useGeneratedKeys="true">
+		insert into tbl_industry( <include refid="table_columns" /> ) 
+		values 
+		<foreach item="item" collection="list" separator="," >
+			( <include refid="entity_properties" /> )
+		</foreach>
+	</insert>
+	
+	<!--根据主键删除 -->
+	<delete id="deleteById">
+		delete from tbl_users
+		where id = #{id}
+	</delete>
+	
+	<!-- 根据ID批量删除 -->
+	<delete id="deleteByIds">
+		delete from tbl_industry
+		where id in
+		<foreach item="item" collection="array" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	
+	<update id="update" parameterType="Industry">
+		update tbl_industry 
+		<trim prefix="set" suffixOverrides=",">
+			<if test="industryName != null and industryName != ''">industry_name = #{industryName},</if>
+			<if test="createTime != null and createTime != ''">create_time = #{createTime},</if>
+			<if test="status != null and status != ''">status = #{status},</if>
+		</trim>
+		<where>id = #{id}</where>
+	</update>
+	
+	<select id="findById" resultMap="industryResultMap" parameterType="String" >
+		select <include refid="table_columns" />
+		from tbl_industry
+		where id = #{id}
+	</select>
+	
+	<select id="queryAll" resultMap="industryResultMap">
+		select <include refid="table_columns" /> 
+		from tbl_industry
+	</select>
+	
+	<!-- 使用like用法：columnName like concat('%',#columnName#,'%') -->
+	<sql id="page_where">
+		<trim prefix="where" prefixOverrides="and | or ">
+			<if test="industryName != null and industryName != ''">and industry_name = #{industryName}</if>
+			<if test="createTime != null and createTime != ''">and create_time = #{createTime}</if>
+			<if test="status != null and status != ''">and status = #{status}</if>
+		</trim>
+	</sql>
+	
+	<select id="page" resultMap="industryResultMap" parameterType="IndustrySearch">
+		select <include refid="table_columns" />
+		from tbl_industry
+		<include refid="page_where" />
+		limit #{firstIndex},#{pageSize}
+	</select>
+	
+	<select id="pageCount" resultType="int" parameterType="IndustrySearch">
+		select count(id) from tbl_industry
+		<include refid="page_where" />
+	</select>
+	
+	<!-- 其他自定义SQL -->
+	
+</mapper>

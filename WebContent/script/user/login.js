@@ -106,7 +106,7 @@ function userRegiste(){
     		    		dataType:"text", 
     		    		success: function(data){
     		    			if(data == "success"){
-    		    				window.location.href = "/user/center.go";
+    		    				window.location.href = "/center/user/center.go";
     		    			}else{
     		    				$("#verify").text("注册失败");
     		    			}
