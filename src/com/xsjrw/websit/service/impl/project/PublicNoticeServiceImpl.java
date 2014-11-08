@@ -60,7 +60,4 @@ public class PublicNoticeServiceImpl implements IPublicNoticeService {
 		return publicNoticeMapper.page(search);
 	}
 	
-	
-	
-	
 }

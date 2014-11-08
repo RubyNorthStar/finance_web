@@ -303,14 +303,28 @@ public class UserController extends BaseWebController{
      * @return
      */
     @RequestMapping(value = "/forgot-submit", method = RequestMethod.POST)
-    public String forgotPasswordSubmit(Model model,  String email, HttpServletRequest request) {
+    public String forgotPasswordSubmit(Model model,  String email, String code, HttpServletRequest request) {
         // 判断用户所输入的电子邮件地址是否存在或者邮件输入是否合法
     	List<Users> user = userService.findUserByEmail(email);
+    	System.out.println(code);
+//    	UserConstans.XS_SESSIONID
+    	String sessionCode = (String) request.getSession().getAttribute(UserConstans.XS_SESSIONID);
+    	System.out.println(sessionCode);
+    	if(sessionCode != null && sessionCode.length() > 0){
+    		String[] arr = sessionCode.split("_");
+    		if(arr[0] == null || code == null || code.length() < 1 || !arr[0].toUpperCase().equals(code.toUpperCase()) || request.getSession().getId() != arr[1]){
+    			 // 验证码输入有误
+                logger.debug("验证码输入有误");
+                model.addAttribute("code", "您输入的验证码有误");
+                return "/user/findBackPassword";
+    		}
+    	}
     	
-        if (user == null ) {
+    	
+        if (user == null || user.size() < 1) {
             // 不存在则返还验证失败信息
             logger.debug("系统中没有找到此邮箱");
-            model.addAttribute("email", email);
+            model.addAttribute("email", "您输入的邮箱不正确");
             return "/user/findBackPassword";
         }
         if (!StringOperUtils.validateEmail(email)) {

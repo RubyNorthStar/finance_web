@@ -1,5 +1,5 @@
 *{padding:0; margin: 0; font-size: 12px;}
-body,ul,li,p,a,h1,h2,h3,h4,h5,h6,i{margin: 0; padding: 0; font-size: 12px; font-family: "微软雅黑;}
+body,ul,li,p,a,h1,h2,h3,h4,h5,h6,i{margin: 0; padding: 0; font-size: 12px; font-family: "微软雅黑";}
 li{list-style: none;}
 i{font-style:normal;}
 td,th{padding:0;}
@@ -498,4 +498,19 @@ ul.move, ol{margin:0; padding:0;}
 .about-bottom{}
 .about-bottom-img{ width: 100%;}
 /*page6.html end*/
+/* 找回密码*/
+
+	 .recover_mima{ margin:20px auto; padding-left:130px; width:1000px;}
+	 .recover_tou{ width:150px; float:left; margin-right:15px; text-align: left; line-height: 42px; }
+	 .recover_tou span{ font-size:20px;}
+	 
+	 
+	 .form-box-code{ width:500px; float:left; }
+	 .recover_mian{}
+	 .text-input-email{ width:300px; height:40px; border:1px solid #ccc; padding-left:10px; border-radius: 5px; float:left;}
+	 .text-input-code{ width:100px; height:40px; border:1px solid #ccc; padding-left:10px; border-radius: 5px; float:left;}
+	 .submit-row{  margin-left:110px;}
+	 .button-style{padding:10px 15px; margin:3px 0 0 20px; border:none; background:#4cd964; color:#fff; border-radius: 5px; }
+	 .code-img{width:100px; height:40px; border:1px solid #ccc; margin-left:10px;}
+/* 找回密码  end*/
 

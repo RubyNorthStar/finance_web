@@ -4,6 +4,13 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>携手金融网 - 找回密码</title>
 	 <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
+	 <script src="/script/jquery/jquery-1.7.js" type="text/javascript" ></script>
+	 <script>
+	 	function changeValidateCode() {   
+			var timenow = new Date().getTime();
+			$("#image_validateCode").attr("src","/captcha/cimge.go?d="+timenow);
+		} 
+	 </script>
 </head>
   <body>
 	
@@ -24,22 +31,51 @@
         </div>
        		 <!--中间内容-->
 		  <div class="view">
-	        <div class="content m-l mt20 clearfix " style="margin-bottom: 200px;">
-	        
-	        	<div class="recover_mima">
+	        <div class="content m-l mt20 clearfix " style="margin-bottom: 140px; padding-top:112px;">
+	        <!-- form开始 -->
+	          <form action="/user/forgot-submit.go" method="post">
+	        	<div class="recover_mima clearfix">
 			    	<div class="recover_tou">
 			        	<span>忘记密码</span>
 			        </div>
-			        <form action="/user/forgot-submit.go" method="post">
-				        <div class="recover_mian">
+		       		 <div class="form-box-code">
+				        <div class="recover_mian clearfix">
 				        	<input type="text" name="email" class="text-input-email" value="" placeholder="请输入您注册时填写的邮箱"/>
-				            <div class="submit-row" style="margin-left:-20px;margin-bottom:0px;">
-				            <font><font><input type="submit" value="发送邮件" class="u-btn green medium" style="margin-top:25px;margin-bottom:10px;margin-left:130px;" /></font></font>
+				        	<#if email??>
+				        		<em>${email}</em>
+				        	</#if>
+				        </div>
+		        	 </div>
+		    	</div>
+	        	
+	        	<div class="recover_mima clearfix">
+			    	<div class="recover_tou ">
+			        	<span>请输入验证码</span>
+			        </div>
+			        <!-- <form class="form-box-code" action="/user/forgot-submit.go" method="post"> -->
+			        <div class="form-box-code">
+				        <div class="recover_mian clearfix">
+				        	<input type="text" name="code" class="text-input-code" value="" placeholder="请输入验证码"/>
+				            <div class="submit-row" style="">
+				            	<img class="code-img" id="image_validateCode" src="/captcha/cimge.go" />
+				            	<input type="button" value="换一张" onclick="changeValidateCode();" class="button-style u-btn green medium" />
+				            	<#if code??>
+					        		<em>${code}</em>
+					        	</#if>
 				            </div>
 				        </div>
-			        </form>
+				    </div>
+			        <!-- </form> -->
 		    	</div>
-	        
+		    	<div class="recover_mima clearfix">
+			    	<div class="submit-row" style="">
+		            	<input type="submit" value="发送邮件" class="button-style u-btn green medium" style="margin-left:55px;" />
+		            </div>
+		    	</div>
+		    	
+		    	
+	        </form>  
+	        <!-- form结束 -->
 	        </div>
 	    </div>
             <!--底部工具栏-->
