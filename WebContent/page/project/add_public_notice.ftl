@@ -34,32 +34,32 @@
                             <h3 class="user">我的公告信息 > 公告信息录入</h3>
                             <ul class="wrap-ul">
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>公告标题</div>
+                                    <div class="left-title"><span style="color:red;">*</span>公告标题</div>
                                     <div class="right-form">
-                                        <input class="input-text" name="noticeTitle" type="text" placeholder=""><span class="span2">&numsp;&numsp;(最多100个汉字)</span>
+                                        <input class="input-text" name="noticeTitle" type="text" placeholder=""><span style="color:red;">&numsp;&numsp;(最多100个汉字)</span>
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
                                     <div class="left-title">公告副标题</div>
                                     <div class="right-form">
-                                        <input class="input-text" name="noticeViceTitle" type="text" placeholder=""><span class="span2">&numsp;&numsp;(最多100个汉字)</span>
+                                        <input class="input-text" name="noticeViceTitle" type="text" placeholder=""><span style="color:red;">&numsp;&numsp;(最多100个汉字)</span>
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
                                     <div class="left-title">公告描述</div>
                                     <div class="right-form">
-                                        <textarea class="input-text" name="noticeDescription" placeholder=""></textarea><span class="span2">&numsp;&numsp;(最多200个汉字)</span>
+                                        <textarea class="input-text" name="noticeDescription" placeholder=""></textarea><span style="color:red;">&numsp;&numsp;(最多200个汉字)</span>
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>公告来源</div>
+                                    <div class="left-title"><span style="color:red;">*</span>公告来源</div>
                                     <div class="right-form">
                                         <input class="input-text" type="text" name="source">
-                                        <span class="span2">&numsp;&numsp;(最多100个汉字)</span>
+                                        <span style="color:red;">&numsp;&numsp;(最多100个汉字)</span>
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>所属品类</div>
+                                    <div class="left-title"><span style="color:red;">*</span>所属品类</div>
                                     <div class="right-form">
                                         <select name="category" id="category" class="input-text">
 									        <option value="">请选择</option>
@@ -77,7 +77,7 @@
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>公告分类</div>
+                                    <div class="left-title"><span style="color:red;">*</span>公告分类</div>
                                     <div class="right-form">
                                         <select name="classiFication" id="classiFication" class="input-text">
 									        <option value="">请选择</option>
@@ -88,7 +88,7 @@
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>所属行业</div>
+                                    <div class="left-title"><span style="color:red;">*</span>所属行业</div>
                                     <div class="right-form">
                                         <#if industryList??>
 						    				<select name="industryId" class="input-text" type="text"> 
@@ -101,7 +101,7 @@
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>标的所在地</div>
+                                    <div class="left-title"><span style="color:red;">*</span>标的所在地</div>
                                     <div class="right-form">
                                         <select id="c_area" name="addressProvince" data-selector="city" class="input-text">
                                             <option>选择城市</option>
@@ -112,7 +112,7 @@
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>底价</div>
+                                    <div class="left-title"><span style="color:red;">*</span>底价</div>
                                     <div class="right-form">
                                         <select class="" type="text" placeholder="">
                                             <option>人民币</option>
@@ -121,36 +121,56 @@
                                         <select class="" type="text" placeholder="">
                                             <option>万元</option>
                                         </select>
-                                        <span class="span2">(为了更有效的促进交易，请注明价格，0为面议。)</span>
+                                        <span style="color:red;">(为了更有效的促进交易，请注明价格，0为面议。)</span>
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>有效起始日期</div>
+                                    <div class="left-title"><span style="color:red;">*</span>有效起始日期</div>
                                     <div class="right-form">
                                         <input type="date" name="beginTime" />
                                     </div>
-                                    <div class="left-title"><span class="span2">*</span>有效截止日期</div>
+                                    <div class="left-title"><span style="color:red;">*</span>有效截止日期</div>
                                     <div class="right-form">
                                         <input type="date" name="endTime" />
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>审核时是否发送邮件</div>
+                                    <div class="left-title"><span style="color:red;">*</span>审核时是否发送邮件</div>
                                     <div class="right-form">
                                         <input class="input-radio" type="radio" name="isMall"  value="1">是
                                         <input class="input-radio" type="radio" name="isMall"  value="2">否
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <p><span class="span2">*</span>公告内容<span class="span2">【至少100字】</span></p>
+                                    <p><span style="color:red;">*</span>公告内容<span style="color:red;">【至少100字】</span></p>
                                     <div class="right-form">
                                         <textarea class="textarea-img" name="content"></textarea>
                                     </div>
                                 </li>
                                  <li class="wrap-li clear">
-                                     <div class="user-info">
-                                         	用户信息
-                                     </div>
+                                     <div class="user" style="border-bottom:none;">
+                                                    	用户信息
+                                        <div class="user-info" style="">
+                                            <table class="cardc">
+                                                <tbody><tr>
+                                                    <td width="25%" valign="bottom"><span class="redstar">*</span>联系人&nbsp;</td>
+                                                    <td width="75%" valign="bottom"><input name="linkmanname" id="linkmanname" type="text" v_type="string" v_incode="dbc" v_name="联系人" v_maxlength="40" v_must="" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td valign="bottom">电&nbsp;&nbsp;话&nbsp;</td>
+                                                    <td valign="bottom"><input name="linkmantel" id="linkmantel" type="text" v_type="tel" v_incode="dbc" v_name="电话" v_maxlength="40" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td valign="bottom">手&nbsp;&nbsp;机&nbsp;</td>
+                                                    <td valign="bottom"><input name="linkmanmobile" id="linkmanmobile" type="text" v_type="mobile" v_incode="dbc" v_name="手机" v_maxlength="30" v_must="0" value=""></td>
+                                                </tr>
+                                                <tr>
+                                                    <td valign="bottom"><span class="redstar">*</span>邮&nbsp;&nbsp;件&nbsp;</td>
+                                                    <td valign="bottom"><input name="linkmanmail" id="linkmanmail" type="text" v_type="email" v_incode="dbc" v_name="邮件" v_maxlength="40" v_must="" value=""></td>
+                                                </tr>
+                                                </tbody></table>
+                                        </div>
+                                    </div>
                                  </li>
                                 <li class="submitBtn">
                                     <button class="button-style button-style-blue">提交待审</button>
