@@ -113,7 +113,7 @@ public class ProjectInfoController {
 		List<Industry> industryList = industryService.findIndustryByPage(search);
 		model.addAttribute("industryList", industryList);
 		
-		return "project/add__porject_info";
+		return "project/add_porject_info";
 	}
 	
 	@RequestMapping(value="addTransferPorject")
