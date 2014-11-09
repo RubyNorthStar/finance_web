@@ -34,7 +34,7 @@ import com.xsjrw.websit.service.project.IPublicNoticeService;
 public class PublicNoticeController {
 	
 	@Autowired
-	private IPublicNoticeService publicNoticeServiceImpl;
+	private IPublicNoticeService publicNoticeService;
 	
 	@Autowired
 	private IIndustryService industryService;
@@ -45,32 +45,32 @@ public class PublicNoticeController {
 			search = new PublicNoticeSearch();
 			// search.setPageSize(20);
 		}
-		model.addAttribute("list", publicNoticeServiceImpl.findPublicNoticeByPage(search));
+		model.addAttribute("list", publicNoticeService.findPublicNoticeByPage(search));
 		return "publicNotice/list";
 	}
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST)
 	public String add(PublicNotice PublicNotice) {
-		publicNoticeServiceImpl.savePublicNotice(PublicNotice);
+		publicNoticeService.savePublicNotice(PublicNotice);
 		return "redirect:/publicNotice";
 	}
 	
 	@RequestMapping(value="/update", method = RequestMethod.POST)
 	public String update(PublicNotice PublicNotice) {
-		publicNoticeServiceImpl.update(PublicNotice);
+		publicNoticeService.update(PublicNotice);
 		return "redirect:/publicNotice";
 	}
 	
 	@RequestMapping(value="/del/{id}", method = RequestMethod.GET)
 	public String del(Model model, @PathVariable Integer id) {
-		publicNoticeServiceImpl.deletePublicNoticeById(id);
+		publicNoticeService.deletePublicNoticeById(id);
 		return "redirect:/publicNotice";
 	}
 	
 	@ResponseBody
 	@RequestMapping(value="/{id}", method = RequestMethod.GET)
 	public PublicNotice getJson(Model model, @PathVariable Integer id){
-		return publicNoticeServiceImpl.findPublicNoticeById(id);
+		return publicNoticeService.findPublicNoticeById(id);
 	}
 	
 	/**
@@ -97,9 +97,14 @@ public class PublicNoticeController {
 	}
 	
 	@RequestMapping(value="publicNotice", method = RequestMethod.POST)
-	public String publicNotice(Model model, HttpServletRequest request){
-		
-		return "project/add_public_notice";
+	public String publicNotice(Model model,PublicNotice publicNotice, HttpServletRequest request){
+		if(publicNotice != null){
+			publicNotice.setStatus(1);
+			publicNotice.setCreateTime(new Date());
+			publicNoticeService.savePublicNotice(publicNotice);
+		}
+		model.addAttribute("project", "2");
+		return "project/success";
 	}
 	
 }

@@ -124,7 +124,7 @@ public class ProjectInfoController {
 	}
 	
 	@RequestMapping(value="addTransferPorject")
-	public String addTransferPorject(HttpServletRequest request, ProjectInfoDto projectInfoDto){
+	public String addTransferPorject(Model model, HttpServletRequest request, ProjectInfoDto projectInfoDto){
 		
 		ProjectInfo projectInfo = projectInfoDto.getProjectInfo();
 		projectInfo.setCreateTime(new Date());
@@ -135,6 +135,7 @@ public class ProjectInfoController {
 		if(listImage != null && listImage.size() > 0){
 			imagePathService.saveImagePathByProjectId(projectInfo.getId(), projectInfoDto.getImages());
 		}
+		model.addAttribute("project", "1");
 		return "project/success";
 	}
 	

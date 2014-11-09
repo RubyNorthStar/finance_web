@@ -23,17 +23,17 @@ public class PublicNotice extends BaseEntity {
 	private String	noticeViceTitle;		 /* 公告副标题 */ 
 	private String	noticeDescription;		 /* 公告描述 */ 
 	private String	source;		 /* 公告来源 */ 
-	private Integer	category;		 /* 所属品类 */ 
-	private Integer	classiFication;		 /* 公告分类 */ 
+	private String	category;		 /* 所属品类 */ 
+	private String	classiFication;		 /* 公告分类 */ 
 	private Integer	industryId;		 /* 所属行业 */ 
 	private String	addressProvince;		 /* 所在地区（省） */ 
 	private String	addressCity;		 /* 所在地区（市） */ 
-	private Integer	floorPrice;		 /* 底价(以万元为单位) */ 
+	private double	floorPrice;		 /* 底价(以万元为单位) */ 
 	private Date	beginTime;		 /* 开始时间 */ 
 	private Date	endTime;		 /* 结束时间 */ 
 	private Integer	isMall;		 /* 是否发送邮件 */ 
 	private String	content;		 /* 公告内容 */ 
-	private Integer	status;		 /* 状态 */ 
+	private Integer	status;		 /* 状态 1.未审核 2.已审核 */ 
 	private Date	createTime;		 /* 创建时间 */ 
 
 	// Constructor
@@ -43,7 +43,7 @@ public class PublicNotice extends BaseEntity {
 	/**
 	 * full Constructor
 	 */
-	public PublicNotice(Integer id, String noticeTitle, String noticeViceTitle, String noticeDescription, String source, Integer category, Integer classiFication, Integer industryId, String addressProvince, String addressCity, Integer floorPrice, Date beginTime, Date endTime, Integer isMall, String content, Integer status, Date createTime) {
+	public PublicNotice(Integer id, String noticeTitle, String noticeViceTitle, String noticeDescription, String source, String category, String classiFication, Integer industryId, String addressProvince, String addressCity, double floorPrice, Date beginTime, Date endTime, Integer isMall, String content, Integer status, Date createTime) {
 		setId(id);
 		this.noticeTitle = noticeTitle;
 		this.noticeViceTitle = noticeViceTitle;
@@ -106,21 +106,21 @@ public class PublicNotice extends BaseEntity {
 	}
 	
 	
-	public Integer getCategory() {
+	public String getCategory() {
 		return category;
 	}
 
-	public PublicNotice setCategory(Integer category) {
+	public PublicNotice setCategory(String category) {
 		this.category = category;
 		return this;
 	}
 	
 	
-	public Integer getClassiFication() {
+	public String getClassiFication() {
 		return classiFication;
 	}
 
-	public PublicNotice setClassiFication(Integer classiFication) {
+	public PublicNotice setClassiFication(String classiFication) {
 		this.classiFication = classiFication;
 		return this;
 	}
@@ -156,11 +156,11 @@ public class PublicNotice extends BaseEntity {
 	}
 	
 	
-	public Integer getFloorPrice() {
+	public double getFloorPrice() {
 		return floorPrice;
 	}
 
-	public PublicNotice setFloorPrice(Integer floorPrice) {
+	public PublicNotice setFloorPrice(double floorPrice) {
 		this.floorPrice = floorPrice;
 		return this;
 	}

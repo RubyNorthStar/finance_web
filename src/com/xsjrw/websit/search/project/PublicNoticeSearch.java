@@ -19,12 +19,12 @@ public class PublicNoticeSearch extends PageModel {
 	private String	noticeViceTitle;		 /* 公告副标题 */ 
 	private String	noticeDescription;		 /* 公告描述 */ 
 	private String	source;		 /* 公告来源 */ 
-	private Integer	category;		 /* 所属品类 */ 
-	private Integer	classiFication;		 /* 公告分类 */ 
+	private String	category;		 /* 所属品类 */ 
+	private String	classiFication;		 /* 公告分类 */ 
 	private Integer	industryId;		 /* 所属行业 */ 
 	private String	addressProvince;		 /* 所在地区（省） */ 
 	private String	addressCity;		 /* 所在地区（市） */ 
-	private Integer	floorPrice;		 /* 底价(以万元为单位) */ 
+	private double	floorPrice;		 /* 底价(以万元为单位) */ 
 	private Date	beginTime;		 /* 开始时间 */ 
 	private Date	endTime;		 /* 结束时间 */ 
 	private Integer	isMall;		 /* 是否发送邮件 */ 
@@ -39,7 +39,7 @@ public class PublicNoticeSearch extends PageModel {
 	/**
 	 * full Constructor
 	 */
-	public PublicNoticeSearch(Integer id, String noticeTitle, String noticeViceTitle, String noticeDescription, String source, Integer category, Integer classiFication, Integer industryId, String addressProvince, String addressCity, Integer floorPrice, Date beginTime, Date endTime, Integer isMall, String content, Integer status, Date createTime) {
+	public PublicNoticeSearch(Integer id, String noticeTitle, String noticeViceTitle, String noticeDescription, String source, String category, String classiFication, Integer industryId, String addressProvince, String addressCity, double floorPrice, Date beginTime, Date endTime, Integer isMall, String content, Integer status, Date createTime) {
 		this.id = id;
 		this.noticeTitle = noticeTitle;
 		this.noticeViceTitle = noticeViceTitle;
@@ -106,20 +106,20 @@ public class PublicNoticeSearch extends PageModel {
 		return this;
 	}
 	
-	public Integer getCategory() {
+	public String getCategory() {
 		return category;
 	}
 
-	public PublicNoticeSearch setCategory(Integer category) {
+	public PublicNoticeSearch setCategory(String category) {
 		this.category = category;
 		return this;
 	}
 	
-	public Integer getClassiFication() {
+	public String getClassiFication() {
 		return classiFication;
 	}
 
-	public PublicNoticeSearch setClassiFication(Integer classiFication) {
+	public PublicNoticeSearch setClassiFication(String classiFication) {
 		this.classiFication = classiFication;
 		return this;
 	}
@@ -151,11 +151,11 @@ public class PublicNoticeSearch extends PageModel {
 		return this;
 	}
 	
-	public Integer getFloorPrice() {
+	public double getFloorPrice() {
 		return floorPrice;
 	}
 
-	public PublicNoticeSearch setFloorPrice(Integer floorPrice) {
+	public PublicNoticeSearch setFloorPrice(double floorPrice) {
 		this.floorPrice = floorPrice;
 		return this;
 	}

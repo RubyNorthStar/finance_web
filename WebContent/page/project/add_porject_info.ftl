@@ -68,17 +68,21 @@
                     	<div class="form">
                             <h3 class="user">转让项目管理 > 转让项目基本信息</h3>
                             <ul class="wrap-ul">
+                            	<!-- 隐藏类型及分类 -->
+                              <form method="post" action="/center/projectInfo/addTransferPorject.go" id="addPorjectInfo"  enctype="multipart/form-data">
+                            	<input type="hidden" name="projectInfo.projectType" value="${proType}"/>
+   		 						<input type="hidden" name="projectInfo.projectTypeClassify" value="${proTypeClassify}"/>
                                 <li class="wrap-li clear">
                                     <div class="left-title"><span class="span2">*</span>项目名称</div>
                                     <div class="right-form">
-                                        <input class="input-text" type="text" placeholder=""><span class="span2">&numsp;&numsp;</span>
+                                        <input class="input-text" name="projectInfo.projectName" type="text" placeholder=""><span class="span2">&numsp;&numsp;</span>
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
                                     <div class="left-title"><span class="span2">*</span>审核时是否发送邮件</div>
                                     <div class="right-form">
-                                        <input class="input-radio" type="radio" name="radio"  value="是">是
-                                        <input class="input-radio" type="radio" name="radio"  value="否">否
+                                        <input class="input-radio" type="radio" name="projectInfo.isMall"  value="1">是
+                                        <input class="input-radio" type="radio" name="projectInfo.isMall"  value="2">否
                                     </div>
                                 </li>
                                  <li class="wrap-li clear">
@@ -97,7 +101,7 @@
                                 <li class="wrap-li clear">
                                     <div class="left-title"><span class="span2">*</span>底价</div>
                                     <div class="right-form">
-                                        <input class="rmb-input" type="text" value="0" />
+                                        <input class="rmb-input" type="text" id="proPrice" value="0" name="projectInfo.proPrice"/>
                                         <select class="" type="text" placeholder="">
                                             <option>万元</option>
                                         </select>
@@ -107,10 +111,10 @@
                                 <li class="wrap-li clear">
                                     <div class="left-title"><span class="span2">*</span>所在地区</div>
                                     <div class="right-form">
-                                        <select id="c_area" data-selector="city" class="input-text">
+                                        <select id="c_area" data-selector="city" name="projectInfo.addressProvince" class="input-text">
                                             <option>选择省</option>
                                         </select>
-                                        <select id="c_city"  data-selector="area" class="input-text" >
+                                        <select id="c_city"  data-selector="area" name="projectInfo.addressCity" class="input-text" >
                                             <option>选择市</option>
                                         </select>
                                     </div>
@@ -118,7 +122,7 @@
                                 <li class="wrap-li clear">
                                     <div class="left-title">标的企业名称</div>
                                     <div class="right-form">
-                                        <input class="input-text" type="text" placeholder=""><span class="span2">&numsp;&numsp;</span>
+                                        <input class="input-text" id="financingPartyName" name="projectInfo.financingPartyName" type="text" placeholder=""><span class="span2">&numsp;&numsp;</span>
                                     </div>
                                 </li>
                                  <li class="wrap-li clear">
@@ -137,23 +141,23 @@
                                 <li class="wrap-li clear">
                                     <div class="left-title"><span class="span2">*</span>有效起始日期</div>
                                     <div class="right-form">
-                                        <input type="date"  />
+                                        <input type="date" name="projectInfo.beginTime"/>
                                     </div>
                                     <div class="left-title"><span class="span2">*</span>有效截止日期</div>
                                     <div class="right-form">
-                                        <input type="date"  />
+                                        <input type="date" name="projectInfo.endTime"/>
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
                                     <p><span class="span2">*</span>受让方应具备条件<span class="span2">【限1000字】</span></p>
                                     <div class="right-form">
-                                        <textarea class="textarea-img"></textarea>
+                                        <textarea class="textarea-img" name="projectInfo.investorsRequire" id="investorsRequire"></textarea>
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
                                     <p><span class="span2">*</span>公告内容<span class="span2">【至少100字】</span></p>
                                     <div class="right-form">
-                                        <textarea class="textarea-img"></textarea>
+                                        <textarea class="textarea-img" name="projectInfo.proDetail" id="proDetail"></textarea>
                                     </div>
                                 </li>
                                 

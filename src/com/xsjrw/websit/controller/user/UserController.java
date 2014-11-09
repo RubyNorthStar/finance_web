@@ -312,7 +312,7 @@ public class UserController extends BaseWebController{
     	System.out.println(sessionCode);
     	if(sessionCode != null && sessionCode.length() > 0){
     		String[] arr = sessionCode.split("_");
-    		if(arr[0] == null || code == null || code.length() < 1 || !arr[0].toUpperCase().equals(code.toUpperCase()) || request.getSession().getId() != arr[1]){
+    		if(arr[0] == null || code == null || code.length() < 1 || !arr[0].toUpperCase().equals(code.toUpperCase()) || !request.getSession().getId().equals(arr[1])){
     			 // 验证码输入有误
                 logger.debug("验证码输入有误");
                 model.addAttribute("code", "您输入的验证码有误");

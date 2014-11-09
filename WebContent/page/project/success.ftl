@@ -2,11 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>携手金融网 </title>
+	<title>携手金融网 - 找回密码</title>
 	 <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
-	 <script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
-	 <script type="text/javascript" src="/resources/common/cookie/cookie.js"></script>
-	 <script type="text/javascript" src="/script/user/login.js"></script>
 </head>
   <body>
 	
@@ -26,11 +23,16 @@
             </div>
         </div>
        		 <!--中间内容-->
-   		 		项目提交成功！
-		  
-	        <!--中间内容结束-->
-	
-	    </div>
+		  <div class="banner_warp" style="margin:0 auto;padding-top:20px;">
+			<div class="recover_mima" style="text-align:center;width:500px;">
+				<#if project == 1>
+					项目添加成功！
+					<#else>
+					公告添加成功！
+				</#if>
+		    	<p><h1 style="font-family:'微软雅黑';font-size:20px;color:#333333;margin-top:30px;">新密码发送成功！</h1></p>
+		    </div>
+		</div>
             <!--底部工具栏-->
          <#include "/index/common/foot.ftl">
 	

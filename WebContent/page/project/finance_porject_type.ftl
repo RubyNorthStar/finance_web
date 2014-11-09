@@ -43,19 +43,19 @@
 	                                <li class="wrap-li clear">
 	                                    <div class="left-form">项目</div>
 	                                    <div class="right-form">
-	                                        <input class="input-radio" type="radio" name="protype"  value="2,1">项目融资
+	                                        <input class="input-radio" type="radio" name="protype"  value="2,2">项目融资
 	                                    </div>
 	                                </li>
 	                                <li class="wrap-li clear">
 	                                    <div class="left-form">债权</div>
 	                                    <div class="right-form w550">
-	                                        <input class="input-radio" type="radio" name="protype"  value="2,1">债权融资
+	                                        <input class="input-radio" type="radio" name="protype"  value="2,3">债权融资
 	                                    </div>
 	                                </li>
 	                                <li class="wrap-li clear">
 	                                    <div class="left-form">租赁</div>
 	                                    <div class="right-form">
-	                                        <input class="input-radio" type="radio" name="protype"  value="2,1">租赁融资
+	                                        <input class="input-radio" type="radio" name="protype"  value="2,4">租赁融资
 	                                    </div>
 	                                </li>
 	                                <li class="submitBtn">
