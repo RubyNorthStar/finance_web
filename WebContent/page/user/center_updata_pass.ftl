@@ -6,6 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <title>携手金融网 - 修改密码</title>
+    <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
     <link rel="stylesheet" href="/resources/css/my-app.css">
     <script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
     <script>
@@ -47,25 +48,13 @@
 
 <!-- Views-->
 <div class="views">
+	<#include "/index/common/top.ftl">
     <!-- Your main view, should have "view-main" class-->
-    <div class="view view-main">
-        <!-- Top Navbar-->
-        <div class="navbar">
-            <div class="navbar-inner">
-                <!-- We have home navbar without left link-->
-                <div class="center sliding">
-                	您好，<a href="/center/user/center.go"> ${user.username}</a>
-            			<a href="/user/loginOut.go" class="button button-color1">退出</a>
-                </div>
-                <div class="right">
-
-                </div>
-            </div>
-        </div>
+    <div class="view-main">
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through">
+        <div class="pages navbar-through toolbar-through" style="margin:0; ">
             <!-- Page, data-page contains page name-->
-            <div data-page="index" class="page">
+            <div data-page="index" class="page" style="margin:0; padding:0;">
                 <!-- Scrollable page content-->
                 <div class="page-content">
                     <!-- 左侧部分 -->
@@ -99,7 +88,7 @@
                                     </div>
                                 </li>
                                 <li class="code">
-                                    <button onclick="updataUserPass()">修改密码</button>
+                                    <button onclick="updataUserPass()" class="button-style button-style-blue">修改密码</button>
                                 </li>
                             </ul>
                         </div>
@@ -109,6 +98,7 @@
         </div>
 
     </div>
+    <#include "/index/common/foot.ftl">
 </div>
 
 <!-- Path to Framework7 Library JS-->

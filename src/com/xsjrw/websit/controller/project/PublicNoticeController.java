@@ -2,6 +2,9 @@ package com.xsjrw.websit.controller.project;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -14,8 +17,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xsjrw.websit.domain.project.Industry;
 import com.xsjrw.websit.domain.project.PublicNotice;
+import com.xsjrw.websit.search.project.IndustrySearch;
 import com.xsjrw.websit.search.project.PublicNoticeSearch;
+import com.xsjrw.websit.service.project.IIndustryService;
 import com.xsjrw.websit.service.project.IPublicNoticeService;
 
 /**
@@ -24,11 +30,14 @@ import com.xsjrw.websit.service.project.IPublicNoticeService;
  * @date 2014-11-4
  */
 @Controller
-@RequestMapping("/publicNotice")
+@RequestMapping("/center/publicNotice")
 public class PublicNoticeController {
 	
 	@Autowired
 	private IPublicNoticeService publicNoticeServiceImpl;
+	
+	@Autowired
+	private IIndustryService industryService;
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String list(Model model, PublicNoticeSearch search){
@@ -73,4 +82,24 @@ public class PublicNoticeController {
         dateFormat.setLenient(false);
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
+	
+	@RequestMapping(value="publicNotice", method = RequestMethod.GET)
+	public String publicNoticeGet(Model model, HttpServletRequest request){
+		
+		IndustrySearch search = new IndustrySearch();
+		search.setPageSize(40);
+		search.setStatus(1);
+		
+		List<Industry> industryList = industryService.findIndustryByPage(search);
+		model.addAttribute("industryList", industryList);
+		
+		return "project/add_public_notice";
+	}
+	
+	@RequestMapping(value="publicNotice", method = RequestMethod.POST)
+	public String publicNotice(Model model, HttpServletRequest request){
+		
+		return "project/add_public_notice";
+	}
+	
 }

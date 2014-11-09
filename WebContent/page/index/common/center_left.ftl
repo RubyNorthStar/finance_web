@@ -20,14 +20,14 @@
             <span class="span5">[</span>
             <a href="javascript:;" style="color:#0075c1;">管理</a>
             <span class="span5">][</span>
-            <a href="javascript:;" style="color:#0075c1;">发布</a>
+            <a href="/center/projectInfo/financeInfoType.go" style="color:#0075c1;">发布</a>
             <span class="span5">]</span>
         </dd>
         <dd class="menu-dd">我的公告信息
             <span class="span5">[</span>
             <a href="javascript:;" style="color:#0075c1;">管理</a>
             <span class="span5">][</span>
-            <a href="javascript:;" style="color:#0075c1;">发布</a>
+            <a href="/center/publicNotice/publicNotice.go" style="color:#0075c1;">发布</a>
             <span class="span5">]</span>
         </dd>
         <dd class="menu-dd">我的投资信息

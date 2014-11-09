@@ -99,6 +99,7 @@ public class ProjectInfoController {
 	public String transferPorject(HttpServletRequest request, String protype, Model model){
 		String porjectType = protype;
 		String[] proTypeArr = null;
+		String type = request.getParameter("type");
 		
 		if(porjectType != null && porjectType.length() > 0){
 			proTypeArr = porjectType.split(",");
@@ -112,8 +113,14 @@ public class ProjectInfoController {
 		
 		List<Industry> industryList = industryService.findIndustryByPage(search);
 		model.addAttribute("industryList", industryList);
+		model.addAttribute("type", type);
 		
 		return "project/add_porject_info";
+	}
+	
+	@RequestMapping(value="financeInfoType")
+	public String financeInfoType(HttpServletRequest request, String protype, Model model){
+		return "project/finance_porject_type";
 	}
 	
 	@RequestMapping(value="addTransferPorject")
