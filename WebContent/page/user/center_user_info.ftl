@@ -35,25 +35,10 @@
 <!-- Views-->
 <div class="views">
     <#include "/index/common/top.ftl">
-    <div class=" view-main" style="margin-bottom:20px;">
-        <!-- Top Navbar-->
-        <!--
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="center sliding">
-                	您好，<a href="/center/user/center.go"> ${user.username}</a>
-            			<a href="/user/loginOut.go" class="button button-color1">退出</a>
-                </div>
-                <div class="right">
-
-                </div>
-            </div>
-        </div>
-        -->
-
-        <div class="pages navbar-through toolbar-through" style="margin:0;">
+    <div class=" view-main">
+        <div class="pages navbar-through toolbar-through" style="margin:0; ">
             <!-- Page, data-page contains page name-->
-            <div data-page="index" class="page" style="padding:0;">
+            <div class="page" style="margin:0; padding:0;">
                 <!-- Scrollable page content-->
                 <div class="page-content">
                     <!-- 左侧部分 -->
