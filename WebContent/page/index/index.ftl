@@ -8,7 +8,7 @@
 
 </head>
 <body>
-<div class="views body-bg">
+<div class="views">
     <#include "/index/common/top.ftl">
         <div class="menu clearfix">
             <ul class="menu_list_ul">

@@ -102,7 +102,7 @@ img{vertical-align: top;}
 }
 .input-text{
     width: 200px;
-    background: #dceffd;
+    /*background: #dceffd;*/
     padding: 10px;
     border: 1px solid #a0a0a0;
     color: #5a5657;

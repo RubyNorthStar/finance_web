@@ -1,4 +1,4 @@
-body,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6{ margin: 0; padding: 0; list-style: none; font-size: 12px; font-family: '微软雅黑';}
+body,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6{ margin: 0; padding: 0; list-style: none; font-size: 12px; font-family: "微软雅黑";}
 a{ text-decoration: none;}
 img{ vertical-align: middle}
 td,th{padding:0;}
@@ -7,15 +7,14 @@ table{border-collapse:collapse;}
 .clear{zoom:1;}
 
 
-.navbar{ height: 50px; width: 100%; background: #ccc; margin: 0 auto;}
-.navbar-inner{ width: 1000px;}
 
-
-
-.page-content{ margin: 0 auto; width: 1000px;padding-left: 190px;}
+.page-content{ margin: 0 auto; width: 1000px;}
 .left-list,.right-content{ float: left;}
-.menu-dl{ background: #9c9c9c;}
-.menu-dt{ font-size: 14px; color:#fff; margin: 5px 0;}
+.menu-dl{ background: #e5e5e5; padding:10px 0;}
+/*.menu-dl{ background: #9c9c9c;}*/
+.menu-dt{ line-height:25px; font-size: 14px; color:#fff; margin: 5px 0;
+	background: #00a0e9; background-size: cover; padding-left:10px;
+}
 .menu-dd{ color: #000; padding: 5px 0 5px 20px;}
 
 .right-content{ padding: 0 30px;}
@@ -29,14 +28,15 @@ table{border-collapse:collapse;}
 .input-text{ width: 200px; }
 .submitBtn{ margin-left: 200px;}
 /**/
-.span1{ color: #000;}
-.span2{ color: #ff0000;}
+.span5{ color: #000;}
+.span6{ color: #ff0000;}
 
 .input-border-none{ border: none;}
 /**/
 
 /*form1*/
 .code{ margin-left: 200px; }
+.button-style-blue{ background:#00a0e9;}
 /*form1 end */
 
 /*form2*/
@@ -54,7 +54,7 @@ th,td{border:1px solid #9a9a9a; width:100px; height:40px;}
 /*form2 end*/
 
 /*form3*/
-/*项目管理 > 项目管理 > 请选择项目种类*/
+/*椤圭洰绠＄悊 > 椤圭洰绠＄悊 > 璇烽�鎷╅」鐩绫�/
 .left-form{ width: 100px; font-size: 14px; color: #000; padding: 0 10px; text-align: left;}
 .w550{ width: 550px;}
 .img1{ width: 100px;height:130px; margin-bottom: 10px;}
