@@ -41,8 +41,8 @@
                                         <input class="name " type="text">
                                     </td>
                                     <td  rowspan="3" class="table-bg">
-                                        <button class="button-style button-style-blue" style="margin:0;">查询</button>
-                                        <button class="button-style button-style-blue" style="margin:0;">取消</button>
+                                        <button class="button-style button-style-blue" style="margin:0; padding:5px 7px;">查询</button>
+                                        <button class="button-style button-style-blue" style="margin:0; padding:5px 7px;">取消</button>
                                     </td>
                                 </tr>
                                 </tbody>
