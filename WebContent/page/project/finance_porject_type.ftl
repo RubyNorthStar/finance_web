@@ -37,7 +37,7 @@
 	                                <li class="wrap-li clear">
 	                                    <div class="left-form">股权</div>
 	                                    <div class="right-form">
-	                                        <input class="input-radio" type="radio" name="protype"  value="2,1">股权融资
+	                                        <input class="input-radio" type="radio" name="protype" checked="checked" value="2,1">股权融资
 	                                    </div>
 	                                </li>
 	                                <li class="wrap-li clear">

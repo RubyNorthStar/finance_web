@@ -34,7 +34,7 @@
 	                                <li class="wrap-li clear">
 	                                    <div class="left-form">股权</div>
 	                                    <div class="right-form">
-	                                        <input class="input-radio" type="radio" name="protype"  value="1,1">股权
+	                                        <input class="input-radio" type="radio" name="protype" checked="checked"  value="1,1">股权
 	                                    </div>
 	                                </li>
 	                                <li class="wrap-li clear">
@@ -106,7 +106,7 @@
 	                                    </div>
 	                                </li>
 	                                <li class="submitBtn">
-	                                    <input type="submit" class="button-style button-style-blue" value="下一步">
+	                                    <input type="submit" class="button-style button-style-blue submit" value="下一步">
 	                                </li>
 	                            </ul>
 	                         </form>
