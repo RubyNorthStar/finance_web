@@ -19,8 +19,9 @@ import com.xsjrw.websit.core.domain.BaseEntity;
 public class InvestmentIntentionInfo extends BaseEntity {
 	
 	
-	private String	investName;		 /* 投资名 */ 
-	private Integer	isMall;		 /* 是否发送邮件: 1:发送邮件 2：不发送邮件 */ 
+	private String	investName;		 /* 投资意向名称 */ 
+	private Integer	isMall;		 	/* 是否发送邮件: 1:发送邮件 2：不发送邮件 */ 
+	private String  agencyName; 	/*投资机构名称*/
 	private String	orgAddress;		 /* 投资机构所在地 */ 
 	private String	investType;		 /* 投资类型 */ 
 	private String	investStyle;		 /* 投资形式 */ 
@@ -46,11 +47,12 @@ public class InvestmentIntentionInfo extends BaseEntity {
 	/**
 	 * full Constructor
 	 */
-	public InvestmentIntentionInfo(Integer id, String investName, Integer isMall, String orgAddress, String investType, String investStyle, String investMode, String industry, String area, String enterpriseType, String investScale, String getRequire, String keyWord, Integer imageId, Date beginTime, Date endTime, String investOrgInfo, String investRequire, String otherRequire, Date createTime) {
+	public InvestmentIntentionInfo(Integer id, String investName, String agencyName, Integer isMall, String orgAddress, String investType, String investStyle, String investMode, String industry, String area, String enterpriseType, String investScale, String getRequire, String keyWord, Integer imageId, Date beginTime, Date endTime, String investOrgInfo, String investRequire, String otherRequire, Date createTime) {
 		setId(id);
 		this.investName = investName;
 		this.isMall = isMall;
 		this.orgAddress = orgAddress;
+		this.agencyName = agencyName;
 		this.investType = investType;
 		this.investStyle = investStyle;
 		this.investMode = investMode;
@@ -261,6 +263,14 @@ public class InvestmentIntentionInfo extends BaseEntity {
 		return this;
 	}
 	
+	public String getAgencyName() {
+		return agencyName;
+	}
+
+	public void setAgencyName(String agencyName) {
+		this.agencyName = agencyName;
+	}
+
 	@Override
 	public String toString() {
 		return "InvestmentIntentionInfo [" + "id=" + getId() + ", investName=" + investName + ", isMall=" + isMall + ", orgAddress=" + orgAddress + ", investType=" + investType + ", investStyle=" + investStyle + ", investMode=" + investMode + ", industry=" + industry + ", area=" + area + ", enterpriseType=" + enterpriseType + ", investScale=" + investScale + ", getRequire=" + getRequire + ", keyWord=" + keyWord + ", imageId=" + imageId + ", beginTime=" + beginTime + ", endTime=" + endTime + ", investOrgInfo=" + investOrgInfo + ", investRequire=" + investRequire + ", otherRequire=" + otherRequire + ", createTime=" + createTime +  "]";

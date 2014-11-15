@@ -6,6 +6,7 @@
 		<result property="investName" column="invest_name" />
 		<result property="isMall" column="is_mall" />
 		<result property="orgAddress" column="org_address" />
+		<result property="agencyName" column="agency_name" />
 		<result property="investType" column="invest_type" />
 		<result property="investStyle" column="invest_style" />
 		<result property="investMode" column="invest_mode" />
@@ -44,7 +45,8 @@
 		invest_org_info,
 		invest_require,
 		other_require,
-		create_time
+		create_time,
+		agency_name
     </sql>
 	<sql id="entity_properties">
 		#{id},
@@ -66,7 +68,8 @@
 		#{investOrgInfo},
 		#{investRequire},
 		#{otherRequire},
-		#{createTime}
+		#{createTime},
+		#{agencyName}
 	</sql>
 	
 	<!-- 适用于主键自增类型 -->
@@ -121,6 +124,7 @@
 			<if test="investRequire != null and investRequire != ''">invest_require = #{investRequire},</if>
 			<if test="otherRequire != null and otherRequire != ''">other_require = #{otherRequire},</if>
 			<if test="createTime != null and createTime != ''">create_time = #{createTime},</if>
+			<if test="agencyName != null and agencyName != ''">agency_name = #{agencyName},</if>
 		</trim>
 		<where>id = #{id}</where>
 	</update>
@@ -158,6 +162,7 @@
 			<if test="investRequire != null and investRequire != ''">and invest_require = #{investRequire}</if>
 			<if test="otherRequire != null and otherRequire != ''">and other_require = #{otherRequire}</if>
 			<if test="createTime != null and createTime != ''">and create_time = #{createTime}</if>
+			<if test="agencyName != null and agencyName != ''">and agency_name = #{agencyName}</if>
 		</trim>
 	</sql>
 	

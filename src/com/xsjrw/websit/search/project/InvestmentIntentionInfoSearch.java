@@ -20,6 +20,7 @@ public class InvestmentIntentionInfoSearch extends PageModel {
 	private String	investName;		 /* 投资名 */ 
 	private Integer	isMall;		 /* 是否发送邮件: 1:发送邮件 2：不发送邮件 */ 
 	private String	orgAddress;		 /* 投资机构所在地 */ 
+	private String  agencyName; 	/*投资机构名称*/
 	private String	investType;		 /* 投资类型 */ 
 	private String	investStyle;		 /* 投资形式 */ 
 	private String	investMode;		 /* 投资方式 */ 
@@ -44,7 +45,7 @@ public class InvestmentIntentionInfoSearch extends PageModel {
 	/**
 	 * full Constructor
 	 */
-	public InvestmentIntentionInfoSearch(Integer id, String investName, Integer isMall, String orgAddress, String investType, String investStyle, String investMode, String industry, String area, String enterpriseType, String investScale, String getRequire, String keyWord, Integer imageId, Date beginTime, Date endTime, String investOrgInfo, String investRequire, String otherRequire, Date createTime) {
+	public InvestmentIntentionInfoSearch(Integer id, String investName, String agencyName, Integer isMall, String orgAddress, String investType, String investStyle, String investMode, String industry, String area, String enterpriseType, String investScale, String getRequire, String keyWord, Integer imageId, Date beginTime, Date endTime, String investOrgInfo, String investRequire, String otherRequire, Date createTime) {
 		this.id = id;
 		this.investName = investName;
 		this.isMall = isMall;
@@ -53,6 +54,7 @@ public class InvestmentIntentionInfoSearch extends PageModel {
 		this.investStyle = investStyle;
 		this.investMode = investMode;
 		this.industry = industry;
+		this.agencyName = agencyName;
 		this.area = area;
 		this.enterpriseType = enterpriseType;
 		this.investScale = investScale;
@@ -247,6 +249,14 @@ public class InvestmentIntentionInfoSearch extends PageModel {
 	public InvestmentIntentionInfoSearch setCreateTime(Date createTime) {
 		this.createTime = createTime;
 		return this;
+	}
+
+	public String getAgencyName() {
+		return agencyName;
+	}
+
+	public void setAgencyName(String agencyName) {
+		this.agencyName = agencyName;
 	}
 	
 }

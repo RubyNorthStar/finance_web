@@ -33,66 +33,64 @@
                     <!-- 中间部分开始 -->
                     	
                     	
-                    	
-                    	
                     	<div>
-                    		<form method="post" action="/center/projectInfo/addTransferPorject.go" id="addPorjectInfo">
+                    		<form method="post" action="/center/investment/addInvestmentPorject.go">
 		                    <h3 class="user">投资意向管理 > 发布投资意向</h3>
 		                    <ul class="wrap-ul">
 		                        <li class="wrap-li clear">
 		                            <div class="left-title"><span class="spanRed">*</span>投资意向名称</div>
 		                            <div class="right-form">
-		                                <input class="input-text" type="text" placeholder="">
+		                                <input class="input-text" name="investName" type="text" placeholder="">
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
 		                            <div class="left-title"><span class="spanRed">*</span>是否发送邮件短信</div>
 		                            <div class="right-form">
-		                                <input class="input-radio" type="radio" name="radio"  value="是">是
-		                                <input class="input-radio" type="radio" name="radio"  value="否">否
+		                                <input class="input-radio" type="radio" name="isMall"  value="是">是
+		                                <input class="input-radio" type="radio" name="isMall"  value="否">否
 		                                <span>【备注：默认审核时发送邮件短信，若选择'否',审核时将取消发送邮件短信】</span>
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
 		                            <div class="left-title"><span class="spanRed">*</span>投资机构名称</div>
 		                            <div class="right-form">
-		                                <input class="input-text" type="text" placeholder="">
+		                                <input class="input-text" type="text" name="agencyName" placeholder="">
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
 		                            <div class="left-title"><span class="spanRed">*</span>投资机构所在地址</div>
 		                            <div class="right-form">
-		                                <input class="input-text" type="text" placeholder="">
+		                                <input class="input-text" type="text" name="orgAddress" placeholder="">
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
 		                            <div class="left-title"><span class="spanRed">*</span>投资类型</div>
 		                            <div class="right-form">
-		                                <input class="input-radio" type="checkbox" name="radio"  value="股权投资[并购]">股权投资[并购]
-		                                <input class="input-radio" type="checkbox" name="radio"  value="借贷式债权投资">借贷式债权投资
-		                                <input class="input-radio" type="checkbox" name="radio"  value="资产购置">资产购置
-		                                <input class="input-radio" type="checkbox" name="radio"  value="承包经营[租赁]项">承包经营[租赁]项
-		                                <input class="input-radio" type="checkbox" name="radio"  value="项目合作">项目合作
-		                                <input class="input-radio" type="checkbox" name="radio"  value="其他">其他
+		                                <input class="input-radio" type="checkbox" name="investType"  value="股权投资[并购]">股权投资[并购]
+		                                <input class="input-radio" type="checkbox" name="investType"  value="借贷式债权投资">借贷式债权投资
+		                                <input class="input-radio" type="checkbox" name="investType"  value="资产购置">资产购置
+		                                <input class="input-radio" type="checkbox" name="investType"  value="承包经营[租赁]项">承包经营[租赁]项
+		                                <input class="input-radio" type="checkbox" name="investType"  value="项目合作">项目合作
+		                                <input class="input-radio" type="checkbox" name="investType"  value="其他">其他
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
 		                            <div class="left-title"><span class="spanRed">*</span>投资形式</div>
 		                            <div class="right-form">
-		                                <input class="input-radio" type="checkbox" name="radio"  value="风险投资">风险投资
-		                                <input class="input-radio" type="checkbox" name="radio"  value="天使投资">天使投资
-		                                <input class="input-radio" type="checkbox" name="radio"  value="实业投资">实业投资
-		                                <input class="input-radio" type="checkbox" name="radio"  value="PE投资">PE投资
-		                                <input class="input-radio" type="checkbox" name="radio"  value="其他">其他
+		                                <input class="input-radio" type="checkbox" name="investStyle"  value="风险投资">风险投资
+		                                <input class="input-radio" type="checkbox" name="investStyle"  value="天使投资">天使投资
+		                                <input class="input-radio" type="checkbox" name="investStyle"  value="实业投资">实业投资
+		                                <input class="input-radio" type="checkbox" name="investStyle"  value="PE投资">PE投资
+		                                <input class="input-radio" type="checkbox" name="investStyle"  value="其他">其他
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
 		                            <div class="left-title"><span class="spanRed">*</span>投资方式</div>
 		                            <div class="right-form">
-		                                <input class="input-radio" type="checkbox" name="radio"  value=" 现金投资"> 现金投资
-		                                <input class="input-radio" type="checkbox" name="radio"  value="管理/技术投资">管理/技术投资
-		                                <input class="input-radio" type="checkbox" name="radio"  value="有形资产/无形资产投资">有形资产/无形资产投资
-		                                <input class="input-radio" type="checkbox" name="radio"  value="其他">其他
+		                                <input class="input-radio" type="checkbox" name="investMode"  value=" 现金投资"> 现金投资
+		                                <input class="input-radio" type="checkbox" name="investMode"  value="管理/技术投资">管理/技术投资
+		                                <input class="input-radio" type="checkbox" name="investMode"  value="有形资产/无形资产投资">有形资产/无形资产投资
+		                                <input class="input-radio" type="checkbox" name="investMode"  value="其他">其他
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
@@ -192,7 +190,7 @@
 		                        </li>
 		
 		                        <li class="submitBtn">
-		                            <button>提交审核</button>
+		                            <button class="button-style button-style-blue">提交审核</button>
 		                        </li>
 		                    </ul>
 		                </div>
