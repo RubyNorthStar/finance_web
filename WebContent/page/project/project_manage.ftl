@@ -41,8 +41,8 @@
                                         <input class="name " type="text">
                                     </td>
                                     <td  rowspan="3" class="table-bg">
-                                        <button>查询</button>
-                                        <button>取消</button>
+                                        <button class="button-style button-style-blue" style="margin:0;">查询</button>
+                                        <button class="button-style button-style-blue" style="margin:0;">取消</button>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -51,12 +51,16 @@
                         <div class=" information">
                             <div class="info-list">
                                 <ul class="info-ul clear">
-                                    <li class="info-li info-active">已发布项目</li>
-                                    <li class="info-li">待审项目</li>
-                                    <li class="info-li">审核通过项目</li>
-                                    <li class="info-li">审核未通过项目</li>
-                                    <li class="info-li">下架项目</li>
-                                    <li class="info-li">成交项目</li>
+                                    <li class="info-li info-active">
+                                    	<a href="javascript:;">已发布项目</a>
+                                    </li>
+                                    <li class="info-li">
+                                    	<a href="javascript:;">待审项目</a>
+                                    </li>
+                                    <li class="info-li"><a href="javascript:;">审核通过项目</a></li>
+                                    <li class="info-li"><a href="javascript:;">审核未通过项目</a></li>
+                                    <li class="info-li"><a href="javascript:;">下架项目</a></li>
+                                    <li class="info-li"><a href="javascript:;">成交项目</a></li>
                                 </ul>
                             </div>
                             <div class="info-content">

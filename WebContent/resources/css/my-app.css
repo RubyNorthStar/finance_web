@@ -47,7 +47,7 @@ select.input-text{ width: 200px; }
 table{width:500px;}
 th,td{border:1px solid #9a9a9a; width:100px; height:40px;}
 .manage-table{ margin-top: 8px;}
-.table-bg{ background: #ccc; text-align: center;}
+.table-bg{ background: #e5e5e5; text-align: center;}
 .table-text{ text-align: center;}
 .name{ margin:5px; }
 
