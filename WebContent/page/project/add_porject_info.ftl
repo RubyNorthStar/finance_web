@@ -84,7 +84,7 @@
                                     <div class="left-title"><span class="spanRed">*</span>审核时是否发送邮件</div>
                                     <div class="right-form">
                                         <input class="input-radio" type="radio" name="projectInfo.isMall"  value="1">是
-                                        <input class="input-radio" type="radio" name="projectInfo.isMall"  value="2">否
+                                        <input class="input-radio" type="radio" name="projectInfo.isMall" checked="checked"  value="2">否
                                     </div>
                                 </li>
                                  <li class="wrap-li clear">
