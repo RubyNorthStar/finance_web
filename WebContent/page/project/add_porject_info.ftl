@@ -45,6 +45,7 @@
 		.question_answer .td_l{width:84px;background:#f7f7f7;border-right:0;}
 		.question_answer .td_r{background:#fff;padding-right:15px;}
 		.question_answer .td_r .zs_clearfix{margin-bottom:10px;}
+		.spanRed{color:red; padding:0 3px;}
 	</style>
 </head>
 <body>
@@ -73,20 +74,20 @@
                             	<input type="hidden" name="projectInfo.projectType" value="${proType}"/>
    		 						<input type="hidden" name="projectInfo.projectTypeClassify" value="${proTypeClassify}"/>
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>项目名称</div>
+                                    <div class="left-title"><span class="spanRed">*</span>项目名称</div>
                                     <div class="right-form">
-                                        <input class="input-text" name="projectInfo.projectName" type="text" placeholder=""><span class="span2">&numsp;&numsp;</span>
+                                        <input class="input-text" name="projectInfo.projectName" type="text" placeholder=""><span class="spanRed">&numsp;&numsp;</span>
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>审核时是否发送邮件</div>
+                                    <div class="left-title"><span class="spanRed">*</span>审核时是否发送邮件</div>
                                     <div class="right-form">
                                         <input class="input-radio" type="radio" name="projectInfo.isMall"  value="1">是
                                         <input class="input-radio" type="radio" name="projectInfo.isMall"  value="2">否
                                     </div>
                                 </li>
                                  <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>所属行业</div>
+                                    <div class="left-title"><span class="spanRed">*</span>所属行业</div>
                                     <div class="right-form">
                                         <#if industryList??>
 						    				<select name="projectInfo.proindustryId"> 
@@ -99,17 +100,17 @@
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>底价</div>
+                                    <div class="left-title"><span class="spanRed">*</span>底价</div>
                                     <div class="right-form">
                                         <input class="rmb-input" type="text" id="proPrice" value="0" name="projectInfo.proPrice"/>
                                         <select class="" type="text" placeholder="">
                                             <option>万元</option>
                                         </select>
-                                        <span class="span2">(为了更有效的促进交易，请注明价格，0为面议。)</span>
+                                        <span class="spanRed">(为了更有效的促进交易，请注明价格，0为面议。)</span>
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>所在地区</div>
+                                    <div class="left-title"><span class="spanRed">*</span>所在地区</div>
                                     <div class="right-form">
                                         <select id="c_area" data-selector="city" name="projectInfo.addressProvince" class="input-text">
                                             <option>选择省</option>
@@ -122,7 +123,7 @@
                                 <li class="wrap-li clear">
                                     <div class="left-title">标的企业名称</div>
                                     <div class="right-form">
-                                        <input class="input-text" id="financingPartyName" name="projectInfo.financingPartyName" type="text" placeholder=""><span class="span2">&numsp;&numsp;</span>
+                                        <input class="input-text" id="financingPartyName" name="projectInfo.financingPartyName" type="text" placeholder=""><span class="spanRed">&numsp;&numsp;</span>
                                     </div>
                                 </li>
                                  <li class="wrap-li clear">
@@ -139,23 +140,23 @@
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title"><span class="span2">*</span>有效起始日期</div>
+                                    <div class="left-title"><span class="spanRed">*</span>有效起始日期</div>
                                     <div class="right-form">
                                         <input type="date" name="projectInfo.beginTime"/>
                                     </div>
-                                    <div class="left-title"><span class="span2">*</span>有效截止日期</div>
+                                    <div class="left-title"><span class="spanRed">*</span>有效截止日期</div>
                                     <div class="right-form">
                                         <input type="date" name="projectInfo.endTime"/>
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <p><span class="span2">*</span>受让方应具备条件<span class="span2">【限1000字】</span></p>
+                                    <p><span class="spanRed">*</span>受让方应具备条件<span class="spanRed">【限1000字】</span></p>
                                     <div class="right-form">
                                         <textarea class="textarea-img" name="projectInfo.investorsRequire" id="investorsRequire"></textarea>
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <p><span class="span2">*</span>公告内容<span class="span2">【至少100字】</span></p>
+                                    <p><span class="spanRed">*</span>公告内容<span class="spanRed">【至少100字】</span></p>
                                     <div class="right-form">
                                         <textarea class="textarea-img" name="projectInfo.proDetail" id="proDetail"></textarea>
                                     </div>
