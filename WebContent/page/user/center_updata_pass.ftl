@@ -70,19 +70,19 @@
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title">原密码<span class="span2">*</span></div>
+                                    <div class="left-title">原密码<span style="color:red;padding-left:3px;">*</span></div>
                                     <div class="right-form">
                                         <input class="input-text" id="oldPass" type="password" >
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title">新密码<span class="span2">*</span></div>
+                                    <div class="left-title">新密码<span style="color:red;padding-left:3px;">*</span></div>
                                     <div class="right-form">
                                         <input class="input-text" id="newPass" type="password" >
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title">重复新密码<span class="span2">*</span></div>
+                                    <div class="left-title">重复新密码<span style="color:red; padding-left:3px;">*</span></div>
                                     <div class="right-form">
                                         <input class="input-text" id="newSurePass" type="password">
                                     </div>

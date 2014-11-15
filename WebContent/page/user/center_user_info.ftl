@@ -60,13 +60,13 @@
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title">邮箱<span style="color:red;">*</span></div>
+                                    <div class="left-title">邮箱<span style="color:red; padding-left:3px;">*</span></div>
                                     <div class="right-form">
                                     	${user.email}
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <div class="left-title">手机号<span style="color:red;">*</span></div>
+                                    <div class="left-title">手机号<span style="color:red; padding-left:3px;">*</span></div>
                                     <div class="right-form">
                                         <input class="input-text" type="text" id="mobile" value="${user.mobile}">
                                     </div>
