@@ -46,9 +46,9 @@
                     </div>
                     <div class="list clearfix">
                         <div class="table-menu clearfix">
-                            <ul class="list-ul product_index row">
-                            	<li class="  col-20"><a class="plr-59" href="javascript:;">挂牌项目</a></li>
-                            	<li class="jsActive col-20"><a class="plr-59" href="javascript:;">融资信息</a></li>
+                            <ul class="list-ul product_index row market">
+                            	<li class="jsActive col-20"><a class="plr-59" href="javascript:;">挂牌项目</a></li>
+                            	<li class="col-20"><a class="plr-59" href="javascript:;">融资信息</a></li>
                             	<li class="col-20"><a class="plr-59" href="javascript:;">投资信息</a></li>
                             	<li class="col-20"><a class="plr-59" href="javascript:;">转让信息</a></li>
                             	<li class="col-20"><a class="plr-59" href="javascript:;">公告信息</a></li>
@@ -113,7 +113,7 @@
                     </div>
                     <div class="list clearfix">
                         <div class="table-menu clearfix">
-                            <ul class="list-ul product_index">
+                            <ul class="list-ul product_index product_click">
                                 <#if fundTypes??>
                                     <#list fundTypes as fund>
                                         <#if fund_index == 0>
@@ -127,7 +127,7 @@
                         </div>
                     </div>
 
-                    <div class="table-div">
+                    <div class="table-product">
                         <#list linkMap?keys as mykey>
                             <#if mykey_index == 0>
                                 <table class="tab tabActive">
