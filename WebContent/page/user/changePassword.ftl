@@ -96,7 +96,6 @@
 	function loginOutTk(){
 		delCookie("LOGINNAME");
 		delCookie("LOGINPWD");
-		alert("ddddmmmmm");
 		window.location.href = "/index.go";
 	}
 	 

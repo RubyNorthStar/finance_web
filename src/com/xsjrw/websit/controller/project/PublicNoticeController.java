@@ -103,7 +103,7 @@ public class PublicNoticeController {
 			publicNotice.setCreateTime(new Date());
 			publicNoticeService.savePublicNotice(publicNotice);
 		}
-		model.addAttribute("project", "2");
+		model.addAttribute("project", 2);
 		return "project/success";
 	}
 	
