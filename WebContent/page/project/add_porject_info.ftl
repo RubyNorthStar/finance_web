@@ -8,16 +8,16 @@
     <title>携手金融网 - 修改密码</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
     <link rel="stylesheet" href="/resources/css/my-app.css">
+    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
     <script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
-	<script type="text/javascript" src="/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/script/project/area.js"></script>
 	<script >
 		// 添加图片
 		function addVoice(self){
-			var outDiv = $(self).prev('div');
+			var outDiv = $('.addImg');
 			var divs = outDiv.children('div');
 			var lastIndex = (parseInt($(divs.get(divs.length - 1)).attr('data-voice')) + 1) || 0;
-			var html = '<div data-voice="' + lastIndex + '"  class="zs_clearfix">'
+			var html = '<div data-voice="' + lastIndex + '"  class="zs_clearfix col-md-12">'
 					 + 		'<div>'
 					 +			'<input style="width:165px;" type="file" name="images[' + lastIndex +'].imagePath" size="37" value="浏  览" /><span class="mp3_tip">(只能上传图片)</span>'
 					 +		'</div>'
@@ -33,7 +33,7 @@
 	</script>
 	<style>
 		.sc_but{color:#333;float:left;width:50px;height:21px;line-height:21px;text-align:center;border:1px solid #ddd;background:#fff;margin-top:10px;margin-bottom:10px;}
-		.tj_but{color:#333;float:left;width:50px;height:21px;line-height:21px;text-align:center;border:1px solid #ddd;background:#fff;}
+		.tj_but{color:#fff;line-height:21px;text-align:center;padding:5px 10px;background:#e5e5e5; border-radius:5px;}
 		.zs_clearfix {
 			 zoom:1; /* IE < 8 */
 			}
@@ -128,15 +128,19 @@
                                 </li>
                                  <li class="wrap-li clear">
                                     <div class="left-title">上传图片</div>
-                                    <div class="right-form">
-                                       <div>
-					   		 				<div data-voice="0"  class="zs_clearfix">
+                                    <div class="right-form">	
+	                                    <div class="addBtn row">
+	                                    	<a class="tj_but" href="javascript:void(0);" onclick="addVoice(this)">添加1</a>
+	                                    </div>
+                                    
+                                       <div class="row addImg">
+					   		 				<div data-voice="0"  class="zs_clearfix col-md-12">
 												<div>
 													<input style="width:165px;"  type="file" name="images[0].imagePath" size="27" /><span class="mp3_tip">(只能上传图片)</span>
 												</div>
 											</div>
 										</div>
-										<a class="tj_but" href="javascript:void(0);" onclick="addVoice(this)">添加</a>
+										
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
