@@ -32,7 +32,7 @@
 		}
 	</script>
 	<style>
-		.sc_but{color:#333;float:left;width:50px;height:21px;line-height:21px;text-align:center;border:1px solid #ddd;background:#fff;margin-top:10px;margin-bottom:10px;}
+		.sc_but{color:#333;padding:5px 10px;margin:10px; width:50px;height:21px;line-height:21px;text-align:center;border:1px solid #ddd;background:#fff;margin-top:10px;margin-bottom:10px;}
 		.tj_but{color:#fff;line-height:21px;text-align:center;padding:5px 10px;background:#e5e5e5; border-radius:5px;}
 		.zs_clearfix {
 			 zoom:1; /* IE < 8 */
@@ -46,6 +46,7 @@
 		.question_answer .td_r{background:#fff;padding-right:15px;}
 		.question_answer .td_r .zs_clearfix{margin-bottom:10px;}
 		.spanRed{color:red; padding:0 3px;}
+		input[type=file]{display:inline-block;}
 	</style>
 </head>
 <body>
@@ -129,18 +130,16 @@
                                  <li class="wrap-li clear">
                                     <div class="left-title">上传图片</div>
                                     <div class="right-form">	
-	                                    <div class="addBtn row">
-	                                    	<a class="tj_but" href="javascript:void(0);" onclick="addVoice(this)">添加1</a>
-	                                    </div>
-                                    
-                                       <div class="row addImg">
+                                       <div class="addImg row clear">
 					   		 				<div data-voice="0"  class="zs_clearfix col-md-12">
 												<div>
 													<input style="width:165px;"  type="file" name="images[0].imagePath" size="27" /><span class="mp3_tip">(只能上传图片)</span>
 												</div>
 											</div>
 										</div>
-										
+										<div class="addBtn row">
+	                                    	<a class="tj_but" href="javascript:void(0);" onclick="addVoice(this)">添加1</a>
+	                                    </div>
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
