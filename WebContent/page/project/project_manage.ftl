@@ -51,7 +51,7 @@
                         <div class=" information">
                             <div class="info-list">
                                 <ul class="info-ul clear">
-                                    <li class="info-li">已发布项目</li>
+                                    <li class="info-li info-active">已发布项目</li>
                                     <li class="info-li">待审项目</li>
                                     <li class="info-li">审核通过项目</li>
                                     <li class="info-li">审核未通过项目</li>
@@ -60,8 +60,42 @@
                                 </ul>
                             </div>
                             <div class="info-content">
-                            	共${search.totalRecords}条  第${search.pageNo}页    <div>首页</div>  <div>上页</div>  <div>下页</div>  <div>尾页</div>
-                                
+	                            <div style="height:300px;">
+	                            	<div class="form-box form-box-active">
+	                            		<table class="table-box">
+											<tr class="tr-title">
+											  <td>项目名称</td>
+											  <td>操作</td>
+											</tr>
+											<tr>
+											  <td>松岛枫</td>
+											  <td>刪除/修改</td>
+											</tr>
+										</table>
+	                            	</div>
+	                            	
+	                            	<div class="form-box">
+	                            		<table class="table-box">
+											<tr class="tr-title">
+											  <td>项目名称</td>
+											  <td>操作</td>
+											</tr>
+											<tr>
+											  <td>didididi</td>
+											  <td>刪除/修改</td>
+											</tr>
+											<tr>
+											  <td>didididi</td>
+											  <td>刪除/修改</td>
+											</tr>
+											<tr>
+											  <td>didididi</td>
+											  <td>刪除/修改</td>
+											</tr>
+										</table>
+	                            	</div>
+                            	
+	                            </div>
                                 <#if list??>
 	                                <#list list as project>
 	                                	 <div class="info-div1">
@@ -69,6 +103,10 @@
 	                                	 </div>
 	                                </#list>
                                 </#if>
+                                <div class="paging clear">
+                                	<div>共${search.totalRecords}条  第${search.pageNo}页</div>    <div>首页</div>  <div>上页</div>  <div>下页</div>  <div>尾页</div>
+                                </div>
+                                
                             </div>
                         </div>
                     	
@@ -87,5 +125,16 @@
 <!--<script type="text/javascript" src="js/framework7.js"></script>-->
 <!-- Path to your app js-->
 <!--<script type="text/javascript" src="js/my-app.js"></script>-->
+<script type="text/javascript">
+	$(function(){
+		$(".info-ul .info-li").click(function(){
+			$(".info-ul .info-li").removeClass("info-active");
+			$(this).addClass("info-active");
+			$(".form-box").removeClass("form-box-active");
+        	$(".form-box").eq( $(this).index()).addClass("form-box-active");
+			
+		})
+	})
+</script>
 </body>
 </html>
