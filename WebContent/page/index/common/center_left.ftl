@@ -34,7 +34,7 @@
             <span class="span5">[</span>
             <a href="javascript:;" style="color:#0075c1;">管理</a>
             <span class="span5">][</span>
-            <a href="javascript:;" style="color:#0075c1;">发布</a>
+            <a href="/center/investment/addInvestment.go" style="color:#0075c1;">发布</a>
             <span class="span5">]</span>
         </dd>
         <dt class="menu-dt">尽职调查报告</dt>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xsjrw.websit.dao.project.InvestmentIntentionInfoMapper">
+	<resultMap type="InvestmentIntentionInfo" id="investmentIntentionInfoResultMap">
+		<result property="id" column="id" />
+		<result property="investName" column="invest_name" />
+		<result property="isMall" column="is_mall" />
+		<result property="orgAddress" column="org_address" />
+		<result property="investType" column="invest_type" />
+		<result property="investStyle" column="invest_style" />
+		<result property="investMode" column="invest_mode" />
+		<result property="industry" column="industry" />
+		<result property="area" column="area" />
+		<result property="enterpriseType" column="enterprise_type" />
+		<result property="investScale" column="invest_scale" />
+		<result property="getRequire" column="get_require" />
+		<result property="keyWord" column="key_word" />
+		<result property="imageId" column="image_id" />
+		<result property="beginTime" column="begin_time" />
+		<result property="endTime" column="end_time" />
+		<result property="investOrgInfo" column="invest_org_info" />
+		<result property="investRequire" column="invest_require" />
+		<result property="otherRequire" column="other_require" />
+		<result property="createTime" column="create_time" />
+	</resultMap>
+	
+	<sql id="table_columns">
+		id,
+		invest_name,
+		is_mall,
+		org_address,
+		invest_type,
+		invest_style,
+		invest_mode,
+		industry,
+		area,
+		enterprise_type,
+		invest_scale,
+		get_require,
+		key_word,
+		image_id,
+		begin_time,
+		end_time,
+		invest_org_info,
+		invest_require,
+		other_require,
+		create_time
+    </sql>
+	<sql id="entity_properties">
+		#{id},
+		#{investName},
+		#{isMall},
+		#{orgAddress},
+		#{investType},
+		#{investStyle},
+		#{investMode},
+		#{industry},
+		#{area},
+		#{enterpriseType},
+		#{investScale},
+		#{getRequire},
+		#{keyWord},
+		#{imageId},
+		#{beginTime},
+		#{endTime},
+		#{investOrgInfo},
+		#{investRequire},
+		#{otherRequire},
+		#{createTime}
+	</sql>
+	
+	<!-- 适用于主键自增类型 -->
+	<insert id="insert" parameterType="InvestmentIntentionInfo" useGeneratedKeys="true" keyProperty="id">
+		insert into tbl_investment_intention_info( <include refid="table_columns" /> ) 
+		values ( <include refid="entity_properties" /> )
+	</insert>
+	
+	<!-- 批量添加 适用于主键自增类型  不支持返回主键-->
+	<insert id="batchInsert" parameterType="java.util.List" useGeneratedKeys="true">
+		insert into tbl_investment_intention_info( <include refid="table_columns" /> ) 
+		values 
+		<foreach item="item" collection="list" separator="," >
+			( <include refid="entity_properties" /> )
+		</foreach>
+	</insert>
+	
+	<!--根据主键删除 -->
+	<delete id="deleteById">
+		delete from tbl_users
+		where id = #{id}
+	</delete>
+	
+	<!-- 根据ID批量删除 -->
+	<delete id="deleteByIds">
+		delete from tbl_investment_intention_info
+		where id in
+		<foreach item="item" collection="array" open="(" separator="," close=")">
+			#{item}
+		</foreach>
+	</delete>
+	
+	<update id="update" parameterType="InvestmentIntentionInfo">
+		update tbl_investment_intention_info 
+		<trim prefix="set" suffixOverrides=",">
+			<if test="investName != null and investName != ''">invest_name = #{investName},</if>
+			<if test="isMall != null and isMall != ''">is_mall = #{isMall},</if>
+			<if test="orgAddress != null and orgAddress != ''">org_address = #{orgAddress},</if>
+			<if test="investType != null and investType != ''">invest_type = #{investType},</if>
+			<if test="investStyle != null and investStyle != ''">invest_style = #{investStyle},</if>
+			<if test="investMode != null and investMode != ''">invest_mode = #{investMode},</if>
+			<if test="industry != null and industry != ''">industry = #{industry},</if>
+			<if test="area != null and area != ''">area = #{area},</if>
+			<if test="enterpriseType != null and enterpriseType != ''">enterprise_type = #{enterpriseType},</if>
+			<if test="investScale != null and investScale != ''">invest_scale = #{investScale},</if>
+			<if test="getRequire != null and getRequire != ''">get_require = #{getRequire},</if>
+			<if test="keyWord != null and keyWord != ''">key_word = #{keyWord},</if>
+			<if test="imageId != null and imageId != ''">image_id = #{imageId},</if>
+			<if test="beginTime != null and beginTime != ''">begin_time = #{beginTime},</if>
+			<if test="endTime != null and endTime != ''">end_time = #{endTime},</if>
+			<if test="investOrgInfo != null and investOrgInfo != ''">invest_org_info = #{investOrgInfo},</if>
+			<if test="investRequire != null and investRequire != ''">invest_require = #{investRequire},</if>
+			<if test="otherRequire != null and otherRequire != ''">other_require = #{otherRequire},</if>
+			<if test="createTime != null and createTime != ''">create_time = #{createTime},</if>
+		</trim>
+		<where>id = #{id}</where>
+	</update>
+	
+	<select id="findById" resultMap="investmentIntentionInfoResultMap" parameterType="String" >
+		select <include refid="table_columns" />
+		from tbl_investment_intention_info
+		where id = #{id}
+	</select>
+	
+	<select id="queryAll" resultMap="investmentIntentionInfoResultMap">
+		select <include refid="table_columns" /> 
+		from tbl_investment_intention_info
+	</select>
+	
+	<!-- 使用like用法：columnName like concat('%',#columnName#,'%') -->
+	<sql id="page_where">
+		<trim prefix="where" prefixOverrides="and | or ">
+			<if test="investName != null and investName != ''">and invest_name = #{investName}</if>
+			<if test="isMall != null and isMall != ''">and is_mall = #{isMall}</if>
+			<if test="orgAddress != null and orgAddress != ''">and org_address = #{orgAddress}</if>
+			<if test="investType != null and investType != ''">and invest_type = #{investType}</if>
+			<if test="investStyle != null and investStyle != ''">and invest_style = #{investStyle}</if>
+			<if test="investMode != null and investMode != ''">and invest_mode = #{investMode}</if>
+			<if test="industry != null and industry != ''">and industry = #{industry}</if>
+			<if test="area != null and area != ''">and area = #{area}</if>
+			<if test="enterpriseType != null and enterpriseType != ''">and enterprise_type = #{enterpriseType}</if>
+			<if test="investScale != null and investScale != ''">and invest_scale = #{investScale}</if>
+			<if test="getRequire != null and getRequire != ''">and get_require = #{getRequire}</if>
+			<if test="keyWord != null and keyWord != ''">and key_word = #{keyWord}</if>
+			<if test="imageId != null and imageId != ''">and image_id = #{imageId}</if>
+			<if test="beginTime != null and beginTime != ''">and begin_time = #{beginTime}</if>
+			<if test="endTime != null and endTime != ''">and end_time = #{endTime}</if>
+			<if test="investOrgInfo != null and investOrgInfo != ''">and invest_org_info = #{investOrgInfo}</if>
+			<if test="investRequire != null and investRequire != ''">and invest_require = #{investRequire}</if>
+			<if test="otherRequire != null and otherRequire != ''">and other_require = #{otherRequire}</if>
+			<if test="createTime != null and createTime != ''">and create_time = #{createTime}</if>
+		</trim>
+	</sql>
+	
+	<select id="page" resultMap="investmentIntentionInfoResultMap" parameterType="InvestmentIntentionInfoSearch">
+		select <include refid="table_columns" />
+		from tbl_investment_intention_info
+		<include refid="page_where" />
+		limit #{firstIndex},#{pageSize}
+	</select>
+	
+	<select id="pageCount" resultType="int" parameterType="InvestmentIntentionInfoSearch">
+		select count(id) from tbl_investment_intention_info
+		<include refid="page_where" />
+	</select>
+	
+	<!-- 其他自定义SQL -->
+	
+</mapper>

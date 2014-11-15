@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>携手金融网 - 修改密码</title>
+    <title>携手金融网 - 添加项目</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
     <link rel="stylesheet" href="/resources/css/my-app.css">
     <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
