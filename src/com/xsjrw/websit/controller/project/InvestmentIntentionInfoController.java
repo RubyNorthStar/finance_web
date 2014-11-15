@@ -3,6 +3,8 @@ package com.xsjrw.websit.controller.project;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
@@ -74,8 +76,15 @@ public class InvestmentIntentionInfoController {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
 	
-	@RequestMapping(value="addInvestment")
-	public String addInvestment(){
+	@RequestMapping(value="addInvestment", method = RequestMethod.GET)
+	public String addInvestmentGet(){
+		return "project/add_investment_info";
+	}
+	
+	@RequestMapping(value="addInvestment", method = RequestMethod.POST)
+	public String addInvestmentPost(HttpServletRequest request, InvestmentIntentionInfo investment){
+		System.out.println(investment);
+		investmentIntentionInfoService.saveInvestmentIntentionInfo(investment);
 		return "project/add_investment_info";
 	}
 }

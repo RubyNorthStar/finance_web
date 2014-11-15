@@ -34,7 +34,7 @@
                     	
                     	
                     	<div>
-                    		<form method="post" action="/center/investment/addInvestmentPorject.go">
+                    		<form method="post" action="/center/investment/addInvestment.go">
 		                    <h3 class="user">投资意向管理 > 发布投资意向</h3>
 		                    <ul class="wrap-ul">
 		                        <li class="wrap-li clear">
@@ -108,19 +108,19 @@
 		                        <li class="wrap-li clear">
 		                            <div class="left-title"><span class="spanRed">*</span>投资企业类型</div>
 		                            <div class="right-form w550">
-		                                <input class="input-radio" type="checkbox" name="radio"  value="全民所有制">全民所有制
-		                                <input class="input-radio" type="checkbox" name="radio"  value="全民与全民联营">全民与全民联营
-		                                <input class="input-radio" type="checkbox" name="radio"  value="全民与集体联营">全民与集体联营
-		                                <input class="input-radio" type="checkbox" name="radio"  value="股份有限公司">股份有限公司
-		                                <input class="input-radio" type="checkbox" name="radio"  value="股份合作制">股份合作制
-		                                <input class="input-radio" type="checkbox" name="radio"  value="外资独资">外资独资
-		                                <input class="input-radio" type="checkbox" name="radio"  value="中外合资">中外合资
-		                                <input class="input-radio" type="checkbox" name="radio"  value="中外合作经营">中外合作经营
-		                                <input class="input-radio" type="checkbox" name="radio"  value="有限责任公司">有限责任公司
-		                                <input class="input-radio" type="checkbox" name="radio"  value="集体所有制">集体所有制
-		                                <input class="input-radio" type="checkbox" name="radio"  value="事业法人">事业法人
-		                                <input class="input-radio" type="checkbox" name="radio"  value="其他">其他
-		                                <input class="input-radio" type="checkbox" name="radio"  value="不限">不限
+		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="全民所有制">全民所有制
+		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="全民与全民联营">全民与全民联营
+		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="全民与集体联营">全民与集体联营
+		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="股份有限公司">股份有限公司
+		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="股份合作制">股份合作制
+		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="外资独资">外资独资
+		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="中外合资">中外合资
+		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="中外合作经营">中外合作经营
+		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="有限责任公司">有限责任公司
+		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="集体所有制">集体所有制
+		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="事业法人">事业法人
+		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="其他">其他
+		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="不限">不限
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
@@ -134,7 +134,7 @@
 		                        <li class="wrap-li clear">
 		                            <div class="left-title">投资回报率要求</div>
 		                            <div class="right-form">
-		                                	年回报率<input type="text" />%以上
+		                                	年回报率<input type="text" name="getRequire" />%以上
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
@@ -148,11 +148,11 @@
 		                        <li class="wrap-li clear">
 		                            <div class="left-title"><span class="spanRed">*</span>有效起始日期</div>
 		                            <div class="right-form">
-		                                <input class="input-text" type="date" placeholder="">
+		                                <input class="input-text" name="beginTime" type="date" placeholder="">
 		                            </div>
 		                            <div class="left-title"><span class="spanRed">*</span>有效截止日期</div>
 		                            <div class="right-form">
-		                                <input class="input-text" type="date" placeholder="">
+		                                <input class="input-text" name="endTime" type="date" placeholder="">
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
@@ -162,7 +162,7 @@
 		                                <span class="spanRed">(至少50字)</span>
 		                            </div>
 		                            <div class="right-form">
-		                                <textarea class="input-text" type="data" placeholder=""></textarea>
+		                                <textarea class="input-text" name="investOrgInfo" type="data" placeholder=""></textarea>
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
@@ -177,14 +177,14 @@
 		                                        <input class="input-radio" type="checkbox"> 提供项目详细资料及投资价值分析报告
 		                                        <input class="input-radio" type="checkbox"> 提供经过第三方评估或审计过的详细资料
 		                                    </p>
-		                                    <textarea class="input-text" placeholder=""></textarea>
+		                                    <textarea class="input-text" name="investRequire" placeholder=""></textarea>
 		                                </div>
 		                                <div>
 		                                    <p>
 		                                        <input class="input-radio" type="checkbox">其他要求
 		                                        <sapn class="spanRed">(限1000字)</sapn>
 		                                    </p>
-		                                    <textarea class="input-text"  placeholder=""></textarea>
+		                                    <textarea class="input-text" name="otherRequire" placeholder=""></textarea>
 		                                </div>
 		                            </div>
 		                        </li>
