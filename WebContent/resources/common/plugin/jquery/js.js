@@ -13,14 +13,21 @@ $(function(){
 //       page3 点击事件结束
 
 //  index 点击事件
-    $(".table-menu .product_index li").click(function(){
-        $(".table-menu .list-ul li").removeClass("aActive");
-        $(this).addClass("aActive");
-//        console.log($(this).index())
-        $(".table-div .tab").removeClass("tabActive");
-        $(".table-div .tab").eq( $(this).index()).addClass("tabActive");
-
+    
+    $(".table-menu .market li").click(function(){
+    	$(".market li").removeClass("jsActive");
+    	$(this).addClass("jsActive");
+    	$(".table-div .tab").removeClass("tabActive");
+    	$(".table-div .tab").eq( $(this).index()).addClass("tabActive");
     });
+    
+     $(".table-menu .product_click li").click(function(){
+    	$(".product_click li").removeClass("aActive");
+    	$(this).addClass("aActive");
+    	$(".table-product .tab").removeClass("tabActive");
+    	$(".table-product .tab").eq( $(this).index()).addClass("tabActive");
+    });
+    
 //       index 点击事件结束
     
 //    百分比
@@ -33,8 +40,6 @@ $(function(){
     $(".table-menu .product_list li").click(function(){
         $(".table-menu .list-ul li").removeClass("aActive");
         $(this).addClass("aActive");
-        
-        
     });
 //       index 点击事件结束
 
