@@ -154,19 +154,19 @@
                                             <table class="cardc">
                                                 <tbody><tr>
                                                     <td width="25%" valign="bottom"><span class="redstar">*</span>联系人&nbsp;</td>
-                                                    <td width="75%" valign="bottom"><input name="linkmanname" id="linkmanname" type="text" v_type="string" v_incode="dbc" v_name="联系人" v_maxlength="40" v_must="" value=""></td>
+                                                    <td width="75%" valign="bottom"><input name="person" id="linkmanname" type="text" v_type="string" v_incode="dbc" v_name="联系人" v_maxlength="40" v_must="" value=""></td>
                                                 </tr>
                                                 <tr>
                                                     <td valign="bottom">电&nbsp;&nbsp;话&nbsp;</td>
-                                                    <td valign="bottom"><input name="linkmantel" id="linkmantel" type="text" v_type="tel" v_incode="dbc" v_name="电话" v_maxlength="40" value=""></td>
+                                                    <td valign="bottom"><input name="linkmantel" id="phone" type="text" v_type="tel" v_incode="dbc" v_name="电话" v_maxlength="40" value=""></td>
                                                 </tr>
                                                 <tr>
                                                     <td valign="bottom">手&nbsp;&nbsp;机&nbsp;</td>
-                                                    <td valign="bottom"><input name="linkmanmobile" id="linkmanmobile" type="text" v_type="mobile" v_incode="dbc" v_name="手机" v_maxlength="30" v_must="0" value=""></td>
+                                                    <td valign="bottom"><input name="linkmanmobile" id="mobile" type="text" v_type="mobile" v_incode="dbc" v_name="手机" v_maxlength="30" v_must="0" value=""></td>
                                                 </tr>
                                                 <tr>
                                                     <td valign="bottom"><span class="redstar">*</span>邮&nbsp;&nbsp;件&nbsp;</td>
-                                                    <td valign="bottom"><input name="linkmanmail" id="linkmanmail" type="text" v_type="email" v_incode="dbc" v_name="邮件" v_maxlength="40" v_must="" value=""></td>
+                                                    <td valign="bottom"><input name="linkmanmail" id="email" type="text" v_type="email" v_incode="dbc" v_name="邮件" v_maxlength="40" v_must="" value=""></td>
                                                 </tr>
                                                 </tbody></table>
                                         </div>

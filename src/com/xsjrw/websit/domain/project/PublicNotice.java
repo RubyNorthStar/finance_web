@@ -35,6 +35,11 @@ public class PublicNotice extends BaseEntity {
 	private String	content;		 /* 公告内容 */ 
 	private Integer	status;		 /* 状态 1.未审核 2.已审核 */ 
 	private Date	createTime;		 /* 创建时间 */ 
+	
+	private String person;  	   /* 联系人*/
+	private String phone;		   /* 电话*/
+	private String mobile;		   /* 手机*/
+	private String email;		   /* 邮件*/
 
 	// Constructor
 	public PublicNotice() {
@@ -43,7 +48,8 @@ public class PublicNotice extends BaseEntity {
 	/**
 	 * full Constructor
 	 */
-	public PublicNotice(Integer id, String noticeTitle, String noticeViceTitle, String noticeDescription, String source, String category, String classiFication, Integer industryId, String addressProvince, String addressCity, double floorPrice, Date beginTime, Date endTime, Integer isMall, String content, Integer status, Date createTime) {
+	public PublicNotice(Integer id, String noticeTitle, String noticeViceTitle, String noticeDescription, String source, String category, String classiFication, Integer industryId, String addressProvince, String addressCity, double floorPrice, 
+			Date beginTime, Date endTime, Integer isMall, String content, Integer status, Date createTime, String person, String phone, String mobile, String email) {
 		setId(id);
 		this.noticeTitle = noticeTitle;
 		this.noticeViceTitle = noticeViceTitle;
@@ -52,7 +58,7 @@ public class PublicNotice extends BaseEntity {
 		this.category = category;
 		this.classiFication = classiFication;
 		this.industryId = industryId;
-		this.addressProvince = addressProvince;
+		this.addressProvince = addressProvince; 
 		this.addressCity = addressCity;
 		this.floorPrice = floorPrice;
 		this.beginTime = beginTime;
@@ -61,6 +67,10 @@ public class PublicNotice extends BaseEntity {
 		this.content = content;
 		this.status = status;
 		this.createTime = createTime;
+		this.person = person;
+		this.phone = phone;
+		this.mobile = mobile;
+		this.email = email;
 	}
 
 	// getter && setter
@@ -225,6 +235,38 @@ public class PublicNotice extends BaseEntity {
 		return this;
 	}
 	
+	public String getPerson() {
+		return person;
+	}
+
+	public void setPerson(String person) {
+		this.person = person;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	@Override
 	public String toString() {
 		return "PublicNotice [" + "id=" + getId() + ", noticeTitle=" + noticeTitle + ", noticeViceTitle=" + noticeViceTitle + ", noticeDescription=" + noticeDescription + ", source=" + source + ", category=" + category + ", classiFication=" + classiFication + ", industryId=" + industryId + ", addressProvince=" + addressProvince + ", addressCity=" + addressCity + ", floorPrice=" + floorPrice + ", beginTime=" + beginTime + ", endTime=" + endTime + ", isMall=" + isMall + ", content=" + content + ", status=" + status + ", createTime=" + createTime +  "]";
