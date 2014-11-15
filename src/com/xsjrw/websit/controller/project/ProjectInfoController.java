@@ -51,8 +51,11 @@ public class ProjectInfoController {
 			search = new ProjectInfoSearch();
 			// search.setPageSize(20);
 		}
+		search.setStatus(1);
+		
 		model.addAttribute("list", projectInfoServiceImpl.findProjectInfoByPage(search));
-		return "projectInfo/list";
+		model.addAttribute("search", search);
+		return "project/project_manage";
 	}
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST)

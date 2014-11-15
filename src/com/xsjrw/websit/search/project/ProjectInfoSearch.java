@@ -32,7 +32,7 @@ public class ProjectInfoSearch extends PageModel {
 	private String	investorsRequire;		 /* 对投资方的要求(投资方应具备条件) */ 
 	private String	proDetail;		 /* 项目详细(简介) */ 
 	private Date	createTime;		 /* 创建时间 */ 
-	private Integer	status;		 /* 状态 */ 
+	private Integer	status;		 /* 状态  1:待审 2：审核通过 3：审核未通过 4：下架项目 5：成交项目 */ 
 
 	// Constructor
 	public ProjectInfoSearch() {
