@@ -47,7 +47,7 @@
 		                            <div class="left-title"><span class="spanRed">*</span>是否发送邮件短信</div>
 		                            <div class="right-form">
 		                                <input class="input-radio" type="radio" name="isMall"  value="是">是
-		                                <input class="input-radio" type="radio" name="isMall"  value="否">否
+		                                <input class="input-radio" type="radio" name="isMall" checked="checked" value="否">否
 		                                <span>【备注：默认审核时发送邮件短信，若选择'否',审核时将取消发送邮件短信】</span>
 		                            </div>
 		                        </li>
@@ -96,13 +96,14 @@
 		                        <li class="wrap-li clear">
 		                            <div class="left-title">投资行业</div>
 		                            <div class="right-form">
-		                                <button>选择</button>
+		                                <div class="tz-button tzhy ">选择</div>
+		                                <div class="inputText"></div>
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
-		                            <div class="left-title">投资行业</div>
+		                            <div class="left-title">投资地区</div>
 		                            <div class="right-form">
-		                                <button>选择</button>
+		                                <div class="tz-button tzdq">选择</div>
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
@@ -205,12 +206,152 @@
         </div>
 
     </div>
+    <div class="alert-text-tzhy">
+		<div class="mask"></div>
+		<div class="alert-input">
+			<div class="alert-input-title">
+				<span class="span-title">请选择行业</span>
+				<span class="span-qd">确定</span>
+			</div>
+			<div class="hy">
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="酒店餐饮"> 酒店餐饮</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="房地产业"> 房地产业</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="农林牧渔"> 农林牧渔</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="批发零售贸易"> 批发零售贸易</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="材料与加工"> 材料与加工</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="信息技术服务"> 信息技术服务</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="科研设计及技术服务"> 科研设计及技术服务</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="电子通讯"> 电子通讯</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="新能源"> 新能源</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="电力工业">电力工业</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="煤炭工业"> 煤炭工业</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="冶金矿产"> 冶金矿产</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="石油石化工"> 石油石化工</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="金融保险投资"> 金融保险投资</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="机械制造"> 机械制造</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="基础设施"> 基础设施</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="建筑建材"> 建筑建材</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="物流仓储"> 物流仓储</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="纺织服装皮毛"> 纺织服装皮毛</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="社会服务"> 社会服务</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="交通运输"> 交通运输</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="教育文化广播"> 教育文化广播</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="食品饮料"> 食品饮料</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="医疗保健"> 医疗保健</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="生物科技"> 生物科技</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="旅游休闲"> 旅游休闲</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="影视娱乐"> 影视娱乐</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="汽车汽配"> 汽车汽配</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="印刷出版"> 印刷出版</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="环境保护"> 环境保护</span>
+				<br />
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="广告传媒"> 广告传媒</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="其他行业"> 其他行业</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="不限"> 不限</span>
+			</div>
+		</div>
+	</div>
+	
+	<div class="alert-text-tzdq">
+		<div class="mask"></div>
+		<div class="alert-input">
+			<div class="alert-input-title">
+				<span class="span-title">请选择地区</span>
+				<span class="span-qd">确定</span>
+			</div>
+			<div class="hy">
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="酒店餐饮"> 酒店餐饮</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="房地产业"> 房地产业</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="农林牧渔"> 农林牧渔</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="批发零售贸易"> 批发零售贸易</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="材料与加工"> 材料与加工</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="信息技术服务"> 信息技术服务</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="科研设计及技术服务"> 科研设计及技术服务</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="电子通讯"> 电子通讯</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="新能源"> 新能源</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="电力工业">电力工业</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="煤炭工业"> 煤炭工业</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="冶金矿产"> 冶金矿产</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="石油石化工"> 石油石化工</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="金融保险投资"> 金融保险投资</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="机械制造"> 机械制造</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="基础设施"> 基础设施</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="建筑建材"> 建筑建材</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="物流仓储"> 物流仓储</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="纺织服装皮毛"> 纺织服装皮毛</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="社会服务"> 社会服务</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="交通运输"> 交通运输</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="教育文化广播"> 教育文化广播</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="食品饮料"> 食品饮料</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="医疗保健"> 医疗保健</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="生物科技"> 生物科技</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="旅游休闲"> 旅游休闲</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="影视娱乐"> 影视娱乐</span>
+				<br/>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="汽车汽配"> 汽车汽配</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="印刷出版"> 印刷出版</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="环境保护"> 环境保护</span>
+				<br />
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="广告传媒"> 广告传媒</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="其他行业"> 其他行业</span>
+				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="不限"> 不限</span>
+			</div>
+		</div>
+	</div>
     <#include "/index/common/foot.ftl">
 </div>
+
+
 
 <!-- Path to Framework7 Library JS-->
 <!--<script type="text/javascript" src="js/framework7.js"></script>-->
 <!-- Path to your app js-->
 <!--<script type="text/javascript" src="js/my-app.js"></script>-->
+<script type="text/javascript">
+	$(function(){
+		$(".tzhy").click(function(){
+			$(".alert-text-tzhy").css("display","block")
+		})
+		$(".span-qd").click(function(){
+		 	var inputText = $(".inputText");
+		 	var str = "";
+			 $("input[name='industrycn']:checked").each(function () {
+                str += this.value + ",";
+            })
+            inputText.text(str.substring(0,str.length-1));
+            $(".alert-text-tzhy").css("display","none")
+		})
+		
+		$(".tzdq").click(function(){
+			$(".alert-text-tzdq").css("display","block")
+		})
+		$(".span-qd").click(function(){
+			var inputText = $(".inputText");
+		 	var str = "";
+			 $("input[name='industrycn']:checked").each(function () {
+                str += this.value + ",";
+            })
+            inputText.text(str.substring(0,str.length-1));
+            $(".alert-text-tzdq").css("display","none")
+		})
+	})
+</script>
 </body>
 </html>

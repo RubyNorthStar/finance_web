@@ -30,7 +30,7 @@
                     <!-- 中间部分开始 -->
                     
                     	<div class="manage-table">
-                            <table><!-- 表格 -->
+                            <table style=""><!-- 表格 -->
                                 <tbody>
                                 <tr><!-- 表格行 -->
                                     <th colspan="4"  class="table-bg">我的转让项目管理</th>
