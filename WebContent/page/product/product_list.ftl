@@ -58,14 +58,47 @@
 						      		</#list>
 						      	</#if>
                             </ul>
-
-                            <ul class="fL" style="margin-top: 15px;">
-                                <li class="list-li-yuan button7 button-color-3"><a href="javascript:;">预期收益</a></li>
+							<br>
+                            
+                        </div>
+                        <ul class="fL clear" style="margin: 15px 0 0 30px;">
+                        	<li class="fL select-li">
+                        		<a href="javascript:;">
+	                        		<select>
+	                        			<option>预期收益</option>
+	                        			<option>1000</option>
+	                        			<option>2000</option>
+	                        			<option>3000</option>	
+	                        		</select>
+                        		</a>
+                        	</li>
+                        	<li class="fL select-li">
+                        		<a href="javascript:;">
+                        		<select>
+                        			<option>投资额度</option>
+	                        			<option>1000</option>
+	                        			<option>2000</option>
+	                        			<option>3000</option>	
+	                        		</select>
+                        		</a>
+                    		</li>
+                        	<li class="fL select-li">
+                        		<a href="javascript:;">
+		                        	<select>
+		                				<option>投资期限</option>
+		                    			<option>1000</option>
+		                    			<option>2000</option>
+		                    			<option>3000</option>	
+		                    		</select>
+                        		</a>
+                        	</li>
+                        	
+                        	
+                                <!--<li class="list-li-yuan button7 button-color-3"><a href="javascript:;">预期收益</a></li>
                                 <li class="list-li-yuan button7 button-color-4"> <a href="javascript:;">投资额度</a></li>
                                 <li class="list-li-yuan button7 button-color-5"><a href="javascript:;">投资期限</a></li>
-                                <li class="list-li-yuan button7 button-color-6"><a href="javascript:;">更多产品</a></li>
-                            </ul>
-                        </div>
+                                <li class="list-li-yuan button7 button-color-6"><a href="javascript:;">更多产品</a></li>-->
+                        </ul>
                     </div>
                 </div>
                 <div class="table-div">
