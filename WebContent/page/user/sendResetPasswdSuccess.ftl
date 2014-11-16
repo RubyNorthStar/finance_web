@@ -15,7 +15,7 @@
                     <a href="/index.go" ><img class="top-logo" src="/resources/images/user/logo.png" /></a>
                 </div>
                 <div class="right">
-                	<i class="rightI" style=""></i>
+                	
                 </div>
                 <div class="login" style="display: block">
                     <a href="javascript:;"></a>
@@ -23,7 +23,7 @@
             </div>
         </div>
        		 <!--中间内容-->
-		  <div class="banner_warp" style="margin:0 auto;padding-top:20px;">
+		  <div class="banner_warp" style="margin:0 auto;padding-top:20px; padding-bottom:310px;">
 			<div class="recover_mima" style="text-align:center;width:500px;">
 		    	<p><h1 style="font-family:'微软雅黑';font-size:20px;color:#333333;margin-top:30px;">新密码发送成功！</h1></p>
 		        <p style="font-size:12px;color:#333333;margin-top:30px;">新的密码重置链接已经发送到注册的邮箱中，24小时内修改有效！</p>

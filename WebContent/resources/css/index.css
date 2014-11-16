@@ -522,8 +522,8 @@ ul.move, ol{margin:0; padding:0;}
 .about-bottom-img{ width: 100%;}
 /*page6.html end*/
 /* 鎵惧洖瀵嗙爜*/
-
-	 .recover_mima{ margin:20px auto; padding-left:130px; width:1000px;}
+		/*padding-left:130px; */
+	 .recover_mima{ margin:20px auto; width:1000px;}
 	 .recover_tou{ width:150px; float:left; margin-right:15px; text-align: left; line-height: 42px; }
 	 .recover_tou span{ font-size:20px;}
 	 
