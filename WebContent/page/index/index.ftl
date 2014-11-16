@@ -109,7 +109,7 @@
                             <span class="span_lc">理财产品</span>
                             <span class="span_en">Wealth Management Products</span>
                         </div>
-                        <div class="more"> 更多产品&nbsp;&nbsp;></div>
+                        <div class="more"> <a href="/product/productInfo.go">更多产品</a>&nbsp;&nbsp;></div>
                     </div>
                     <div class="list clearfix">
                         <div class="table-menu clearfix">
