@@ -52,7 +52,7 @@ th,td{border:1px solid #9a9a9a; width:100px; height:40px;}
 .manage-table table{ width:600px;}
 .table-bg{ background: #e5e5e5; text-align: center;}
 .table-text{ text-align: center;}
-.name{ margin:5px; width:260px;}
+.name{ margin:5px; width:260px;height:23px;}
 
 .information{ margin-top: 20px; border:1px solid #e5e5e5;}
 .info-ul{ background:#e5e5e5; }
