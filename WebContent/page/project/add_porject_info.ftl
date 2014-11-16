@@ -173,7 +173,7 @@
                                      </div>
                                  </li>
                                 <li class="submitBtn">
-                                    <button class="button-style button-style-blue">提交待审</button>
+                                    <button class="button-style button-style-blue padding">提交待审</button>
                                 </li>
                             </ul>
                         </div>
