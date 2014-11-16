@@ -23,9 +23,7 @@
         <!--中间内容-->
 
         <div class="content m-l clearfix " style="display: block">
-            <div class="content-block ">
-                <img class="content-top-img box-shadow" src="/images/common/001.jpg" />
-            </div>
+       
             <div class="content-content clearfix" style="width: 81%;background: #fff;">
                 <!--正文-->
                 <h4 class="h4">新闻动态</h4>

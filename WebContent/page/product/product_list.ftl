@@ -61,7 +61,7 @@
 							<br>
                             
                         </div>
-                        <ul class="fL clear" style="margin: 15px 0 0 30px;">
+                        <ul class="fL clear" style="margin: 15px 0 0 30px; display:none;">
                         	<li class="fL select-li">
                         		<a href="javascript:;">
 	                        		<select>
@@ -92,12 +92,6 @@
 		                    		</select>
                         		</a>
                         	</li>
-                        	
-                        	
-                                <!--<li class="list-li-yuan button7 button-color-3"><a href="javascript:;">预期收益</a></li>
-                                <li class="list-li-yuan button7 button-color-4"> <a href="javascript:;">投资额度</a></li>
-                                <li class="list-li-yuan button7 button-color-5"><a href="javascript:;">投资期限</a></li>
-                                <li class="list-li-yuan button7 button-color-6"><a href="javascript:;">更多产品</a></li>-->
                         </ul>
                     </div>
                 </div>

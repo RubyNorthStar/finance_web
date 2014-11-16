@@ -3,15 +3,15 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>携手金融网</title>
-    <link rel="stylesheet" type="text/css" href="/style/common/index.css">
+    <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
+    <link rel="stylesheet" href="/resources/css/my-app.css">
     <script src="/script/jquery/jquery-1.7.js"></script>
 </head>
 
 <body>
 <div class="views">
-    <!--头部导航-->
-    <div class="navbar">
-       <#include "/index/common/top.ftl">
+    <#include "/index/common/top.ftl">
+       
     <div class="view">
         <!--中间内容-->
         <div class="content m-l clearfix" style="display: block">

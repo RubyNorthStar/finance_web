@@ -42,7 +42,7 @@
                             <span class="span_lc">集市项目</span>
                             <span class="span_en">Project Market</span>
                         </div>
-                        <div class="more"> 更多产品&nbsp;&nbsp;></div>
+                        <div class="more"> <a href="javascript:;">更多产品&nbsp;&nbsp;></a></div>
                     </div>
                     <div class="list clearfix">
                         <div class="table-menu clearfix">

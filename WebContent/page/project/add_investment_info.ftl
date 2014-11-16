@@ -31,8 +31,6 @@
                     <#include "/index/common/center_left.ftl">
                     <div class="right-content">
                     <!-- 中间部分开始 -->
-                    	
-                    	
                     	<div>
                     		<form method="post" action="/center/investment/addInvestment.go">
 		                    <h3 class="user">投资意向管理 > 发布投资意向</h3>
