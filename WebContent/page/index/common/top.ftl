@@ -21,23 +21,28 @@
 </div>
 <div class="menu clearfix">
     <ul class="menu_list_ul">
-        <li class="menu-active">
-            <a href="javascript:;">关于我们</a>
+    	<li class="menu-active">
+            <a href="javascript:;">首页</a>
         </li>
+        
         <li>
             <a href="javascript:;">我要理财</a>
         </li>
         <li>
-            <a href="javascript:;">我要借款</a>
+            <a href="javascript:;">我要投资</a>
         </li>
         <li>
             <a href="javascript:;">新手指南</a>
         </li>
         <li>
-            <a href="javascript:;">联系我们</a>
+            <a href="/article/articleInfo/list_article.go?aptId=9">新闻动态</a>
         </li>
         <li>
-            <a href="/article/articleInfo/list_new.go?aptId=9">新闻动态</a>
+            <a href="javascript:;">联系我们</a>
+        </li>
+        
+        <li class="">
+            <a href="javascript:;">关于我们</a>
         </li>
     </ul>
 </div>
