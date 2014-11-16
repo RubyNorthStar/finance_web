@@ -10,7 +10,8 @@
   <body>
 	
 	<div class="views">
-	<!--头部导航-->
+	<#include "/index/common/top.ftl">
+	<!--头部导航
 	        <div class="navbar">
 	            <div class="navbar-inner clearfix">
 	                <div class="left">
@@ -24,6 +25,7 @@
 	                </div>
 	            </div>
 	        </div>
+	        -->
 	    <div class="view">
 	        <!--中间内容-->
 	        <!--注册页-->
@@ -85,7 +87,7 @@
 	                </div>
 	            </div>
 	        </div>
-	        <!--底部工具栏-->
+	        <!--底部工具栏
 	        <div class="page clearfix" style="margin-bottom: 40px;">
 	            <div class="toolbar">
 	                <img class="bottom-logo" src="/resources/images/user/0013.jpg" />
@@ -101,7 +103,8 @@
 	            <div class="toolbar">
 	                <img class="" style="width: 200px;height: 60px" src="/resources/images/user/0012.jpg" />
 	            </div>
-	        </div>
+	        </div>-->
+	        <#include "/index/common/foot.ftl">
 	    </div>
 	</div>
   </body>

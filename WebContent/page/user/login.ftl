@@ -11,7 +11,8 @@
   <body>
 	
 	<div class="views">
-		<!--头部导航-->
+	<#include "/index/common/top.ftl">
+		<!--头部导航
         <div class="navbar">
             <div class="navbar-inner clearfix">
                 <div class="left">
@@ -24,7 +25,7 @@
                     <a href="javascript:;">登录</a>
                 </div>
             </div>
-        </div>
+        </div>-->
 		<div class="view"> 
             <!--中间内容-->
                 <!--登陆页-->
@@ -45,32 +46,34 @@
 	                            <input class="input-text code" type="password" name="password" id="password" placeholder="密码">
 	                        </div>
 	                        <div class="text">
+	                        <!--
 	                            <div class="input-ck">
 	                                <input class="input-checkbox" type="checkbox" checked="checked" id="remember">
 	                            </div>
-	                            	记住用户名
-	                            <a class="forget Acolor" href="/user/forgot.go">忘记密码</a>
+	                            	记住用户名-->
+	                            
 	                        </div>
 	                        <div class="login-btn">
 	                            <button onclick="javascript:userLogin(this);">马上登陆</button>
 	                            <div class="zc">
 	                               <span>没有账号？</span>
 	                                <span><a class="Acolor" href="javascript:;">免费注册</a></span>
+	                                <a class="forget Acolor" href="/user/forgot.go">忘记密码</a>
 	                            </div>
 	                        </div>
                         <div class="hzzh clearfix">
-                            <p style="float: left; text-align: center;line-height: 45px; margin: 0 20px 0 30px">
+                            <!--<p style="float: left; text-align: center;line-height: 45px; margin: 0 20px 0 30px">
                              	   您还可以使用合作账号登陆
                             </p>
 
                             <i class="icon icon-wb"></i>
-                            <i class="icon icon-qq"></i>
+                            <i class="icon icon-qq"></i>-->
                         </div>
 
                     </div>
                 </div>
             </div>
-            <!--底部工具栏-->
+            <!--底部工具栏
             <div class="page clearfix" style="margin-bottom: 40px;">
                 <div class="toolbar">
                     <img class="bottom-logo" src="/resources/images/user/0013.jpg" />
@@ -87,6 +90,8 @@
                     <img class="" style="width: 200px;height: 60px" src="/resources/images/user/0012.jpg" />
                 </div>
             </div>
+            -->
+            <#include "/index/common/foot.ftl">
 		</div>
 	</div>
 	

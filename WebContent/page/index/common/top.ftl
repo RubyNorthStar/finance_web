@@ -21,7 +21,7 @@
 </div>
 <div class="menu clearfix">
     <ul class="menu_list_ul">
-        <li>
+        <li class="menu-active">
             <a href="javascript:;">关于我们</a>
         </li>
         <li>

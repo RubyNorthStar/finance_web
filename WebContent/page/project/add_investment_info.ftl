@@ -139,7 +139,7 @@
 		                        <li class="wrap-li clear">
 		                            <div class="left-title">投资回报率要求</div>
 		                            <div class="right-form">
-		                                	年回报率<input type="text" name="getRequire" />%以上
+		                                	年回报率<input style="width:25px;" type="text" name="getRequire" />%以上
 		                            </div>
 		                        </li>
 		
