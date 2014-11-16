@@ -28,7 +28,10 @@
                     <#include "/index/common/center_left.ftl">
                     <div class="right-content">
                     <!-- 中间部分开始 -->
-                    
+                    	<input type="hidden" id="projectType" value="${search.projectType}"/>
+                    	<input type="hidden" id="status" value="${search.status}"/>
+                    	<input type="hidden" id="totalPage" value="${search.totalPages}"/>
+                    	
                     	<div class="manage-table">
                             <table><!-- 表格 -->
                                 <tbody>
@@ -52,9 +55,6 @@
                             <div class="info-list">
                                 <ul class="info-ul clear">
                                     <li class="info-li info-active">
-                                    	<a href="javascript:;">已发布项目</a>
-                                    </li>
-                                    <li class="info-li">
                                     	<a href="javascript:;">待审项目</a>
                                     </li>
                                     <li class="info-li"><a href="javascript:;">审核通过项目</a></li>
@@ -71,44 +71,27 @@
 											  <td>项目名称</td>
 											  <td>操作</td>
 											</tr>
-											<tr>
-											  <td>松岛枫</td>
-											  <td>刪除/修改</td>
-											</tr>
+											
+											 <#if list??>
+				                                <#list list as project>
+				                                	 <tr>
+													   <td>${project.projectName}</td>
+													   <td>刪除&nbsp&nbsp|&nbsp&nbsp修改</td>
+													 </tr>
+				                                </#list>
+			                                </#if>
 										</table>
 	                            	</div>
 	                            	
-	                            	<div class="form-box">
-	                            		<table class="table-box">
-											<tr class="tr-title">
-											  <td>项目名称</td>
-											  <td>操作</td>
-											</tr>
-											<tr>
-											  <td>didididi</td>
-											  <td>刪除/修改</td>
-											</tr>
-											<tr>
-											  <td>didididi</td>
-											  <td>刪除/修改</td>
-											</tr>
-											<tr>
-											  <td>didididi</td>
-											  <td>刪除/修改</td>
-											</tr>
-										</table>
-	                            	</div>
                             	
 	                            </div>
-                                <#if list??>
-	                                <#list list as project>
-	                                	 <div class="info-div1">
-	                                    	${project.projectName} 
-	                                	 </div>
-	                                </#list>
-                                </#if>
                                 <div class="paging clear">
-                                	<div>共${search.totalRecords}条  第${search.pageNo}页</div>    <div>首页</div>  <div>上页</div>  <div>下页</div>  <div>尾页</div>
+                                	<input type="hidden" id="pageInput"/>
+                                	<div>共${search.totalRecords}条   <span class="pageNumber">第${search.pageNo}页</span>  共${search.totalPages}页</div>    
+                                	<div class="pageDate" data="1">首页</div>  
+                                	<div class="pageDate pageNumber" data="${search.pageNo-1}">上一页</div>  
+                                	<div class="pageDate pageNumber" data="${search.pageNo+1}">下一页</div>  
+                                	<div class="pageDate" data="${search.totalPages}">尾页</div>
                                 </div>
                                 
                             </div>
@@ -137,8 +120,34 @@
 			$(".form-box").removeClass("form-box-active");
         	$(".form-box").eq( $(this).index()).addClass("form-box-active");
 			
-		})
+		});
+		
+		$(".pageDate").click(function(){
+			var curPage = $(this).attr("data");
+			var totalPage = $('#totalPage').val();
+			if(curPage <= 0){
+				curPage = 1;
+			}else if(curPage >= totalPage){
+				curPage = totalPage;
+			}
+			
+			var projectType = $("#projectType").val();
+			var status = $("#status").val();
+			$.ajax({
+				url : "/center/projectInfo/ajaxList.go",
+				type : "post",
+				data:{"pageNo":curPage,"projectType":projectType,"status":status},
+				dataType : "html",
+				cache : false,
+				success :function(data){
+					$(".table-box").empty();
+		            $(".table-box").html(data);
+				}
+			});
+		});
 	})
+	
+	
 </script>
 </body>
 </html>
