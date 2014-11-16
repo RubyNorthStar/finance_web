@@ -97,19 +97,21 @@
 		                            <div class="left-title">投资行业</div>
 		                            <div class="right-form">
 		                                <div class="tz-button tzhy ">选择</div>
-		                                <div class="inputText"></div>
+		                                <div class="tzhy-inputText"></div>
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
 		                            <div class="left-title">投资地区</div>
 		                            <div class="right-form">
 		                                <div class="tz-button tzdq">选择</div>
+		                                <div class="tzdq-inputText"></div>
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
 		                            <div class="left-title"><span class="spanRed">*</span>投资企业类型</div>
 		                            <div class="right-form w550">
-		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="全民所有制">全民所有制
+		                            	<div style="width:512px;">
+		                            		<input class="input-radio" type="checkbox" name="enterpriseType"  value="全民所有制">全民所有制
 		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="全民与全民联营">全民与全民联营
 		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="全民与集体联营">全民与集体联营
 		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="股份有限公司">股份有限公司
@@ -122,6 +124,8 @@
 		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="事业法人">事业法人
 		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="其他">其他
 		                                <input class="input-radio" type="checkbox" name="enterpriseType"  value="不限">不限
+		                            	</div>
+		                                
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
@@ -138,54 +142,43 @@
 		                                	年回报率<input type="text" name="getRequire" />%以上
 		                            </div>
 		                        </li>
-		                        <li class="wrap-li clear">
-		                            <div class="left-title">关键</div>
-		                            <div class="right-form">
-		                               	 年回报率<input type="text" />%以上
-		                                <span class="spanRed">(输入关键字可以使您发布的信息更容易被检索到。多个关键字请用","号隔开。)</span>
-		                            </div>
-		                        </li>
 		
 		                        <li class="wrap-li clear">
 		                            <div class="left-title"><span class="spanRed">*</span>有效起始日期</div>
 		                            <div class="right-form">
-		                                <input class="input-text" name="beginTime" type="date" placeholder="">
+		                                <input class="input-date" name="beginTime" type="date" placeholder="">
 		                            </div>
 		                            <div class="left-title"><span class="spanRed">*</span>有效截止日期</div>
 		                            <div class="right-form">
-		                                <input class="input-text" name="endTime" type="date" placeholder="">
+		                                <input class="input-date" name="endTime" type="date" placeholder="">
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
-		                            <div class="left-title">
-		                                <span class="spanRed">*</span>投资机构介绍
+		                            <div class="right-form">
+		                            	<span class="spanRed">*</span>投资机构介绍
 		                                <span class="spanRed">*</span>(介绍：投资团队，投资理念，优势资源，投资机构动态，成功投资案例，网站网址等)
 		                                <span class="spanRed">(至少50字)</span>
-		                            </div>
-		                            <div class="right-form">
-		                                <textarea class="input-text" name="investOrgInfo" type="data" placeholder=""></textarea>
+		                                <textarea class="input-textarea" name="investOrgInfo" type="data" placeholder=""></textarea>
 		                            </div>
 		                        </li>
 		                        <li class="wrap-li clear">
-		                            <div class="left-title">
-		                                <span class="spanRed">*</span>对接受项目要求
-		                                <span class="spanRed"> (限1000字)</span>
-		                            </div>
 		                            <div class="right-form">
+		                            	<span class="spanRed">*</span>对接受项目要求
+		                                <span class="spanRed"> (限1000字)</span>
 		                                <div>
 		                                    <p>
 		                                        <input class="input-radio" type="checkbox"> 提供项目概述
 		                                        <input class="input-radio" type="checkbox"> 提供项目详细资料及投资价值分析报告
 		                                        <input class="input-radio" type="checkbox"> 提供经过第三方评估或审计过的详细资料
 		                                    </p>
-		                                    <textarea class="input-text" name="investRequire" placeholder=""></textarea>
+		                                    <textarea class="input-textarea" name="investRequire" placeholder=""></textarea>
 		                                </div>
 		                                <div>
 		                                    <p>
 		                                        <input class="input-radio" type="checkbox">其他要求
 		                                        <sapn class="spanRed">(限1000字)</sapn>
 		                                    </p>
-		                                    <textarea class="input-text" name="otherRequire" placeholder=""></textarea>
+		                                    <textarea class="input-textarea" name="otherRequire" placeholder=""></textarea>
 		                                </div>
 		                            </div>
 		                        </li>
@@ -211,7 +204,7 @@
 		<div class="alert-input">
 			<div class="alert-input-title">
 				<span class="span-title">请选择行业</span>
-				<span class="span-qd">确定</span>
+				<span class="tzhy-span-qd">确定</span>
 			</div>
 			<div class="hy">
 				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="酒店餐饮"> 酒店餐饮</span>
@@ -266,52 +259,55 @@
 		<div class="alert-input">
 			<div class="alert-input-title">
 				<span class="span-title">请选择地区</span>
-				<span class="span-qd">确定</span>
+				<span class="tzdq-span-qd">确定</span>
 			</div>
 			<div class="hy">
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="酒店餐饮"> 酒店餐饮</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="房地产业"> 房地产业</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="农林牧渔"> 农林牧渔</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="不限"> 不限</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="境外"> 境外</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="北京"> 北京</span>
 				<br/>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="批发零售贸易"> 批发零售贸易</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="材料与加工"> 材料与加工</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="信息技术服务"> 信息技术服务</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="天津">天津</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="上海"> 上海</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="河北"> 河北</span>
 				<br/>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="科研设计及技术服务"> 科研设计及技术服务</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="电子通讯"> 电子通讯</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="新能源"> 新能源</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="山西"> 山西</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="内蒙"> 内蒙</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="辽宁"> 辽宁</span>
 				<br/>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="电力工业">电力工业</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="煤炭工业"> 煤炭工业</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="冶金矿产"> 冶金矿产</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="吉林">吉林</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="江苏"> 江苏</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="浙江"> 浙江</span>
 				<br/>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="石油石化工"> 石油石化工</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="金融保险投资"> 金融保险投资</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="机械制造"> 机械制造</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="安徽"> 安徽</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="福建">福建</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="江西"> 江西</span>
 				<br/>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="基础设施"> 基础设施</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="建筑建材"> 建筑建材</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="物流仓储"> 物流仓储</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="河南"> 河南</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="湖南"> 湖南</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="湖北"> 湖北</span>
 				<br/>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="纺织服装皮毛"> 纺织服装皮毛</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="社会服务"> 社会服务</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="交通运输"> 交通运输</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="广东"> 广东</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="广西"> 广西</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="海南"> 海南</span>
 				<br/>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="教育文化广播"> 教育文化广播</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="食品饮料"> 食品饮料</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="医疗保健"> 医疗保健</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="重庆"> 重庆</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="四川"> 四川</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="贵州"> 贵州</span>
 				<br/>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="生物科技"> 生物科技</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="旅游休闲"> 旅游休闲</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="影视娱乐"> 影视娱乐</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="云南"> 云南</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="陕西"> 陕西</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="西藏"> 西藏</span>
 				<br/>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="汽车汽配"> 汽车汽配</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="印刷出版"> 印刷出版</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="环境保护"> 环境保护</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="甘肃"> 甘肃</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="青海"> 青海</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="宁夏"> 宁夏</span>
 				<br />
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="广告传媒"> 广告传媒</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="其他行业"> 其他行业</span>
-				<span class="hy-span"><input type="checkbox" name="industrycn" class="hy-checkbox" value="不限"> 不限</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="新疆">新疆</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="黑龙江"> 黑龙江</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="台湾省"> 台湾省</span>
+				<br />
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="香港"> 香港</span>
+				<span class="hy-span"><input type="checkbox" name="du-checkbox" class="du-checkbox" value="澳门"> 澳门</span>
 			</div>
 		</div>
 	</div>
@@ -329,8 +325,8 @@
 		$(".tzhy").click(function(){
 			$(".alert-text-tzhy").css("display","block")
 		})
-		$(".span-qd").click(function(){
-		 	var inputText = $(".inputText");
+		$(".tzhy-span-qd").click(function(){
+		 	var inputText = $(".tzhy-inputText");
 		 	var str = "";
 			 $("input[name='industrycn']:checked").each(function () {
                 str += this.value + ",";
@@ -342,10 +338,10 @@
 		$(".tzdq").click(function(){
 			$(".alert-text-tzdq").css("display","block")
 		})
-		$(".span-qd").click(function(){
-			var inputText = $(".inputText");
+		$(".tzdq-span-qd").click(function(){
+			var inputText = $(".tzdq-inputText");
 		 	var str = "";
-			 $("input[name='industrycn']:checked").each(function () {
+			 $("input[name='du-checkbox']:checked").each(function () {
                 str += this.value + ",";
             })
             inputText.text(str.substring(0,str.length-1));

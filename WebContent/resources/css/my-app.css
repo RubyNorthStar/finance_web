@@ -30,6 +30,8 @@ table{border-collapse:collapse;}
 .addImg{ width:400px;}
 .addImg .zs_clearfix {margin:5px 0; border:1px solid #ccc;padding:10px;}
 input.input-text{ width: 420px; }
+input.input-date{ width: 160px; }
+.input-textarea{ width:630px; height:120px; margin-top:10px;}
 textarea.input-text{ width: 420px; height:100px;}
 select.input-text{ width: 200px; }
 .submitBtn{ margin-left: 200px;}
@@ -96,10 +98,10 @@ th,td{border:1px solid #9a9a9a; width:100px; height:40px;}
 .alert-input{ background:#fff; position: absolute;z-index:10; left:400px; top:50px;}
 .alert-input-title{ background:#cecece; color:#000; padding:5px;}
 .span-title{ color:red;}
-.span-qd{cursor: pointer; color:#000; text-alengin:right; margin-left:357px;}
+.tzhy-span-qd,.tzdq-span-qd{cursor: pointer; color:#000; text-alengin:right; margin-left:357px;}
 .hy{ padding:20px;}
 .hy-span{ display: inline-block; padding: 5px 5px; width: 127px;}
-.inputText{ padding-left:10px;}
+.tzhy-inputText,.tzdq-inputText{ padding-left:10px;}
 
 .alert-text-tzdq{position: fixed; left:0; top:0; z-index:9; display:none;}
 /*投資發佈 end*/
