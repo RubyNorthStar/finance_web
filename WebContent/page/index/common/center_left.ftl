@@ -37,25 +37,6 @@
             <a href="/center/investment/addInvestment.go" style="color:#0075c1;">发布</a>
             <span class="span5">]</span>
         </dd>
-        <dt class="menu-dt">尽职调查报告</dt>
-        <dd class="menu-dd">项目方
-            <span class="span5">[</span>
-            <a href="javascript:;" style="color:#0075c1;">我的项目</a>
-            <span class="span5">][</span>
-            <a href="javascript:;" style="color:#0075c1;">历史项目</a>
-            <span class="span5">]</span>
-        </dd>
-        <dd class="menu-dd">投资人
-            <span class="span5">[</span>
-            <a href="javascript:;" style="color:#0075c1;">我的订阅</a>
-            <span class="span5">][</span>
-            <a href="javascript:;" style="color:#0075c1;">我的收藏</a>
-            <span class="span5">]</span>
-        </dd>
-        <dd class="menu-dd">投资人
-            <span class="span5">[</span>
-            <a href="javascript:;" style="color:#0075c1;">项目浏览</a>
-            <span class="span5">]</span>
-        </dd>
+        
     </dl>
 </div>

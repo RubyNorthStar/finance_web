@@ -90,7 +90,7 @@
 
             </div>
             <div class="" style="margin-top: 20px;">
-                <div class="">
+                <div class="" style="box-shadow: 0px 1px 2px rgba(0,0,0,0.5); width:930px;">
                     <ul class="tab-title clearfix">
                         <li class="list-li-title fL active">
                             	项目介绍
