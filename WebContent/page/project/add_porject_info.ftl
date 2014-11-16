@@ -8,7 +8,7 @@
     <title>携手金融网 - 添加项目</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
     <link rel="stylesheet" href="/resources/css/my-app.css">
-    <link rel="stylesheet" href="/resources/css/bootstrap.min.css">
+    
     <script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
 	<script type="text/javascript" src="/script/project/area.js"></script>
 	<script >
@@ -164,16 +164,14 @@
                                         <textarea class="textarea-img" name="projectInfo.proDetail" id="proDetail"></textarea>
                                     </div>
                                 </li>
-                                
-                                
-                                
+                                <!--
                                  <li class="wrap-li clear">
                                      <div class="user-info">
                                        	  用户信息
                                      </div>
-                                 </li>
+                                 </li>-->
                                 <li class="submitBtn">
-                                    <button class="button-style button-style-blue padding">提交待审</button>
+                                    <button class="button-style button-style-blue">提交待审</button>
                                 </li>
                             </ul>
                         </div>
