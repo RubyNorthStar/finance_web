@@ -7,11 +7,12 @@
     <link rel="stylesheet" type="text/css" href="/resources/css/style.css">
 	<link rel="stylesheet" href="/resources/css/swiper-demos.css?v=1.8">
     <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
+    <link rel="stylesheet" href="/resources/css/my-app.css">
     <script type="text/javascript" src="/script/product/product.js"></script>
     <script src="/script/jquery/jquery-1.7.js"></script>
     <style>
         .none{
-            display: none;
+            display: none; 
         }
     </style>
     
@@ -28,14 +29,14 @@
 </head>
 
 <body>
-<div class="views body-bg">
+<div class="views">
 
     <!--头部导航-->
     <#include "/index/common/top.ftl">
-    <div class="view" style="width:1348px;background:#f7f7f7;">
+    <div class="view" style="width:1300px;">
         <!--中间内容-->
 
-        <div class="content clearfix " style="display: block; background: #f7f7f7; padding-left: 150px;">
+        <div class="content clearfix " style="display: block;padding-left: 150px;">
             <div class="content-block ">
                 <!--<img class="content-top-img box-shadow" src="/images/common/001.jpg" />-->
                 <div class="" >
@@ -138,12 +139,7 @@
 	        				<img class="swiper-slide content-img" src="/userfiles/mortgageImages/${m.imagUrl}" />
 	        			</#list>
 				      
-				    <!--  <img class="swiper-slide content-img" src="/images/common/003.jpg" />
-				      <img class="swiper-slide content-img" src="/images/common/004.jpg" />
-				      <img class="swiper-slide content-img" src="/images/common/005.jpg" />
-				      <img class="swiper-slide content-img" src="/images/common/002.jpg" />
-				      <img class="swiper-slide content-img" src="/images/common/003.jpg" />
-				      <img class="swiper-slide content-img" src="/images/common/005.jpg" /> -->
+				    <!--  <img class="swiper-slide content-img" src="/images/common/003.jpg" /> -->
 				    </div>
 	            </div>
             </#if>
@@ -163,23 +159,7 @@
             </div>
         </div>
     </div>
-	       <!--底部工具栏-->
-	<div class="page clearfix" style="padding-bottom: 40px;">
-	    <div class="toolbar">
-	        <img class="bottom-logo" src="/resources/images/user/0013.jpg" />
-	    </div>
-	    <div class="toolbar">
-	        <div class="top-inner toolbar-inner">
-	        	    关于安心理财&numsp;|&numsp;联系我们&numsp;|&numsp;公司荣誉&numsp;|&numsp;合作伙伴&numsp;|&numsp;安心官方微博&numsp;|&numsp;全国免费质询电话：400-6099-800
-	        </div>
-	        <div class="bottom-text">
-	          	   京ICP证100743号 京公网安1101055897CreditEase@Θ2009
-	        </div>
-	    </div>
-	    <div class="toolbar">
-	        <img class="" style="width: 200px;height: 60px" src="/resources/images/user/0012.jpg" />
-	    </div>
-	</div>
+	<#include "/index/common/foot.ftl">
 </div>
 
 <script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
