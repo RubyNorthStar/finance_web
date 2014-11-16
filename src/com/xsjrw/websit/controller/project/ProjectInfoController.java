@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -56,6 +57,24 @@ public class ProjectInfoController {
 		model.addAttribute("list", projectInfoServiceImpl.findProjectInfoByPage(search));
 		model.addAttribute("search", search);
 		return "project/project_manage";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="ajaxList")
+	public String ajaxList(Model model, ProjectInfoSearch search, HttpServletResponse response){
+		search.setPageSize(2);
+		List<ProjectInfo> ajaxList = projectInfoServiceImpl.findProjectInfoByPage(search);
+		String result = "<tr class='tr-title'><td>项目名称</td><td>操作</td></tr>";
+		if(ajaxList != null && ajaxList.size() > 0){
+			try {
+				for(ProjectInfo pro : ajaxList){
+					result += "<tr><td>"+pro.getProjectName().getBytes("UTF-8")+"</td><td>刪除&nbsp|&nbsp修改</td></tr>";
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST)
