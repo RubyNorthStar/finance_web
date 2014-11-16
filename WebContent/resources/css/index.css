@@ -533,7 +533,7 @@ ul.move, ol{margin:0; padding:0;}
 	 .text-input-email{ width:300px; height:40px; border:1px solid #ccc; padding-left:10px; border-radius: 5px; float:left;}
 	 .text-input-code{ width:100px; height:40px; border:1px solid #ccc; padding-left:10px; border-radius: 5px; float:left;}
 	 .submit-row{  margin-left:110px;}
-	 .button-style{padding:10px 15px; margin:3px 0 0 20px; border:none; background:#4cd964; color:#fff; border-radius: 5px; }
+	 .button-style{ margin:3px 0 0 20px; border:none; background:#4cd964; color:#fff; border-radius: 5px; }
 	 .code-img{width:100px; height:40px; border:1px solid #ccc; margin-left:10px;}
 /* 鎵惧洖瀵嗙爜  end*/
 
