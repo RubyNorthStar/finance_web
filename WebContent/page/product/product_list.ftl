@@ -29,11 +29,11 @@
    <#include "/index/common/top.ftl">
     <div class="view noneBG" style="background: none;">
         <!--中间内容-->
-        <div class="content m-l clearfix " style="display: block">
+        <div class="content clearfix ">
             <div class="content-block ">
                 <img class="content-top-img box-shadow" src="/images/common/0020.jpg" />
             </div>
-            <div class="content-content clearfix" style="width: 81%;">
+            <div class="content-content clearfix" >
                 <div class="content-text" style="">
                     <h3 class="h3" style="">欢迎来到携手管理金融管理中心？</h3>
                     <div>
@@ -129,7 +129,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="phone clearfix">
+                <div class="paging clearfix">
                         <div class="pagination rightPager"></div>
                     </div>
                 </div>

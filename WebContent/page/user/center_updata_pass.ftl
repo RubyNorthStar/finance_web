@@ -51,12 +51,10 @@
 	<#include "/index/common/top.ftl">
     <!-- Your main view, should have "view-main" class-->
     <div class="view-main">
-        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through" style="margin:0; ">
-            <!-- Page, data-page contains page name-->
-            <div data-page="index" class="page" style="margin:0; padding:0;">
+        <div class="pages" style="margin:0; ">
+            <div class="page">
                 <!-- Scrollable page content-->
-                <div class="page-content">
+                <div class="page-content clearfix">
                     <!-- 左侧部分 -->
                     <#include "/index/common/center_left.ftl">
                     <div class="right-content">

@@ -33,10 +33,10 @@
 
     <!--头部导航-->
     <#include "/index/common/top.ftl">
-    <div class="view" style="width:1300px;">
+    <div class="view">
         <!--中间内容-->
 
-        <div class="content clearfix " style="display: block;padding-left: 150px;">
+        <div class="content clearfix " style="">
             <div class="content-block ">
                 <!--<img class="content-top-img box-shadow" src="/images/common/001.jpg" />-->
                 <div class="" >
@@ -90,7 +90,7 @@
 
             </div>
             <div class="" style="margin-top: 20px;">
-                <div class="" style="box-shadow: 0px 1px 2px rgba(0,0,0,0.5); width:930px;">
+                <div class="" style=" width:980px;">
                     <ul class="tab-title clearfix">
                         <li class="list-li-title fL active">
                             	项目介绍

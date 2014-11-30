@@ -19,9 +19,9 @@
         <!-- Top Navbar-->
         <#include "/index/common/top.ftl">
         <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through" style="margin:0; ">
+        <div class="pages" style="margin:0; ">
             <!-- Page, data-page contains page name-->
-            <div data-page="index" class="page" style="margin:0; padding:0;">
+            <div class="page">
                 <!-- Scrollable page content-->
                 <div class="page-content">
                     <!-- 中间部分开始 -->

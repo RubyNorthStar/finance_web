@@ -1,5 +1,5 @@
 <!--底部工具栏-->
-<div class="page clearfix" style="padding-bottom: 30px;">
+<div class="page clearfix" style="">
     <div class="toolbar">
         <img class="bottom-logo" src="/resources/images/user/0013.png" />
     </div>

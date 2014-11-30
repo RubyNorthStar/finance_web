@@ -85,7 +85,7 @@
    		 		<div class="question_answer">
    		 			<table>
    		 				<tr>
-							<td class="td_l">上传图片hahah</td>
+							<td class="td_l">上传图片</td>
 							<td class="td_r">
 								<div>
 			   		 				<div data-voice="0"  class="zs_clearfix">

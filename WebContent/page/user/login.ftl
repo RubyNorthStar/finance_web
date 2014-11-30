@@ -31,7 +31,7 @@
                 <!--登陆页-->
             <div class="pages clearfix">
                 <div class="content-block">
-                    <img class="left-img" style="height:397px;" src="/resources/images/user/1.jpg" />
+                    <img class="left-img"  src="/resources/images/user/1.jpg" /> <!--style="height:397px;"-->
                 </div>
                 <div class="content-block">
                     <div class="right-block">

@@ -14,11 +14,11 @@
        
     <div class="view">
         <!--中间内容-->
-        <div class="content m-l clearfix" style="display: block">
+        <div class="content clearfix" style="display: block">
             <div class="content-block " style="margin-top: 1px;">
                 <img class="content-top-img box-shadow" src="/images/common/0025.jpg" />
             </div>
-            <div class="content-content clearfix" style="width: 81%;">
+            <div class="content-content clearfix">
                 ${articleInfo.normalCode}
             </div>
         </div>

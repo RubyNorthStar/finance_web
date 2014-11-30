@@ -8,7 +8,7 @@ table{border-collapse:collapse;}
 
 
 
-.page-content{ margin: 0 auto; width: 1000px;}
+.page-content{width: 980px; margin: 0 auto; }
 .left-list,.right-content{ float: left;}
 .menu-dl{ background: #e5e5e5; padding:10px 0;}
 /*.menu-dl{ background: #9c9c9c;}*/

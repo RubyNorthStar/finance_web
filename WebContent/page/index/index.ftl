@@ -11,25 +11,25 @@
 <div class="views">
     <#include "/index/common/top.ftl">
         
-        <div class="view" style="background:none;">
+        <div class="view" style="">
             <!--中间内容-->
-            <div class="content m-l clearfix " style="display: block">
+            <div class="content clearfix " style="display: block">
                 <div class="content-block ">
-                    <div class="flexslider" style="width:970px;">
+                    <div class="flexslider" style="width:980px;">
                         <ul class="slides flex-viewport">
                             <li>
                                 <div class="banner_box ">
-                                    <img class="content-top-img box-shadow" src="/resources/images/user/001.jpg">
+                                    <img class="content-top-img" src="/resources/images/user/001.jpg">
                                 </div>
                             </li>
                             <li>
                                 <div class="banner_box">
-                                    <img class="content-top-img box-shadow" src="/resources/images/user/002.jpg">
+                                    <img class="content-top-img" src="/resources/images/user/002.jpg">
                                 </div>
                             </li>
                             <li>
                                 <div class="banner_box">
-                                    <img class="content-top-img box-shadow" src="/resources/images/user/002.jpg">
+                                    <img class="content-top-img" src="/resources/images/user/002.jpg">
                                 </div>
                             </li>
                         </ul>
@@ -119,7 +119,7 @@
                                         <#if fund_index == 0>
                                             <li class="aActive"><a href="javascript:;">${fund.fundName}</a></li>
                                             <#else>
-                                                <li><a href="javascript:;">${fund.fundName}</a></li>
+                                                <li class=""><a href="javascript:;">${fund.fundName}</a></li>
                                         </#if>
                                     </#list>
                                 </#if>
