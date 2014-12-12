@@ -11,8 +11,8 @@
         			<a href="/user/loginOut.go" class="button button-color1">退出</a>
         		<#else>
             		<div class="login-box clearfix">
-		    			<a href="/user/goTOLogin.go" class="button_fill">登陆</a>
-		                <a href="/user/goTORegister.go" class="">注册</a>
+		    			<a href="/user/goTORegister.go" class="button_fill">注册</a>
+		                <a  href="/user/goTOLogin.go" class="">登陆</a>
 		            </div>
                 </#if>
             </div>

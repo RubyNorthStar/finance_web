@@ -14,8 +14,8 @@ $(function(){
 
 //  index 点击事件
     
-    $(".table-menu .market li").click(function(){
-    	$(".market li").removeClass("jsActive");
+    $(".table-menu .market-ul li").click(function(){
+    	$(".market-ul li").removeClass("jsActive");
     	$(this).addClass("jsActive");
     	$(".table-div .tab").removeClass("tabActive");
     	$(".table-div .tab").eq( $(this).index()).addClass("tabActive");
