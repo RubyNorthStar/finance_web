@@ -170,7 +170,7 @@ box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
 .text-lc-title{width:300px; color:#6c6c6c; float: left;}
 .span_lc{ font-size:18px; font-weight:bold; margin-right:5px;}
 .span_en{ font-size:12px;}
-.more{ width: 70px;float: right;}
+.more{ float: right;}
 .more a{color: #b7b8b8;}
 .phone{padding-left: 42%; margin-bottom: 20px;}
 .number{padding-top: 10px;}	
@@ -190,7 +190,8 @@ box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
 .market-list .table-menu{}
 .market-list .table-menu .market-ul{ width:980px;margin-top:21px; }
 .market-list .table-menu .market-ul li{ float: left; background: #00a0e9; border-right:1px solid #8fceef;padding: 5px 65px;}
-.market-list .table-menu .market-ul li a.plr-59{width:195px; font-size:16px; text-align: center; line-height: 24px;color: #fff;}
+.market-list .table-menu .market-ul li a.plr-59{ width:20px; line-height: 24px;color: #fff;}
+/* .market-list .table-menu .market-ul li a.plr-59{width:195px; font-size:16px; text-align: center; line-height: 24px;color: #fff;} */
 .market-list .table-menu .market-ul .jsActive{ background: #007cc8; }
 	/*表格菜单结束*/
 .table-div{}
@@ -201,10 +202,10 @@ box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
 .market-list td{width:0%;padding: 5px 0%; border-bottom: 1px dotted #d3d3d3;}
 .creditLevle{}
 .span1{color:#fff; background: #1468b0; border-radius: 25px;padding: 5px;}
-.span2{ width:10px; display: inline-block; color:#fff; background: #1468b0; border-radius: 25px;padding: 5px 8px;}
-.span3{color:#f39800;font-size: 16px;}
-.span4{color: #814e23;font-size: 16px;}
-.span5{color: #814e23;font-size: 16px;}
+.span2{ width:12px; display: inline-block; color:#fff; background: #1468b0; border-radius: 25px;padding: 5px 8px;}
+.span3{color:#f39800;font-size: 20px;}
+.span4{color:#f39800;font-size: 20px;}
+.span5{color:#f39800;font-size: 20px;}
 .span6{
     display: block;width: 44px; height: 44px; line-height: 44px; font-size: 8px; margin-left: 24px;
     text-align: center;background: url("/resources/images/user/progressbar_mid.png");
@@ -215,7 +216,7 @@ box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
 /*首页第二个表格*/
 /*第二个表个头部菜单*/
 .product_index{width:980px;margin-top:21px; }
-.product_index li{float: left; background: #00a0e9; border-right:1px solid #8fceef;padding: 5px 25px;}
+.product_index li{float: left; background: #00a0e9; border-right:1px solid #8fceef;padding: 5px 52px;}
 .product_index li a{color:#fff; font-size:16px;}
 .table-menu .list-ul .aActive{ background: #007cc8;}
 .list-ul.row{ width:980px;margin: 40px 0 0 0px;}

@@ -47,7 +47,7 @@
                     			<!--market  集市-->
                     <div class="market-list clearfix">
                         <div class="table-menu clearfix">
-                            <ul class="list-ul product_index  market-ul">
+                            <ul class="list-ul product_index  market-ul clearfix">
                             	<li class="jsActive"><a class="plr-59" href="javascript:;">挂牌项目</a></li>
                             	<li class=""><a class="plr-59" href="javascript:;">融资信息</a></li>
                             	<li class=""><a class="plr-59" href="javascript:;">投资信息</a></li>
@@ -137,7 +137,6 @@
                             <tbody class="tbody product">
                             <tr class="table-title product-title"><!-- 表格行 -->
                                 <th>借款标题</th>
-                                <th>信用等级</th>
                                 <th>利率</th>
                                 <th>金额</th>
                                 <th>期限</th>
@@ -148,7 +147,6 @@
                                 <#list values as a>
                                     <tr class="product-list">
                                         <td><a href="/product/productInfo/detail.go?id=${a.id}">${a.productName?default("产品名称")}</a></td>
-                                        <td><span class="span2 creditLevle" style="">${a.creditLevle?default("A")}</span></td>
                                         <td><span class="span3" style="" >${a.yearInterestRate?default("0")}%</span><span style="font-size: 10px;">每年</span></td>
                                         <td><span class="span4" style="" >${a.fundScale?default("0")}</span>元</td>
                                         <td><span class="span5" style="" >${a.investmentTimeLimit?default("0")}</span>个月</td>
