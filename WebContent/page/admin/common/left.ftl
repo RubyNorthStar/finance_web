@@ -25,19 +25,36 @@
 	        		<a href="/admin/productInfo.go" onclick="javascript:showCurPic('picId100004')">产品产品列表</a>
 	        	</li>
             </ul>
-	      	<div class="dt"><a href="javascript:showActionLeft('ul2');">文章类型管理</a></div>
+            
+            <div class="dt"><a href="javascript:showActionLeft('ul2');">项目管理</a></div>
+    		<ul id="ul1" style="display:block">
+	        	<li class="dd">
+	        		<a href="/admin/projectInfo.go?projectType=1" onclick="javascript:showCurPic('picId200001')">转让信息列表</a>
+	        	</li>
+	        	<li class="dd">
+	        		<a href="/admin/projectInfo.go?projectType=2" onclick="javascript:showCurPic('picId200002')">融资信息列表</a>
+	        	</li>
+	        	<li class="dd">
+	        		<a href="/admin/publicNotice.go" onclick="javascript:showCurPic('picId200003')">公告信息列表</a>
+	        	</li>
+	        	<li class="dd">
+	        		<a href="/admin/productInfo.go" onclick="javascript:showCurPic('picId200004')">投资信息列表</a>
+	        	</li>
+            </ul>
+            
+	      	<div class="dt"><a href="javascript:showActionLeft('ul3');">文章类型管理</a></div>
 	      	<ul id="ul2" style="display:block">
 	        	<li class="dd">
-	        		<a href="/admin/articleInfoType/list.go" onclick="javascript:showCurPic('picId000001')">文章类型列表</a>
+	        		<a href="/admin/articleInfoType/list.go" onclick="javascript:showCurPic('picId300001')">文章类型列表</a>
 	        	</li>
 	            <li class="dd">
-	           		<a href="/admin/articleInfoType/add.go" onclick="javascript:showCurPic('picId000002')">文章类型添加</a>
+	           		<a href="/admin/articleInfoType/add.go" onclick="javascript:showCurPic('picId300002')">文章类型添加</a>
 	            </li>
 	            <li class="dd">
-	        		<a href="/admin/articleInfo/list.go" onclick="javascript:showCurPic('picId000003')">文章列表</a>
+	        		<a href="/admin/articleInfo/list.go" onclick="javascript:showCurPic('picId300003')">文章列表</a>
 	        	</li>
 	            <li class="dd">
-	           		<a href="/admin/articleInfo/add.go" onclick="javascript:showCurPic('picId000004')">文章添加</a>
+	           		<a href="/admin/articleInfo/add.go" onclick="javascript:showCurPic('picId300004')">文章添加</a>
 	            </li>
             </ul>
         </dl>

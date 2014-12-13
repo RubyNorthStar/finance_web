@@ -90,11 +90,11 @@
 	</filter-mapping> 
 	
 	<filter>  
-	    <filter-name>sessionFilter</filter-name>  
+	    <filter-name>centerSessionFilter</filter-name>  
 	    <filter-class>com.xsjrw.common.filter.CenterLoginFilter</filter-class>  
 	</filter>  
 	<filter-mapping>  
-	    <filter-name>sessionFilter</filter-name>  
+	    <filter-name>centerSessionFilter</filter-name>  
 	    <url-pattern>/center/*</url-pattern>  
 	</filter-mapping> 
     

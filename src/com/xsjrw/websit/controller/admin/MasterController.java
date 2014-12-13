@@ -19,7 +19,7 @@ import com.xsjrw.websit.service.IMasterService;
 
 @Component
 /**
- * @author Zhiwei Wang
+ * @author zx Wang
  */
 @RequestMapping("/admin/master")
 public class MasterController {
@@ -60,7 +60,7 @@ public class MasterController {
 				if(String.valueOf(validatec.toString().toLowerCase()).equals(validateCode.toLowerCase())){
 					if(!StringUtils.isBlank(account)){
 						List<Master> masterList = masterService.obtainMasterListBuyAccount(account);
-						if(masterList != null){
+						if(masterList != null && masterList.size() > 0){
 							if(masterList.size() > 1){
 								masterDTO.setFlag("1010");//该用户名有多个用户
 							}else{
