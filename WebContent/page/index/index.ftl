@@ -53,51 +53,150 @@
                             	<li class=""><a class="plr-59" href="javascript:;">投资信息</a></li>
                             	<li class=""><a class="plr-59" href="javascript:;">转让信息</a></li>
                             	<li class=""><a class="plr-59" href="javascript:;">公告信息</a></li>
-                                <!--<#if fundTypes??>
-                                    <#list fundTypes as fund>
-                                        <#if fund_index == 0>
-                                            <li class="aActive"><a href="javascript:;">${fund.fundName}</a></li>
-                                            <#else>
-                                                <li><a href="javascript:;">${fund.fundName}</a></li>
-                                        </#if>
-                                    </#list>
-                                </#if>-->
                             </ul>
                         </div>
                     </div>
                     <div class="table-div">
-                        <#list linkMap?keys as mykey>
-                            <#if mykey_index == 0>
-                                <table class="tab tabActive">
-                                    <#else>
-                                        <table class="tab">
-                            </#if>
-                            <!-- 表格 -->
-                            <tbody class="tbody market-tbody">
-                            <tr class="table-title market-title"><!-- 表格行 -->
-                                <th>项目编号</th>
-                                <th>项目名称</th>
-                                <th>挂牌机构</th>
-                                <th>挂牌日期</th>
-                            </tr>
-                            <#assign values = linkMap[mykey]>
-                                <#list values as a>
-                                    <tr class="market-list">
-                                        <td><a href="/product/productInfo/detail.go?id=${a.id}">${a.productName?default("产品名称")}</a></td>
-                                        <td><span class="span2 creditLevle" style="">${a.creditLevle?default("A")}</span></td>
-                                        <td><span class="span3" style="" >${a.yearInterestRate?default("0")}%</span><span style="font-size: 10px;">每年</span></td>
-                                        <!--<td><span class="span5" style="" >${a.investmentTimeLimit?default("0")}</span>个月</td>
-                                        <td><span class="span6" style=""><#if a.totalMoney == 0>0<#else>${(a.totalMoney/a.fundScale*100)?int+1}</#if>%</span></td>-->
-                                        <td>
-                                            <#if a.toExamineStatus == 1>等待审核</#if>
-                                            <#if a.toExamineStatus == 2>已审核</#if>
-                                            <#if a.toExamineStatus == 3>禁用</#if>
-                                        </td>
-                                    </tr>
-                                </#list>
-                            </tbody>
-                            </table>
-                        </#list>
+                        
+                        
+                      <!-- 挂牌项目开始 -->
+                        <table class="tab tabActive">
+							<!-- 表格 -->
+							<tbody class="tbody market-tbody">
+							<tr class="table-title market-title"><!-- 表格行 -->
+								<th>项目名称</th>
+								<th>所属行业</th>
+								<th>地区</th>
+								<th>挂牌日期</th>
+							</tr>
+									<tr class="market-list">
+										<td><a href="javascript:">SW1501273097</a></td>
+										<td>陕西兆兴房地产开发有限公司商铺1</td>
+										<td>西部产权交易所</td>
+										<td>2015-01-28~2015-01-27</td>
+									</tr>
+									<tr class="market-list">
+										<td><a href="javascript:">SW1501273097</a></td>
+										<td>陕西兆兴房地产开发有限公司商铺2</td>
+										<td>西部产权交易所</td>
+										<td>2015-01-28~2015-01-27</td>
+									</tr>
+									<tr class="market-list">
+										<td><a href="javascript:">SW1501273097</a></td>
+										<td>陕西兆兴房地产开发有限公司商铺3</td>
+										<td>西部产权交易所</td>
+										<td>2015-01-28~2015-01-27</td>
+									</tr>
+									<tr class="market-list">
+										<td><a href="javascript:">SW1501273097</a></td>
+										<td>陕西兆兴房地产开发有限公司商铺4</td>
+										<td>西部产权交易所</td>
+										<td>2015-01-28~2015-01-27</td>
+									</tr>
+									<tr class="market-list">
+										<td><a href="javascript:">SW1501273097</a></td>
+										<td>陕西兆兴房地产开发有限公司商铺5</td>
+										<td>西部产权交易所</td>
+										<td>2015-01-28~2015-01-27</td>
+									</tr>
+							</tbody>
+						</table>
+                        
+                    <!-- 挂牌项目结束 -->
+                        
+                    <!-- 融资信息开始 -->
+						<table class="tab">
+							<!-- 表格 -->
+							<tbody class="tbody market-tbody">
+							<tr class="table-title market-title"><!-- 表格行 -->
+								<th>项目名称</th>
+								<th>所属行业</th>
+								<th>地区</th>
+								<th>发布日期</th>
+							</tr>
+								<#list financeList as a>
+									<tr class="market-list">
+										<td><a href="javascript:">${a.projectName}</a></td>
+										<td>${a.proindustryId?default("")}</td>
+										<td>${a.addressProvince?default("")}-${a.addressCity?default("")}</td>
+										<td>${a.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
+									</tr>
+								</#list>
+							</tbody>
+						</table>
+					<!-- 融资信息结束 -->
+					
+					
+					<!-- 投资信息开始 -->
+						<table class="tab">
+							<!-- 表格 -->
+							<tbody class="tbody market-tbody">
+							<tr class="table-title market-title"><!-- 表格行 -->
+								<th>项目名称</th>
+								<th>投资行业</th>
+								<th>地区</th>
+								<th>发布日期</th>
+							</tr>
+								<#list investmentList as a>
+									<tr class="market-list">
+										<td><a href="javascript:">${a.investName}</a></td>
+										<td>${a.industry?default("")}</td>
+										<td>${a.orgAddress?default("")}}</td>
+										<td>${a.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
+									</tr>
+								</#list>
+							</tbody>
+						</table>
+					<!-- 投资信息结束 -->
+					
+					<!-- 转让信息开始 -->
+						<table class="tab">
+							<!-- 表格 -->
+							<tbody class="tbody market-tbody">
+							<tr class="table-title market-title"><!-- 表格行 -->
+								<th>项目名称</th>
+								<th>所属行业</th>
+								<th>地区</th>
+								<th>发布日期</th>
+							</tr>
+								<#list transferList as a>
+									<tr class="market-list">
+										<td><a href="javascript:">${a.projectName}</a></td>
+										<td>${a.proindustryId?default("")}</td>
+										<td>${a.addressProvince?default("")}-${a.addressCity?default("")}</td>
+										<td>${a.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
+									</tr>
+								</#list>
+							</tbody>
+						</table>
+					<!-- 转让信息结束 -->
+					
+					<!-- 公告信息开始 -->
+						<table class="tab">
+							<!-- 表格 -->
+							<tbody class="tbody market-tbody">
+							<tr class="table-title market-title"><!-- 表格行 -->
+								<th>公告标题</th>
+								<th>所属行业</th>
+								<th>地区</th>
+								<th>发布日期</th>
+							</tr>
+								<#list noticeList as a>
+									<tr class="market-list">
+										<td><a href="javascript:">${a.noticeTitle}</a></td>
+										<td>${a.source?default("")}</td>
+										<td>${a.addressProvince?default("")}-${a.addressCity?default("")}</td>
+										<td>${a.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
+									</tr>
+								</#list>
+							</tbody>
+						</table>
+					<!-- 公告信息结束 -->
+                        
+                        
+                        
+                        
+                        
                     </div>
                 </div>
                 <div class="content-content content-content-bg clearfix">
@@ -129,7 +228,7 @@
                             <#if mykey_index == 0>
                                 <table class="tab tabActive">
                                     <#else>
-                                        <table class="tab">
+                                 <table class="tab">
                             </#if>
                             <!-- 表格 -->
                             <tbody class="tbody product">
