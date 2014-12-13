@@ -65,10 +65,10 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="table-div">
+                    <div class="table-div" style="height:220px;">
                         <#list linkMap?keys as mykey>
                             <#if mykey_index == 0>
-                                <table class="tab tabActive">
+                                <table class="tab tabActive" >
                                     <#else>
                                         <table class="tab">
                             </#if>
@@ -86,8 +86,6 @@
                                         <td><a href="/product/productInfo/detail.go?id=${a.id}">${a.productName?default("产品名称")}</a></td>
                                         <td><span class="span2 creditLevle" style="">${a.creditLevle?default("A")}</span></td>
                                         <td><span class="span3" style="" >${a.yearInterestRate?default("0")}%</span><span style="font-size: 10px;">每年</span></td>
-                                        <!--<td><span class="span5" style="" >${a.investmentTimeLimit?default("0")}</span>个月</td>
-                                        <td><span class="span6" style=""><#if a.totalMoney == 0>0<#else>${(a.totalMoney/a.fundScale*100)?int+1}</#if>%</span></td>-->
                                         <td>
                                             <#if a.toExamineStatus == 1>等待审核</#if>
                                             <#if a.toExamineStatus == 2>已审核</#if>
@@ -124,7 +122,7 @@
                         </div>
                     </div>
 
-                    <div class="table-product">
+                    <div class="table-product" style="height: 460px;">
                         <#list linkMap?keys as mykey>
                             <#if mykey_index == 0>
                                 <table class="tab tabActive">
