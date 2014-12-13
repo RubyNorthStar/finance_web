@@ -2,8 +2,10 @@ package com.xsjrw.websit.controller.project;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -17,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xsjrw.websit.domain.project.InvestmentIntentionInfo;
+import com.xsjrw.websit.domain.project.ProjectInfo;
 import com.xsjrw.websit.search.project.InvestmentIntentionInfoSearch;
+import com.xsjrw.websit.search.project.ProjectInfoSearch;
 import com.xsjrw.websit.service.project.IInvestmentIntentionInfoService;
 
 /**
@@ -38,8 +42,32 @@ public class InvestmentIntentionInfoController {
 			search = new InvestmentIntentionInfoSearch();
 			// search.setPageSize(20);
 		}
+		search.setPageSize(2);
+		search.setPageNo(1);
+		search.setStatus(1);
 		model.addAttribute("list", investmentIntentionInfoService.findInvestmentIntentionInfoByPage(search));
-		return "investmentIntentionInfo/list";
+		model.addAttribute("search", search);
+		return "project/investment_manage";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="ajaxList")
+	public String ajaxList(Model model, InvestmentIntentionInfoSearch search, HttpServletResponse response){
+		search.setPageSize(2);
+		
+		List<InvestmentIntentionInfo> ajaxList = investmentIntentionInfoService.findInvestmentIntentionInfoByPage(search);
+		
+		String result = "<tr class='tr-title'><td>投资项目名称</td><td>操作</td></tr>";
+		if(ajaxList != null && ajaxList.size() > 0){
+			try {
+				for(InvestmentIntentionInfo pro : ajaxList){
+					result += "<tr><td>"+pro.getInvestName()+"</td><td>刪除&nbsp|&nbsp修改</td></tr>";
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST)
@@ -78,6 +106,7 @@ public class InvestmentIntentionInfoController {
 	
 	@RequestMapping(value="addInvestment", method = RequestMethod.GET)
 	public String addInvestmentGet(){
+		System.out.println("进来了");
 		return "project/add_investment_info";
 	}
 	
