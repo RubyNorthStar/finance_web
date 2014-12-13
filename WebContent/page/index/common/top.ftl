@@ -29,13 +29,16 @@
             <a href="javascript:;">我要理财</a>
         </li>
         <li>
+            <a href="javascript:;">我要借款</a>
+        </li>
+        <li>
             <a href="javascript:;">我要投资</a>
         </li>
         <li>
-            <a href="javascript:;">新手指南</a>
+            <a href="javascript:;">携手动态</a>
         </li>
         <li>
-            <a href="/article/articleInfo/list_article.go?aptId=9">新闻动态</a>
+            <a href="/article/articleInfo/list_article.go?aptId=9">招商加盟</a>
         </li>
         <li>
             <a href="javascript:;">联系我们</a>

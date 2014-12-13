@@ -109,7 +109,7 @@ img{vertical-align: top;}
  /*menu */  
 .menu{ width:100%; background:#00a0e9;}
 .menu_list_ul{width:980px; margin:0 auto;}
-.menu_list_ul li{ float:left; padding:10px 38px 10px 38px;}
+.menu_list_ul li{ float:left; padding:10px 35px 10px 35px;}
 .menu_list_ul li.menu-active{background:#007cc8;}
 .menu_list_ul li a{ color:#fff; font-size: 13px; }
 .menu_list_ul li:hover{ color:#fff; font-size: 13px; background:#007cc8;}
