@@ -116,7 +116,7 @@
 							</tr>
 								<#list financeList as a>
 									<tr class="market-list">
-										<td><a href="javascript:">${a.projectName}</a></td>
+										<td><a href="/projectInfo/peojectDetail.go?id=${a.id}">${a.projectName}</a></td>
 										<td>${a.proindustryId?default("")}</td>
 										<td>${a.addressProvince?default("")}-${a.addressCity?default("")}</td>
 										<td>${a.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
@@ -161,7 +161,7 @@
 							</tr>
 								<#list transferList as a>
 									<tr class="market-list">
-										<td><a href="javascript:">${a.projectName}</a></td>
+										<td><a href="/projectInfo/peojectDetail.go?id=${a.id}">${a.projectName}</a></td>
 										<td>${a.proindustryId?default("")}</td>
 										<td>${a.addressProvince?default("")}-${a.addressCity?default("")}</td>
 										<td>${a.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
