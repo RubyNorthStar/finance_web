@@ -128,8 +128,8 @@ public class ProjectInfoController {
 		
 		if(porjectType != null && porjectType.length() > 0){
 			proTypeArr = porjectType.split(",");
-			model.addAttribute("proType", proTypeArr[0]);
-			model.addAttribute("proTypeClassify", proTypeArr[1]);
+			model.addAttribute("proType", Integer.parseInt(proTypeArr[0]));
+			model.addAttribute("proTypeClassify", Integer.parseInt(proTypeArr[1]));
 		}
 		
 		IndustrySearch search = new IndustrySearch();
@@ -160,7 +160,7 @@ public class ProjectInfoController {
 		if(listImage != null && listImage.size() > 0){
 			imagePathService.saveImagePathByProjectId(projectInfo.getId(), projectInfoDto.getImages());
 		}
-		model.addAttribute("project", "1");
+		model.addAttribute("project", 1);
 		return "project/success";
 	}
 	

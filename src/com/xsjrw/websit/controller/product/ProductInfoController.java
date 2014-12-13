@@ -59,7 +59,6 @@ public class ProductInfoController {
 	public String list(Model model, ProductInfoSearch search){
 		if (search == null) {
 			search = new ProductInfoSearch();
-			// search.setPageSize(20);
 			search.setStatus(1);
 		}
 		search.setStatus(1);

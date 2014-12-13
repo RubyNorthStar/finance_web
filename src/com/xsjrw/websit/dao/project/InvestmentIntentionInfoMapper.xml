@@ -23,6 +23,7 @@
 		<result property="investRequire" column="invest_require" />
 		<result property="otherRequire" column="other_require" />
 		<result property="createTime" column="create_time" />
+		<result property="status" column="status" />
 	</resultMap>
 	
 	<sql id="table_columns">
@@ -46,7 +47,8 @@
 		invest_require,
 		other_require,
 		create_time,
-		agency_name
+		agency_name,
+		status
     </sql>
 	<sql id="entity_properties">
 		#{id},
@@ -69,7 +71,8 @@
 		#{investRequire},
 		#{otherRequire},
 		#{createTime},
-		#{agencyName}
+		#{agencyName},
+		#{status}
 	</sql>
 	
 	<!-- 适用于主键自增类型 -->
@@ -125,6 +128,7 @@
 			<if test="otherRequire != null and otherRequire != ''">other_require = #{otherRequire},</if>
 			<if test="createTime != null and createTime != ''">create_time = #{createTime},</if>
 			<if test="agencyName != null and agencyName != ''">agency_name = #{agencyName},</if>
+			<if test="status != null and status != ''">status = #{status},</if>
 		</trim>
 		<where>id = #{id}</where>
 	</update>
@@ -163,6 +167,7 @@
 			<if test="otherRequire != null and otherRequire != ''">and other_require = #{otherRequire}</if>
 			<if test="createTime != null and createTime != ''">and create_time = #{createTime}</if>
 			<if test="agencyName != null and agencyName != ''">and agency_name = #{agencyName}</if>
+			<if test="status != null and status != ''">and status = #{status}</if>
 		</trim>
 	</sql>
 	
