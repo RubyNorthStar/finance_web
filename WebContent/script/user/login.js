@@ -10,16 +10,16 @@ function userLogin(obj){
 	var password = $.trim($('#password').val());
 	
 	var isEmail = checkEmailLogin(email);
-	$("#verify").empty();
+	$("#verify p").empty();
 	
 	if (!isEmail) {
-    	$("#verify").text("请输入一个有效的邮箱地址");
+    	$("#verify p").text("请输入一个有效的邮箱地址");
         $("#email").focus();
     } else if (password == null || password == '') {
-    	$("#verify").text("请输入密码");
+    	$("#verify p").text("请输入密码");
         $("#password").focus();
     } else if (password.length < 6) {
-    	$("#verify").text("输入密码错误");
+    	$("#verify p").text("输入密码错误");
         $("#password").focus();
     } else{
     	$(obj).val("登录中...");
@@ -36,13 +36,13 @@ function userLogin(obj){
 			        }
 			        window.location.href = "/index.go";
 			    } else { 
-			    	$("#verify").html("用户名或密码错误！"); 
+			    	$("#verify p").html("用户名或密码错误！"); 
 			    	$(obj).val("马上登录");
 			    }
     		},
     		error:function(data)
     		{
-    			$('#verify').text("邮箱地址或者密码错误，请确认后重新登录。");
+    			$('#verify p').text("邮箱地址或者密码错误，请确认后重新登录。");
     			$(obj).val("马上登录");
     		}
     	});
@@ -63,28 +63,28 @@ function userRegiste(){
 	var isMobile = checkPhone(mobile);
 	
 	if(username == null || username == ''){
-		$("#verify").text("请输入用户名");
+		$("#verify p").text("请输入用户名");
         $("#username").focus();
 	}else if (!isMobile) {
-    	$("#verify").text("请输入一个有效的手机号");
+    	$("#verify p").text("请输入一个有效的手机号");
         $("#mobile").focus();
     }else if(!isEmail){
-    	$("#verify").text("请输入一个正确的邮箱地址");
+    	$("#verify p").text("请输入一个正确的邮箱地址");
         $("#email").focus();
     }else if(password == null || password == ''){
-    	$("#verify").text("密码不能为空");
+    	$("#verify p").text("密码不能为空");
         $("#password").focus();
     }else if(password != null && password.length < 6){
-    	$("#verify").text("密码不能小于六位数");
+    	$("#verify p").text("密码不能小于六位数");
         $("#password").focus();
     }else if(confirm_password == null || confirm_password == ''){
-        	$("#verify").text("确认密码不能为空");
+        	$("#verify p").text("确认密码不能为空");
             $("#password").focus();
     }else if(password != confirm_password){
-    	$("#verify").text("两次输入密码不一致");
+    	$("#verify p").text("两次输入密码不一致");
         $("#confirm_password").focus();
     }else if(!verification_code || !checkYzm(verification_code)){
-    	$("#verify").text("验证码不正确");
+    	$("#verify p").text("验证码不正确");
         $("#verification_code").focus();
     }else{
     	
@@ -96,7 +96,7 @@ function userRegiste(){
     		dataType:"text", 
     		success: function(data){
     			if(data){
-    				$("#verify").text("该邮箱已经注册");
+    				$("#verify p").text("该邮箱已经注册");
     		        $("#email").focus();
     			}else{
     				$.ajax({
@@ -108,7 +108,7 @@ function userRegiste(){
     		    			if(data == "success"){
     		    				window.location.href = "/center/user/center.go";
     		    			}else{
-    		    				$("#verify").text("注册失败");
+    		    				$("#verify p").text("注册失败");
     		    			}
     		    		}
     				});
@@ -116,7 +116,7 @@ function userRegiste(){
     		},
     		error:function(data)
     		{
-    			$('#verify').text("邮箱地址或者密码错误，请确认后重新登录。");
+    			$('#verify p').text("邮箱地址或者密码错误，请确认后重新登录。");
     			$(obj).val("马上登录");
     		}
     	});

@@ -165,8 +165,9 @@
                 <img class="Qr-code" src="/images/common/0019.jpg" />
             </div>
         </div>
-
+		
     </div>
+    <#include "/index/common/foot.ftl">
 </div>
 
 <script type="text/javascript" src="/resources/common/plugin/jquery/js.js"></script>

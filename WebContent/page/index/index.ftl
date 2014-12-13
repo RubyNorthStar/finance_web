@@ -163,7 +163,7 @@
                         </#list>
                     </div>
                     <div class="phone clearfix">
-                        <i class="icon icon-phone"></i>
+                        <img class="img-phone" src="/resources/images/user/phone.png">
                         <div class="number">010-99998888</div>
                     </div>
 

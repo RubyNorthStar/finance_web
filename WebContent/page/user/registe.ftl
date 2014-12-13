@@ -11,53 +11,17 @@
 	
 	<div class="views">
 	<#include "/index/common/top.ftl">
-	<!--头部导航
-	        <div class="navbar">
-	            <div class="navbar-inner clearfix">
-	                <div class="left">
-	                    <img class="top-logo" src="/resources/images/user/logo.png" />
-	                </div>
-	                <div class="right">
-	                	<i class="rightI" style=""></i>
-	                </div>
-	                <div class="login" style="display: block">
-	                    <a href="javascript:;">注册</a>
-	                </div>
-	            </div>
-	        </div>
-	        -->
 	    <div class="view">
 	        <!--中间内容-->
 	        <!--注册页-->
 	        <div class="pages clearfix " style="display: block">
-	        <!-- 提交注册记录条
-	        	<div class="schedule clearfix">
-	        		<div class="scheduleBG"></div>
-	        		<i class="num numActive">1</i>
-	        		<div class="scheduleBG"></div>
-	        		<i class="num">2</i>
-	        		<div class="scheduleBG"></div>
-	        		<i class="num">3</i>
-	        		<div class="scheduleBG"></div>
-	        		<div><a href="javascript:;">已有账号？立即登录</a></div>
-	        	</div>
-	        	<div class="schedule clearfix">
-	        		<i class="scheduleText ml125">填写账户信息</i>
-	        		<i class="scheduleText ml105">手机信息验证</i>
-	        		<i class="scheduleText ml105">注册成功</i>
-	        	</div>
-	        	-->
+	        	<div class="verify-block" id="verify"><p></p></div>
 	            <div class="content-block">
 	                <img class="left-img" src="/resources/images/user/2.jpg" />
 	            </div>
 	            <div class="content-block">
 	                <div class="right-box">
-	                	<div class="verify-block" id="verify"></div>
-	                    <div class="input-block">
-	                        <i class="icon icon-user"></i>
-	                        <input class="input-text user" type="text" name="username" id="username" placeholder="输入昵称">
-	                    </div>
-	
+	                	
 	                    <div class="input-box">
 	                        <i class="icon icon-number"></i>
 	                        <input class="input-text code" type="text" name="mobile" id="mobile" placeholder="手机号码">
@@ -74,15 +38,15 @@
 	                        <i class="icon icon-code"></i>
 	                        <input class="input-text code" type="password" name="confirm_password" id="confirm_password" placeholder="重复密码">
 	                    </div>
-	                    <div class="input-box clearfix">
-	                        <input class="input-proving" type="text" value="" id="verification_code" placeholder="验证码">
+	                    <div class="input-box clearfix paddingie" style="">
+	                        <input class="input-proving" style="" type="text" value="" id="verification_code" placeholder="验证码">
 	                        <div class="proving-img" style="">
 								<img class="hyx_img" src="/captcha/cimge.go" alt="img" /></a>
 	                        </div>
 	                    </div>
 	                    <div class="login-btn">
 	                        <p class="p1">我已阅读并同意《人人贷网站服务协议》</p>
-	                        <button class="" style="margin-top: 10px; cursor: pointer;" onclick="javascript:userRegiste();">免费注册</button>
+	                        <button class="" style="margin-top: 10px; cursor: pointer;font-family: 微软雅黑;" onclick="javascript:userRegiste();">免费注册</button>
 	                    </div>
 	                </div>
 	            </div>

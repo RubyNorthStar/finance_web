@@ -12,30 +12,17 @@
 	
 	<div class="views">
 	<#include "/index/common/top.ftl">
-		<!--头部导航
-        <div class="navbar">
-            <div class="navbar-inner clearfix">
-                <div class="left">
-                    <img class="top-logo" src="/resources/images/user/logo.png" />
-                </div>
-                <div class="right">
-                	<i class="rightI" style=""></i>
-                </div>
-                <div class="login" style="display: block">
-                    <a href="javascript:;">登录</a>
-                </div>
-            </div>
-        </div>-->
 		<div class="view"> 
             <!--中间内容-->
                 <!--登陆页-->
             <div class="pages clearfix">
+            	<div class="verify-block" id="verify"><p></p></div>
                 <div class="content-block">
                     <img class="left-img"  src="/resources/images/user/1.jpg" /> <!--style="height:397px;"-->
                 </div>
                 <div class="content-block">
                     <div class="right-block">
-	                        <div class="verify-block" id="verify"></div>
+	                        
 	                        <div class="input-block">
 	                            <i class="icon icon-user"></i>
 	                            <input class="input-text user" type="text" name="email" id="email" placeholder="用户名">

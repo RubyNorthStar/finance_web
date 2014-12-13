@@ -1,5 +1,5 @@
 *{padding:0; margin: 0; font-size: 12px;}
-body,ul,li,p,a,h1,h2,h3,h4,h5,h6,i{margin: 0; padding: 0; font-size: 12px; font-family: "微软雅黑";}
+body,ul,li,p,a,h1,h2,h3,h4,h5,h6,i,inout{margin: 0; padding: 0; font-size: 12px; font-family: "微软雅黑";}
 li{list-style: none;}
 i{font-style:normal;}
 td,th{padding:0;}
@@ -34,7 +34,8 @@ img{vertical-align: top;}
 .pages .content-block{float: left;}
 .pages .content-block .left-img{ width: 635px; height: 366px;}
 .pages .content-block .right-block{border: 1px solid #404040;padding: 44px 30px; margin-left: 23px;}
-.verify-block{height:30px; color: red;margin: -14px 0 15px 30px;}
+.verify-block{width:980px; margin:0 auto; height:30px;text-align: right; color: red;margin-left:30px;}
+.verify-block p{padding-right: 73px;}
 .input-block{ margin-bottom: 24px;}
 .icon{
     width: 20px; height: 20px; display: block;
@@ -69,8 +70,9 @@ img{vertical-align: top;}
     background-size: cover;
 }
 .icon-code{}
-.input-text{ width: 200px;padding: 10px;border: 1px solid #a0a0a0; color: #5a5657;}
-.input-proving{ width: 80px; background: #dceffd;padding: 10px; border: 1px solid #a0a0a0; color: #5a5657; margin-left: 30px;float: left;}
+.input-text{ width: 200px;padding:6px 10px;border: 1px solid #a0a0a0; color: #5a5657;}
+.paddingie{padding-left:30px;*padding-left:0px; *margin-left:-10px;}
+.input-proving{ width: 60px; background: #dceffd;padding: 10px; float: left;border: 1px solid #a0a0a0; color: #5a5657;}
 .proving-img{ width: 86px;height: 15px;background: #dceffd; padding: 10px; border: 1px solid #a0a0a0; float: left; margin-left: 10px;}
 .hyx_img{ width: 108px; height: 37px; background: #dceffd; float: left; margin-left: -11px; margin-top: -11px;}
 .text{ font-size: 12px; padding-left: 32px;}
@@ -173,6 +175,7 @@ box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
 .more{ float: right;}
 .more a{color: #b7b8b8;}
 .phone{padding-left: 42%; margin-bottom: 20px;}
+.img-phone{width:22px; height:22px;margin: 10px 10px 0 0; float: left;}
 .number{padding-top: 10px;}	
 /*index */
 /*.select-li{ margin-left:17px;}
@@ -250,7 +253,7 @@ box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
 .page1 .list-ul li a:hover{
     background: url("/resources/images/user/0017.jpg") repeat-x; background-size: contain;
 }
-.apply{ width: 970px; background: url("/images/common/apply.jpg") no-repeat right center;margin: 30px 0 40px 200px;}
+.apply{ width: 980px;margin:0 auto; background: url("/images/common/apply.jpg") no-repeat right center;}
 .apply-methods{ margin: 10px 0;font-size: 14px;}
 .p3{ font-size: 14px; padding-bottom: 10px;}
 .VIP-phone{margin: 15px 0;}
@@ -298,11 +301,11 @@ box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
 .list-box{ background: #fff; width: 975px;}
 .list-block{}
 /*.list-block{ padding: 20px 0 20px 20px;}*/
-.list-block-ul{ width: 370px; float: left;}
+.list-block-ul{ width: 340px; float: left;}
 .list-block-li{ border-bottom: 1px dashed #ccc; padding:5px 0;}
 .list-block-div{ margin: 5px;}
 .ml20{ margin-left: 20px;}
-.list-block-img{ width: 177px; height: 157px; margin:0 0 0 40px;}
+.list-block-img{ width: 255px; height: 157px; margin:0 0 0 40px;}
 
 .tab-title{}
 .list-li-title{ padding: 6px 15px; background: #f7f7f7;}
@@ -362,7 +365,7 @@ ul.move, ol{margin:0; padding:0;}
 .page4-img{ text-align: center;}
 .page4-img img{ width: 625px; height: 275px;}
 .h1-text{ font-size: 24px;}
-.news-bottom{ width: 1300px;height: 200px; background: url("../images/0023.jpg") no-repeat; background-size: cover;}
+.news-bottom{ width: 980px; margin:0 auto;height: 200px; background: url("../images/0023.jpg") no-repeat; background-size: cover;}
 /*page4.html end*/
 
 
