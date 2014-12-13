@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>携手金融网 - 项目管理</title>
+    <title>携手金融网 - 公告管理</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
     <link rel="stylesheet" href="/resources/css/my-app.css">
     <script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
@@ -28,7 +28,6 @@
                     <#include "/index/common/center_left.ftl">
                     <div class="right-content">
                     <!-- 中间部分开始 -->
-                    	<input type="hidden" id="projectType" value="${search.projectType}"/>
                     	<input type="hidden" id="status" value="${search.status}"/>
                     	<input type="hidden" id="totalPage" value="${search.totalPages}"/>
                     	
@@ -37,15 +36,11 @@
                                 <tbody>
                                 <tr><!-- 表格行 -->
                                     <th colspan="4"  class="table-bg">
-                                    	<#if (search.projectType == 1)>
-			                            		我的转让项目管理
-			                            	<#else>
-			                            		我的融资项目管理
-			                            </#if>
+	                            		公告信息管理
                                     </th>
                                 </tr>
                                 <tr>
-                                    <td class="table-bg">项目名称</td>
+                                    <td class="table-bg">公告名称</td>
                                     <td rowspan="2">
                                         <input class="name" type="text">
                                     </td>
@@ -61,12 +56,11 @@
                             <div class="info-list">
                                 <ul class="info-ul clear">
                                     <li class="info-li info-active" date="1">
-                                    	<a href="javascript:;">待审项目</a>
+                                    	<a href="javascript:;">待审公告</a>
                                     </li>
-                                    <li class="info-li" date="2"><a href="javascript:;">审核通过项目</a></li>
-                                    <li class="info-li" date="3"><a href="javascript:;">审核未通过项目</a></li>
-                                    <li class="info-li" date="4"><a href="javascript:;">下架项目</a></li>
-                                    <li class="info-li" date="5"><a href="javascript:;">成交项目</a></li>
+                                    <li class="info-li" date="2"><a href="javascript:;">审核通过公告</a></li>
+                                    <li class="info-li" date="3"><a href="javascript:;">审核未通过公告</a></li>
+                                    <li class="info-li" date="4"><a href="javascript:;">下架公告</a></li>
                                 </ul>
                             </div>
                             <div class="info-content">
@@ -74,14 +68,16 @@
 	                            	<div class="form-box form-box-active">
 	                            		<table class="table-box">
 											<tr class="tr-title">
-											  <td>项目名称</td>
+											  <td>公告标题</td>
+											  <td>所在地区</td>
 											  <td>操作</td>
 											</tr>
 											
 											 <#if list??>
-				                                <#list list as project>
+				                                <#list list as public>
 				                                	 <tr>
-													   <td>${project.projectName}</td>
+													   <td>${public.noticeTitle}</td>
+													    <td>${public.addressProvince} | ${public.addressCity}</td>
 													   <td>刪除&nbsp&nbsp|&nbsp&nbsp修改</td>
 													 </tr>
 				                                </#list>
@@ -128,8 +124,7 @@
 			
 			var state = $(this).attr("date");
 			var curPage = 1;
-			var projectType = $("#projectType").val();
-			queryProject(curPage,projectType,state,null);
+			queryProject(curPage,state,null);
 		});
 		
 		$(".pageDate").click(function(){
@@ -143,29 +138,27 @@
 			
 			$('.curNumber').html("第"+curPage+"页");
 			$('.prefNumber').attr("data",parseInt(curPage)-1);
-			$('.curNumber').attr("data",parseInt(curPage)+1);
+			$('.nextNumber').attr("data",parseInt(curPage)+1);
 			
-			var projectType = $("#projectType").val();
 			var status = $("#status").val();
-			queryProject(curPage,projectType,status,null);
+			queryProject(curPage,status,null);
 			
 		});
 		
 		
 		$(".query_project").click(function(){
 			var curPage  = 1;
-			var projectType = $("#projectType").val();
 			var status = $("#status").val();
 			var name = $('.name').val();
-			queryProject(curPage,projectType,status,name);
+			queryProject(curPage,status,name);
 		});
 	})
 	
-	function queryProject( curPage,  type,  status,  name){
+	function queryProject( curPage, status, name){
 		$.ajax({
-				url : "/center/projectInfo/ajaxList.go",
+				url : "/center/publicNotice/ajaxList.go",
 				type : "post",
-				data:{"pageNo":curPage,"projectType":type,"status":status,"projectName":name},
+				data:{"pageNo":curPage,"status":status,"noticeTitle":name},
 				dataType : "html",
 				cache : false,
 				success :function(data){

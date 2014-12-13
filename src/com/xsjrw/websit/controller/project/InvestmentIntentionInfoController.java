@@ -83,7 +83,8 @@ public class InvestmentIntentionInfoController {
 	
 	@RequestMapping(value="addInvestment", method = RequestMethod.POST)
 	public String addInvestmentPost(HttpServletRequest request, InvestmentIntentionInfo investment){
-		System.out.println(investment);
+		investment.setCreateTime(new Date());
+		investment.setStatus(1);
 		investmentIntentionInfoService.saveInvestmentIntentionInfo(investment);
 		return "project/add_investment_info";
 	}

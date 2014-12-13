@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -18,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xsjrw.websit.domain.project.Industry;
+import com.xsjrw.websit.domain.project.ProjectInfo;
 import com.xsjrw.websit.domain.project.PublicNotice;
 import com.xsjrw.websit.search.project.IndustrySearch;
+import com.xsjrw.websit.search.project.ProjectInfoSearch;
 import com.xsjrw.websit.search.project.PublicNoticeSearch;
 import com.xsjrw.websit.service.project.IIndustryService;
 import com.xsjrw.websit.service.project.IPublicNoticeService;
@@ -45,8 +48,32 @@ public class PublicNoticeController {
 			search = new PublicNoticeSearch();
 			// search.setPageSize(20);
 		}
+		search.setStatus(1);
+		search.setPageSize(2);
+		
 		model.addAttribute("list", publicNoticeService.findPublicNoticeByPage(search));
-		return "publicNotice/list";
+		model.addAttribute("search", search);
+		return "project/public_manage";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="ajaxList")
+	public String ajaxList(Model model, PublicNoticeSearch search, HttpServletResponse response){
+		search.setPageSize(2);
+		
+		List<PublicNotice> ajaxList = publicNoticeService.findPublicNoticeByPage(search);
+		
+		String result = "<tr class='tr-title'><td>项目名称</td><td>地区</td><td>操作</td></tr>";
+		if(ajaxList != null && ajaxList.size() > 0){
+			try {
+				for(PublicNotice pro : ajaxList){
+					result += "<tr><td>"+pro.getNoticeTitle()+"</td><td>"+pro.getAddressProvince()+" | "+pro.getAddressCity()+"</td><td>刪除&nbsp|&nbsp修改</td></tr>";
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return result;
 	}
 	
 	@RequestMapping(value="/add", method = RequestMethod.POST)

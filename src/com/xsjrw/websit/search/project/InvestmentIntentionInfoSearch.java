@@ -37,6 +37,7 @@ public class InvestmentIntentionInfoSearch extends PageModel {
 	private String	investRequire;		 /* 对投资机构要求 */ 
 	private String	otherRequire;		 /* 其他要求 */ 
 	private Date	createTime;		 /* 创建时间 */ 
+	private Integer	status; /* 状态 */
 
 	// Constructor
 	public InvestmentIntentionInfoSearch() {
@@ -45,7 +46,8 @@ public class InvestmentIntentionInfoSearch extends PageModel {
 	/**
 	 * full Constructor
 	 */
-	public InvestmentIntentionInfoSearch(Integer id, String investName, String agencyName, Integer isMall, String orgAddress, String investType, String investStyle, String investMode, String industry, String area, String enterpriseType, String investScale, String getRequire, String keyWord, Integer imageId, Date beginTime, Date endTime, String investOrgInfo, String investRequire, String otherRequire, Date createTime) {
+	public InvestmentIntentionInfoSearch(Integer id, String investName, String agencyName, Integer isMall, String orgAddress, String investType, String investStyle, String investMode, String industry, String area, String enterpriseType, String investScale, String getRequire, 
+			String keyWord, Integer imageId, Date beginTime, Date endTime, String investOrgInfo, String investRequire, String otherRequire, Date createTime, Integer status) {
 		this.id = id;
 		this.investName = investName;
 		this.isMall = isMall;
@@ -67,6 +69,7 @@ public class InvestmentIntentionInfoSearch extends PageModel {
 		this.investRequire = investRequire;
 		this.otherRequire = otherRequire;
 		this.createTime = createTime;
+		this.status = status;
 	}
 
 	// getter && setter
@@ -257,6 +260,14 @@ public class InvestmentIntentionInfoSearch extends PageModel {
 
 	public void setAgencyName(String agencyName) {
 		this.agencyName = agencyName;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
 	}
 	
 }

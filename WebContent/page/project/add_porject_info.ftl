@@ -68,7 +68,11 @@
                     <div class="right-content">
                     <!-- 中间部分开始 -->
                     	<div class="form">
-                            <h3 class="user">转让项目管理 > 转让项目基本信息</h3>
+                            <#if (proType == 1)>
+                            		<h3 class="user">转让项目管理 > 转让项目基本信息</h3>
+                            	<#else>
+                            		<h3 class="user">融资项目管理 > 融资项目基本信息</h3>
+                            </#if>
                             <ul class="wrap-ul">
                             	<!-- 隐藏类型及分类 -->
                               <form method="post" action="/center/projectInfo/addTransferPorject.go" id="addPorjectInfo"  enctype="multipart/form-data">

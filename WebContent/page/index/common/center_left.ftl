@@ -25,14 +25,14 @@
         </dd>
         <dd class="menu-dd">我的公告信息
             <span class="span5">[</span>
-            <a href="javascript:;" style="color:#0075c1;">管理</a>
+            <a href="/center/publicNotice.go" style="color:#0075c1;">管理</a>
             <span class="span5">][</span>
             <a href="/center/publicNotice/publicNotice.go" style="color:#0075c1;">发布</a>
             <span class="span5">]</span>
         </dd>
         <dd class="menu-dd">我的投资信息
             <span class="span5">[</span>
-            <a href="javascript:;" style="color:#0075c1;">管理</a>
+            <a href="/center/investment.go" style="color:#0075c1;">管理</a>
             <span class="span5">][</span>
             <a href="/center/investment/addInvestment.go" style="color:#0075c1;">发布</a>
             <span class="span5">]</span>
