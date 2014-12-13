@@ -38,7 +38,7 @@
 	        		<a href="/admin/publicNotice.go" onclick="javascript:showCurPic('picId200003')">公告信息列表</a>
 	        	</li>
 	        	<li class="dd">
-	        		<a href="/admin/productInfo.go" onclick="javascript:showCurPic('picId200004')">投资信息列表</a>
+	        		<a href="/admin/investment.go" onclick="javascript:showCurPic('picId200004')">投资信息列表</a>
 	        	</li>
             </ul>
             
