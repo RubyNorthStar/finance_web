@@ -22,9 +22,9 @@
 
         <!--中间内容-->
 
-        <div class="content m-l clearfix " style="display: block">
+        <div class="content clearfix " style="display: block">
        
-            <div class="content-content clearfix" style="width: 81%;background: #fff;">
+            <div class="content-content clearfix" style="margin-bottom:22%;">
                 <!--正文-->
                 <h4 class="h4">新闻动态</h4>
                 <#if list??>

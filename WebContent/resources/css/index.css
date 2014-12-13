@@ -6,9 +6,9 @@ td,th{padding:0;}
 table{border-collapse:collapse;}
 a{text-decoration: none; cursor: pointer; color:#585657;}
 img{vertical-align: top;}
+.clearfix:after{content:'';display:block; clear:both;}
+.clearfix{zoom:1;}
 
-.clearfix{ clear: both;}
-.clearfix:after{content: "."; display: block; height: 0; overflow: hidden;clear: both;}
 .Acolor{color: #0e6fb6;}
 .m-l{margin-left:150px;}
 .mt6{margin-top: 6px;}
@@ -30,7 +30,7 @@ img{vertical-align: top;}
 }
 .top-logo{ width:370; height:38px;padding-top:16px; vertical-align: middle;}
 .login a{cursor: pointer; font-size: 24px; color: #5b5758;}
-.pages{ margin: 50px 0 0 0px;}
+.pages{ margin: 50px 0 20px 0px;}
 .pages .content-block{float: left;}
 .pages .content-block .left-img{ width: 635px; height: 366px;}
 .pages .content-block .right-block{border: 1px solid #404040;padding: 44px 30px; margin-left: 23px;}
@@ -81,7 +81,7 @@ img{vertical-align: top;}
 .login-btn button{cursor: pointer; font-size: 18px;width: 120px;padding: 10px;background: #00a3e4;color: #fff; border:none;}
 .zc{ font-size: 12px;margin-top: 40px;}
 .hzzh{ margin-top: 20px;font-size: 12px;}
-.page {position: relative;bottom: 0;background: #eeefef;padding: 25px 0 30px 143px; margin-top:20px;}
+.page {position: relative;bottom: 0;background: #eeefef;padding: 25px 0 30px 143px; /*margin-top:20px;*/}
 .foot{width:980px;margin:0 auto; }
 .bottom-logo{ padding: 11px 0 0 10px; width:156px;  height: 31px;}
 .page .toolbar{ float: left;}
@@ -109,6 +109,7 @@ img{vertical-align: top;}
 .menu_list_ul li{ float:left; padding:10px 38px 10px 38px;}
 .menu_list_ul li.menu-active{background:#007cc8;}
 .menu_list_ul li a{ color:#fff; font-size: 13px; }
+.menu_list_ul li:hover{ color:#fff; font-size: 13px; background:#007cc8;}
 /*end menu*/
 .body-bg{ background: #efefef;}
 .box-shadow{ box-shadow: 0px 1px 2px rgba(0,0,0,0.5);}
@@ -119,8 +120,9 @@ img{vertical-align: top;}
 .content-top-img{ width: 980px;height: 302px;}
 .content-img{ width: 320px;height: 159px;}
 .slides, .flex-control-nav, .flex-direction-nav {margin: 0;padding: 0;list-style: none;}
-.flex-control-nav {width: 100%;position: absolute;text-align: center;bottom: 5px;}
-.flex-control-nav li {margin: 0 6px;display: inline-block;zoom: 1;}
+.flex-control-nav {position: absolute;bottom: 5px; margin-left:46%;}
+.flex-control-nav li {margin: 0 6px; float:left; zoom: 1;}
+/* .flex-control-nav li {margin: 0 6px;display: inline-block;zoom: 1;} */
 .flex-control-paging li a {
 width: 11px;
 height: 11px;
@@ -199,7 +201,7 @@ box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
 .market-list td{width:0%;padding: 5px 0%; border-bottom: 1px dotted #d3d3d3;}
 .creditLevle{}
 .span1{color:#fff; background: #1468b0; border-radius: 25px;padding: 5px;}
-.span2{color:#fff; background: #1468b0; border-radius: 25px;padding: 5px 8px;}
+.span2{ width:10px; display: inline-block; color:#fff; background: #1468b0; border-radius: 25px;padding: 5px 8px;}
 .span3{color:#f39800;font-size: 16px;}
 .span4{color: #814e23;font-size: 16px;}
 .span5{color: #814e23;font-size: 16px;}
@@ -231,7 +233,7 @@ box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
 .fL{float: left;}
 .news-img{width: 214px; height: 118px;}
 .news-title{ color: #0e6eb8;font-size: 14px; font-weight: bold; line-height: 24px; margin: 5px 0;}
-.news-title .span7{margin-left: 46%;font-size: 14px;}
+.news-title .span7{margin-left: 66%;font-size: 14px;}
 .news-content{width: 690px; margin-left: 20px;}
 .newsInfo{color: #106cb5; font-size: 12px;}
 /*news.html end*/

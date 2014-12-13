@@ -90,22 +90,22 @@
 
             </div>
             <div class="" style="margin-top: 20px;">
-                <div class="" style=" width:980px;">
+                <div class="" style="border:2px solid #f7f7f7;">
                     <ul class="tab-title clearfix">
                         <li class="list-li-title fL active">
-                            	项目介绍
+                            <a href="javascript:;">项目介绍</a>
                         </li>
                         <li class="list-li-title fL">
-                            	资金用途
+                            <a href="javascript:;">资金用途</a>
                         </li>
                         <li class="list-li-title fL">
-                            	还款来源
+                            <a href="javascript:;">还款来源</a>
                         </li>
                         <li class="list-li-title fL">
-                            	交易结构
+                            <a href="javascript:;">交易结构</a>
                         </li>
                         <li class="list-li-title fL">
-                            	风险措施
+                            <a href="javascript:;">风险措施</a>
                         </li>
                     </ul>
                     <div class="Tab-content">
