@@ -16,23 +16,64 @@
 			<#include "/admin/common/left.ftl">
 			<div class="right">
 				<div class="m-r">
-				    <div>
-				    	公告标题：${publicNotice.noticeTitle!''}</br>
-				    	公告副标题：${publicNotice.noticeViceTitle!''}</br>
-				    	公告描述：${publicNotice.noticeDescription!''}</br>
-				    	公告来源：${publicNotice.source!''}</br>
-				    	所属品类：${publicNotice.category!''}</br>
-				    	公告分类：${publicNotice.classiFication!''}</br>
-				    	所属行业：${publicNotice.industryId!''}</br>
-				    	所在地区（省）：${publicNotice.addressProvince!''}</br>
-				    	所在地区（市）：${publicNotice.addressCity!''}</br>
-				    	底价：${publicNotice.floorPrice!''}</br>
-				    	公告内容：${publicNotice.content!''}</br>
-				    	联系人：${publicNotice.person!''}</br>
-				    	手机：${publicNotice.mobile!''}</br>
-					    	
-					    	<a href="/admin/projectInfo/update.go?id=${publicNotice.id}&status=2">审核通过</a> &nbsp;
-					    	<a href="/admin/projectInfo/update.go?id=${publicNotice.id}&status=3">审核未通过</a> &nbsp;
+					<ul class="examine-list-block-ul clear">
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">公告标题：1</div>
+							<div class="examine-right">&nbsp;${publicNotice.noticeTitle!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">公告副标题：2</div>
+							<div class="examine-right">&nbsp;${publicNotice.noticeViceTitle!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">公告描述：3</div>
+							<div class="examine-right">&nbsp;${publicNotice.noticeDescription!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">公告来源：4</div>
+							<div class="examine-right">&nbsp;${publicNotice.source!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">所属品类：5</div>
+							<div class="examine-right">&nbsp;${publicNotice.category!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">公告分类：6</div>
+							<div class="examine-right">&nbsp;${publicNotice.classiFication!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">所属行业：7</div>
+							<div class="examine-right">&nbsp;${publicNotice.industryId!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">所在地区（省）：8</div>
+							<div class="examine-right">&nbsp;${publicNotice.addressProvince!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">所在地区（市）：9</div>
+							<div class="examine-right">&nbsp;${publicNotice.addressCity!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">底价：10</div>
+							<div class="examine-right">&nbsp;${publicNotice.floorPrice!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">公告内容：11</div>
+							<div class="examine-right">&nbsp;${publicNotice.content!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">联系人：12</div>
+							<div class="examine-right">&nbsp;${publicNotice.person!''}</div>
+						</li>
+						<li class="examine-list-block-li clear" style=" border-bottom:1px solid #ccc;">
+							<div class="examine-left">手机：13</div>
+							<div class="examine-right">&nbsp;${publicNotice.mobile!''}</div>
+						</li>
+					</ul>
+					
+				    <div class="examine-botton">
+				    	<a class="button" href="/admin/projectInfo/update.go?id=${publicNotice.id}&status=2">审核通过</a> &nbsp;
+				    	<a class="button" href="/admin/projectInfo/update.go?id=${publicNotice.id}&status=3">审核未通过</a> &nbsp;
 		            </div>
 			    </div>
 			    <div class="pagination rightPager"></div>

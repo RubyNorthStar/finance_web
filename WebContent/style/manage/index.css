@@ -69,3 +69,15 @@ beccf1
 .dis{ display:none;}
 .float{float:left;}
 .p-a{ display:inline-block;}
+
+/*后台管理系统投资信息列表样式*/
+.examine-list-block-ul{margin-top:20px;}
+.examine-list-block-li{ border-top:1px solid #ccc;}
+.examine-left{float:left; width:150px; padding:10px;  text-align:right; }
+.examine-right{float:left; width:600px; padding:10px; text-align:left;padding-left:20px; border-left:1px solid #ccc;}
+.examine-botton{margin-top:50px;padding-left:180px;}
+.button{ width:150px; padding:10px 20px; background:#0074c1; color:#fff; border-radius: 5px}
+/*后台管理系统投资信息列表样式*/
+
+
+

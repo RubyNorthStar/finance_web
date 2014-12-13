@@ -16,19 +16,46 @@
 			<#include "/admin/common/left.ftl">
 			<div class="right">
 				<div class="m-r">
-				    <div>
-				    	项目名称：${projectInfo.projectName!''}</br>
-				    	所属行业：${projectInfo.proindustryId!''}</br>
-				    	转让金额：${projectInfo.proPrice!''}</br>
-				    	所在地区（省）：${projectInfo.addressProvince!''}</br>
-				    	所在地区（市）：${projectInfo.addressCity!''}</br>
-				    	融资方名称：${projectInfo.financingPartyName!''}</br>
-				    	投资方应具备条件：${projectInfo.investorsRequire!''}</br>
-				    	项目详细：${projectInfo.proDetail!''}</br>
-					    	
-					    	<a href="/admin/projectInfo/update.go?id=${projectInfo.id}&status=2&projectType=${projectInfo.projectType}">审核通过</a> &nbsp;
-					    	<a href="/admin/projectInfo/update.go?id=${projectInfo.id}&status=3&projectType=${projectInfo.projectType}">审核未通过</a> &nbsp;
-		            </div>
+					<ul class="examine-list-block-ul clear">
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">项目名称：</div>
+							<div class="examine-right">&nbsp;${projectInfo.projectName!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">所属行业：2</div>
+							<div class="examine-right">&nbsp;${projectInfo.proindustryId!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">转让金额：3</div>
+							<div class="examine-right">&nbsp;${projectInfo.proPrice!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">所在地区（省）：4</div>
+							<div class="examine-right">&nbsp;${projectInfo.addressProvince!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">所在地区（市）：5</div>
+							<div class="examine-right">&nbsp;${projectInfo.addressCity!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">融资方名称：6</div>
+							<div class="examine-right">&nbsp;${projectInfo.financingPartyName!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">投资方应具备条件：7</div>
+							<div class="examine-right">&nbsp;${projectInfo.investorsRequire!''}</div>
+						</li>
+						<li class="examine-list-block-li clear" style="border-bottom:1px solid #ccc;">
+							<div class="examine-left">项目详细：8</div>
+							<div class="examine-right">&nbsp;${projectInfo.proDetail!''}</div>
+						</li>
+					</ul>
+					<div class="examine-botton">
+						<a class="button"  href="/admin/projectInfo/update.go?id=${projectInfo.id}&status=2&projectType=${projectInfo.projectType}">审核通过</a> &nbsp;
+						<a class="button" href="/admin/projectInfo/update.go?id=${projectInfo.id}&status=3&projectType=${projectInfo.projectType}">审核未通过</a> &nbsp;
+					</div>
+					
+				    
 			    </div>
 			    <div class="pagination rightPager"></div>
 		    </div>

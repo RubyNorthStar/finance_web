@@ -16,24 +16,60 @@
 			<#include "/admin/common/left.ftl">
 			<div class="right">
 				<div class="m-r">
-				    <div>
-				    	投资名称：${investment.investName!''}</br>
-				    	投资机构名称：${investment.agencyName!''}</br>
-				    	投资机构所在地：${investment.orgAddress!''}</br>
-				    	投资类型：${investment.investType!''}</br>
-				    	投资形式：${investment.investStyle!''}</br>
-				    	投资方式：${investment.investMode!''}</br>
-				    	投资行业 ：${investment.industry!''}</br>
-				    	投资地区：${investment.area!''}</br>
-				    	投资企业类型：${investment.enterpriseType!''}</br>
-				    	投资回报率要求：${investment.getRequire!''}</br>
-				    	投资机构介绍：${investment.investOrgInfo!''}</br>
-				    	对投资机构要求 ：${investment.investRequire!''}</br>
-				    	其他要求：${investment.otherRequire!''}</br>
-					    	
-					    	<a href="/admin/projectInfo/update.go?id=${investment.id}&status=2">审核通过</a> &nbsp;
-					    	<a href="/admin/projectInfo/update.go?id=${investment.id}&status=3">审核未通过</a> &nbsp;
-		            </div>
+					<ul class="examine-list-block-ul clear">
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">投资名称：</div>
+							<div class="examine-right">&nbsp;${investment.investName!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">投资机构名称：</div>
+							<div class="examine-right">&nbsp;${investment.agencyName!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">投资机构所在地：</div>
+							<div class="examine-right">&nbsp;${investment.orgAddress!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">投资类型：</div>
+							<div class="examine-right">&nbsp;${investment.investType!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">投资形式：</div>
+							<div class="examine-right">&nbsp;${investment.investStyle!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">投资方式：</div>
+							<div class="examine-right">&nbsp;${investment.investMode!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">投资行业 ：</div>
+							<div class="examine-right">&nbsp;${investment.industry!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">投资地区：</div>
+							<div class="examine-right">&nbsp;${investment.area!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">投资企业类型：</div>
+							<div class="examine-right">&nbsp;${investment.enterpriseType!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">投资回报率要求：</div>
+							<div class="examine-right">&nbsp;${investment.getRequire!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">投资机构介绍：</div>
+							<div class="examine-right">&nbsp;${investment.investOrgInfo!''}</div>
+						</li>
+						<li class="examine-list-block-li clear">
+							<div class="examine-left">对投资机构要求 ：</div>
+							<div class="examine-right">&nbsp;${investment.investRequire!''}</div>
+						</li>
+						<li class="examine-list-block-li clear" style="border-bottom:1px solid #ccc;">
+							<div class="examine-left">其他要求：</div>
+							<div class="examine-right">&nbsp;${investment.otherRequire!''}</div>
+						</li>
+					</ul>
 			    </div>
 			    <div class="pagination rightPager"></div>
 		    </div>
