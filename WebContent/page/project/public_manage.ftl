@@ -14,16 +14,13 @@
 
 <!-- Views-->
 <div class="views">
-    <!-- Your main view, should have "view-main" class-->
+<#include "/index/common/top.ftl">
     <div class="view-main">
-        <!-- Top Navbar-->
-        <#include "/index/common/top.ftl">
-        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through" style="margin:0; ">
+        <div class="pages" style="margin:0; ">
             <!-- Page, data-page contains page name-->
-            <div data-page="index" class="page" style="margin:0; padding:0;">
+            <div class="page" style="margin:0; padding:0;">
                 <!-- Scrollable page content-->
-                <div class="page-content">
+                <div class="page-content clearfix">
                     <!-- 左侧部分 -->
                     <#include "/index/common/center_left.ftl">
                     <div class="right-content">
@@ -87,7 +84,7 @@
 	                            	
                             	
 	                            </div>
-                                <div class="paging clear">
+                                <div class="zr_paging clear">
                                 	<input type="hidden" id="pageInput"/>
                                 	<div>共${search.totalRecords}条   <span class="curNumber">第${search.pageNo}页</span>  共${search.totalPages}页</div>    
                                 	<div class="pageDate" data="1">首页</div>  

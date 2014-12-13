@@ -86,7 +86,7 @@
 	                            	
                             	
 	                            </div>
-                                <div class="paging clear">
+                                <div class="zr_paging clear">
                                 	<input type="hidden" id="pageInput"/>
                                 	<div>共${search.totalRecords}条   <span class="curNumber">第${search.pageNo}页</span>  共${search.totalPages}页</div>    
                                 	<div class="pageDate" data="1">首页</div>  

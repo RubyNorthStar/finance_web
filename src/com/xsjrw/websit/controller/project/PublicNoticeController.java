@@ -110,7 +110,7 @@ public class PublicNoticeController {
         binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
     }
 	
-	@RequestMapping(value="publicNotice", method = RequestMethod.GET)
+	@RequestMapping(value="addPublic", method = RequestMethod.GET)
 	public String publicNoticeGet(Model model, HttpServletRequest request){
 		
 		IndustrySearch search = new IndustrySearch();

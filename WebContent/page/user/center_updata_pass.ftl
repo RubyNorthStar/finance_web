@@ -49,7 +49,6 @@
 <!-- Views-->
 <div class="views">
 	<#include "/index/common/top.ftl">
-    <!-- Your main view, should have "view-main" class-->
     <div class="view-main">
         <div class="pages" style="margin:0; ">
             <div class="page">
@@ -98,10 +97,5 @@
     </div>
     <#include "/index/common/foot.ftl">
 </div>
-
-<!-- Path to Framework7 Library JS-->
-<!--<script type="text/javascript" src="js/framework7.js"></script>-->
-<!-- Path to your app js-->
-<!--<script type="text/javascript" src="js/my-app.js"></script>-->
 </body>
 </html>

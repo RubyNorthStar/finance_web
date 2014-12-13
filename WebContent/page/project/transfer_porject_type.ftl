@@ -14,16 +14,11 @@
 
 <!-- Views-->
 <div class="views">
-    <!-- Your main view, should have "view-main" class-->
+<#include "/index/common/top.ftl">
     <div class="view-main">
-        <!-- Top Navbar-->
-       <#include "/index/common/top.ftl">
-        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
-        <div class="pages navbar-through toolbar-through" style="margin:0; ">
-            <!-- Page, data-page contains page name-->
-            <div data-page="index" class="page" style="margin:0; padding:0;">
-                <!-- Scrollable page content-->
-                <div class="page-content">
+        <div class="pages" style="margin:0; ">
+            <div class="page">
+                <div class="page-content clearfix">
                     <!-- 左侧部分 -->
                     <#include "/index/common/center_left.ftl">
                     <div class="right-content">
@@ -106,7 +101,7 @@
 	                                    </div>
 	                                </li>
 	                                <li class="submitBtn">
-	                                    <input type="submit" class="button-style button-style-blue submit" value="下一步">
+	                                    <input type="submit" class="button-style-blue submit" value="下一步">
 	                                </li>
 	                            </ul>
 	                         </form>
@@ -118,14 +113,9 @@
                 </div>
             </div>
         </div>
-
+		
     </div>
     <#include "/index/common/foot.ftl">
 </div>
-
-<!-- Path to Framework7 Library JS-->
-<!--<script type="text/javascript" src="js/framework7.js"></script>-->
-<!-- Path to your app js-->
-<!--<script type="text/javascript" src="js/my-app.js"></script>-->
 </body>
 </html>
