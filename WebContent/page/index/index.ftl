@@ -78,7 +78,6 @@
                                 <th>项目编号</th>
                                 <th>项目名称</th>
                                 <th>挂牌机构</th>
-                                <th>挂牌价格</th>
                                 <th>挂牌日期</th>
                             </tr>
                             <#assign values = linkMap[mykey]>
@@ -87,7 +86,6 @@
                                         <td><a href="/product/productInfo/detail.go?id=${a.id}">${a.productName?default("产品名称")}</a></td>
                                         <td><span class="span2 creditLevle" style="">${a.creditLevle?default("A")}</span></td>
                                         <td><span class="span3" style="" >${a.yearInterestRate?default("0")}%</span><span style="font-size: 10px;">每年</span></td>
-                                        <td><span class="span4" style="" >${a.fundScale?default("0")}</span>元</td>
                                         <!--<td><span class="span5" style="" >${a.investmentTimeLimit?default("0")}</span>个月</td>
                                         <td><span class="span6" style=""><#if a.totalMoney == 0>0<#else>${(a.totalMoney/a.fundScale*100)?int+1}</#if>%</span></td>-->
                                         <td>
