@@ -148,7 +148,7 @@
     </div>
 	<div class="content-content mt6 bg-content" style="width: 100%">
         <div class="details-form" style="">
-            <div class="user-name">更多产品信息请致电&numsp;400-6099-800</div>
+            <div class="user-name">更多产品信息请致电&nbsp;400-6099-800</div>
             <div class="form-text">
                 <p>在线填写真实姓名和电话号码</p>
             </div>
