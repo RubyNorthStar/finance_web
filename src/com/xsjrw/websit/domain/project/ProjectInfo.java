@@ -35,6 +35,7 @@ public class ProjectInfo extends BaseEntity {
 	private String	proDetail;		 /* 项目详细(简介) */ 
 	private Date	createTime;		 /* 创建时间 */ 
 	private Integer	status;		 /* 状态-1.审核未通过  1:未审核  2.已审核 3.已发布 4.已下架(审核通过，过期未成交) 5.已成交 */ 
+	private Integer userId;      /* 用户ID */
 
 	// Constructor
 	public ProjectInfo() {
@@ -43,7 +44,8 @@ public class ProjectInfo extends BaseEntity {
 	/**
 	 * full Constructor
 	 */
-	public ProjectInfo(Integer id, String projectName, Integer projectType, String projectTypeClassify, Integer isMall, String proindustryId, String proPrice, String addressProvince, String addressCity, String financingPartyName, String proImageId, Date beginTime, Date endTime, String investorsRequire, String proDetail, Date createTime, Integer status) {
+	public ProjectInfo(Integer id, String projectName, Integer projectType, String projectTypeClassify, Integer isMall, String proindustryId, String proPrice, String addressProvince, String addressCity, String financingPartyName, String proImageId,
+			Date beginTime, Date endTime, String investorsRequire, String proDetail, Date createTime, Integer status, Integer userId) {
 		setId(id);
 		this.projectName = projectName;
 		this.projectType = projectType;
@@ -61,6 +63,7 @@ public class ProjectInfo extends BaseEntity {
 		this.proDetail = proDetail;
 		this.createTime = createTime;
 		this.status = status;
+		this.userId = userId;
 	}
 
 	// getter && setter
@@ -225,6 +228,14 @@ public class ProjectInfo extends BaseEntity {
 		return this;
 	}
 	
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
 	@Override
 	public String toString() {
 		return "ProjectInfo [" + "id=" + getId() + ", projectName=" + projectName + ", projectType=" + projectType + ", projectTypeClassify=" + projectTypeClassify + ", isMall=" + isMall + ", proindustryId=" + proindustryId + ", proPrice=" + proPrice + ", addressProvince=" + addressProvince + ", addressCity=" + addressCity + ", financingPartyName=" + financingPartyName + ", proImageId=" + proImageId + ", beginTime=" + beginTime + ", endTime=" + endTime + ", investorsRequire=" + investorsRequire + ", proDetail=" + proDetail + ", createTime=" + createTime + ", status=" + status +  "]";

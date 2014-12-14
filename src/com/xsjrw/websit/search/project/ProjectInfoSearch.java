@@ -33,6 +33,7 @@ public class ProjectInfoSearch extends PageModel {
 	private String	proDetail;		 /* 项目详细(简介) */ 
 	private Date	createTime;		 /* 创建时间 */ 
 	private Integer	status;		 /* 状态  1:待审 2：审核通过 3：审核未通过 4：下架项目 5：成交项目 */ 
+	private Integer userId;      /* 用户ID */
 
 	// Constructor
 	public ProjectInfoSearch() {
@@ -214,6 +215,14 @@ public class ProjectInfoSearch extends PageModel {
 	public ProjectInfoSearch setStatus(Integer status) {
 		this.status = status;
 		return this;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 	
 }

@@ -42,6 +42,7 @@ public class PublicNotice extends BaseEntity {
 	private String email;		   /* 邮件*/
 	
 	private String industryStr;  // 所属行业
+	private Integer userId;      /* 用户ID */
 
 	// Constructor
 	public PublicNotice() {
@@ -51,7 +52,7 @@ public class PublicNotice extends BaseEntity {
 	 * full Constructor
 	 */
 	public PublicNotice(Integer id, String noticeTitle, String noticeViceTitle, String noticeDescription, String source, String category, String classiFication, Integer industryId, String addressProvince, String addressCity, double floorPrice, 
-			Date beginTime, Date endTime, Integer isMall, String content, Integer status, Date createTime, String person, String phone, String mobile, String email) {
+			Date beginTime, Date endTime, Integer isMall, String content, Integer status, Date createTime, String person, String phone, String mobile, String email, Integer userId) {
 		setId(id);
 		this.noticeTitle = noticeTitle;
 		this.noticeViceTitle = noticeViceTitle;
@@ -73,6 +74,7 @@ public class PublicNotice extends BaseEntity {
 		this.phone = phone;
 		this.mobile = mobile;
 		this.email = email;
+		this.userId = userId;
 	}
 
 	// getter && setter
@@ -275,6 +277,14 @@ public class PublicNotice extends BaseEntity {
 
 	public void setIndustryStr(String industryStr) {
 		this.industryStr = industryStr;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	@Override

@@ -38,6 +38,7 @@ public class InvestmentIntentionInfoSearch extends PageModel {
 	private String	otherRequire;		 /* 其他要求 */ 
 	private Date	createTime;		 /* 创建时间 */ 
 	private Integer	status; /* 状态 */
+	private Integer userId;      /* 用户ID */
 
 	// Constructor
 	public InvestmentIntentionInfoSearch() {
@@ -268,6 +269,14 @@ public class InvestmentIntentionInfoSearch extends PageModel {
 
 	public void setStatus(Integer status) {
 		this.status = status;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 	
 }
