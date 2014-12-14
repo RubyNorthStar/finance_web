@@ -140,7 +140,7 @@
 							</tr>
 								<#list investmentList as a>
 									<tr class="market-list">
-										<td><a href="javascript:">${a.investName}</a></td>
+										<td><a href="/projectInfo/investment.go?id=${a.id}">${a.investName}</a></td>
 										<td>${a.industry?default("")}</td>
 										<td>${a.orgAddress?default("")}</td>
 										<td>${a.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
