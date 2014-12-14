@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>携手金融网 - 项目详细页</title>
+    <title>携手金融网 - 公告详细页</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
     <link rel="stylesheet" href="/resources/css/my-app.css">
     <script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
@@ -27,63 +27,59 @@
                         <img src="/resources/images/manage/list-img.jpg">
                     </div>
                     <div class="content-inner">
-                        <h2 class="h2-title">当前位置> 项目集市> <#if projectInfo.projectType == 1>融资信息 <#else> 转让项目</#if> > ${projectInfo.projectName}</h2>
+                        <h2 class="h2-title">当前位置> 项目集市> 公告信息 > ${publicNotice.noticeTitle!''}</h2>
                         <div class="market-content">
                             <ul class="market-content-info">
                                 <li class="clearfix">
                                     <div>
-                                       <span class="span-title-green"> 项目名称：</span>
-                                       <span class="span-content"> ${projectInfo.projectName!''}</span>
+                                       <span class="span-title-green"> 公告名称：</span>
+                                       <span class="span-content"> ${publicNotice.noticeTitle!''}</span>
                                     </div>
                                     <div >
-                                        <span class="span-title-green"> 交易品类：</span>
-                                        <span class="span-content"> ${projectInfo.projectTypeClassify!''}</span>
+                                        <span class="span-title-green"> 所属品类：</span>
+                                        <span class="span-content"> ${publicNotice.category!''}</span>
                                     </div>
                                 </li>
                                 <li class="clearfix">
                                     <div>
-                                        <span class="span-title-green"> 参考价格：</span>
-                                        <span class="span-content">${projectInfo.proPrice!''}万元</span>
+                                        <span class="span-title-green"> 所属行业：</span>
+                                        <span class="span-content">${publicNotice.industryStr!''}</span>
+                                    </div>
+                                    <div >
+                                        <span class="span-title-green"> 所在地区：</span>
+                                        <span class="span-content">${publicNotice.addressProvince!''}&nbsp-&nbsp${publicNotice.addressCity!''}</span>
+                                    </div>
+                                </li>
+                                <li class="clearfix">
+                                    <div>
+                                        <span class="span-title-green"> 公告分类：</span>
+                                        <span class="span-content">${publicNotice.classiFication!''}</span>
                                     </div>
                                     <div >
                                         <span class="span-title-green"> 有效期至：</span>
-                                        <span class="span-content">${projectInfo.beginTime?string("yyyy-MM-dd")}&nbsp至&nbsp${projectInfo.endTime?string("yyyy-MM-dd")}</span>
+                                        <span class="span-content">${publicNotice.beginTime?string("yyyy-MM-dd")}&nbsp&nbsp${publicNotice.endTime?string("yyyy-MM-dd")}</span>
                                     </div>
-                                </li>
-                                <li class="market-content-info-button clearfix">
-                                    <a class="button-gz">我要关注</a>
-                                    <a class="button-fk">我要反馈</a>
                                 </li>
                             </ul>
                             <div class="">
-                                <h2 class="h2-title">•&numsp;融资项目简介</h2>
                                 <div class="worth">
-                                    <div class="span-title-green worth-title">项目基本信息</div>
-                                    <div class="market-person-info-1">
-                                        <span class="span-title-green">所属行业：${projectInfo.proindustryId!''}</span>
-                                        <span class="span-title-green">所在地区：${projectInfo.addressProvince!''}-${projectInfo.addressCity!''}</span>
-                                    </div>
+                                    <div class="span-title-green worth-title">公告内容</div>
                                     <div class="worth-text">
-                                        ${projectInfo.proDetail}
+                                        ${publicNotice.content!''}
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="" style="margin-bottom: 60px;">
-                                <h2 class="h2-title">•&numsp;项目反馈</h2>
+                                <h2 class="h2-title">•&numsp;联系方式</h2>
                                 <div class="worth">
-                                    <div class="fk-info clearfix">
-                                        <div class="span-title-green " style=" float: left;">反馈信息:</div>
-                                        <div>
-                                            <textarea class="fk-text" style="float: left;"> </textarea>
-                                        </div>
+                                    <div class="market-person-info-2">
+                                        <span class="span-title-green">联系人：${publicNotice.person!''}</span>
+                                        <span class="span-title-green">邮&nbsp;&nbsp; 箱：${publicNotice.email!''}</span>
                                     </div>
                                     <div class="market-person-info-2">
-                                        <span class="span-title-green">联系人：<input type="text"></span>
-                                        <span class="span-title-green">邮 箱：<input type="text"></span>
-                                    </div>
-                                    <div class="tj-button">
-                                        <a class="">提交反馈</a>
+                                        <span class="span-title-green">手&nbsp;&nbsp;机：${publicNotice.mobile!''}</span>
+                                        <span class="span-title-green">电&nbsp;&nbsp; 话：${publicNotice.phone!''}</span>
                                     </div>
                                 </div>
                             </div>
