@@ -19,10 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xsjrw.websit.domain.project.Industry;
-import com.xsjrw.websit.domain.project.ProjectInfo;
 import com.xsjrw.websit.domain.project.PublicNotice;
 import com.xsjrw.websit.search.project.IndustrySearch;
-import com.xsjrw.websit.search.project.ProjectInfoSearch;
 import com.xsjrw.websit.search.project.PublicNoticeSearch;
 import com.xsjrw.websit.service.project.IIndustryService;
 import com.xsjrw.websit.service.project.IPublicNoticeService;

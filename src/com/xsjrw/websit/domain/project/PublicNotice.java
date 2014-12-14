@@ -40,6 +40,8 @@ public class PublicNotice extends BaseEntity {
 	private String phone;		   /* 电话*/
 	private String mobile;		   /* 手机*/
 	private String email;		   /* 邮件*/
+	
+	private String industryStr;  // 所属行业
 
 	// Constructor
 	public PublicNotice() {
@@ -265,6 +267,14 @@ public class PublicNotice extends BaseEntity {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getIndustryStr() {
+		return industryStr;
+	}
+
+	public void setIndustryStr(String industryStr) {
+		this.industryStr = industryStr;
 	}
 
 	@Override

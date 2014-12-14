@@ -141,7 +141,7 @@
 									<tr class="market-list">
 										<td><a href="javascript:">${a.investName}</a></td>
 										<td>${a.industry?default("")}</td>
-										<td>${a.orgAddress?default("")}}</td>
+										<td>${a.orgAddress?default("")}</td>
 										<td>${a.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>
 									</tr>
 								</#list>
@@ -183,7 +183,7 @@
 							</tr>
 								<#list noticeList as a>
 									<tr class="market-list">
-										<td><a href="javascript:">${a.noticeTitle}</a></td>
+										<td><a href="/projectInfo/publicNotice.go?id=${a.id}">${a.noticeTitle}</a></td>
 										<td>${a.source?default("")}</td>
 										<td>${a.addressProvince?default("")}-${a.addressCity?default("")}</td>
 										<td>${a.createTime?string('yyyy-MM-dd HH:mm:ss')}</td>

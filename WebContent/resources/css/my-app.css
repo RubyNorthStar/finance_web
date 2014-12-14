@@ -107,3 +107,42 @@ th,td{border:1px solid #9a9a9a; width:100px; height:40px;}
 
 .alert-text-tzdq{position: fixed; left:0; top:0; z-index:9; display:none;}
 /*投資發佈 end*/
+
+
+/* 项目详细页面 */
+/*market_list*/
+.top-img{}
+.top-img img{ width: 980px;}
+.h2-title{ color: #2687cc; margin:26px 0; font-size: 16px;}
+/*项目集市*/
+.market-list{}
+.list-menu{}
+.list-menu li{ width: 159px; float:left; background: #00a0e9; padding: 5px 0 5px 37px;}
+.list-menu li a{ color: #fff;}
+.list-content{}
+.list-content ol{}
+.list-content ol li{width: 159px; float: left; padding: 16px 0 16px 37px; border-bottom: 1px solid #b8b8b8;}
+.list-content ol li a{ color:#303030;}
+.market-content{}
+.market-content-info{}
+.market-content-info li{ border-top:1px solid #b8b8b8;}
+.market-content-info li div{ width: 490px; float:left;padding:14px 0;}
+.span-title-green{ color: #23ac38;}
+.span-content{ color: #231815;}
+.market-content-info-button{ text-align: center; padding-top:19px; }
+.button-gz{ display: inline-block; margin-right: 19px; padding: 5px 10px; background: #00a0e9; color: #fff;}
+.button-fk{ display: inline-block; padding: 5px 10px; background: #23ac38; color: #fff;}
+.worth-title{ padding: 16px 0px; border-bottom:1px solid #b8b8b8; }
+.worth{ border: 1px solid #b8b8b8;}
+.worth-text{ height:165px;}
+.fk-info{ margin: 13px 0 0 20px;}
+/*.worth textarea{ width: 974px; height: 300px; border: none;}*/
+.market-person-info-1{ padding: 20px  0 0 26px; border-bottom:1px solid #b8b8b8; }
+.market-person-info-1 span{ margin-bottom:20px;  display: inline-block; width: 465px;}
+.market-person-info-2{ padding: 20px  0 0 26px;}
+.market-person-info-2 span{ margin-bottom:20px;  display: inline-block; width: 465px;}
+.worth .fk-text{ width: 865px; height: 100px; margin-left: 10px;}
+.tj-button{ text-align: center; margin-bottom: 20px;}
+.tj-button a{ background: #23ac38; color: #fff; padding: 5px 10px; display: inline-block;}
+/*market_list end*/
+/* 项目详细页面结束 */
