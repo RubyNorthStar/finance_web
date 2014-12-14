@@ -42,11 +42,13 @@
                             <span class="span_lc">集市项目</span>
                             <span class="span_en">Project Market</span>
                         </div>
-                        <div class="more"> <a href="javascript:;">更多产品&nbsp;&nbsp;></a></div>
+                        
                     </div>
                     			<!--market  集市-->
                     <div class="market-list clearfix">
+                    
                         <div class="table-menu clearfix">
+                        
                             <ul class="list-ul product_index  market-ul clearfix">
                             	<li class="jsActive"><a class="plr-59" href="javascript:;">挂牌项目</a></li>
                             	<li class=""><a class="plr-59" href="javascript:;">融资信息</a></li>
@@ -56,8 +58,11 @@
                             </ul>
                         </div>
                     </div>
-
-                    <div class="table-div" style="height:220px;">
+                    <div class="clearfix">
+                    <div class="more" style="margin: 15px 0 -15px 0;"> <a href="javascript:;">更多产品&nbsp;&nbsp;></a></div>
+                    </div>
+					
+                    <div class="table-div clearfix" style="height:220px;">
                         
                         
                       <!-- 挂牌项目开始 -->
