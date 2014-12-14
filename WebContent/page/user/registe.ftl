@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
  	<link rel="stylesheet" type="text/css" href="/resources/css/index.css">
- 	<script type="text/javascript" src="/resources/common/plugin/jquery/jquery-1.8.3.js"></script>
+ 	<script type="text/javascript" src="/resources/common/plugin/jquery/jquery-1.4.2.min.js"></script>
   	<script type="text/javascript" src="/script/user/login.js"></script>
 	<title>携手金融网 - 用户注册</title>
 </head>
