@@ -106,7 +106,6 @@ public class InvestmentIntentionInfoController {
 	
 	@RequestMapping(value="addInvestment", method = RequestMethod.GET)
 	public String addInvestmentGet(){
-		System.out.println("进来了");
 		return "project/add_investment_info";
 	}
 	
