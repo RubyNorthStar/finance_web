@@ -30,7 +30,7 @@ function userLogin(obj){
     		dataType:"json", 
     		success: function(data){
     			 if (data) {
-			        if ($("#remember").prop("checked")) {
+			        if ($("#remember").attr("checked")) {
 			            setCookie("LOGINNAME",email);
 			            setCookie("LOGINPWD",data[0].password);
 			        }
