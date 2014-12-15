@@ -1,5 +1,7 @@
 package com.xsjrw.websit.controller.project;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +13,7 @@ import com.xsjrw.websit.domain.project.Industry;
 import com.xsjrw.websit.domain.project.InvestmentIntentionInfo;
 import com.xsjrw.websit.domain.project.ProjectInfo;
 import com.xsjrw.websit.domain.project.PublicNotice;
+import com.xsjrw.websit.search.project.ProjectInfoSearch;
 import com.xsjrw.websit.service.project.IIndustryService;
 import com.xsjrw.websit.service.project.IInvestmentIntentionInfoService;
 import com.xsjrw.websit.service.project.IProjectInfoService;
@@ -49,6 +52,34 @@ public class ProjectInfoFontController {
 			model.addAttribute("projectInfo", projectInfo);
 		}
 		return "project/project_detail";
+	}
+	
+	/**
+	 * 查询融资项目、转让项目列表页
+	 * @param request
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value="peojectList")
+	public String peojectList(HttpServletRequest request, Model model, ProjectInfoSearch search){
+//		ProjectInfo projectInfo = projectInfoService.findProjectInfoById(id);
+		
+		
+		List<ProjectInfo> projectList = projectInfoService.findProjectInfoByPage(search);
+		
+		if(projectList != null && projectList.size() > 0){
+			for(ProjectInfo project : projectList){
+				String industryId = project.getProindustryId();
+				if(industryId != null && industryId.length() > 0){
+					Industry Industry = industryService.findIndustryById(Integer.parseInt(project.getProindustryId()));
+					project.setProindustryId(Industry.getIndustryName());
+				}
+			}
+			model.addAttribute("projectList", projectList);
+		}
+		model.addAttribute("search", search);
+		
+		return "project/project_list";
 	}
 	
 	/**

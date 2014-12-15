@@ -36,6 +36,7 @@ public class PublicNoticeSearch extends PageModel {
 	private String phone;		   /* 电话*/
 	private String mobile;		   /* 手机*/
 	private String email;		   /* 邮件*/
+	private Integer userId;      /* 用户ID */
 
 	// Constructor
 	public PublicNoticeSearch() {
@@ -254,6 +255,14 @@ public class PublicNoticeSearch extends PageModel {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 	
 }

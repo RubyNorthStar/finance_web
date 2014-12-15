@@ -23,6 +23,7 @@
 		<result property="phone" column="phone" />
 		<result property="mobile" column="mobile" />
 		<result property="email" column="email" />
+		<result property="userId" column="user_id" />
 	</resultMap>
 	
 	<sql id="table_columns">
@@ -46,7 +47,8 @@
 		person,
 		phone,
 		mobile,
-		email
+		email,
+		user_id
     </sql>
 	<sql id="entity_properties">
 		#{id},
@@ -69,7 +71,8 @@
 		#{person},
 		#{phone},
 		#{mobile},
-		#{email}
+		#{email},
+		#{userId}
 	</sql>
 	
 	<!-- 适用于主键自增类型 -->
@@ -126,6 +129,7 @@
 			<if test="phone != null and phone != ''">phone = #{phone},</if>
 			<if test="mobile != null and mobile != ''">mobile = #{mobile},</if>
 			<if test="email != null and email != ''">email = #{email},</if>
+			<if test="userId != null and userId != ''">user_id = #{userId},</if>
 		</trim>
 		<where>id = #{id}</where>
 	</update>
@@ -161,10 +165,12 @@
 			<if test="status != null and status != ''">and status = #{status}</if>
 			<if test="createTime != null and createTime != ''">and create_time = #{createTime}</if>
 			
-			<if test="person != null and person != ''">person = #{person}</if>
-			<if test="phone != null and phone != ''">phone = #{phone}</if>
-			<if test="mobile != null and mobile != ''">mobile = #{mobile}</if>
-			<if test="email != null and email != ''">email = #{email}</if>
+			<if test="person != null and person != ''">and person = #{person}</if>
+			<if test="phone != null and phone != ''">and phone = #{phone}</if>
+			<if test="mobile != null and mobile != ''">and mobile = #{mobile}</if>
+			<if test="email != null and email != ''">and email = #{email}</if>
+			
+			<if test="userId != null and userId != ''">and user_id = #{userId},</if>
 		</trim>
 	</sql>
 	

@@ -18,9 +18,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.xsjrw.common.constans.UserConstans;
 import com.xsjrw.websit.domain.project.Industry;
-import com.xsjrw.websit.domain.project.ProjectInfo;
 import com.xsjrw.websit.domain.project.PublicNotice;
+import com.xsjrw.websit.domain.user.Users;
 import com.xsjrw.websit.search.project.IndustrySearch;
 import com.xsjrw.websit.search.project.PublicNoticeSearch;
 import com.xsjrw.websit.service.project.IIndustryService;
@@ -143,11 +144,15 @@ public class AdminPublicNoticeController {
 	
 	@RequestMapping(value="publicNotice", method = RequestMethod.POST)
 	public String publicNotice(Model model,PublicNotice publicNotice, HttpServletRequest request){
+		//从session中获取User信息
+		Users user = (Users) request.getSession().getAttribute(UserConstans.USER_LOGIN);
 		if(publicNotice != null){
 			publicNotice.setStatus(1);
 			publicNotice.setCreateTime(new Date());
+			publicNotice.setUserId(user.getId());
 			publicNoticeService.savePublicNotice(publicNotice);
 		}
+		
 		model.addAttribute("project", 2);
 		return "project/success";
 	}

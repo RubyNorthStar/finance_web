@@ -40,6 +40,7 @@ public class InvestmentIntentionInfo extends BaseEntity {
 	private String	otherRequire;		 /* 其他要求 */ 
 	private Date	createTime;		 /* 创建时间 */ 
 	private Integer	status;		 /* 状态-1.审核未通过  1:未审核  2.已审核 3.已发布 4.已下架(审核通过，过期未成交) 5.已成交 */ 
+	private Integer userId;      /* 用户ID */
 
 	// Constructor
 	public InvestmentIntentionInfo() {
@@ -49,7 +50,7 @@ public class InvestmentIntentionInfo extends BaseEntity {
 	 * full Constructor
 	 */
 	public InvestmentIntentionInfo(Integer id, String investName, String agencyName, Integer isMall, String orgAddress, String investType, String investStyle, String investMode, String industry, String area, String enterpriseType, String investScale, String getRequire, 
-			String keyWord, Integer imageId, Date beginTime, Date endTime, String investOrgInfo, String investRequire, String otherRequire, Date createTime, Integer status) {
+			String keyWord, Integer imageId, Date beginTime, Date endTime, String investOrgInfo, String investRequire, String otherRequire, Date createTime, Integer status, Integer userId) {
 		setId(id);
 		this.investName = investName;
 		this.isMall = isMall;
@@ -72,6 +73,7 @@ public class InvestmentIntentionInfo extends BaseEntity {
 		this.otherRequire = otherRequire;
 		this.createTime = createTime;
 		this.status = status;
+		this.userId = userId;
 	}
 
 	// getter && setter
@@ -280,6 +282,14 @@ public class InvestmentIntentionInfo extends BaseEntity {
 
 	public void setStatus(Integer status) {
 		this.status = status;
+	}
+
+	public Integer getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 
 	@Override
