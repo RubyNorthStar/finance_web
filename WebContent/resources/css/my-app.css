@@ -132,9 +132,9 @@ th,td{border:1px solid #9a9a9a; width:100px; height:40px;}
 .market-content-info-button{ text-align: center; padding-top:19px; }
 .button-gz{ display: inline-block; margin-right: 19px; padding: 5px 10px; background: #00a0e9; color: #fff;}
 .button-fk{ display: inline-block; padding: 5px 10px; background: #23ac38; color: #fff;}
-.worth-title{ padding: 16px 0px; border-bottom:1px solid #b8b8b8; }
+.worth-title{ padding: 16px 0px 16px 28px; border-bottom:1px solid #b8b8b8; }
 .worth{ border: 1px solid #b8b8b8;}
-.worth-text{ height:165px;}
+.worth-text{ height:165px;padding:20px;}
 .fk-info{ margin: 13px 0 0 20px;}
 /*.worth textarea{ width: 974px; height: 300px; border: none;}*/
 .market-person-info-1{ padding: 20px  0 0 26px; border-bottom:1px solid #b8b8b8; }

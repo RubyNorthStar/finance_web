@@ -74,7 +74,8 @@
                                         <span class="span-title-green">投资地区：${investment.area!''}</span>
                                     </div>
                                     <div class="market-person-info-1">
-                                        <span class="span-title-green">对接受项目要求：${investment.investRequire!''}</span>
+                                        <span class="span-title-green">对接受项目要求：</span>
+                                        <span style="">${investment.investRequire!''}</span>
                                     </div>
                                     <div class="market-person-info-1">
                                         <span class="span-title-green">其它要求：${investment.otherRequire!''}</span>

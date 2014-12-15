@@ -47,7 +47,7 @@
                                     </div>
                                     <div >
                                         <span class="span-title-green"> 有效期至：</span>
-                                        <span class="span-content">${projectInfo.beginTime?string("yyyy-MM-dd")}&nbsp至&nbsp${projectInfo.endTime?string("yyyy-MM-dd")}</span>
+                                        <span class="span-content">${projectInfo.beginTime?string("yyyy-MM-dd")}&nbsp;至&nbsp;${projectInfo.endTime?string("yyyy-MM-dd")}</span>
                                     </div>
                                 </li>
                                 <li class="market-content-info-button clearfix">
@@ -79,7 +79,7 @@
                                         </div>
                                     </div>
                                     <div class="market-person-info-2">
-                                        <span class="span-title-green">联系人：<input type="text"></span>
+                                        <span class="span-title-green">&numsp;联系人：<input type="text"></span>
                                         <span class="span-title-green">邮 箱：<input type="text"></span>
                                     </div>
                                     <div class="tj-button">
