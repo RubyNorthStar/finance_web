@@ -67,6 +67,7 @@ public class IndexController {
 				infoSearch = new ProductInfoSearch();
 				infoSearch.setFundTypeId(pft.getId());
 				infoSearch.setPageSize(5);
+				infoSearch.setStatus(2);
 				List<ProductInfo> proInfos = productInfoService.findProductInfoByPage(infoSearch);
 				linkMap.put(String.valueOf(pft.getId()), proInfos);
 			}

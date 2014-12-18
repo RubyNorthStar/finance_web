@@ -123,6 +123,7 @@ th,td{border:1px solid #9a9a9a; width:100px; height:40px;}
 .list-content ol{}
 .list-content ol li{width: 159px; float: left; padding: 16px 0 16px 37px; border-bottom: 1px solid #b8b8b8;}
 .list-content ol li a{ color:#303030;}
+.list-content .ol_div:hover{ background: #F9F9F9; }
 .market-content{}
 .market-content-info{}
 .market-content-info li{ border-top:1px solid #b8b8b8;}

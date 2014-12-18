@@ -59,7 +59,7 @@
                         </div>
                     </div>
                     <div class="clearfix">
-                    <div class="more" style="margin: 15px 0 -15px 0;"> <a href="javascript:;">更多产品&nbsp;&nbsp;></a></div>
+                    <div class="more project_more" style="margin: 15px 0 -15px 0;"> <a href="javascript:;">&nbsp;</a></div>
                     </div>
 					
                     <div class="table-div clearfix" style="height:220px;">

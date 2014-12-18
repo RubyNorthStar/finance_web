@@ -17,6 +17,26 @@ $(function(){
     $(".table-menu .market-ul li").click(function(){
     	$(".market-ul li").removeClass("jsActive");
     	$(this).addClass("jsActive");
+    	if($(this).index() == 0){
+    		$('.project_more a').html("&nbsp");
+    	}else if($(this).index() == 1){
+    		$('.project_more a').html("&nbsp");
+    		$('.project_more a').html("更多产品&nbsp;&nbsp;>");
+    		$('.project_more a').attr("href","/projectInfo/projectList.go?projectType=2");
+    	}else if($(this).index() == 2){
+    		$('.project_more a').html("&nbsp");
+    		$('.project_more a').html("更多产品&nbsp;&nbsp;>");
+    		$('.project_more a').attr("href","/projectInfo/investList.go");
+    	}else if($(this).index() == 3){
+    		$('.project_more a').html("&nbsp");
+    		$('.project_more a').html("更多产品&nbsp;&nbsp;>");
+    		$('.project_more a').attr("href","/projectInfo/projectList.go?projectType=1");
+    	}else if($(this).index() == 4){
+    		$('.project_more a').html("&nbsp");
+    		$('.project_more a').html("更多产品&nbsp;&nbsp;>");
+    		$('.project_more a').attr("href","/projectInfo/publicList.go");
+    	}
+    	
     	$(".table-div .tab").removeClass("tabActive");
     	$(".table-div .tab").eq( $(this).index()).addClass("tabActive");
     });

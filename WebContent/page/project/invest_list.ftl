@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <title>携手金融网 - 投资项目列表页</title>
+    <title>携手金融网 - 投资列表页</title>
     <link rel="stylesheet" type="text/css" href="/resources/css/index.css">
     <link rel="stylesheet" href="/resources/css/my-app.css">
     <script type="text/javascript" src="/resources/common/plugin/jquery/jquery-2.1.1.js"></script>
@@ -19,7 +19,7 @@
 				current_page: ${search.pageNo - 1},
 				prev_show_always:false,
 				next_show_always:false,
-				link_to: encodeURI('/projectInfo/projectList.go?pageNo=__id__&projectType=${search.projectType}')
+				link_to: encodeURI('/projectInfo/investList.go?pageNo=__id__')
 		    });
 	   	});
 	</script>
@@ -46,25 +46,25 @@
                         <h2 class="h2-title">当前位置>项目集市</h2>
                         <div class="market-list clear">
                             <ul class="list-menu clear">
-                                <li><a href="javascript:;">项目名称</a></li>
-                                <li><a href="javascript:;">交易品类</a></li>
-                                <li><a href="javascript:;">所属行业</a></li>
-                                <li><a href="javascript:;">所在地区</a></li>
+                                <li><a href="javascript:;">投资名称</a></li>
+                                <li><a href="javascript:;">投资类型</a></li>
+                                <li><a href="javascript:;">投资行业</a></li>
+                                <li><a href="javascript:;">投资地区</a></li>
                                 <li><a href="javascript:;">发布时间</a></li>
                             </ul>
                             <div class="list-content">
                                 
-                                 <#if projectList??>
-			    					<#list projectList as obj>
-				    					<div class="ol_div" onclick='document.location.href="/projectInfo/peojectDetail.go?id=${obj.id}"' style="cursor:pointer;">
+                                 <#if investList??>
+			    					<#list investList as obj>
+				    					<div class="ol_div" onclick='document.location.href="/projectInfo/publicNotice.go?id=${obj.id}"' style="cursor:pointer;">
 				    						 <ol class="clear" >
-		                                		<li>${obj.projectName!''}</li>
-			                                    <li>${obj.projectTypeClassify!''}</li>
-			                                    <li>${obj.proindustryId!''}</li>
+		                                		<li>${obj.investName!''}</li>
+			                                    <li>${obj.investType!''}</li>
+			                                    <li>${obj.industry!'-'}</li>
 			                                    <li>${obj.addressProvince!''}-${obj.addressCity!''}</li>
 			                                    <li>${obj.beginTime?string("yyyy-MM-dd")}</li>
 		                                     </ol>
-		                                     </div>
+		                                </div>
                                		 </#list>
                                	</#if>
 

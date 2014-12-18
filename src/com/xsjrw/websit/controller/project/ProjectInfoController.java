@@ -154,6 +154,9 @@ public class ProjectInfoController {
 		ProjectInfo projectInfo = projectInfoDto.getProjectInfo();
 		projectInfo.setCreateTime(new Date());
 		projectInfo.setStatus(1);
+		String classfy = projectInfo.getProjectTypeClassify();
+		classfy = getClassify(classfy);
+		projectInfo.setProjectTypeClassify(classfy);
 		projectInfoServiceImpl.saveProjectInfo(projectInfo);
 		
 		List<ImagePath> listImage = projectInfoDto.getImages();
@@ -163,6 +166,31 @@ public class ProjectInfoController {
 		model.addAttribute("project", 1);
 		return "project/success";
 	}
+	
+	
+	private String getClassify(String key){
+		String str = "";
+		if(key != null){
+			Integer type = Integer.parseInt(key);
+			switch(type){
+				case 1 :{
+					str = "股权融资";  
+				}
+				case 2 :{
+					str = "项目融资";  
+				}
+				case 3 :{
+					str = "债权融资";  
+				}
+				case 4 :{
+					str = "租赁融资";  
+				}
+			}
+		}
+		return str;
+	}
+	
+	
 	
 	
 }
