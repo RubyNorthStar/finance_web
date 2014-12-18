@@ -66,26 +66,6 @@ public class AdminPublicNoticeController {
 		return "project/admin/public_info_list";
 	}
 	
-	@ResponseBody
-	@RequestMapping(value="ajaxList")
-	public String ajaxList(Model model, PublicNoticeSearch search, HttpServletResponse response){
-		search.setPageSize(2);
-		
-		List<PublicNotice> ajaxList = publicNoticeService.findPublicNoticeByPage(search);
-		
-		String result = "<tr class='tr-title'><td>项目名称</td><td>地区</td><td>操作</td></tr>";
-		if(ajaxList != null && ajaxList.size() > 0){
-			try {
-				for(PublicNotice pro : ajaxList){
-					result += "<tr><td>"+pro.getNoticeTitle()+"</td><td>"+pro.getAddressProvince()+" | "+pro.getAddressCity()+"</td><td>刪除&nbsp|&nbsp修改</td></tr>";
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		return result;
-	}
-	
 	@RequestMapping(value="detail")
 	public String detail(Model model, Integer id){
 		

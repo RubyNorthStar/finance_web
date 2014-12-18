@@ -34,7 +34,7 @@ public class ProjectInfo extends BaseEntity {
 	private String	investorsRequire;		 /* 对投资方的要求(投资方应具备条件) */ 
 	private String	proDetail;		 /* 项目详细(简介) */ 
 	private Date	createTime;		 /* 创建时间 */ 
-	private Integer	status;		 /* 状态-1.审核未通过  1:未审核  2.已审核 3.已发布 4.已下架(审核通过，过期未成交) 5.已成交 */ 
+	private Integer	status;		 /* 状态-1.审核未通过  1:未审核  2.已审核 3.已发布 4.已下架(审核通过，过期未成交) 5.已成交 6.删除 */ 
 	private Integer userId;      /* 用户ID */
 
 	// Constructor

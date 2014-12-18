@@ -60,26 +60,6 @@ public class ProjectInfoController {
 		return "project/project_manage";
 	}
 	
-	@ResponseBody
-	@RequestMapping(value="ajaxList")
-	public String ajaxList(Model model, ProjectInfoSearch search, HttpServletResponse response){
-		search.setPageSize(2);
-		
-		List<ProjectInfo> ajaxList = projectInfoServiceImpl.findProjectInfoByPage(search);
-		
-		String result = "<tr class='tr-title'><td>项目名称</td><td>操作</td></tr>";
-		if(ajaxList != null && ajaxList.size() > 0){
-			try {
-				for(ProjectInfo pro : ajaxList){
-					result += "<tr><td>"+pro.getProjectName()+"</td><td>刪除&nbsp|&nbsp修改</td></tr>";
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		return result;
-	}
-	
 	@RequestMapping(value="/add", method = RequestMethod.POST)
 	public String add(ProjectInfo ProjectInfo) {
 		projectInfoServiceImpl.saveProjectInfo(ProjectInfo);
@@ -92,10 +72,20 @@ public class ProjectInfoController {
 		return "redirect:/projectInfo";
 	}
 	
+	@ResponseBody
 	@RequestMapping(value="/del/{id}", method = RequestMethod.GET)
 	public String del(Model model, @PathVariable Integer id) {
-		projectInfoServiceImpl.deleteProjectInfoById(id);
-		return "redirect:/projectInfo";
+		String del = "";
+		ProjectInfo projectInfo = projectInfoServiceImpl.findProjectInfoById(id);
+		projectInfo.setStatus(6);
+		try {
+			projectInfoServiceImpl.update(projectInfo);
+			del = "succ";
+		} catch (Exception e) {
+			e.printStackTrace();
+			del = "fail";
+		}
+		return del;
 	}
 	
 	@ResponseBody

@@ -76,9 +76,12 @@
 											
 											 <#if list??>
 				                                <#list list as project>
-				                                	 <tr>
+				                                	 <tr name="aaaaa">
 													   <td>${project.projectName}</td>
-													   <td>刪除&nbsp&nbsp|&nbsp&nbsp修改</td>
+													   <td name="bbbbb">
+														   <button class="button-style button-style-blue delete" data="${project.id}" style="margin:0; padding:5px 7px;">删除</button>
+	                                       				   <button class="button-style button-style-blue update" data="${project.id}" style="margin:0; padding:5px 7px;">修改</button>
+                                       				   </td>
 													 </tr>
 				                                </#list>
 			                                </#if>
@@ -151,6 +154,27 @@
 			var status = $("#status").val();
 			var name = $('.name').val();
 			queryProject(curPage,projectType,status,name);
+		});
+		
+		$(".delete").click(function(){
+			var obj = $(this);
+			var id = $(this).attr("data");
+			  if (confirm("确认要删除？")) {
+			  	$.ajax({
+					url : "/center/projectInfo/del/"+id+".go",
+					type : "get",
+					dataType : "text",
+					cache : false,
+					success :function(data){
+						if(data = "succ"){
+							alert("删除成功");
+							obj.parents("tr").remove();
+						}else{
+							alert("删除失败");
+						}
+					}
+				});
+			  }
 		});
 	})
 	

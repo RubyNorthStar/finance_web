@@ -77,7 +77,10 @@
 				                                <#list list as investment>
 				                                	 <tr>
 													   <td>${investment.investName}</td>
-													   <td>刪除&nbsp&nbsp|&nbsp&nbsp修改</td>
+													   <td>
+													   		<button class="button-style button-style-blue delete" data="${investment.id}" style="margin:0; padding:5px 7px;">删除</button>
+	                                       				    <button class="button-style button-style-blue update" data="${investment.id}" style="margin:0; padding:5px 7px;">修改</button>
+													   </td>
 													 </tr>
 				                                </#list>
 			                                </#if>
@@ -150,6 +153,27 @@
 			var name = $('.name').val();
 			alert(name);
 			queryProject(curPage,status,name);
+		});
+		
+		$(".delete").click(function(){
+			var obj = $(this);
+			var id = $(this).attr("data");
+			  if (confirm("确认要删除？")) {
+			  	$.ajax({
+					url : "/center/investment/del/"+id+".go",
+					type : "get",
+					dataType : "text",
+					cache : false,
+					success :function(data){
+						if(data = "succ"){
+							alert("删除成功");
+							obj.parents("tr").remove();
+						}else{
+							alert("删除失败");
+						}
+					}
+				});
+			  }
 		});
 	})
 	

@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.xsjrw.websit.domain.project.Industry;
+import com.xsjrw.websit.domain.project.ProjectInfo;
 import com.xsjrw.websit.domain.project.PublicNotice;
 import com.xsjrw.websit.search.project.IndustrySearch;
 import com.xsjrw.websit.search.project.PublicNoticeSearch;
@@ -65,7 +66,9 @@ public class PublicNoticeController {
 		if(ajaxList != null && ajaxList.size() > 0){
 			try {
 				for(PublicNotice pro : ajaxList){
-					result += "<tr><td>"+pro.getNoticeTitle()+"</td><td>"+pro.getAddressProvince()+" | "+pro.getAddressCity()+"</td><td>刪除&nbsp|&nbsp修改</td></tr>";
+					result += "<tr><td>"+pro.getNoticeTitle()+"</td><td>"+pro.getAddressProvince()+" | "+pro.getAddressCity()+
+							"</td><td><button class='button-style button-style-blue delete' data='"+pro.getId()+"' style='margin:0; padding:5px 7px;'>删除</button>"
+							+ " <button class='button-style button-style-blue update' data='"+pro.getId()+"' style='margin:0; padding:5px 7px;'>修改</button></td></tr>";
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -86,10 +89,20 @@ public class PublicNoticeController {
 		return "redirect:/publicNotice";
 	}
 	
+	@ResponseBody
 	@RequestMapping(value="/del/{id}", method = RequestMethod.GET)
 	public String del(Model model, @PathVariable Integer id) {
-		publicNoticeService.deletePublicNoticeById(id);
-		return "redirect:/publicNotice";
+		String del = "";
+		PublicNotice publicNotice = publicNoticeService.findPublicNoticeById(id);
+		publicNotice.setStatus(6);
+		try {
+			publicNoticeService.update(publicNotice);
+			del = "succ";
+		} catch (Exception e) {
+			e.printStackTrace();
+			del = "fail";
+		}
+		return del;
 	}
 	
 	@ResponseBody

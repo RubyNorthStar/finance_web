@@ -80,7 +80,9 @@ public class AdminProjectInfoController {
 		if(ajaxList != null && ajaxList.size() > 0){
 			try {
 				for(ProjectInfo pro : ajaxList){
-					result += "<tr><td>"+pro.getProjectName()+"</td><td>刪除&nbsp|&nbsp修改</td></tr>";
+					result += "<tr><td>"+pro.getProjectName()+
+							"</td><td><button class='button-style button-style-blue delete' data='"+pro.getId()+"' style='margin:0; padding:5px 7px;'>删除</button>"
+							+ " <button class='button-style button-style-blue update' data='"+pro.getId()+"' style='margin:0; padding:5px 7px;'>修改</button></td></tr>";
 				}
 			} catch (Exception e) {
 				e.printStackTrace();

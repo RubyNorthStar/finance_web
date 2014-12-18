@@ -50,26 +50,6 @@ public class AdminInvestmentIntentionInfoController {
 		return "project/admin/investment_info_list";
 	}
 	
-	@ResponseBody
-	@RequestMapping(value="ajaxList")
-	public String ajaxList(Model model, InvestmentIntentionInfoSearch search, HttpServletResponse response){
-		search.setPageSize(2);
-		
-		List<InvestmentIntentionInfo> ajaxList = investmentIntentionInfoService.findInvestmentIntentionInfoByPage(search);
-		
-		String result = "<tr class='tr-title'><td>投资项目名称</td><td>操作</td></tr>";
-		if(ajaxList != null && ajaxList.size() > 0){
-			try {
-				for(InvestmentIntentionInfo pro : ajaxList){
-					result += "<tr><td>"+pro.getInvestName()+"</td><td>刪除&nbsp|&nbsp修改</td></tr>";
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		return result;
-	}
-	
 	@RequestMapping(value="detail")
 	public String detail(Model model, Integer id){
 		

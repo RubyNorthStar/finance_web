@@ -61,7 +61,9 @@ public class InvestmentIntentionInfoController {
 		if(ajaxList != null && ajaxList.size() > 0){
 			try {
 				for(InvestmentIntentionInfo pro : ajaxList){
-					result += "<tr><td>"+pro.getInvestName()+"</td><td>刪除&nbsp|&nbsp修改</td></tr>";
+					result += "<tr><td>"+pro.getInvestName()+
+							"</td><td><button class='button-style button-style-blue delete' data='"+pro.getId()+"' style='margin:0; padding:5px 7px;'>删除</button>"
+							+ " <button class='button-style button-style-blue update' data='"+pro.getId()+"' style='margin:0; padding:5px 7px;'>修改</button></td></tr>";
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -84,8 +86,17 @@ public class InvestmentIntentionInfoController {
 	
 	@RequestMapping(value="/del/{id}", method = RequestMethod.GET)
 	public String del(Model model, @PathVariable Integer id) {
-		investmentIntentionInfoService.deleteInvestmentIntentionInfoById(id);
-		return "redirect:/investmentIntentionInfo";
+		String del = "";
+		InvestmentIntentionInfo info = investmentIntentionInfoService.findInvestmentIntentionInfoById(id);
+		info.setStatus(6);
+		try {
+			investmentIntentionInfoService.update(info);
+			del = "succ";
+		} catch (Exception e) {
+			e.printStackTrace();
+			del = "fail";
+		}
+		return del;
 	}
 	
 	@ResponseBody
