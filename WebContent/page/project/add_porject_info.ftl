@@ -161,7 +161,7 @@
                                     </div>
                                 </li>
                                 <li class="wrap-li clear">
-                                    <p><span class="spanRed">*</span>公告内容<span class="spanRed">【至少100字】</span></p>
+                                    <p><span class="spanRed">*</span>项目及其价值介绍<span class="spanRed">【至少100字】</span></p>
                                     <div class="right-form">
                                         <textarea class="textarea-img" name="projectInfo.proDetail" id="proDetail"></textarea>
                                     </div>

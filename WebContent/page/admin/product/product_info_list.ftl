@@ -72,26 +72,25 @@
 			    			<#list listProduct as item>
 					    		<tr>
 	
-					    			<td><#if item.productName??>${item.productName}</#if></td>
-						      		<td><#if item.fundScale??>${item.fundScale}</#if></td>
-						      		<td><#if item.expectProfit??>${item.expectProfit}</#if></td>
-						      		
-						      		<td><#if item.fundTypeId??>基金类型${item.fundTypeId}</#if></td>
-						      		<td><#if item.investmentTimeLimit??>${item.investmentTimeLimit}</#if></td>
-						      		<td><#if item.fundManage??>${item.fundManage}</#if></td>
-						      		<td><#if item.minBidMoney??>${item.minBidMoney}</#if></td>
-						      		<td><#if item.profitDistribution??>${item.profitDistribution}</#if></td>
+					    			<td><#if item.productName??>${item.productName!''}</#if></td>
+						      		<td><#if item.fundScale??>${item.fundScale!''}</#if></td>
+						      		<td><#if item.expectProfit??>${item.expectProfit!''}</#if></td>
+						      		<td><#if item.fundTypeId??>基金类型${item.fundTypeId!''}</#if></td>
+						      		<td><#if item.investmentTimeLimit??>${item.investmentTimeLimit!''}</#if></td>
+						      		<td><#if item.fundManage??>${item.fundManage!''}</#if></td>
+						      		<td><#if item.minBidMoney??>${item.minBidMoney!''}</#if></td>
+						      		<td><#if item.profitDistribution??>${item.profitDistribution!''}</#if></td>
 						      		<td><#if item.isMortgage??> <#if item.isMortgage == 1>有<#else>无</#if></#if></td>
-						      		<td><#if item.yearInterestRate??>${item.yearInterestRate}</#if></td>
-						      		<td><#if item.creditLevle??>${item.creditLevle}</#if></td>
+						      		<td><#if item.yearInterestRate??>${item.yearInterestRate!''}</#if></td>
+						      		<td><#if item.creditLevle??>${item.creditLevle!''}</#if></td>
 						      		<td>
 						      			<#if item.toExamineStatus == 1 || item.toExamineStatus == 3>
-						      					<a onclick="updateStatus(${item.id},2)" style="cursor:pointer">审核</a> &nbsp;
+						      					<a onclick="updateStatus(${item.id!''},2)" style="cursor:pointer">审核</a> &nbsp;
 						      				<#else>
-						      					<a onclick="updateStatus(${item.id},3)" style="cursor:pointer">禁用</a> &nbsp;
+						      					<a onclick="updateStatus(${item.id!''},3)" style="cursor:pointer">禁用</a> &nbsp;
 						      			</#if>
-						      			<a href="/admin/productInfo/update.go?id=${item.id}">更新</a> &nbsp;
-						      			<a href="/admin/productInfo/del/${item.id}.go">删除</a> &nbsp;
+						      			<a href="/admin/productInfo/update.go?id=${item.id!''}">更新</a> &nbsp;
+						      			<a href="/admin/productInfo/del/${item.id!''}.go">删除</a> &nbsp;
 						      		</td>
 						      	</tr>
 				      		</#list>
